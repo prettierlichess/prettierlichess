@@ -1,0 +1,13 @@
+{
+    "name": "Prettier Lichess",
+    "version": "0.0.2",
+    "manifest_version": 2,
+    "description": "Lichess, but prettier.",
+    "icons": {
+        "128": "icon_128.png"
+    },
+    "content_scripts": [{
+        "matches": ["*://lichess.org/*"],
+        "css": ["styles.css"]
+    }]
+}
