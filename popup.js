@@ -1,6 +1,9 @@
 const colorScheme = ["primaryColor","secondaryColor","tertiaryColor","backgroundColor","surfaceColor","surfaceColorHover","defaultWhite"]
 const colorDefaults = ["#9FC0A2","#f5c276","#d36d6d","#2B343B","#3F474D","#4e565c","#F2F5F3"]
 
+colorScheme.forEach(scheme => colorPickerSet(scheme));
+colorScheme.forEach(scheme => addChangeListener(scheme));
+
 document.querySelector('#resetButton').addEventListener('click', () => {
     document.getElementById("list").reset();
 
@@ -12,10 +15,8 @@ document.querySelector('#resetButton').addEventListener('click', () => {
         });
     }
 
-    tabScript('window.location.reload();')
+    tabScript('window.location.reload();');
 })
-
-colorScheme.forEach(scheme => addChangeListener(scheme));
 
 function addChangeListener(scheme) {
     let schemeElement = document.getElementById(scheme);
@@ -30,7 +31,15 @@ function addChangeListener(scheme) {
     });
 }
 
-function tabScript(code){
+function colorPickerSet(scheme) {
+    let schemeElement = document.getElementById(scheme);
+
+    chrome.storage.sync.get(scheme, function (result) {
+        schemeElement.setAttribute('value', result[scheme]);
+    });
+}
+
+function tabScript(code) {
     chrome.tabs.query({
         active: true,
         currentWindow: true
