@@ -2621,3 +2621,12 @@ group.radio label {
 .game__tournament-link a {
     color: var(--primaryColor) !important;
 }
+
+.crosstable__users,
+.crosstable__score,
+.crosstable povs:hover,
+.cmn-toggle+label::after,
+.rcontrols .rematch.fbt,
+#powerTip .forecast-info .title {
+    text-shadow: none !important;
+}
