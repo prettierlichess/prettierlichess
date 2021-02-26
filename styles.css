@@ -224,13 +224,13 @@
 
 html {
     font-family: 'Red Hat Text', sans-serif !important;
-    --green: #9FC0A2 !important;
-    --gray-dark: #2B343B !important;
-    --gray-light: #3F474D !important;
-    --gray-light-hover: #4e565c !important;
-    --orange: #f5c276 !important;
-    --red: #d36d6d !important;
-    --white: #F2F5F3 !important;
+    --primaryColor: #9FC0A2 !important;
+    --backgroundColor: #2B343B !important;
+    --surfaceColor: #3F474D !important;
+    --surfaceColorHover: #4e565c !important;
+    --secondaryColor: #f5c276 !important;
+    --tertiaryColor: #d36d6d !important;
+    --defaultWhite: #F2F5F3 !important;
     --main-shadow: 0 4px 76px -15px rgba(0, 0, 0, 0.5) !important;
 }
 
@@ -248,13 +248,13 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 10px 10px var(--gray-light) !important;
+    box-shadow: inset 0 0 10px 10px var(--surfaceColor) !important;
     border: solid 5px transparent !important;
     border-radius: 8px !important;
 }
 
 body {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
     font-family: 'Red Hat Text', sans-serif !important;
     --main-margin: .2vw !important;
     text-shadow: 0px 0px 0px transparent !important;
@@ -285,28 +285,28 @@ coords coord {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
     opacity: .7 !important;
     transform: none !important;
 }
 
 cg-resize {
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
     bottom: -30px !important;
     right: -25px !important;
     z-index: 999999999 !important;
 }
 
 cg-resize:hover {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
 }
 
 cg-resize::before {
-    background-color: var(--white) !important;
+    background-color: var(--defaultWhite) !important;
 }
 
 cg-resize::after {
-    background-color: var(--white) !important;
+    background-color: var(--defaultWhite) !important;
 }
 
 .site-title {
@@ -319,11 +319,11 @@ cg-resize::after {
 }
 
 h1 a span {
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
 }
 
 div h1 a {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 #topnav {
@@ -344,7 +344,7 @@ nav section a {
     border-left: none !important;
     background: none !important;
     text-transform: lowercase !important;
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
     letter-spacing: .1em !important;
     transition: .25s ease-in-out !important;
     transition-property: padding, background !important;
@@ -355,14 +355,14 @@ nav section a {
 
 nav section a:hover {
     border-left: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     padding: 0px 20px !important;
     border-radius: 4px !important;
 }
 
 nav section a:target-within {
     border-left: none !important;
-    background-color: var(--gray-light) !important;
+    background-color: var(--surfaceColor) !important;
     border-radius: 4px !important;
 }
 
@@ -370,7 +370,7 @@ nav section a:target-within {
     border-left: none !important;
     box-shadow: none !important;
     border-radius: 8px !important;
-    background-color: var(--gray-light) !important;
+    background-color: var(--surfaceColor) !important;
     overflow: hidden !important;
     width: 12.25rem !important;
     left: 50% !important;
@@ -386,50 +386,50 @@ nav section a:target-within {
 }
 
 #topnav div a:hover {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
     border-radius: 0 !important;
-    color: var(--gray-dark) !important;
+    color: var(--backgroundColor) !important;
 }
 
 #topnav.hover section:hover>a,
 #topnav section:active>a {
     border-left: none !important;
-    background-color: var(--gray-light) !important;
+    background-color: var(--surfaceColor) !important;
     border-radius: 4px 4px 0 0 !important;
 }
 
 signal>i {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
 }
 
 .user-link.online .line,
 .is-green::before {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 #dasher_app .sub::before {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 #dasher_app .head::before {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 #dasher_app .selector a::before {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 #dasher_app .selector a.active::before {
-    color: var(--gray-dark) !important;
+    color: var(--backgroundColor) !important;
 }
 
 #dasher_app .selector a.active {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 #dasher_app .links a:hover {
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
 }
 
 #dasher_app .links a:hover::before {
@@ -441,8 +441,8 @@ signal>i {
 }
 
 #dasher_app .links button:hover {
-    background: var(--red) !important;
-    color: var(--gray-dark) !important;
+    background: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .site-buttons .dropdown a {
@@ -450,7 +450,7 @@ signal>i {
 }
 
 .site-buttons .dropdown a:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 main.puzzle {
@@ -459,38 +459,38 @@ main.puzzle {
 }
 
 .puzzle__feedback.after .puzzle__more {
-    border-top: 1px solid var(--gray-dark) !important;
+    border-top: 1px solid var(--backgroundColor) !important;
 }
 
 .puzzle__moves {
     border: none !important;
-    border-top: 1px solid var(--gray-dark) !important;
-    border-bottom: 1px solid var(--gray-dark) !important;
+    border-top: 1px solid var(--backgroundColor) !important;
+    border-bottom: 1px solid var(--backgroundColor) !important;
 }
 
 .tview2 move.parent {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .tview2 move.active {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 .tview2 lines {
-    border-left: 0 solid var(--gray-dark) !important;
+    border-left: 0 solid var(--backgroundColor) !important;
 }
 
 .tview2 lines line::before {
-    border-top: 2px solid var(--gray-dark) !important;
+    border-top: 2px solid var(--backgroundColor) !important;
 }
 
 .puzzle__moves move.good glyph,
 .puzzle__moves move.win glyph {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .puzzle__moves move.fail glyph {
-    color: var(--red) !important;
+    color: var(--tertiaryColor) !important;
 }
 
 .puzzle__side__metas .infos.puzzle {
@@ -500,7 +500,7 @@ main.puzzle {
 div.puzzle__side__metas {
     border-radius: 8px !important;
     box-shadow: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     padding: 30px !important;
 }
 
@@ -511,14 +511,14 @@ strong {
 div.puzzle__side__user {
     border-radius: 8px !important;
     box-shadow: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     padding: 30px !important;
 }
 
 div.puzzle__side__theme {
     border-radius: 8px !important;
     box-shadow: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     padding: 30px !important;
 }
 
@@ -536,7 +536,7 @@ select {
 div.puzzle__side__config {
     border-radius: 8px !important;
     box-shadow: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     padding: 30px !important;
 }
 
@@ -545,30 +545,30 @@ aside.puzzle__side {
 }
 
 div.puzzle__feedback.play {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     box-shadow: none !important;
 }
 
 div.puzzle__tools {
     border-radius: 8px !important;
     box-shadow: none !important;
-    background: var(--gray-light);
+    background: var(--surfaceColor);
 }
 
 .tview2-column>index {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     line-height: 40px !important;
-    border-right: 1px solid var(--gray-dark) !important;
+    border-right: 1px solid var(--backgroundColor) !important;
 }
 
 .tview2 move.active {
-    background: var(--gray-light-hover);
+    background: var(--surfaceColorHover);
 }
 
 .tview2 move:not(.empty):hover,
 .tview2 move:not(.empty):hover index,
 .tview2 move:not(.empty):hover eval {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .tview2 eval {
@@ -580,7 +580,7 @@ move.hist {
 }
 
 move.hist:hover {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 div.cg-wrap.orientation-black.manipulable {
@@ -592,47 +592,47 @@ a.offline.user-link {
 }
 
 div.lobby__app__content.lpools {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     box-shadow: none !important;
     border-radius: 8px !important;
     margin-bottom: 20px !important;
 }
 
 .lpools .active {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     box-shadow: var(--main-shadow) !important;
 }
 
 div p a {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 div a h2 {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .action-menu__tools .button {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .action-menu__tools .button:hover {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
     box-shadow: var(--main-shadow) !important;
 }
 
 a.result-true {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 a.result-false {
-    background: var(--red) !important;
-    color: var(--gray-dark) !important;
+    background: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 a.result-cursor.current {
-    background: var(--white) !important;
+    background: var(--defaultWhite) !important;
 }
 
 .game-row .result {
@@ -640,16 +640,16 @@ a.result-cursor.current {
 }
 
 select.puzzle__difficulty__selector {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
     border-radius: 4px !important;
 }
 
 div div label::before {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 div div label::after {
-    background: var(--white) !important;
+    background: var(--defaultWhite) !important;
 }
 
 move {
@@ -657,7 +657,7 @@ move {
 }
 
 move.current.active {
-    border-color: var(--green) !important;
+    border-color: var(--primaryColor) !important;
 }
 
 div.puzzle__session {
@@ -665,22 +665,22 @@ div.puzzle__session {
 }
 
 interrupt lines line {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     margin: 2px 0 !important;
     padding-top: 4px !important;
     padding-bottom: 4px !important;
 }
 
 move:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 move.current {
-    border: 1px solid var(--green) !important;
+    border: 1px solid var(--primaryColor) !important;
 }
 
 .puzzle__feedback {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .puzzle__controls {
@@ -692,8 +692,8 @@ button.fbt {
 }
 
 button.fbt:hover {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .puzzle__vote__help {
@@ -705,31 +705,31 @@ button.fbt:hover {
 }
 
 .vote.vote-up {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .vote.vote-up:hover {
-    background-color: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background-color: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .vote.vote-down {
-    color: var(--red) !important;
+    color: var(--tertiaryColor) !important;
 }
 
 .vote.vote-down:hover {
-    background-color: var(--red) !important;
-    color: var(--gray-dark) !important;
+    background-color: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .pv_box .pv {
-    border-top: 1px solid var(--gray-light) !important;
-    border-left: 1px solid var(--gray-light) !important;
-    border-right: 1px solid var(--gray-light) !important;
+    border-top: 1px solid var(--surfaceColor) !important;
+    border-left: 1px solid var(--surfaceColor) !important;
+    border-right: 1px solid var(--surfaceColor) !important;
 }
 
 .ceval {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     height: 50px !important;
 }
 
@@ -738,24 +738,24 @@ button.fbt:hover {
 }
 
 .ceval .bar span {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
 }
 
 .ceval .wasmx {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .pv_box {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 .pv_box .pv:hover {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .eval-gauge {
-    background: var(--white) !important;
+    background: var(--defaultWhite) !important;
     border-radius: 4px !important;
 }
 
@@ -772,7 +772,7 @@ button.fbt:hover {
 }
 
 .eval-gauge tick.zero {
-    border-bottom: 3px solid var(--orange) !important;
+    border-bottom: 3px solid var(--secondaryColor) !important;
 }
 
 .ceval pearl {
@@ -793,18 +793,18 @@ button.fbt:hover {
 }
 
 .ceval.enabled .show-threat:hover {
-    color: var(--red) !important;
+    color: var(--tertiaryColor) !important;
 }
 
 .ceval .show-threat:hover:not(.hidden),
 .ceval .show-threat.active {
-    color: var(--red) !important;
+    color: var(--tertiaryColor) !important;
 }
 
 input,
 textarea,
 select {
-    background-color: var(--gray-dark) !important;
+    background-color: var(--backgroundColor) !important;
     border: none !important;
     border-radius: 8px !important;
     padding: .8em 1em !important;
@@ -817,7 +817,7 @@ div.round__app.variant-standard {
 }
 
 .crosstable__score {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .rcontrols .follow-up .fbt {
@@ -831,7 +831,7 @@ div.round__app.variant-standard {
 }
 
 div.game__meta {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     box-shadow: none !important;
     border-radius: 8px !important;
 }
@@ -843,44 +843,44 @@ div.game__meta {
 }
 
 .mchat__presets span.disabled {
-    background: var(--orange) !important;
-    color: var(--gray-dark) !important;
+    background: var(--secondaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .moretime {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
     transform: scale(.75) !important;
 }
 
 .round__app__table {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     box-shadow: none !important;
     border-radius: 8px !important;
 }
 
 rm6 {
-    background: var(--gray-light) !important;
-    border-bottom: 1px solid var(--gray-dark) !important;
+    background: var(--surfaceColor) !important;
+    border-bottom: 1px solid var(--backgroundColor) !important;
 }
 
 rm6 u8t.a1t {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 .buttons {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     box-shadow: none !important;
-    border-bottom: 1px solid var(--gray-dark) !important;
+    border-bottom: 1px solid var(--backgroundColor) !important;
 }
 
 rm6 l4x i5z {
-    background: var(--gray-light) !important;
-    border-right: 1px solid var(--gray-dark) !important;
+    background: var(--surfaceColor) !important;
+    border-right: 1px solid var(--backgroundColor) !important;
 }
 
 rm6 l4x u8t:hover {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 l4x {
@@ -889,51 +889,51 @@ l4x {
 }
 
 button.fbt.rematch.white {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 button.fbt.rematch.white:hover {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 a.fbt:hover {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 a.user-link:hover {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .mchat.mchat-optional {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     box-shadow: none !important;
 }
 
 ol.mchat__messages.chat-v-1 {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 div.mchat__tab.discussion.mchat__tab-active {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 div.mchat__tab.note.mchat__tab-active {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .mchat-optional .mchat__tab.discussion {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 div.mchat__content.discussion {
-    background: var(--gray-light);
+    background: var(--surfaceColor);
 }
 
 input.mchat__say {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
     height: 40px !important;
     padding-left: 14px !important;
     margin: 10px !important;
@@ -948,7 +948,7 @@ input.mchat__say {
     display: flex !important;
     align-items: center !important;
     height: 40px !important;
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
     border-radius: 0 !important;
 }
 
@@ -957,7 +957,7 @@ input.mchat__say {
 }
 
 .mchat__tab span {
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
 }
 
 .mchat__presets span {
@@ -969,15 +969,15 @@ input.mchat__say {
 }
 
 .mchat__presets span:hover {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .time {
     border-radius: 8px !important;
     box-shadow: none !important;
     background: none !important;
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
     opacity: .8 !important;
     width: 100% !important;
     display: flex !important;
@@ -988,7 +988,7 @@ input.mchat__say {
 }
 
 .bar {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
     border-radius: 100px !important;
 }
 
@@ -1019,59 +1019,59 @@ input.mchat__say {
 }
 
 .round__underboard {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
 }
 
 .crosstable {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     box-shadow: none !important;
 }
 
 .crosstable__users {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
 }
 
 span.win {
-    color: var(--green) !important;
-    background: var(--gray-light) !important;
+    color: var(--primaryColor) !important;
+    background: var(--surfaceColor) !important;
 }
 
 span.loss {
-    color: var(--red) !important;
-    background: var(--gray-light) !important;
+    color: var(--tertiaryColor) !important;
+    background: var(--surfaceColor) !important;
 }
 
 div div good {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 div div bad {
-    color: var(--red) !important;
+    color: var(--tertiaryColor) !important;
 }
 
 div div fill {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 a.win {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 a.loss {
-    background: var(--red) !important;
-    color: var(--gray-dark) !important;
+    background: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .mchat__tab-active {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .mchat__tab input {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
     border: none !important;
     border-radius: 100px !important;
     width: 28px !important;
@@ -1081,12 +1081,12 @@ a.loss {
 }
 
 .mchat__tab input:checked {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
     border: none !important;
 }
 
 .mchat__content.note textarea {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 0 !important;
 }
 
@@ -1098,17 +1098,17 @@ a.loss {
 }
 
 .fbt.yes {
-    background: var(--red) !important;
-    border-bottom: 5px solid var(--red) !important;
+    background: var(--tertiaryColor) !important;
+    border-bottom: 5px solid var(--tertiaryColor) !important;
 }
 
 .fbt.yes:hover {
     background: #e47f7f !important;
-    border-bottom: 5px solid var(--red) !important;
+    border-bottom: 5px solid var(--tertiaryColor) !important;
 }
 
 .fbt.resign:hover {
-    background: var(--red) !important;
+    background: var(--tertiaryColor) !important;
 }
 
 .analyse {
@@ -1117,18 +1117,18 @@ a.loss {
 }
 
 .analyse__tools {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     box-shadow: none !important;
-    border: 1px solid var(--gray-light) !important;
+    border: 1px solid var(--surfaceColor) !important;
 }
 
 .analyse__moves .result {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .analyse__moves .status {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .cmn-toggle:focus+label::before,
@@ -1137,11 +1137,11 @@ a.loss {
 }
 
 .cmn-toggle:checked+label::before {
-    background-color: var(--green) !important;
+    background-color: var(--primaryColor) !important;
 }
 
 .tview2-column>interrupt {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
     border: none !important;
 }
 
@@ -1159,11 +1159,11 @@ a.loss {
 }
 
 .analyse__underboard__menu>span.active {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .analyse__underboard__menu>span::after {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
 }
 
 #main-wrap {
@@ -1172,19 +1172,19 @@ a.loss {
 }
 
 .hooks__list tr.join:hover td {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .site-buttons .shown .toggle {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
 }
 
 .data-count::after {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
     text-shadow: none !important;
-    color: var(--gray-dark) !important;
+    color: var(--backgroundColor) !important;
 }
 
 #challenge-app.rendered {
@@ -1192,19 +1192,19 @@ a.loss {
 }
 
 #challenge-app .create {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
     padding: 8px 20px !important;
 }
 
 #challenge-app .empty {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     box-shadow: var(--main-shadow) !important;
 }
 
 .site-buttons .dropdown {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     box-shadow: var(--main-shadow) !important;
     padding: 10px !important;
@@ -1216,15 +1216,15 @@ a.loss {
 }
 
 #notify-app .site_notification:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 #notify-app .site_notification:hover i {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 #challenge-app .challenge>i {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
     font-size: 1.8em !important;
     right: 1.25rem !important;
     top: 11px !important;
@@ -1245,7 +1245,7 @@ a.loss {
 }
 
 #challenge-app .challenge {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     box-shadow: var(--main-shadow) !important;
     border-radius: 8px !important;
     padding: 10px !important;
@@ -1277,11 +1277,11 @@ a.loss {
 }
 
 .timeline .entry:hover a {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .upt__score {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .upt__actions.btn-rack {
@@ -1293,26 +1293,26 @@ a.loss {
 }
 
 .upt__actions.btn-rack a:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 #friend_box {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border: none !important;
     border-radius: 4px 4px 0 0 !important;
 }
 
 #friend_box .content a.user-link .line::before {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 #friend_box .content div:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 #powerTip,
 #miniGame {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     padding: 10px !important;
     border-radius: 8px !important;
 }
@@ -1323,14 +1323,14 @@ a.loss {
 
 .btn-rack__btn,
 .btn-rack form {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border: none !important;
 }
 
 
 
 #friend_box .friend_box_title {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border: none !important;
     padding: 8px 14px !important;
 }
@@ -1343,7 +1343,7 @@ a.loss {
 }
 
 .user-link.online .line {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
     font-family: 'lichess' !important;
 }
 
@@ -1373,15 +1373,15 @@ a.loss {
 }
 
 .lpools>div:hover {
-    background: var(--gray-light) !important;
-    color: var(--white) !important;
+    background: var(--surfaceColor) !important;
+    color: var(--defaultWhite) !important;
     transform: scale(.95) !important;
     border-radius: 8px !important;
 }
 
 .tabs-horiz {
     margin-top: 26px !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     margin-bottom: 8px !important;
     overflow: hidden !important;
@@ -1390,11 +1390,11 @@ a.loss {
 }
 
 .tabs-horiz span.active {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .tabs-horiz span::after {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
     bottom: -9px !important;
     width: 100% !important;
     left: 0 !important;
@@ -1405,7 +1405,7 @@ div.perf {
 }
 
 .utitle {
-    color: var(--orange) !important;
+    color: var(--secondaryColor) !important;
 }
 
 .lobby__side {
@@ -1416,7 +1416,7 @@ div.perf {
 .lobby__streams {
     display: flex !important;
     flex-direction: column !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     margin-bottom: 10px !important;
     padding: 10px !important;
@@ -1438,11 +1438,11 @@ div.perf {
 }
 
 .stream.highlight:hover {
-    background: var(--gray-light-hover);
+    background: var(--surfaceColorHover);
 }
 
 .lobby__streams .stream.highlight strong {
-    color: var(--orange) !important;
+    color: var(--secondaryColor) !important;
     margin-bottom: 10px !important;
 }
 
@@ -1453,20 +1453,20 @@ div.perf {
 }
 
 .tour-spotlight {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     box-shadow: none !important;
     opacity: 1 !important;
     padding: 14px !important;
 }
 
 .tour-spotlight:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
     color: #bababa !important;
 }
 
 .lobby__streams .more:hover,
 .timeline .more:hover {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .timeline .entry::after {
@@ -1480,25 +1480,25 @@ div.perf {
 
 .lobby__leaderboard td:last-child,
 .lobby__winners td:last-child a {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 #hook .opponent,
 .lobby__box__top {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     padding: 10px !important;
     margin-bottom: 8px !important;
     border-radius: 8px !important;
 }
 
 .lobby__box__content {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
-    border: 1px solid var(--gray-light) !important;
+    border: 1px solid var(--surfaceColor) !important;
 }
 
 .lobby__box tr:nth-child(even) {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 .lobby__box td {
@@ -1512,15 +1512,15 @@ div.perf {
 }
 
 .lobby__box td.name a:hover {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 a.post_link.text {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 a.post_link.text:hover {
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
 }
 
 .lobby__tv {
@@ -1537,7 +1537,7 @@ a.post_link.text:hover {
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
 }
 
@@ -1570,12 +1570,12 @@ a.post_link.text:hover {
 }
 
 #nb_connected_players:hover {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 #nb_connected_players strong {
     font-size: 60px !important;
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
 }
 
 #nb_games_in_play {
@@ -1587,25 +1587,25 @@ a.post_link.text:hover {
 }
 
 #nb_games_in_play:hover {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 #nb_games_in_play strong {
     font-size: 60px !important;
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
 }
 
 a.button.button-metal {
-    background: var(--gray-dark) !important;
-    color: var(--white) !important;
+    background: var(--backgroundColor) !important;
+    color: var(--defaultWhite) !important;
     box-shadow: none !important;
     margin: 4px !important;
     border-radius: 4px !important;
 }
 
 a.button.button-metal:hover {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .lobby__tournaments {
@@ -1622,7 +1622,7 @@ a.button.button-metal:hover {
     flex-grow: 1 !important;
     margin-bottom: 4px !important;
     box-shadow: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     padding: 20px !important;
     border-radius: 8px !important;
 }
@@ -1632,32 +1632,32 @@ a.button.button-metal:hover {
 }
 
 .lobby__support i::before {
-    color: var(--orange) !important;
+    color: var(--secondaryColor) !important;
 }
 
 .lobby__support__text {
-    color: var(--orange) !important;
+    color: var(--secondaryColor) !important;
 }
 
 .lobby__app__content.lreal_time {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     width: 500px !important;
     border-radius: 8px !important;
     box-shadow: none !important;
 }
 
 .join:hover {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
     filter: none !important;
 }
 
 .hook__filters {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .toggle.toggle-filter:hover {
-    color: var(--red) !important;
+    color: var(--tertiaryColor) !important;
 }
 
 .actions {
@@ -1674,11 +1674,11 @@ a.button.button-metal:hover {
 }
 
 .hook__filters .regular-checkbox:checked {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
 }
 
 .lobby__app__content.lseeks {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     box-shadow: none !important;
     border: none !important;
     border-radius: 8px !important;
@@ -1687,8 +1687,8 @@ a.button.button-metal:hover {
 .button {
     font-family: 'Red Hat Text' !important;
     font-weight: 500 !important;
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
     box-shadow: none !important;
     border-radius: 4px !important;
     outline: none !important;
@@ -1699,21 +1699,21 @@ a.button.button-metal:hover {
 
 .button:hover {
     background: none !important;
-    color: var(--white) !important;
-    box-shadow: 0 0 0 2px var(--gray-light-hover) inset !important;
+    color: var(--defaultWhite) !important;
+    box-shadow: 0 0 0 2px var(--surfaceColorHover) inset !important;
 }
 
 .signin.button.button-empty {
-    color: var(--gray-dark) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .signin.button.button-empty:hover {
-    color: var(--white) !important;
-    box-shadow: 0 0 0 2px var(--gray-light) inset !important;
+    color: var(--defaultWhite) !important;
+    box-shadow: 0 0 0 2px var(--surfaceColor) inset !important;
 }
 
 .mini-game__clock.clock--run {
-    color: var(--orange) !important;
+    color: var(--secondaryColor) !important;
 }
 
 .post {
@@ -1721,7 +1721,7 @@ a.button.button-metal:hover {
 }
 
 .post:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .lobby__blog .post img {
@@ -1755,7 +1755,7 @@ a.lobby__box__top {
 }
 
 .study__comment {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     box-shadow: none !important;
     border-radius: 8px !important;
 }
@@ -1773,22 +1773,22 @@ a.lobby__box__top {
 }
 
 .subnav a.active {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .subnav a::after {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
     height: 50% !important;
     top: 25% !important;
 }
 
 .studies .study .top::before {
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
     opacity: .2 !important;
 }
 
 .studies .study .top .study-name {
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
 }
 
 .study-index .list {
@@ -1801,14 +1801,14 @@ a.lobby__box__top {
     border-radius: 8px !important;
     padding: 30px !important;
     transition: all .25s ease-in-out !important;
-    border: 1px solid var(--gray-light-hover) !important;
+    border: 1px solid var(--surfaceColorHover) !important;
 }
 
 .studies .study:hover {
     box-shadow: var(--main-shadow) !important;
     background: none !important;
     z-index: 9999 !important;
-    border: 1px solid var(--gray-light) !important;
+    border: 1px solid var(--surfaceColor) !important;
 }
 
 input {
@@ -1825,7 +1825,7 @@ input {
 }
 
 .box {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     box-shadow: none !important;
 }
@@ -1835,7 +1835,7 @@ input {
 }
 
 .mselect__label {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
     box-shadow: none !important;
     border-radius: 8px !important;
 }
@@ -1859,29 +1859,29 @@ input {
 
 .mselect__label::after {
     background: none !important;
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
     margin-right: 10px !important;
 }
 
 .mselect__list {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .mselect__list .current {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .mselect__list>* {
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
     padding: 20px !important;
 }
 
 .mselect__list>:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .study__player {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
 }
 
@@ -1891,7 +1891,7 @@ input {
 
 .study__chapters {
     border-radius: 8px !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .study__chapters>div {
@@ -1903,11 +1903,11 @@ input {
 .study__chapters>div.active,
 .study__members>div.active {
     padding: 10px !important;
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .study__chapters>div>span {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
     border-radius: 100px !important;
     flex: 0 0 2em !important;
     transform: scale(.9) !important;
@@ -1915,13 +1915,13 @@ input {
 
 .study__chapters>div.active>span,
 .study__chapters>div:active>span {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .study__members {
     border-radius: 8px !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .study__members>div {
@@ -1935,48 +1935,48 @@ input {
 .study__metadata {
     border-radius: 8px !important;
     box-shadow: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     overflow: hidden !important;
-    border: 1px solid var(--gray-light) !important;
+    border: 1px solid var(--surfaceColor) !important;
 }
 
 .study__comments {
     border-radius: 8px !important;
     box-shadow: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .study__message {
     border-radius: 8px !important;
     box-shadow: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .study__metadata h2 {
     border: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     padding: 10px 20px !important;
-    border-bottom: 1px solid var(--gray-light-hover) !important;
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
 }
 
 .slist tbody tr:nth-child(even) {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 .study__multiboard {
     border-radius: 8px !important;
     box-shadow: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .study__multiboard .now-playing a.active,
 .study__multiboard .now-playing a:active {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .study__multiboard .now-playing a:nth-child(even) {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 .study__multiboard .now-playing a {
@@ -1986,7 +1986,7 @@ input {
 }
 
 .study__multiboard .now-playing a:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .study__multiboard .now-playing {
@@ -1996,19 +1996,19 @@ input {
 .study__share {
     border-radius: 8px !important;
     box-shadow: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .gamebook .comment {
     border-radius: 8px !important;
     box-shadow: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border: none !important;
     padding: 10px !important;
 }
 
 .gamebook .comment::after {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border: none !important;
 }
 
@@ -2018,8 +2018,8 @@ input {
 
 .gamebook .feedback.end a {
     border: none !important;
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
     font-size: 1em !important;
 }
 
@@ -2028,16 +2028,16 @@ input {
 }
 
 .study__multiboard .now-playing a:nth-child(even).active {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
 }
 
 .fbt.active {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .analyse__tools .sub-box .title {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
     padding: 10px !important;
 }
 
@@ -2051,11 +2051,11 @@ input {
 }
 
 .explorer-box tr:nth-child(even) {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 .explorer-box tr:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .explorer-box .bar span {
@@ -2069,24 +2069,24 @@ input {
 
 .analyse__tools .sub-box,
 .action-menu {
-    border-bottom: 3px solid var(--green) !important;
-    border-top: 3px solid var(--green) !important;
+    border-bottom: 3px solid var(--primaryColor) !important;
+    border-top: 3px solid var(--primaryColor) !important;
 }
 
 .explorer-box .config .choices span.selected {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
     box-shadow: none !important;
-    color: var(--gray-dark) !important;
+    color: var(--backgroundColor) !important;
     font-weight: 500 !important;
 }
 
 .explorer-box .config .choices span:hover {
-    background: var(--gray-light-hover) !important;
-    color: var(--white) !important;
+    background: var(--surfaceColorHover) !important;
+    color: var(--defaultWhite) !important;
 }
 
 .tour__meta {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     box-shadow: none !important;
     border-radius: 8px !important;
     padding: 20px !important;
@@ -2094,31 +2094,31 @@ input {
 
 .tour__meta section.conditions.accepted,
 .tour__meta section.conditions .accepted {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .tour__meta section.conditions.refused,
 .tour__meta section.conditions .refused {
-    color: var(--red) !important;
+    color: var(--tertiaryColor) !important;
 }
 
 .tour .box.created {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     box-shadow: none !important;
-    border: 1px solid var(--gray-light) !important;
+    border: 1px solid var(--surfaceColor) !important;
 }
 
 .tour .box.started {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     box-shadow: none !important;
-    border: 1px solid var(--gray-light) !important;
+    border: 1px solid var(--surfaceColor) !important;
 }
 
 .tour-sched .tour__main__header h1,
 .tour-sched .tour__main__header .img {
-    color: var(--orange) !important;
+    color: var(--secondaryColor) !important;
 }
 
 .tour__main__header .time {
@@ -2127,51 +2127,51 @@ input {
 }
 
 .tour__controls {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
     box-shadow: none !important;
     padding: 10px !important;
 }
 
 .pull-quote p {
-    border: 1px solid var(--gray-dark) !important;
+    border: 1px solid var(--backgroundColor) !important;
     padding: 20px !important;
     border-radius: 8px !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .pull-quote p:after {
-    background: var(--gray-light) !important;
-    border-left: 2px solid var(--gray-dark) !important;
-    border-bottom: 1px solid var(--gray-dark) !important;
+    background: var(--surfaceColor) !important;
+    border-left: 2px solid var(--backgroundColor) !important;
+    border-bottom: 1px solid var(--backgroundColor) !important;
 }
 
 .tour__controls .highlight {
-    background: var(--green) !important;
-    border-bottom: 5px solid var(--green) !important;
+    background: var(--primaryColor) !important;
+    border-bottom: 5px solid var(--primaryColor) !important;
     text-shadow: none !important;
-    color: var(--gray-dark) !important;
+    color: var(--backgroundColor) !important;
     top: 5px !important;
 }
 
 .tour__controls .highlight:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
     border-bottom: none !important;
     text-shadow: none !important;
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
     top: 10px !important;
 }
 
 .tour__duels a {
-    border-top: 1px solid var(--gray-light) !important;
+    border-top: 1px solid var(--surfaceColor) !important;
     padding: 10px !important;
 }
 
 .tour__duels a:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .tour__duels .rank {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .tour__duels h2 {
@@ -2180,21 +2180,21 @@ input {
 }
 
 .tour__notice {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .tour__standing tr:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .slist tbody tr:nth-child(even):hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 #announce {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -2204,7 +2204,7 @@ input {
 }
 
 #announce a {
-    color: var(--gray-dark) !important;
+    color: var(--backgroundColor) !important;
 }
 
 #announce .actions {
@@ -2217,7 +2217,7 @@ input {
 }
 
 .mchat__messages i {
-    color: var(--orange) !important;
+    color: var(--secondaryColor) !important;
     box-shadow: none !important;
     text-shadow: none !important;
 }
@@ -2227,8 +2227,8 @@ input {
 }
 
 .context-streamer {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
     border-radius: 8px !important;
     margin-bottom: 4px !important;
     padding: 10px !important;
@@ -2242,7 +2242,7 @@ input {
 .user-show__header,
 .user-show__social,
 .number-menu {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .number-menu .nm-item {
@@ -2250,29 +2250,29 @@ input {
 }
 
 .number-menu .nm-item:hover {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .btn-rack {
-    border: 1px solid var(--gray-light-hover) !important;
+    border: 1px solid var(--surfaceColorHover) !important;
 }
 
 #us_profile {
-    border-top: 0px solid var(--gray-dark) !important;
+    border-top: 0px solid var(--backgroundColor) !important;
     padding-left: 10px !important;
 }
 
 .highcharts-grid path {
-    stroke: var(--gray-light-hover) !important;
+    stroke: var(--surfaceColorHover) !important;
 }
 
 #us_profile .profile-side {
-    border-left: 0px solid var(--gray-dark) !important;
+    border-left: 0px solid var(--backgroundColor) !important;
 }
 
 #us_profile .insight {
-    border-top: 0px solid var(--gray-dark) !important;
-    color: var(--green) !important;
+    border-top: 0px solid var(--backgroundColor) !important;
+    color: var(--primaryColor) !important;
     padding: 10px 20px !important;
     margin: 10px 20px !important;
     border-radius: 4px !important;
@@ -2280,34 +2280,34 @@ input {
 
 #us_profile .insight:hover,
 #us_profile .insight:hover::before {
-    background: var(--gray-light-hover) !important;
-    color: var(--white) !important;
+    background: var(--surfaceColorHover) !important;
+    color: var(--defaultWhite) !important;
 }
 
 .user-show .angles {
-    border-top: 0px solid var(--gray-dark) !important;
+    border-top: 0px solid var(--backgroundColor) !important;
 }
 
 .crosstable__users,
 .crosstable__score,
 .crosstable povs:hover,
 .user-show .angles {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .number-menu--tabs .nm-item.active {
     border: none !important;
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .user-show .number-menu a.nm-item.to-games.active {
     border: none !important;
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .user-show #games.number-menu.number-menu--tabs {
     border: none !important;
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     padding: 10px 20px !important;
 }
 
@@ -2319,75 +2319,75 @@ input {
 }
 
 .number-menu--tabs .nm-item {
-    border-bottom: 0px solid var(--gray-light-hover) !important;
+    border-bottom: 0px solid var(--surfaceColorHover) !important;
     border-radius: 8px !important;
 }
 
 .stats a {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 g.highcharts-button {
     padding: 4px !important;
     border-radius: 4px !important;
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 g.highcharts-button rect {
-    fill: var(--gray-light-hover) !important;
+    fill: var(--surfaceColorHover) !important;
 }
 
 .activity section h2 time {
     background: none !important;
-    color: var(--orange) !important;
+    color: var(--secondaryColor) !important;
 }
 
 .activity .entry>i {
     border: none !important;
-    background: var(--orange) !important;
-    color: var(--gray-dark) !important;
+    background: var(--secondaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .activity .entries {
-    border-left: 2px solid var(--orange) !important;
+    border-left: 2px solid var(--secondaryColor) !important;
 }
 
 .activity win strong {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .activity loss strong {
-    background: var(--red) !important;
-    color: var(--gray-dark) !important;
+    background: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .activity draw strong {
-    background: var(--orange) !important;
-    color: var(--gray-dark) !important;
+    background: var(--secondaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .entry a,
 .game-row a {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .game-row {
-    border: 0px solid var(--gray-light-hover) !important;
+    border: 0px solid var(--surfaceColorHover) !important;
     margin: 30px 20px !important;
     border-radius: 8px !important;
 }
 
 .game-row:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .game-row:nth-child(odd) {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 .game-row:nth-child(odd):hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .game-row .win,
@@ -2403,12 +2403,12 @@ g.highcharts-button rect {
 }
 
 .sub-ratings a:hover {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .sub-ratings a:hover::before,
 .sub-ratings a:hover i {
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
 }
 
 .round {
@@ -2416,133 +2416,133 @@ g.highcharts-button rect {
 }
 
 .tv-channel.active>span>span {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .tv-channel.active>span::before {
     opacity: 1 !important;
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .tv-channel>span::before {
-    color: var(--white) !important;
+    color: var(--defaultWhite) !important;
     opacity: .5 !important;
 }
 
 .puzzle__more a:hover {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 #notify-app .site_notification.new {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 #notify-app .site_notification.new i {
-    color: var(--gray-dark) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .analyse__clock {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     box-shadow: none !important;
     border-radius: 4px !important;
 }
 
 .analyse__clock.active {
-    background: var(--gray-light) !important;
-    border: 1px solid var(--green) !important;
+    background: var(--surfaceColor) !important;
+    border: 1px solid var(--primaryColor) !important;
 }
 
 .analyse__underboard__menu {
-    border-top: 2px solid var(--gray-light) !important;
+    border-top: 2px solid var(--surfaceColor) !important;
 }
 
 .result {
-    border-top: 1px solid var(--gray-dark) !important;
+    border-top: 1px solid var(--backgroundColor) !important;
 }
 
 .rcontrols .follow-up {
-    border-bottom: 1px solid var(--gray-dark) !important;
+    border-bottom: 1px solid var(--backgroundColor) !important;
 }
 
 .advice-summary tr.symbol:hover {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 a.context-streamer.text {
-    color: var(--gray-dark) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .fbt.flip.active {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
 }
 
 button.fbt.active {
-    background: var(--green) !important;
+    background: var(--primaryColor) !important;
 }
 
 .puzzle__themes__list__entry a {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .puzzle__themes {
-    border-top: 1px solid var(--gray-dark) !important;
+    border-top: 1px solid var(--backgroundColor) !important;
 }
 
 .blog .meta-headline {
-    background: var(--gray-light-hover) !important;
+    background: var(--surfaceColorHover) !important;
     border-radius: 8px !important;
     box-shadow: none !important;
 }
 
 .blog .meta-headline a {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .page-menu__content.box:hover {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .ceval .technology.good {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .practice-box .comment {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .practice-box.goodMove .verdict {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 .practice-box.goodMove .verdict::before {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .practice-box.mistake .verdict,
 .practice-box.blunder .verdict {
-    color: var(--red) !important;
+    color: var(--tertiaryColor) !important;
 }
 
 .practice-box.mistake .verdict::before,
 .practice-box.blunder .verdict::before {
-    background: var(--red) !important;
-    color: var(--gray-dark) !important;
+    background: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .training-box .choices a,
 .practice-box .comment move {
-    color: var(--green) !important;
+    color: var(--primaryColor) !important;
 }
 
 #modal-wrap {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
     border-radius: 8px !important;
 }
 
 #modal-wrap .close {
-    background: var(--gray-light) !important;
+    background: var(--surfaceColor) !important;
 }
 
 .game-setup .optional_config,
@@ -2557,14 +2557,14 @@ group.radio,
 }
 
 .game-setup group.radio input:checked+label {
-    background: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
     text-shadow: none !important;
     box-shadow: none !important;
 }
 
 group.radio label {
-    background: var(--gray-dark) !important;
+    background: var(--backgroundColor) !important;
 }
 
 .game-setup .color-submits__button.random {
@@ -2577,10 +2577,10 @@ group.radio label {
 
 .tour__standing tr.me td:first-child {
     background: none !important;
-    border-left: 4px solid var(--green) !important;
+    border-left: 4px solid var(--primaryColor) !important;
 }
 
 .expiration {
-    background-color: var(--green) !important;
-    color: var(--gray-dark) !important;
+    background-color: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
