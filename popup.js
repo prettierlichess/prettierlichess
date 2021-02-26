@@ -26,9 +26,7 @@ function addChangeListener(scheme) {
 
         tabScript(schemeCode);
 
-        chrome.storage.sync.set({
-            scheme: color
-        });
+        chrome.storage.sync.set({[scheme]: color});
     });
 }
 
