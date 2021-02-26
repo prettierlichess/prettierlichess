@@ -992,6 +992,12 @@ input.mchat__say {
     border-radius: 100px !important;
 }
 
+.rcontrols .suggestion,
+.rcontrols .pending,
+.rcontrols .negotiation {
+    background: var(--backgroundColor) !important;
+}
+
 .rclock {
     overflow: hidden !important;
 }
@@ -1007,13 +1013,13 @@ input.mchat__say {
 }
 
 .rclock.rclock-bottom {
-    margin-top: -20px !important;
+    margin-top: -2.1vmin !important;
     width: 90% !important;
     margin-left: 1vw !important;
 }
 
 .rclock.rclock-top {
-    margin-bottom: -20px !important;
+    margin-bottom: -2.1vmin !important;
     width: 90% !important;
     margin-left: 1vw !important;
 }
