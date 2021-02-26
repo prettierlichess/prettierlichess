@@ -312,6 +312,7 @@ cg-resize::after {
 .site-title {
     transition: opacity .2s ease-in-out !important;
     font-family: 'Red Hat Display' !important;
+    text-shadow: none !important;
 }
 
 .site-title:hover {
@@ -351,6 +352,7 @@ nav section a {
     padding: 0px 10px !important;
     height: auto !important;
     border-radius: 4px !important;
+    text-shadow: none !important;
 }
 
 nav section a:hover {
@@ -400,6 +402,30 @@ nav section a:target-within {
 
 signal>i {
     background: var(--primaryColor) !important;
+}
+
+#hook .opponent,
+.lobby__box__top {
+    text-shadow: none !important;
+}
+
+.tour-spotlight i.img::before {
+    text-shadow: none !important;
+    color: var(--secondaryColor) !important;
+}
+
+.tour-spotlight {
+    text-shadow: none !important;
+}
+
+.button.button-empty:not(.disabled):hover,
+.button.button-empty.button-green:not(.disabled):hover,
+.button.button-empty.button-red:not(.disabled):hover,
+.button.button-metal,
+#friend_box .friend_box_title,
+.btn-rack__btn,
+.btn-rack form {
+    text-shadow: none !important;
 }
 
 .user-link.online .line,
@@ -1376,6 +1402,7 @@ a.loss {
     border: none !important;
     border-radius: 0 !important;
     transition: all 250ms !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .lpools>div:hover {
