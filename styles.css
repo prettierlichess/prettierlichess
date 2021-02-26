@@ -242,7 +242,7 @@ html {
 
 ::-webkit-scrollbar-thumb {
     border-radius: 8px !important;
-    box-shadow: inset 0 0 10px 10px #696969 !important;
+    box-shadow: inset 0 0 10px 10px var(--surfaceColorHover) !important;
     border: solid 5px transparent !important;
     background: none !important;
 }
@@ -2279,7 +2279,8 @@ input {
 }
 
 .number-menu .nm-item:hover {
-    color: var(--primaryColor) !important;
+    color: var(--surfaceColorHover) !important;
+    color: var(--defaultWhite) !important;
 }
 
 .btn-rack {
@@ -2724,4 +2725,12 @@ input[type=range]::-moz-range-thumb {
 
 .dasher.shown #dasher_app .selector a.active::before {
     color: var(--backgroundColor) !important;
+}
+
+.game__tournament a {
+    color: var(--primaryColor) !important;
+}
+
+#acpl-chart-loader {
+    box-shadow: none !important;
 }
