@@ -2617,3 +2617,7 @@ group.radio label {
     background-color: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
+
+.game__tournament-link a {
+    color: var(--primaryColor) !important;
+}
