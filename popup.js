@@ -35,7 +35,9 @@ function colorPickerSet(scheme) {
     let schemeElement = document.getElementById(scheme);
 
     chrome.storage.sync.get(scheme, function (result) {
-        schemeElement.setAttribute('value', result[scheme]);
+        if(result[scheme]){
+            schemeElement.setAttribute('value', result[scheme]);
+        }
     });
 }
 
