@@ -583,6 +583,7 @@ div.puzzle__tools {
 
 .tview2-column>index {
     background: var(--surfaceColor) !important;
+    color: var(--defaultWhite) !important;
     line-height: 40px !important;
     border-right: 1px solid var(--backgroundColor) !important;
 }
@@ -781,7 +782,7 @@ button.fbt:hover {
 }
 
 .eval-gauge {
-    background: var(--defaultWhite) !important;
+    background: white !important;
     border-radius: 4px !important;
 }
 
@@ -2629,4 +2630,82 @@ group.radio label {
 .rcontrols .rematch.fbt,
 #powerTip .forecast-info .title {
     text-shadow: none !important;
+}
+
+.lobby__app .gamesFiltered {
+    color: var(--tertiaryColor) !important;
+}
+
+.button.button-empty {
+    background: none !important;
+    color: var(--defaultWhite) !important;
+}
+
+.button.button-empty:hover {
+    box-shadow: none !important;
+}
+
+input[type=range] {
+    -webkit-appearance: none !important;
+    margin: 0 20px !important;
+    width: 100% !important;
+}
+
+input[type=range]:focus {
+    outline: none !important;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100% !important;
+    height: 8.4px !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+    background: var(--primaryColor) !important;
+    border-radius: 4px !important;
+    border: none !important;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: none !important;
+    border: none !important;
+    height: 20px !important;
+    width: 20px !important;
+    border-radius: 100% !important;
+    background: var(--defaultWhite) !important;
+    cursor: pointer !important;
+    -webkit-appearance: none !important;
+    margin-top: -5px !important;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100% !important;
+    height: 8.4px !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+    background: var(--primaryColor) !important;
+    border-radius: 4px !important;
+    border: none !important;
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: none !important;
+    border: none !important;
+    height: 20px !important;
+    width: 20px !important;
+    border-radius: 100% !important;
+    background: var(--defaultWhite) !important;
+    cursor: pointer !important;
+    -webkit-appearance: none !important;
+    margin-top: -5px !important;
+}
+
+.analyse__fork move:hover,
+.analyse__fork:not(:hover) move.selected {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.analyse__fork move {
+    background: var(--surfaceColorHover) !important;
+    color: var(--defaultWhite) !important;
 }
