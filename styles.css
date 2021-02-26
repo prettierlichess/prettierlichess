@@ -2709,3 +2709,7 @@ input[type=range]::-moz-range-thumb {
     background: var(--surfaceColorHover) !important;
     color: var(--defaultWhite) !important;
 }
+
+#friend_box .content a.tv {
+    color: var(--primaryColor) !important;
+}
