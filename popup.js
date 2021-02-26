@@ -23,7 +23,9 @@ function addChangeListener(scheme) {
 
     schemeElement.addEventListener('change', (element) =>{
         let color = element.target.value;
-        let schemeCode = 'document.documentElement.setAttribute("style", document.documentElement.getAttribute("style") + "--'+ scheme +': ' + color + ' !important;")'
+        let getStyle = document.documentElement.getAttribute('style');
+        let appendStyle = getStyle ? getStyle : '';
+        let schemeCode = 'document.documentElement.setAttribute("style", ' + appendStyle + ' "--'+ scheme +': ' + color + ' !important;")'
 
         tabScript(schemeCode);
 
