@@ -1,6 +1,6 @@
 {
     "name": "Prettier Lichess",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "manifest_version": 2,
     "description": "Lichess, but prettier.",
     "icons": {
@@ -8,6 +8,15 @@
     },
     "content_scripts": [{
         "matches": ["*://lichess.org/*"],
-        "css": ["styles.css"]
-    }]
+        "css": ["styles.css"],
+        "js": ["content.js"]
+    }],
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": ["activeTab", "storage", "declarativeContent"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistant": false
+    }
 }

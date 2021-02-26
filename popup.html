@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Traversy Media Quick Launcher</title>
+    <link href="popupStyles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <img src="./logo.svg" alt="logo" class="logo">
+    <form id="list">
+        <div class="listItem">
+            <span>primary color</span>
+            <input type="color" value="#9FC0A2" id="primaryColor">
+        </div>
+        <div class="listItem">
+            <span>secondary color</span>
+            <input type="color" value="#F5C276" id="secondaryColor">
+        </div>
+        <div class="listItem">
+            <span>tertiary color</span>
+            <input type="color" value="#D36D6D" id="tertiaryColor">
+        </div>
+        <div class="listItem">
+            <span>background color</span>
+            <input type="color" value="#2B343B" id="backgroundColor">
+        </div>
+        <div class="listItem">
+            <span>surface color</span>
+            <input type="color" value="#3F474D" id="surfaceColor">
+        </div>
+        <div class="listItem">
+            <span>surface color hover</span>
+            <input type="color" value="#4E565C" id="surfaceColorHover">
+        </div>
+        <div class="listItem">
+            <span>default white</span>
+            <input type="color" value="#F2F5F3" id="defaultWhite">
+        </div>
+        <button id="resetButton">
+            reset to defaults
+        </button>
+    </form>
+    <script src="popup.js"></script>
+</body>
+
+</html>

@@ -224,9 +224,6 @@
 
 html {
     font-family: 'Red Hat Text', sans-serif !important;
-}
-
-:root {
     --green: #9FC0A2 !important;
     --gray-dark: #2B343B !important;
     --gray-light: #3F474D !important;
@@ -260,6 +257,7 @@ body {
     background: var(--gray-dark) !important;
     font-family: 'Red Hat Text', sans-serif !important;
     --main-margin: .2vw !important;
+    text-shadow: 0px 0px 0px transparent !important;
 }
 
 p {
@@ -590,7 +588,6 @@ div.cg-wrap.orientation-black.manipulable {
 }
 
 a.offline.user-link {
-    color: #F2F5F3 !important;
     font-weight: 100 !important;
 }
 
@@ -1341,6 +1338,8 @@ a.loss {
 .lobby {
     grid-template-areas: 'app tv tv side''leader puzzle puzzle winner''tours tours forum forum''support table table blog''. simuls simuls .''. about about .' !important;
     grid-row-gap: 8vmin !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-rows: repeat(2, fit-content(0)) !important;
 }
 
 .user-link.online .line {
