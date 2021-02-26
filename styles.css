@@ -449,11 +449,6 @@ signal>i {
     color: var(--backgroundColor) !important;
 }
 
-a.text.active {
-    background: var(--primaryColor) !important;
-    color: var(--backgroundColor) !important;
-}
-
 #dasher_app .links a:hover {
     color: var(--defaultWhite) !important;
 }
@@ -2712,4 +2707,21 @@ input[type=range]::-moz-range-thumb {
 
 #friend_box .content a.tv {
     color: var(--primaryColor) !important;
+}
+
+.game__meta section:not(:last-child) {
+    border-bottom: 1px solid var(--backgroundColor) !important;
+}
+
+.mchat__messages a:not(.user-link) {
+    color: var(--primaryColor) !important;
+}
+
+.dasher.shown #dasher_app .selector a.active {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.dasher.shown #dasher_app .selector a.active::before {
+    color: var(--backgroundColor) !important;
 }
