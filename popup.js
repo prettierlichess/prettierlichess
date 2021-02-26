@@ -8,7 +8,7 @@ document.querySelector('#resetButton').addEventListener('click', () => {
     for(i = 0; i < colorScheme.length; i++){
         scheme = colorScheme[i]
         chrome.storage.sync.set({
-            scheme: colorDefaults[i]
+            [scheme]: colorDefaults[i]
         });
     }
 
