@@ -449,7 +449,7 @@ signal>i {
     color: var(--backgroundColor) !important;
 }
 
-#dasher_app .selector a.active {
+a.text.active {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
