@@ -2734,3 +2734,9 @@ input[type=range]::-moz-range-thumb {
 #acpl-chart-loader {
     box-shadow: none !important;
 }
+
+.tour-spotlight img.img.icon {
+    filter: none !important;
+    background: var(--secondaryColor) !important;
+    border-radius: 100% !important;
+}
