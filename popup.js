@@ -14,7 +14,6 @@ document.querySelector('#resetButton').addEventListener('click', () => {
             [scheme]: colorDefaults[i]
         });
     }
-chrome.storage.sync.clear()
     tabScript('window.location.reload();');
 })
 
@@ -23,8 +22,6 @@ function addChangeListener(scheme) {
 
     schemeElement.addEventListener('change', (element) =>{
         let color = element.target.value;
-        let getStyle = tabScript('document.documentElement.getAttribute("style")')
-        console.log(getStyle)
         let schemeCode = 'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--'+ scheme +': ' + color + ' !important;")'
 
         tabScript(schemeCode);
@@ -51,8 +48,6 @@ function tabScript(code) {
         chrome.tabs.executeScript(
             tabs[0].id, {
                 code: code
-            },function (result){
-                return result[0];
             });
     });
 }
