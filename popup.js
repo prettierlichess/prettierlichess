@@ -14,7 +14,6 @@ document.querySelector('#resetButton').addEventListener('click', () => {
             [scheme]: colorDefaults[i]
         });
     }
-
     tabScript('window.location.reload();');
 })
 
@@ -23,8 +22,7 @@ function addChangeListener(scheme) {
 
     schemeElement.addEventListener('change', (element) =>{
         let color = element.target.value;
-
-        let schemeCode = 'document.documentElement.setAttribute("style", document.documentElement.getAttribute("style") + "--'+ scheme +': ' + color + ' !important;")'
+        let schemeCode = 'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--'+ scheme +': ' + color + ' !important;")'
 
         tabScript(schemeCode);
 
