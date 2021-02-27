@@ -497,6 +497,30 @@ main.puzzle {
     background: var(--backgroundColor) !important;
 }
 
+.tview2 move.inaccuracy {
+    color: var(--primaryColor) !important;
+}
+
+.tview2-column comment.inaccuracy {
+    border-color: var(--primaryColor) !important;
+}
+
+.tview2 move.mistake {
+    color: var(--secondaryColor) !important;
+}
+
+.tview2-column comment.mistake {
+    border-color: var(--secondaryColor) !important;
+}
+
+.tview2 move.blunder {
+    color: var(--tertiaryColor) !important;
+}
+
+.tview2-column comment.blunder {
+    border-color: var(--tertiaryColor) !important;
+}
+
 .tview2 lines {
     border-left: 0 solid var(--backgroundColor) !important;
 }
@@ -2739,4 +2763,9 @@ input[type=range]::-moz-range-thumb {
     filter: none !important;
     background: var(--secondaryColor) !important;
     border-radius: 100% !important;
+}
+
+.puzzle__feedback.good .icon,
+.puzzle__feedback .win .icon {
+    color: var(--primaryColor) !important;
 }
