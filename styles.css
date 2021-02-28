@@ -2778,3 +2778,57 @@ input[type=range]::-moz-range-thumb {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
+
+cg-container .cg-shapes {
+    opacity: .8 !important;
+}
+
+/* Selects Default Arrow */
+
+line[stroke="#15781B"] {
+    stroke: var(--primaryColor) !important;
+    stroke-opacity: 1 !important;
+}
+
+path[fill="#15781B"] {
+    fill: var(--primaryColor) !important;
+    fill-opacity: 1 !important;
+}
+
+circle[stroke="#15781B"] {
+    stroke: var(--primaryColor) !important;
+}
+
+/* Selects Control Arrow */
+
+line[stroke="#003088"] {
+    stroke: var(--secondaryColor) !important;
+}
+
+path[fill="#003088"] {
+    fill: var(--secondaryColor) !important;
+}
+
+circle[stroke="#003088"] {
+    stroke: var(--secondaryColor) !important;
+}
+
+/* Selects Alt Arrow */
+
+line[stroke="#882020"] {
+    stroke: var(--tertiaryColor) !important;
+}
+
+path[fill="#882020"] {
+    fill: var(--tertiaryColor) !important;
+}
+
+circle[stroke="#882020"] {
+    stroke: var(--tertiaryColor) !important;
+}
+
+/*Computer Lines*/
+
+line[opacity="0.4"] {
+    opacity: .6 !important;
+}
