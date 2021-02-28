@@ -57,3 +57,52 @@ input[type="color"]::-webkit-color-swatch {
     border: none;
     transform: scale(2);
 }
+
+/* Picker Styles Overrides */
+
+.pickr .pcr-button:after,
+.pickr .pcr-button:before {
+    border-radius: 100% !important;
+    overflow: hidden !important;
+    outline: none !important;
+    border: 1px solid white !important;
+}
+
+.pcr-app .pcr-interaction input {
+    background: #2B343B !important;
+    color: white !important;
+}
+
+.pcr-app .pcr-interaction .pcr-save,
+.pcr-app .pcr-interaction .pcr-type.active {
+    background: #9FC0A2 !important;
+    color: #2B343B !important;
+}
+
+.pcr-app {
+    background: #3F474D !important;
+    font-family: 'Red Hat Text', sans-serif !important;
+    color: white !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.pcr-app[data-theme=nano] .pcr-selection .pcr-color-preview .pcr-current-color {
+    border: 1px solid white !important;
+}
+
+.pcr-app button {
+    transition: transform .4s ease-in-out !important;
+}
+
+.pcr-app button.pcr-active,
+.pcr-app button:focus,
+.pcr-app input.pcr-active,
+.pcr-app input:focus,
+.pickr button.pcr-active,
+.pickr button:focus,
+.pickr input.pcr-active,
+.pickr input:focus {
+    box-shadow: none !important;
+    transform: scale(.9) !important;
+}

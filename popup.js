@@ -3,7 +3,7 @@ const colorDefaults = ["#9FC0A2", "#f5c276", "#d36d6d", "#2B343B", "#3F474D", "#
 
 
 var j;
-for(j = 0; j < colorScheme.length; j++){
+for (j = 0; j < colorScheme.length; j++) {
     pickrCreate(colorScheme[j], colorDefaults[j]);
 }
 
@@ -20,7 +20,7 @@ document.querySelector('#resetButton').addEventListener('click', () => {
     tabScript('window.location.reload();');
 })
 
-function pickrCreate(scheme, color){
+function pickrCreate(scheme, color) {
     chrome.storage.sync.get(scheme, function (result) {
         color = result[scheme] ? result[scheme] : color;
 
@@ -43,7 +43,7 @@ function pickrCreate(scheme, color){
             }
         });
 
-        pickr.on('save', (color) =>{
+        pickr.on('save', (color) => {
             color = color.toHEXA().toString();
             console.log('setting color to: ' + color)
             console.log(typeof color)

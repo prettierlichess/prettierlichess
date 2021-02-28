@@ -1183,6 +1183,10 @@ a.loss {
     background: var(--surfaceColor) !important;
 }
 
+.cmn-toggle+label {
+    background: none !important;
+}
+
 .cmn-toggle:focus+label::before,
 .cmn-toggle:hover+label::before {
     box-shadow: none !important;
