@@ -2783,6 +2783,11 @@ cg-container .cg-shapes {
     opacity: .8 !important;
 }
 
+square.last-move {
+    background: var(--primaryColor) !important;
+    opacity: .6 !important;
+}
+
 /* Selects Default Arrow */
 
 line[stroke="#15781B"] {
