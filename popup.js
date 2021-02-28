@@ -2,9 +2,9 @@ const colorScheme = ["primaryColor", "secondaryColor", "tertiaryColor", "backgro
 const colorDefaults = ["#9FC0A2", "#f5c276", "#d36d6d", "#2B343B", "#3F474D", "#4e565c", "#F2F5F3"]
 
 
-var j;
-for (j = 0; j < colorScheme.length; j++) {
-    pickrCreate(colorScheme[j], colorDefaults[j]);
+var i;
+for (i = 0; i < colorScheme.length; i++) {
+    pickrCreate(colorScheme[i], colorDefaults[i]);
 }
 
 document.querySelector('#resetButton').addEventListener('click', () => {
