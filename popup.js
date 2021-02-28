@@ -8,15 +8,7 @@ for (j = 0; j < colorScheme.length; j++) {
 }
 
 document.querySelector('#resetButton').addEventListener('click', () => {
-
-    let scheme = null
-    var i;
-    for (i = 0; i < colorScheme.length; i++) {
-        scheme = colorScheme[i]
-        chrome.storage.sync.set({
-            [scheme]: colorDefaults[i]
-        });
-    }
+    chrome.storage.sync.clear()
     tabScript('window.location.reload();');
 })
 
