@@ -2769,3 +2769,8 @@ input[type=range]::-moz-range-thumb {
 .puzzle__feedback .win .icon {
     color: var(--primaryColor) !important;
 }
+
+.ceval .engine .cloud {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
