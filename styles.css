@@ -642,6 +642,7 @@ div.lobby__app__content.lpools {
     box-shadow: none !important;
     border-radius: 8px !important;
     margin-bottom: 20px !important;
+    flex: 1 1 100% !important;
 }
 
 .lpools .active {
@@ -1391,13 +1392,6 @@ a.loss {
     padding: 8px 14px !important;
 }
 
-.lobby {
-    grid-template-areas: 'app tv tv side''leader puzzle puzzle winner''tours tours forum forum''support table table blog''. simuls simuls .''. about about .' !important;
-    grid-row-gap: 8vmin !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    grid-template-rows: repeat(2, fit-content(0)) !important;
-}
-
 .user-link.online .line {
     color: var(--primaryColor) !important;
     font-family: 'lichess' !important;
@@ -1630,11 +1624,6 @@ a.post_link.text:hover {
     color: var(--primaryColor) !important;
 }
 
-#nb_connected_players strong {
-    font-size: 60px !important;
-    color: var(--defaultWhite) !important;
-}
-
 #nb_games_in_play {
     display: flex !important;
     flex-direction: column !important;
@@ -1647,8 +1636,9 @@ a.post_link.text:hover {
     color: var(--primaryColor) !important;
 }
 
-#nb_games_in_play strong {
-    font-size: 60px !important;
+#nb_games_in_play strong,
+#nb_connected_players strong {
+    font-size: 4vw !important;
     color: var(--defaultWhite) !important;
 }
 
@@ -2836,4 +2826,158 @@ circle[stroke="#882020"] {
 
 line[opacity="0.4"] {
     opacity: .6 !important;
+}
+
+.lobby {
+    grid-template-areas:
+        'app tv tv side'
+        'leader puzzle puzzle winner'
+        'tours tours forum forum'
+        'support table table blog'
+        '. simuls simuls .'
+        '. about about .' !important;
+    grid-row-gap: 8vmin !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-rows: repeat(2, fit-content(0)) !important;
+}
+
+/*Responsive Sizes*/
+
+@media (max-width: 1280px) {
+    .lobby {
+        grid-template-columns: 50% repeat(2, 1fr) !important;
+        grid-template-rows: repeat(2, fit-content(0)) !important;
+        grid-template-areas:
+            'tv   app     app'
+            'side    app     app'
+            'puzzle   leader  leader'
+            'winner  tours   tours'
+            'table table table'
+            'support blog    blog '
+            'simuls   simuls  simuls'
+            'forum forum about' !important;
+    }
+
+    div.lobby__app__content.lpools {
+        width: 100% !important;
+    }
+
+    .lobby__table {
+        padding: 80px !important;
+    }
+
+    main.puzzle {
+        grid-template-areas:
+            'board gauge tools'
+            'session . controls'
+            'side side side' !important;
+    }
+}
+
+@media (max-width: 979px) {
+    .topnav-toggle:checked~.hbg {
+        background: var(--surfaceColor) !important;
+    }
+
+    .hbg__in {
+        background: var(--defaultWhite) !important;
+        width: 30px !important;
+        height: 2px !important;
+        left: 15px !important;
+    }
+
+    .hbg__in::before {
+        background: var(--defaultWhite) !important;
+        top: -6px !important;
+        width: 30px !important;
+        height: 2px !important;
+    }
+
+    .hbg__in::after {
+        background: var(--defaultWhite) !important;
+        bottom: -8px !important;
+        width: 30px !important;
+        height: 2px !important;
+    }
+
+    .topnav-toggle:checked~.hbg .hbg__in::after {
+        bottom: 0 !important;
+    }
+
+    #topnav {
+        display: flex !important;
+        flex-flow: row wrap !important;
+        align-items: flex-start !important;
+        justify-content: flex-start;
+        position: fixed !important;
+        top: var(--site-header-height) !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        background: #262421 !important;
+        transition: transform 200ms !important;
+        padding-bottom: 1.2rem !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain !important;
+        box-shadow: none !important;
+        border-radius: 0 8px 0 0 !important;
+        max-width: none !important;
+        width: 60vw !important;
+        z-index: 110 !important;
+        background: var(--surfaceColor) !important;
+        padding-left: 7% !important;
+        padding-top: 2rem !important;
+        transform: translateX(-60vw) !important;
+        margin-left: 0 !important;
+    }
+
+    .topnav-toggle:checked~#topnav {
+        transform: translateX(0vw) !important;
+    }
+
+    #topnav section>a {
+        margin-bottom: 10px !important;
+    }
+
+    [role="group"] {
+        box-shadow: none !important;
+        background-color: none !important;
+        width: auto !important;
+        left: auto !important;
+        margin-left: 0 !important;
+        border-left: none !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+    }
+
+    #topnav div a {
+        height: auto !important;
+        margin: 5px 0px;
+    }
+}
+
+@media (max-width: 800px) {
+    main.puzzle {
+        grid-template-areas:
+            'board'
+            'controls'
+            'tools'
+            'session'
+            'side' !important;
+    }
+
+    rm6 .col1-moves {
+        display: none !important;
+    }
+
+    .time {
+        justify-content: flex-end !important;
+    }
+
+    .ruser-bottom {
+        margin-top: 20px !important;
+    }
+
+    .round__app .rclock-bottom {
+        margin-top: 10px !important;
+    }
 }
