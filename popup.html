@@ -4,6 +4,7 @@
 <head>
     <title>Traversy Media Quick Launcher</title>
     <link href="popupStyles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" />
 </head>
 
 <body>
@@ -11,7 +12,7 @@
     <form id="list">
         <div class="listItem">
             <span>primary color</span>
-            <input type="color" value="#9FC0A2" id="primaryColor">
+            <div id="primaryColor"></div>
         </div>
         <div class="listItem">
             <span>secondary color</span>
@@ -41,7 +42,8 @@
             reset to defaults
         </button>
     </form>
-    <script src="popup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="popup.js" type="module"></script>
 </body>
 
 </html>
