@@ -2854,6 +2854,17 @@ square.selected {
     opacity: .3 !important;
 }
 
+#dasher_app .subs,
+#dasher_app .status {
+    border-top: 1px solid var(--backgroundColor) !important;
+    border-radius: 0 !important;
+}
+
+.timeline {
+    min-height: 200px !important;
+    overflow: auto !important;
+}
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
