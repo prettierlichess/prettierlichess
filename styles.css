@@ -1638,7 +1638,7 @@ a.post_link.text:hover {
 
 #nb_games_in_play strong,
 #nb_connected_players strong {
-    font-size: 4vw !important;
+    font-size: 3.5vw !important;
     color: var(--defaultWhite) !important;
 }
 
