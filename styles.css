@@ -2783,7 +2783,7 @@ cg-container .cg-shapes {
 
 square.last-move {
     background: var(--primaryColor) !important;
-    opacity: .6 !important;
+    opacity: .4 !important;
 }
 
 /* Selects Default Arrow */
@@ -2851,7 +2851,7 @@ line[opacity="0.4"] {
 
 square.selected {
     background: var(--primaryColor) !important;
-    opacity: .3 !important;
+    opacity: .2 !important;
 }
 
 #dasher_app .subs,
