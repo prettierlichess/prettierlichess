@@ -2764,6 +2764,14 @@ input[type=range]::-moz-range-thumb {
     color: var(--primaryColor) !important;
 }
 
+.puzzle__feedback.fail .icon {
+    color: var(--tertiaryColor) !important;
+}
+
+.puzzle__themes__study a {
+    color: var(--primaryColor) !important;
+}
+
 .ceval .engine .cloud {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
@@ -2839,6 +2847,11 @@ line[opacity="0.4"] {
     grid-row-gap: 8vmin !important;
     grid-template-columns: repeat(4, 1fr) !important;
     grid-template-rows: repeat(2, fit-content(0)) !important;
+}
+
+square.selected {
+    background: var(--primaryColor) !important;
+    opacity: .3 !important;
 }
 
 /*Responsive Sizes*/
