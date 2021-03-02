@@ -2865,6 +2865,10 @@ square.selected {
     overflow: auto !important;
 }
 
+a.variant-link {
+    color: var(--primaryColor) !important;
+}
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
