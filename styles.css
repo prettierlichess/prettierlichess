@@ -1032,6 +1032,7 @@ input.mchat__say {
     margin-top: 10px !important;
     margin-bottom: 10px !important;
     padding: 0 !important;
+    letter-spacing: .1em !important;
 }
 
 .bar {
@@ -2657,6 +2658,22 @@ group.radio label {
 
 .button.button-empty:hover {
     box-shadow: none !important;
+}
+
+#dasher_app .sound input[type='range'] {
+    flex: 0 0 1em !important;
+    width: 1em !important;
+    margin: 1rem !important;
+    writing-mode: bt-lr !important;
+    -webkit-appearance: slider-vertical !important;
+}
+
+#dasher_app .sound input[type='range']::-webkit-slider-thumb {
+    margin-right: -8px;
+}
+
+#dasher_app .head {
+    border-bottom: none !important;
 }
 
 input[type=range] {
