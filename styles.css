@@ -2869,6 +2869,10 @@ a.variant-link {
     color: var(--primaryColor) !important;
 }
 
+.number-menu--tabs .nm-item:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
