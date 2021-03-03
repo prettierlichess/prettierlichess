@@ -1752,7 +1752,7 @@ a.button.button-metal:hover {
 }
 
 .signin.button.button-empty {
-    color: var(--backgroundColor) !important;
+    color: var(--defaultWhite) !important;
 }
 
 .signin.button.button-empty:hover {
