@@ -2284,7 +2284,7 @@ input {
 }
 
 .context-streamer:hover {
-    box-shadow: 0px 0px 16px rgba(176, 253, 176, 0.3) !important;
+    box-shadow: 0px 0px 16px var(--primaryColor) !important;
 }
 
 .user-show__header,
