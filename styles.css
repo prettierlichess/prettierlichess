@@ -2803,6 +2803,14 @@ square.last-move {
     opacity: .4 !important;
 }
 
+square.move-dest {
+    background: radial-gradient(var(--primaryColor) 19%, rgba(0, 0, 0, 0) 20%) !important;
+}
+
+square.oc.move-dest {
+    background: radial-gradient(transparent 0%, transparent 79%, var(--primaryColor) 80%) !important;
+}
+
 /* Selects Default Arrow */
 
 line[stroke="#15781B"] {
