@@ -913,6 +913,7 @@ rm6 {
 
 rm6 u8t.a1t {
     background: var(--backgroundColor) !important;
+    border: 1px solid var(--defaultWhite) !important;
 }
 
 .buttons {
