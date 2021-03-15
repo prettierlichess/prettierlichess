@@ -2787,7 +2787,7 @@ input[type=range]::-moz-range-thumb {
     color: var(--tertiaryColor) !important;
 }
 
-.puzzle__themes__study a {
+.puzzle__themes__study text {
     color: var(--primaryColor) !important;
 }
 
