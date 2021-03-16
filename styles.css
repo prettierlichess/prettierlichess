@@ -805,6 +805,7 @@ button.fbt:hover {
 .eval-gauge {
     background: white !important;
     border-radius: 4px !important;
+    overflow: hidden !important;
 }
 
 .eval-gauge::after {
@@ -812,7 +813,7 @@ button.fbt:hover {
 }
 
 .eval-gauge .black {
-    background: #000 !important;
+    background: rgb(22, 22, 22) !important;
 }
 
 .eval-gauge tick {
