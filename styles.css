@@ -1974,7 +1974,7 @@ input {
 }
 
 .study__player .info {
-    margin-left: none !important;
+    margin-left: 0px !important;
 }
 
 .study__player .result {
