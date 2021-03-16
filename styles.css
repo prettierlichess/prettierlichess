@@ -2342,6 +2342,10 @@ input {
     letter-spacing: .025em !important;
 }
 
+.mchat__messages li t {
+    line-height: 1.5em !important;
+}
+
 .streamers {
     padding-top: 8px !important;
 }
