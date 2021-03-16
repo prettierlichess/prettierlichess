@@ -957,6 +957,7 @@ rm6 l4x u8t:hover {
 l4x {
     flex-grow: 1 !important;
     line-height: 40px !important;
+    padding-bottom: 1px !important;
 }
 
 button.fbt.rematch.white {
