@@ -1991,6 +1991,7 @@ input {
 
 .study__player .result {
     border-right: 1px solid var(--surfaceColor) !important;
+    margin-right: .8em !important;
 }
 
 .study__chapters {
