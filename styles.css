@@ -906,7 +906,9 @@ div.game__meta {
 .mchat__messages .color,
 .mchat__messages .user-link {
     font-weight: 500 !important;
-    letter-spacing: .02em !important;
+    letter-spacing: .04em !important;
+    color: var(--defaultWhite) !important;
+    opacity: .6 !important;
 }
 
 .mchat__presets span.disabled {
@@ -2322,6 +2324,12 @@ input {
     color: var(--secondaryColor) !important;
     box-shadow: none !important;
     text-shadow: none !important;
+}
+
+.mchat__messages li {
+    color: var(--defaultWhite) !important;
+    opacity: .8 !important;
+    letter-spacing: .025em !important;
 }
 
 .streamers {
