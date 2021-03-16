@@ -1964,6 +1964,16 @@ input {
     background: var(--surfaceColorHover) !important;
 }
 
+.study__topics .topic {
+    background: var(--backgroundColor) !important;
+    color: var(--primaryColor) !important;
+}
+
+.study__topics .topic:hover {
+    background: var(--surfaceColorHover) !important;
+    color: var(--defaultWhite) !important;
+}
+
 .study__player {
     background: none !important;
     border-radius: 8px !important;
