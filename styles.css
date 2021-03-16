@@ -1253,6 +1253,38 @@ a.loss {
     background: var(--primaryColor) !important;
 }
 
+path[fill="rgba(0,0,0,1)"] {
+    fill: rgb(26, 26, 26) !important;
+}
+
+path[fill="#d85000"] {
+    fill: none !important;
+}
+
+path[stroke="#d85000"] {
+    stroke: var(--primaryColor) !important;
+}
+
+path[stroke="#639B24"] {
+    stroke: var(--primaryColor) !important;
+}
+
+path[stroke="#3093cc"] {
+    stroke: var(--secondaryColor) !important;
+}
+
+path[stroke="#cc9730"] {
+    stroke: var(--tertiaryColor) !important;
+}
+
+path[fill="url(#highcharts-1)"] {
+    fill: var(--surfaceColor) !important;
+}
+
+path[fill="none"][stroke="black"] {
+    stroke-opacity: 0 !important;
+}
+
 #main-wrap {
     grid-template-columns: var(--main-margin) 1fr minmax(auto, var(--main-max-width)) 1fr var(--main-margin) !important;
     margin: 20px 20px 0px 20px !important;
