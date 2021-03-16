@@ -803,6 +803,8 @@ button.fbt:hover {
 }
 
 .eval-gauge {
+    width: calc(100% - 30px) !important;
+    margin-left: 30px !important;
     background: white !important;
     border-radius: 4px !important;
     overflow: hidden !important;
@@ -814,6 +816,7 @@ button.fbt:hover {
 
 .eval-gauge .black {
     background: rgb(22, 22, 22) !important;
+    border-radius: 0px !important;
 }
 
 .eval-gauge tick {
@@ -1169,7 +1172,12 @@ a.loss {
 }
 
 .analyse {
-    grid-template-areas: 'side gauge board . tools''chat gauge board . tools''uchat . under . controls''uchat . under . acpl' !important;
+    grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
+    grid-template-areas:
+        'side . board gauge tools'
+        'chat . board gauge tools'
+        'uchat . under . controls'
+        'uchat . under . acpl' !important;
     grid-gap: 1vmin !important;
 }
 
