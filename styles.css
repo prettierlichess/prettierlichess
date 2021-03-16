@@ -829,7 +829,7 @@ button.fbt:hover {
 }
 
 .eval-gauge .black {
-    background: rgb(22, 22, 22) !important;
+    background: rgb(26, 26, 26) !important;
     border-radius: 0px !important;
     z-index: 9 !important;
 }
