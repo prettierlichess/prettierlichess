@@ -901,6 +901,7 @@ div.game__meta {
     background: var(--surfaceColor) !important;
     box-shadow: none !important;
     border-radius: 8px !important;
+    margin-bottom: 4px !important;
 }
 
 .mchat__messages .color,
