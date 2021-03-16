@@ -1218,6 +1218,11 @@ a.loss {
     background: var(--surfaceColor) !important;
 }
 
+.pv_box .pv .pv-wrap-toggle:hover {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
 .cmn-toggle+label {
     background: none !important;
 }
