@@ -1191,13 +1191,16 @@ a.loss {
 }
 
 .analyse {
-    grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
     grid-template-areas:
         'side . board gauge tools'
         'chat . board gauge tools'
         'uchat . under . controls'
         'uchat . under . acpl' !important;
     grid-gap: 1vmin !important;
+}
+
+.gauge-on {
+    grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
 }
 
 .analyse__tools {
