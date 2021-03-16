@@ -2068,10 +2068,19 @@ input {
     background: var(--backgroundColor) !important;
 }
 
+.pv_box .pv[data-uci] .pv-san:hover {
+    color: var(--defaultWhite) !important;
+}
+
 .study__multiboard {
     border-radius: 8px !important;
     box-shadow: none !important;
     background: var(--surfaceColor) !important;
+    overflow: visible !important;
+}
+
+.mini-board cg-helper cg-container cg-board {
+    box-shadow: none !important;
 }
 
 .study__multiboard .now-playing a.active,
@@ -2081,7 +2090,7 @@ input {
 }
 
 .study__multiboard .now-playing a:nth-child(even) {
-    background: var(--backgroundColor) !important;
+    background: none !important;
 }
 
 .study__multiboard .now-playing a {
