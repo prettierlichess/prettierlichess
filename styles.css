@@ -1973,6 +1973,14 @@ input {
     bottom: -4.5rem !important;
 }
 
+.study__player .info {
+    margin-left: none !important;
+}
+
+.study__player .result {
+    border-right: 1px solid var(--surfaceColor) !important;
+}
+
 .study__chapters {
     border-radius: 8px !important;
     background: var(--surfaceColor) !important;
