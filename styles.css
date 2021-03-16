@@ -805,18 +805,33 @@ button.fbt:hover {
 .eval-gauge {
     width: calc(100% - 30px) !important;
     margin-left: 30px !important;
-    background: white !important;
+    background: none !important;
     border-radius: 4px !important;
     overflow: hidden !important;
+    background: none !important;
 }
 
 .eval-gauge::after {
     box-shadow: none !important;
 }
 
+.eval-gauge::before {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgb(225, 225, 225) !important;
+    border-radius: 4px !important;
+    z-index: -1 !important;
+}
+
 .eval-gauge .black {
     background: rgb(22, 22, 22) !important;
     border-radius: 0px !important;
+    z-index: 9 !important;
 }
 
 .eval-gauge tick {
