@@ -887,7 +887,7 @@ div.game__meta {
 .mchat__messages .color,
 .mchat__messages .user-link {
     font-weight: 500 !important;
-    letter-spacing: .05em !important;
+    letter-spacing: .02em !important;
 }
 
 .mchat__presets span.disabled {
@@ -1931,7 +1931,7 @@ input {
 }
 
 .study__player {
-    background: var(--surfaceColor) !important;
+    background: none !important;
     border-radius: 8px !important;
 }
 
@@ -2272,6 +2272,10 @@ input {
     text-shadow: none !important;
 }
 
+.streamers {
+    margin-top: 8px !important;
+}
+
 .context-streamers {
     padding: 10px 0 0 10px !important;
 }
@@ -2500,8 +2504,8 @@ g.highcharts-button rect {
 }
 
 .analyse__clock.active {
-    background: var(--surfaceColor) !important;
-    border: 1px solid var(--primaryColor) !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .analyse__underboard__menu {
