@@ -12,6 +12,14 @@ document.querySelector('#resetButton').addEventListener('click', () => {
     tabScript('window.location.reload();');
 })
 
+document.querySelector('#saveButton').addEventListener('click', () => {
+    console.log("Saved.")
+})
+
+document.querySelector('#loadButton').addEventListener('click', () => {
+    console.log("Loaded.")
+})
+
 function pickrCreate(scheme, color) {
     chrome.storage.sync.get(scheme, function (result) {
         color = result[scheme] ? result[scheme] : color;
