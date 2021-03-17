@@ -1879,7 +1879,8 @@ a.lobby__box__top {
 }
 
 .intro__text h1 {
-    font-weight: bold !important;
+    font-family: 'Red Hat Display', sans-serif !important;
+    font-weight: 500 !important;
 }
 
 .study__comment {
