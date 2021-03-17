@@ -12,12 +12,12 @@ document.querySelector('#resetButton').addEventListener('click', () => {
     tabScript('window.location.reload();');
 })
 
-document.querySelector('#saveButton').addEventListener('click', () => {
-    console.log("Saved.")
+document.querySelector('#importButton').addEventListener('click', () => {
+    console.log("Imported.")
 })
 
-document.querySelector('#loadButton').addEventListener('click', () => {
-    console.log("Loaded.")
+document.querySelector('#exportButton').addEventListener('click', () => {
+    console.log("Exported.")
 })
 
 function pickrCreate(scheme, color) {
