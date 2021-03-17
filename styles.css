@@ -2214,6 +2214,10 @@ input {
     background: var(--surfaceColorHover) !important;
 }
 
+.explorer-box .black {
+    background: rgb(26, 26, 26) !important;
+}
+
 .explorer-box .bar span {
     border: none !important;
     box-shadow: none !important;
