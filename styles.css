@@ -1872,6 +1872,10 @@ a.lobby__box__top {
     box-shadow: none !important;
 }
 
+.study__chapters>div ongoing {
+    color: var(--primaryColor) !important;
+}
+
 .intro__text {
     background: var(--surfaceColor) !important;
     border-radius: 8px !important;
