@@ -260,6 +260,10 @@ body {
     text-shadow: 0px 0px 0px transparent !important;
 }
 
+h2 {
+    font-family: 'Red Hat Display', sans-serif !important;
+}
+
 p {
     line-height: 20px !important;
     font-size: 14px !important;
@@ -1942,6 +1946,245 @@ a.lobby__box__top {
     background: none !important;
     z-index: 9999 !important;
     border: 1px solid var(--surfaceColor) !important;
+}
+
+.practice-app .study.ongoing {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.practice-app .ribbon {
+    background: var(--surfaceColor) !important;
+    color: var(--defaultWhite) !important;
+    text-shadow: none !important;
+}
+
+.practice-app .ribbon:before,
+.practice-app .ribbon:after {
+    border-top: 3px solid var(--surfaceColorHover) !important;
+}
+
+.practice-side {
+    background: var(--surfaceColor) !important;
+    color: var(--defaultWhite) !important;
+}
+
+.practice-side .progress {
+    background: var(--surfaceColorHover) !important;
+    box-shadow: none !important;
+}
+
+.feedback {
+    background: var(--surfaceColor) !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+}
+
+.practice-app .studies .study.done {
+    background: var(--surfaceColor) !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.learn__side-home {
+    background: var(--surfaceColor) !important;
+    color: var(--defaultWhite) !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+}
+
+.learn__side-home .progress {
+    background: var(--surfaceColorHover) !important;
+    box-shadow: none !important;
+}
+
+.learn-stages .stage.ongoing {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.learn-stages .ribbon.ongoing {
+    background: var(--surfaceColor) !important;
+    color: var(--defaultWhite) !important;
+    text-shadow: none !important;
+}
+
+.learn-stages .ribbon.ongoing:before,
+.learn-stages .ribbon.ongoing:after {
+    border-top: 3px solid var(--surfaceColorHover) !important;
+}
+
+.learn-stages .stage.future {
+    background: var(--secondaryColor) !important;
+    color: var(--backgroundColor) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.learn-stages .stage.done {
+    background: var(--surfaceColor) !important;
+    color: var(--defaultWhite) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.learn-stages .ribbon.done {
+    background: var(--primaryColor) !important;
+}
+
+.learn-stages .ribbon.done:before,
+.learn-stages .ribbon.done:after {
+    border-top: none !important;
+}
+
+.learn-stages .ribbon i {
+    color: var(--defaultWhite) !important;
+}
+
+.learn__screen-overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+.learn__screen .buttons {
+    background: none !important;
+}
+
+.learn__screen .buttons .next {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    text-shadow: none !important;
+}
+
+.learn__screen {
+    border-radius: 8px !important;
+    box-shadow: var(--main-shadow) !important;
+    background: var(--backgroundColor) !important;
+    color: var(--defaultWhite) !important;
+}
+
+.learn__screen h1 {
+    color: var(--defaultWhite) !important;
+    font-family: 'Red Hat Display', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+.learn--run {
+    grid-gap: 5vmin !important;
+}
+
+.learn__table .wrap,
+.learn__side-home {
+    box-shadow: none !important;
+    background: var(--surfaceColor) !important;
+}
+
+.learn__table .wrap,
+.learn__side-home,
+.learn-stages .stage,
+.learn__screen,
+.learn__screen .buttons a {
+    border-radius: 8px !important;
+}
+
+.learn__table .title {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.learn__table .goal {
+    background: var(--surfaceColor) !important;
+    border: none !important;
+}
+
+.learn__table .progress {
+    border: none !important;
+}
+
+.learn__table .progress a {
+    background: var(--surfaceColor) !important;
+    color: var(--primaryColor) !important;
+    border: none !important;
+}
+
+.learn__table .progress a:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.learn__table .progress a.active {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.learn__side .stages {
+    background: var(--surfaceColor) !important;
+    border-radius: 8px !important;
+}
+
+.learn__side-map .back {
+    border-radius: 8px !important;
+}
+
+.learn__side-map .back:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.learn__side-map .back img {
+    border-radius: 8px 0 0 0 !important;
+}
+
+.learn__side-map .categ.active>h2 {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.learn__side-map .stage.active {
+    background: var(--surfaceColorHover) !important;
+}
+
+.learn__side-map .stage img {
+    background: var(--primaryColor) !important;
+}
+
+.learn__side-map .stage.future:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.learn__side-map .categ>h2 {
+    border-top: 1px solid var(--backgroundColor) !important;
+}
+
+.learn__side-map .categ>h2:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.learn__table .result.completed {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.learn__table .result.failed {
+    background: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.learn__table .result.failed button {
+    color: var(--tertiaryColor) !important;
+    font-size: 20px !important;
+}
+
+.learn__screen .buttons .back {
+    background: var(--secondaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.learn__screen .score {
+    color: var(--primaryColor) !important;
 }
 
 input {
