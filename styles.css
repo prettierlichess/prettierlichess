@@ -3012,14 +3012,7 @@ group.radio label {
     color: var(--primaryColor) !important;
 }
 
-.crosstable__users,
-.crosstable__score,
-.crosstable povs:hover,
-.cmn-toggle+label::after,
-.slist thead,
-#analyse-cm .title,
-.study__player,
-.study__metadata h2 {
+.slist thead {
     background: var(--surfaceColorHover) !important;
     border-radius: 8px !important;
     overflow: hidden !important;
