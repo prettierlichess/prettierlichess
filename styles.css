@@ -2645,7 +2645,7 @@ input {
 }
 
 .context-streamers {
-    padding: 10px 0 0 10px !important;
+    padding-top: 10px !important;
 }
 
 .context-streamer {
