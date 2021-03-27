@@ -882,7 +882,7 @@ select {
 }
 
 div.round__app {
-    grid-column-gap: 4vmin !important;
+    grid-column-gap: 40px !important;
     grid-template-rows: .2fr auto auto min-content auto 4fr auto auto min-content auto auto .2fr !important;
     grid-row-gap: 1.5vmin !important;
 }
