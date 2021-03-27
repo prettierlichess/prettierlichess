@@ -1195,23 +1195,41 @@ a.loss {
 }
 
 .analyse {
+    position: relative !important;
     grid-template-areas:
         'side . board gauge tools'
         'chat . board gauge tools'
         'uchat . under . controls'
         'uchat . under . acpl' !important;
     grid-gap: 1vmin !important;
+    grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
+    transform: translateX(30px) !important;
+    transition: transform .3s ease-in-out !important;
 }
 
-.gauge-on {
-    grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
+.analyse.gauge-on {
+    transform: translateX(0px) !important;
 }
 
 .analyse__tools {
+    position: relative !important;
     background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     box-shadow: none !important;
     border: 1px solid var(--surfaceColor) !important;
+    left: -60px !important;
+    transition: left .3s ease-in-out !important;
+}
+
+.gauge-on .analyse__tools,
+.gauge-on .analyse__controls {
+    left: 0px !important;
+}
+
+.analyse__controls {
+    position: relative !important;
+    left: -60px !important;
+    transition: left .3s ease-in-out !important;
 }
 
 .analyse__moves .result {
