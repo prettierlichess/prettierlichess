@@ -5,17 +5,17 @@ const styleTernary = 'document.documentElement.setAttribute("style", (document.d
 
 var fileSelector = document.createElement('input');
 fileSelector.setAttribute('type', 'file');
-fileSelector.onchange = function(){
+fileSelector.onchange = function () {
     console.log(fileSelector.value)
     let file = fileSelector.files[0];
     let reader = new FileReader();
 
-    reader.onload = function(e) {
+    reader.onload = function (e) {
         console.log(e.target.result)
         let json = JSON.parse(e.target.result)
         console.log(json["primaryColor"])
         let schemeCode, scheme, color
-        for (let i = 0; i < colorScheme.length; i++){
+        for (let i = 0; i < colorScheme.length; i++) {
             scheme = colorScheme[i]
             color = json[colorScheme[i]]
             schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
@@ -49,12 +49,14 @@ document.querySelector('#exportButton').addEventListener('click', () => {
     chrome.storage.sync.get(null, function (result) {
         let json = {}
         let color;
-        for (let i = 0; i < colorScheme.length; i++){
+        for (let i = 0; i < colorScheme.length; i++) {
             color = result[colorScheme[i]] ? result[colorScheme[i]] : colorDefaults[i]
             json[colorScheme[i]] = color
         }
         console.log(json)
-        json = new Blob([JSON.stringify(json, null, 2)], {type: "application/json"});
+        json = new Blob([JSON.stringify(json, null, 2)], {
+            type: "application/json"
+        });
         let url = URL.createObjectURL(json);
         chrome.downloads.download({
             url: url // The object URL can be used as download URL
@@ -112,4 +114,8 @@ function tabScript(code) {
                 code: code
             });
     });
+}
+
+if (navigator.userAgent.indexOf("Firefox") !== -1) {
+    document.getElementById('buttonRow').style.display = 'none';
 }
