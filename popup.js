@@ -1,9 +1,37 @@
 const colorScheme = ["primaryColor", "secondaryColor", "tertiaryColor", "backgroundColor", "surfaceColor", "surfaceColorHover", "defaultWhite"]
 const colorDefaults = ["#9FC0A2", "#f5c276", "#d36d6d", "#2B343B", "#3F474D", "#4e565c", "#F2F5F3"]
+const styleTernary = 'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--'
 
 
-var i;
-for (i = 0; i < colorScheme.length; i++) {
+var fileSelector = document.createElement('input');
+fileSelector.setAttribute('type', 'file');
+fileSelector.onchange = function(){
+    console.log(fileSelector.value)
+    let file = fileSelector.files[0];
+    let reader = new FileReader();
+
+    reader.onload = function(e) {
+        console.log(e.target.result)
+        let json = JSON.parse(e.target.result)
+        console.log(json["primaryColor"])
+        let schemeCode, scheme, color
+        for (let i = 0; i < colorScheme.length; i++){
+            scheme = colorScheme[i]
+            color = json[colorScheme[i]]
+            schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
+            tabScript(schemeCode);
+
+            chrome.storage.sync.set({
+                [scheme]: color
+            });
+        }
+        location.reload()
+    };
+    reader.readAsText(file)
+}
+
+
+for (let i = 0; i < colorScheme.length; i++) {
     pickrCreate(colorScheme[i], colorDefaults[i]);
 }
 
@@ -13,20 +41,21 @@ document.querySelector('#resetButton').addEventListener('click', () => {
 })
 
 document.querySelector('#importButton').addEventListener('click', () => {
-    console.log("Imported.")
+    fileSelector.click()
+    return false
 })
 
 document.querySelector('#exportButton').addEventListener('click', () => {
     chrome.storage.sync.get(null, function (result) {
-        let blob = {}
+        let json = {}
         let color;
-        for (let j = 0; j < colorScheme.length; j++){
-            color = result[colorScheme[j]] ? result[colorScheme[j]] : colorDefaults[j]
-            blob[colorScheme[j]] = color
+        for (let i = 0; i < colorScheme.length; i++){
+            color = result[colorScheme[i]] ? result[colorScheme[i]] : colorDefaults[i]
+            json[colorScheme[i]] = color
         }
-        console.log(blob)
-        blob = new Blob([JSON.stringify(blob, null, 2)], {type: "application/json"});
-        let url = URL.createObjectURL(blob);
+        console.log(json)
+        json = new Blob([JSON.stringify(json, null, 2)], {type: "application/json"});
+        let url = URL.createObjectURL(json);
         chrome.downloads.download({
             url: url // The object URL can be used as download URL
         });
@@ -61,7 +90,7 @@ function pickrCreate(scheme, color) {
             color = color.toHEXA().toString();
             console.log('setting color to: ' + color)
             console.log(typeof color)
-            let schemeCode = 'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--' + scheme + ': ' + color + ' !important;")'
+            let schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
 
             tabScript(schemeCode);
 
