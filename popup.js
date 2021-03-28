@@ -17,7 +17,21 @@ document.querySelector('#importButton').addEventListener('click', () => {
 })
 
 document.querySelector('#exportButton').addEventListener('click', () => {
-    console.log("Exported.")
+    chrome.storage.sync.get(null, function (result) {
+        let blob = {}
+        let color;
+        for (let j = 0; j < colorScheme.length; j++){
+            color = result[colorScheme[j]] ? result[colorScheme[j]] : colorDefaults[j]
+            blob[colorScheme[j]] = color
+        }
+        console.log(blob)
+        blob = new Blob([JSON.stringify(blob, null, 2)], {type: "application/json"});
+        let url = URL.createObjectURL(blob);
+        chrome.downloads.download({
+            url: url // The object URL can be used as download URL
+        });
+        console.log("Exported.")
+    });
 })
 
 function pickrCreate(scheme, color) {

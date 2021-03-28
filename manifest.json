@@ -14,7 +14,7 @@
     "browser_action": {
         "default_popup": "popup.html"
     },
-    "permissions": ["activeTab", "storage", "declarativeContent", "*://lichess.org/*"],
+    "permissions": ["activeTab", "storage", "declarativeContent", "downloads", "*://lichess.org/*"],
     "background": {
         "scripts": ["background.js"],
         "persistant": false
