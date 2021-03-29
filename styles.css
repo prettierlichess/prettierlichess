@@ -3310,6 +3310,7 @@ a.variant-link {
 
 .puzzle__side__streak__score {
     color: var(--primaryColor) !important;
+    padding-right: .5em !important;
 }
 
 .puzzle__side__streak__info h1 {
@@ -3328,6 +3329,15 @@ a.variant-link {
 
 .puzzle__feedback.after .continue i::before {
     font-size: 1.5em !important;
+}
+
+.puzzle__side__streak__score::before {
+    font-size: .75em !important;
+}
+
+.is.text::before,
+.text[data-icon]::before {
+    margin-right: .2em !important;
 }
 
 /*Responsive Sizes*/
