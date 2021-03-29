@@ -3317,6 +3317,19 @@ a.variant-link {
     font-family: 'Red Hat Display', sans-serif !important;
 }
 
+.puzzle__feedback.after .complete .game-over {
+    border-bottom: 1px solid var(--backgroundColor) !important;
+}
+
+.puzzle__feedback.after .continue {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.puzzle__feedback.after .continue i::before {
+    font-size: 1.5em !important;
+}
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
