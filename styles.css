@@ -3308,6 +3308,19 @@ a.variant-link {
     background: var(--surfaceColorHover) !important;
 }
 
+.top.user-tv.text::before {
+    position: relative !important;
+    font-size: 1em !important;
+    margin-bottom: .1em !important;
+    margin-right: .5em !important;
+}
+
+.top.user-tv.text {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+}
+
 .puzzle__side__streak__score {
     color: var(--primaryColor) !important;
     padding-right: .5em !important;
