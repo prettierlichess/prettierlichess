@@ -3469,6 +3469,105 @@ a.variant-link {
 }
 
 @media (max-width: 800px) {
+    ::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        display: none !important;
+    }
+
+    ::-webkit-scrollbar-track {
+        display: none !important;
+    }
+
+    header#top {
+        width: 100vw !important;
+        max-width: 100vw !important;
+    }
+
+    #main-wrap {
+        width: 100% !important;
+        margin: 0 !important;
+        grid-template-columns: var(--main-margin) 1fr minmax(auto, var(--main-max-width)) 1fr var(--main-margin) !important;
+        margin-top: var(--site-header-margin) !important;
+    }
+
+    #topnav {
+        width: 90vw !important;
+        transform: translateX(-90vw) !important;
+    }
+
+    .lobby {
+        grid-template-areas:
+            'tv'
+            'app'
+            'side'
+            'blog'
+            'table'
+            'puzzle'
+            'leader'
+            'winner'
+            'tours'
+            'simuls'
+            'forum'
+            'support'
+            'about'
+            '.' !important;
+        grid-template-columns: 100% !important;
+        max-width: 100vw !important;
+        grid-gap: 5vmin !important;
+    }
+
+    .lobby__app {
+        min-height: 70vh !important;
+    }
+
+    div.lobby__app__content.lpools {
+        height: 100% !important;
+        margin-bottom: 0 !important;
+    }
+
+    .lpools .clock {
+        font-size: 1.3em !important;
+    }
+
+    .tabs-horiz {
+        padding-top: 1rem !important;
+        margin-top: 0 !important;
+    }
+
+    .tabs-horiz span {
+        text-shadow: none !important;
+        font-size: 1.2rem !important;
+    }
+
+    .about-side,
+    .lobby__streams,
+    .lobby__about {
+        margin-left: 0 !important;
+    }
+
+    .lobby__counters {
+        background: none !important;
+        width: 100vw !important;
+    }
+
+    .lobby__start {
+        flex-direction: column !important;
+        width: 90vw !important;
+    }
+
+    .lobby__start a.button.button-metal {
+        min-width: 100% !important;
+        margin: 4px 0 !important;
+    }
+
+    #nb_games_in_play strong,
+    #nb_connected_players strong {
+        font-size: 2.5rem !important;
+    }
+
     main.puzzle {
         grid-template-areas:
             'board'
@@ -3476,12 +3575,63 @@ a.variant-link {
             'tools'
             'session'
             'side' !important;
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 100% !important;
+    }
 
+    .files {
+        font-size: calc(8px + 4 * ((100vw - 320px) / 880)) !important;
+        bottom: 0px !important;
+    }
+
+    .ranks {
+        font-size: calc(8px + 4 * ((100vw - 320px) / 880)) !important;
+        right: 0px !important;
+    }
+
+    .orientation-white .files coord:nth-child(2n),
+    .orientation-white .ranks coord:nth-child(2n+1),
+    .orientation-black .files coord:nth-child(2n+1),
+    .orientation-black .ranks coord:nth-child(2n) {
+        color: var(--cg-coord-color-black) !important;
+    }
+
+    .orientation-white .files coord:nth-child(2n+1),
+    .orientation-white .ranks coord:nth-child(2n),
+    .orientation-black .files coord:nth-child(2n),
+    .orientation-black .ranks coord:nth-child(2n+1) {
+        color: var(--cg-coord-color-white) !important;
+    }
+
+    div.puzzle__session {
+        margin-top: 0 !important;
+    }
+
+    div.round__app {
+        grid-template-rows: auto auto 50px auto -webkit-min-content 50px auto !important;
+        grid-template-rows: auto auto 50px auto min-content 50px auto !important;
     }
 
     rm6 .col1-moves {
-        display: none !important;
+        display: flex !important;
+    }
+
+    rm6 l4x {
+        box-shadow: none !important;
+        background: var(--backgroundColor) !important;
+    }
+
+    rm6 l4x i5z {
+        background: none !important;
+        color: var(--defaultWhite) !important;
+    }
+
+    .subnav {
+        background: none !important;
+    }
+
+    .subnav a {
+        background: none !important;
+        box-shadow: none !important;
     }
 
     .time {
