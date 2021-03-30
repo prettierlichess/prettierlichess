@@ -3498,6 +3498,11 @@ a.variant-link {
         transform: translateX(-90vw) !important;
     }
 
+    #topnav div a {
+        height: 3em !important;
+        margin: 0 !important;
+    }
+
     .lobby {
         grid-template-areas:
             'tv'
@@ -3618,6 +3623,7 @@ a.variant-link {
     rm6 l4x {
         box-shadow: none !important;
         background: var(--backgroundColor) !important;
+        padding-right: 8px !important;
     }
 
     rm6 l4x i5z {
@@ -3634,8 +3640,21 @@ a.variant-link {
         box-shadow: none !important;
     }
 
+    cg-container {
+        width: 100vw !important;
+        height: 100vw !important;
+    }
+
     .time {
         justify-content: flex-end !important;
+    }
+
+    .ruser {
+        align-items: center !important;
+    }
+
+    .rclock {
+        padding-right: .3em !important;
     }
 
     .ruser-bottom {
