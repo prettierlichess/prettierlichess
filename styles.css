@@ -290,8 +290,15 @@ coords coord {
     justify-content: center !important;
     align-items: center !important;
     color: var(--defaultWhite) !important;
-    opacity: .7 !important;
+    opacity: .4 !important;
     transform: none !important;
+    font-weight: 200 !important;
+}
+
+cg-container coords.ranks coord,
+cg-container coords.files coord,
+.ruser rating {
+    color: var(--defaultWhite) !important;
 }
 
 cg-resize {
