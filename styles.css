@@ -3658,11 +3658,6 @@ a.variant-link {
         box-shadow: none !important;
     }
 
-    cg-container {
-        width: 100vw !important;
-        height: 100vw !important;
-    }
-
     .time {
         justify-content: flex-end !important;
     }
