@@ -3664,4 +3664,17 @@ a.variant-link {
     .round__app .rclock-bottom {
         margin-top: 10px !important;
     }
+
+    .analyse {
+        grid-template-areas:
+            'board'
+            'controls'
+            'tools'
+            'side'
+            'acpl'
+            'under'
+            'chat'
+            'uchat' !important;
+        grid-template-columns: 100vw !important;
+    }
 }
