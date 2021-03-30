@@ -3353,6 +3353,15 @@ a.variant-link {
     margin-right: .2em !important;
 }
 
+.crosstable__users,
+.crosstable__score,
+.crosstable povs:hover,
+.cmn-toggle+label::after,
+#analyse-cm .title,
+.analyse__clock {
+    text-shadow: none !important;
+}
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
