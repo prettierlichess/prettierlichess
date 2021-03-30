@@ -3385,6 +3385,18 @@ a.variant-link {
             'side side side' !important;
         grid-template-columns: minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) var(--gauge-gap) minmax(240px, 400px) !important;
     }
+
+    .analyse {
+        grid-template-areas:
+            'board gauge tools'
+            'under . controls'
+            'under . acpl'
+            'under . side'
+            'chat . side'
+            'uchat . side' !important;
+        grid-row-gap: 0 !important;
+        grid-template-columns: minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) var(--gauge-gap) minmax(240px, 400px) !important;
+    }
 }
 
 @media (max-width: 979px) {
