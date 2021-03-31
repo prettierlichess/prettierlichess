@@ -1710,7 +1710,7 @@ a.post_link.text:hover {
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    font-family: monospace !important;
+    font-family: 'Roboto Mono', monospace !important;
 }
 
 #nb_connected_players {
