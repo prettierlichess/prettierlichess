@@ -143,3 +143,14 @@ input[type="color"]::-webkit-color-swatch {
     box-shadow: none !important;
     transform: scale(.9) !important;
 }
+
+#basicImportExportContainer {
+    margin: 8px 0;
+}
+#basicImportExport{
+    width: 100%;
+    background-color: #4b5b67;
+    color: #fff;
+    border: 1px solid #607585;
+    border-radius: 4px;
+}
