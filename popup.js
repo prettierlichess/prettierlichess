@@ -112,19 +112,13 @@ document.querySelector('#exportButton').addEventListener('click', () => {
             color = result[colorScheme[i]] ? result[colorScheme[i]] : colorDefaults[i]
             json[colorScheme[i]] = color
         }
-        if(useBasicImportExport){
-            setBasicImportExportVisibility(true)
-            setImportExportMode(IMPORT_EXPORT_MODE.EXPORT)
-            basicImportExportInput.textContent = JSON.stringify(result, null, 2)
-        }else{
-            json = new Blob([JSON.stringify(json, null, 2)], {
-                type: "application/json"
-            });
-            let url = URL.createObjectURL(json);
-            chrome.downloads.download({
-                url: url // The object URL can be used as download URL
-            });
-        }
+        json = new Blob([JSON.stringify(json, null, 2)], {
+            type: "application/json"
+        });
+        let url = URL.createObjectURL(json);
+        chrome.downloads.download({
+            url: url // The object URL can be used as download URL
+        });
     });
 })
 
