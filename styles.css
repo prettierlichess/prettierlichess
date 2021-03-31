@@ -3385,6 +3385,12 @@ text {
     fill: var(--defaultWhite) !important;
 }
 
+#zentog {
+    background: none !important;
+    color: var(--primaryColor) !important;
+    border: 1px solid var(--primaryColor) !important;
+}
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
