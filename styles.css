@@ -3369,6 +3369,10 @@ a.variant-link {
     text-shadow: none !important;
 }
 
+text {
+    fill: var(--defaultWhite) !important;
+}
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
