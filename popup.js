@@ -64,12 +64,14 @@ const importScheme = (data) => {
     let schemeCode, scheme, color
     for (let i = 0; i < colorScheme.length; i++) {
         scheme = colorScheme[i]
-        color = json[colorScheme[i]]
-        schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
-        tabScript(schemeCode);
-        chrome.storage.sync.set({
-            [scheme]: color
-        });
+        color = json[scheme]
+        if(color){
+            schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
+            tabScript(schemeCode);
+            chrome.storage.sync.set({
+                [scheme]: color
+            });
+        }
     }
     location.reload()
 }
