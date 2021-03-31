@@ -3391,6 +3391,15 @@ text {
     border: 1px solid var(--primaryColor) !important;
 }
 
+.crosstable__users,
+.crosstable__score,
+.crosstable povs:hover,
+.cmn-toggle+label::after,
+.mselect__label,
+#analyse-cm .title {
+    text-shadow: none !important;
+}
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
