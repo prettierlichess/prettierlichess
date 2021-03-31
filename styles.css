@@ -2360,7 +2360,8 @@ input {
     border: 1px solid var(--surfaceColor) !important;
 }
 
-.study__comments {
+.study__comments,
+.study-desc {
     border-radius: 8px !important;
     box-shadow: none !important;
     background: var(--surfaceColor) !important;
@@ -2377,6 +2378,17 @@ input {
     background: var(--surfaceColor) !important;
     padding: 10px 20px !important;
     border-bottom: 1px solid var(--surfaceColorHover) !important;
+}
+
+.crosstable__users,
+.crosstable__score,
+.crosstable povs:hover,
+.cmn-toggle+label::after,
+.slist thead,
+#analyse-cm .title,
+.study__player,
+.study__metadata h2 {
+    text-shadow: none !important;
 }
 
 .slist tbody tr:nth-child(even) {
