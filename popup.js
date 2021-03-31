@@ -53,6 +53,8 @@ const setImportExportMode = (mode) => {
     importExportActionButton.textContent = label
     if(mode === IMPORT_EXPORT_MODE.EXPORT){
         basicImportExportInput.focus()
+    }else if(mode === IMPORT_EXPORT_MODE.IMPORT){
+        basicImportExportInput.value = ''
     }
 }
 
@@ -105,13 +107,13 @@ document.querySelector('#exportButton').addEventListener('click', () => {
         let json = {}
         let color;
         for (let i = 0; i < colorScheme.length; i++) {
-            color = data[colorScheme[i]] ? data[colorScheme[i]] : colorDefaults[i]
+            color = result[colorScheme[i]] ? result[colorScheme[i]] : colorDefaults[i]
             json[colorScheme[i]] = color
         }
         if(useBasicImportExport){
             setBasicImportExportVisibility(true)
             setImportExportMode(IMPORT_EXPORT_MODE.EXPORT)
-            basicImportExportInput.textContent = JSON.stringify(data, null, 2)
+            basicImportExportInput.textContent = JSON.stringify(result, null, 2)
         }else{
             json = new Blob([JSON.stringify(json, null, 2)], {
                 type: "application/json"
