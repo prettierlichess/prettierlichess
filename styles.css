@@ -1840,7 +1840,7 @@ a.button.button-metal:hover {
     border-radius: 4px !important;
     outline: none !important;
     font-size: 1em !important;
-    padding: 14px !important;
+    padding: 10px 14px !important;
     text-transform: lowercase !important;
 }
 
@@ -2698,6 +2698,26 @@ input {
     box-shadow: 0px 0px 16px var(--primaryColor) !important;
 }
 
+path[stroke="#b2b1b6"] {
+    stroke: var(--surfaceColorHover) !important;
+}
+
+.fire-trophy,
+.trophy.streaming,
+.trophy.patron,
+.trophy.patron:hover,
+.crosstable__users,
+.crosstable__score,
+.crosstable povs:hover,
+.cmn-toggle+label::after,
+.user-show .angles {
+    text-shadow: none !important;
+}
+
+.trophy.patron:hover {
+    margin-top: -8px !important;
+}
+
 .user-show__header,
 .user-show__social,
 .number-menu {
@@ -3205,6 +3225,28 @@ input[type=range]::-moz-range-thumb {
     border-radius: 100% !important;
 }
 
+group.radio label {
+    border-right: 1px solid var(--surfaceColor) !important;
+}
+
+.slist thead,
+.cmn-toggle+label::after,
+group.radio label,
+.account section group.radio input:checked+label {
+    text-shadow: none !important;
+}
+
+group.radio input:checked+label,
+.account group.radio input:checked+label {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    box-shadow: none !important;
+}
+
+.account h2::after {
+    background: none !important;
+}
+
 .puzzle__feedback.good .icon,
 .puzzle__feedback .win .icon {
     color: var(--primaryColor) !important;
@@ -3234,6 +3276,7 @@ square.last-move {
 
 square.move-dest {
     background: radial-gradient(var(--primaryColor) 19%, rgba(0, 0, 0, 0) 20%) !important;
+    opacity: .8 !important;
 }
 
 square.oc.move-dest {

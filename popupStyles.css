@@ -8,6 +8,7 @@ body {
     font-size: 18px;
     width: 300px;
     height: 500px;
+    overflow-x: hidden;
 }
 
 .logo {
@@ -145,12 +146,17 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 #basicImportExportContainer {
-    margin: 8px 0;
+    margin: 8px 0 30px;
 }
-#basicImportExport{
+
+#basicImportExport {
+    box-sizing: border-box;
     width: 100%;
     background-color: #4b5b67;
     color: #fff;
     border: 1px solid #607585;
     border-radius: 4px;
+    margin-bottom: 8px;
+    resize: none;
+    outline: none;
 }
