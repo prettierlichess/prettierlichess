@@ -1710,6 +1710,7 @@ a.post_link.text:hover {
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
+    width: 80% !important;
 }
 
 #nb_connected_players {
@@ -1717,7 +1718,8 @@ a.post_link.text:hover {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    margin-right: 40px !important;
+    margin-right: 0px !important;
+    width: 50% !important;
 }
 
 #nb_connected_players:hover {
@@ -1729,7 +1731,8 @@ a.post_link.text:hover {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    margin-left: 40px !important;
+    margin-left: 0px !important;
+    width: 50% !important;
 }
 
 #nb_games_in_play:hover {
@@ -2911,6 +2914,10 @@ g.highcharts-button rect {
 
 .puzzle__more a:hover {
     color: var(--primaryColor) !important;
+}
+
+.forum-post__message .embed:not(img)>* {
+    position: absolute !important;
 }
 
 #notify-app .site_notification.new {
