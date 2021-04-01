@@ -232,6 +232,8 @@ html {
     --tertiaryColor: #d36d6d !important;
     --defaultWhite: #F2F5F3 !important;
     --main-shadow: 0 4px 76px -15px rgba(0, 0, 0, 0.5) !important;
+    scrollbar-color: var(--surfaceColorHover) var(--surfaceColor) !important;
+    scrollbar-width: thin !important;
 }
 
 ::-webkit-scrollbar {
@@ -1562,6 +1564,8 @@ div.perf {
 .lobby__side {
     overflow-y: auto !important;
     border-radius: 8px !important;
+    scrollbar-color: var(--surfaceColorHover) var(--surfaceColor) !important;
+    scrollbar-width: thin !important;
 }
 
 .lobby__streams {
@@ -1646,6 +1650,7 @@ div.perf {
     background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     border: 1px solid var(--surfaceColor) !important;
+    scrollbar-width: thin !important;
 }
 
 .lobby__box tr:nth-child(even) {
@@ -3367,6 +3372,8 @@ square.selected {
 .timeline {
     min-height: 200px !important;
     overflow: auto !important;
+    scrollbar-color: var(--surfaceColorHover) var(--surfaceColor) !important;
+    scrollbar-width: thin !important;
 }
 
 a.variant-link {
