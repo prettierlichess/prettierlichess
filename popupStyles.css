@@ -115,10 +115,20 @@ input[type="color"]::-webkit-color-swatch {
     font-size: .8em;
     border-bottom: 1px solid #4e565c;
     cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.tab:hover {
+    border-bottom: 1px solid white;
 }
 
 .tab.active {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #9FC0A2;
+    color: #9FC0A2;
+}
+
+.tab.active:hover {
+    border-bottom: 1px solid #9FC0A2;
 }
 
 .hideGroup {
