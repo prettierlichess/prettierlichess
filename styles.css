@@ -232,6 +232,10 @@ html {
     --tertiaryColor: #d36d6d !important;
     --defaultWhite: #F2F5F3 !important;
     --main-shadow: 0 4px 76px -15px rgba(0, 0, 0, 0.5) !important;
+    --arrowPrimary: #5CD567 !important;
+    --arrowSecondary: #E8A43F !important;
+    --arrowTertiary: #EF4747 !important;
+    --arrowAlternate: #4B81E6 !important;
     scrollbar-color: var(--surfaceColorHover) var(--surfaceColor) !important;
     scrollbar-width: thin !important;
 }
@@ -500,6 +504,10 @@ main.puzzle {
     border: none !important;
     border-top: 1px solid var(--backgroundColor) !important;
     border-bottom: 1px solid var(--backgroundColor) !important;
+}
+
+.tview2 shapes {
+    color: var(--primaryColor) !important;
 }
 
 .tview2 move.parent {
@@ -3295,48 +3303,67 @@ square.oc.move-dest {
     background: radial-gradient(transparent 0%, transparent 79%, var(--primaryColor) 80%) !important;
 }
 
+cg-board square.current-premove {
+    background: var(--secondaryColor) !important;
+    opacity: .5 !important;
+}
+
 /* Selects Default Arrow */
 
 line[stroke="#15781B"] {
-    stroke: var(--primaryColor) !important;
+    stroke: var(--arrowPrimary) !important;
     stroke-opacity: 1 !important;
 }
 
 path[fill="#15781B"] {
-    fill: var(--primaryColor) !important;
+    fill: var(--arrowPrimary) !important;
     fill-opacity: 1 !important;
 }
 
 circle[stroke="#15781B"] {
-    stroke: var(--primaryColor) !important;
+    stroke: var(--arrowPrimary) !important;
 }
 
 /* Selects Control Arrow */
 
 line[stroke="#003088"] {
-    stroke: var(--secondaryColor) !important;
+    stroke: var(--arrowSecondary) !important;
 }
 
 path[fill="#003088"] {
-    fill: var(--secondaryColor) !important;
+    fill: var(--arrowSecondary) !important;
 }
 
 circle[stroke="#003088"] {
-    stroke: var(--secondaryColor) !important;
+    stroke: var(--arrowSecondary) !important;
 }
 
 /* Selects Alt Arrow */
 
 line[stroke="#882020"] {
-    stroke: var(--tertiaryColor) !important;
+    stroke: var(--arrowTertiary) !important;
 }
 
 path[fill="#882020"] {
-    fill: var(--tertiaryColor) !important;
+    fill: var(--arrowTertiary) !important;
 }
 
 circle[stroke="#882020"] {
-    stroke: var(--tertiaryColor) !important;
+    stroke: var(--arrowTertiary) !important;
+}
+
+/* Selects Shift-Alt Arrow */
+
+line[stroke="#e68f00"] {
+    stroke: var(--arrowAlternate) !important;
+}
+
+path[fill="#e68f00"] {
+    fill: var(--arrowAlternate) !important;
+}
+
+circle[stroke="#e68f00"] {
+    stroke: var(--arrowAlternate) !important;
 }
 
 /*Computer Lines*/

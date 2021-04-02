@@ -1,5 +1,5 @@
-const colorScheme = ["primaryColor", "secondaryColor", "tertiaryColor", "backgroundColor", "surfaceColor", "surfaceColorHover", "defaultWhite"]
-const colorDefaults = ["#9FC0A2", "#f5c276", "#d36d6d", "#2B343B", "#3F474D", "#4e565c", "#F2F5F3"]
+const colorScheme = ["primaryColor", "secondaryColor", "tertiaryColor", "backgroundColor", "surfaceColor", "surfaceColorHover", "defaultWhite", "arrowPrimary", "arrowSecondary", "arrowTertiary", "arrowAlternate"]
+const colorDefaults = ["#9FC0A2", "#f5c276", "#d36d6d", "#2B343B", "#3F474D", "#4e565c", "#F2F5F3", "#35c554", "#f3ae48", "#d64d4d", "#4b81e6"]
 const styleTernary = 'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--'
 const basicImportExportContainer = document.getElementById('basicImportExportContainer')
 const basicImportExportInput = document.getElementById('basicImportExport')
@@ -31,8 +31,8 @@ let importExportMode = null
 
 /**
  * Set basic import/export container visibility
- * @param {boolean} isVisible 
- * @returns 
+ * @param {boolean} isVisible
+ * @returns
  */
 const setBasicImportExportVisibility = (isVisible) => basicImportExportContainer.style.display = isVisible ? 'block' : 'none'
 /**
@@ -45,15 +45,15 @@ const toggleBasicImportExport = () => {
 
 /**
  * Set the import export color mode
- * @param {'import' | 'export'} mode 
+ * @param {'import' | 'export'} mode
  */
 const setImportExportMode = (mode) => {
     const label = mode === IMPORT_EXPORT_MODE.IMPORT ? 'Save' : "Close"
     importExportMode = mode;
     importExportActionButton.textContent = label
-    if(mode === IMPORT_EXPORT_MODE.EXPORT){
+    if (mode === IMPORT_EXPORT_MODE.EXPORT) {
         basicImportExportInput.focus()
-    }else if(mode === IMPORT_EXPORT_MODE.IMPORT){
+    } else if (mode === IMPORT_EXPORT_MODE.IMPORT) {
         basicImportExportInput.value = ''
     }
 }
@@ -65,7 +65,7 @@ const importScheme = (data) => {
     for (let i = 0; i < colorScheme.length; i++) {
         scheme = colorScheme[i]
         color = json[scheme]
-        if(color){
+        if (color) {
             schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
             tabScript(schemeCode);
             chrome.storage.sync.set({
@@ -86,26 +86,26 @@ document.querySelector('#resetButton').addEventListener('click', () => {
     tabScript('window.location.reload();');
 })
 document.querySelector('#importButton').addEventListener('click', () => {
-    if(useBasicImportExport){
+    if (useBasicImportExport) {
         setBasicImportExportVisibility(true)
         setImportExportMode(IMPORT_EXPORT_MODE.IMPORT)
-    }else{
+    } else {
         fileSelector.click()
     }
     return false
 })
 
 importExportActionButton.addEventListener('click', () => {
-    if(importExportMode === 'import'){
+    if (importExportMode === 'import') {
         importScheme(basicImportExportInput.value.trim())
-    }else{
+    } else {
         setBasicImportExportVisibility(false)
         setImportExportMode(null)
     }
 })
 
 document.querySelector('#exportButton').addEventListener('click', () => {
-    chrome.storage.sync.get(null, function(result){
+    chrome.storage.sync.get(null, function (result) {
         let json = {}
         let color;
         for (let i = 0; i < colorScheme.length; i++) {
@@ -172,3 +172,24 @@ function tabScript(code) {
             });
     });
 }
+
+//Tab Switch
+
+const siteTab = document.querySelector('#siteTab');
+const boardTab = document.querySelector('#boardTab');
+const siteColorGroup = document.querySelector('#siteColorGroup');
+const boardColorGroup = document.querySelector('#boardColorGroup');
+
+siteTab.addEventListener('click', () => {
+    siteTab.classList.add('active');
+    boardTab.classList.remove('active');
+    siteColorGroup.classList.remove('hideGroup');
+    boardColorGroup.classList.add('hideGroup');
+})
+
+boardTab.addEventListener('click', () => {
+    siteTab.classList.remove('active');
+    boardTab.classList.add('active');
+    siteColorGroup.classList.add('hideGroup');
+    boardColorGroup.classList.remove('hideGroup');
+})
