@@ -3484,6 +3484,43 @@ text {
     text-shadow: none !important;
 }
 
+.board-editor .spare {
+    background: var(--surfaceColor) !important;
+    box-shadow: none !important;
+    border-right: 8px !important;
+}
+
+.board-editor .spare .no-square.selected-square {
+    background: var(--primaryColor) !important;
+}
+
+.board-editor .spare .no-square:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.board-editor .spare-bottom {
+    margin-top: 40px !important;
+}
+
+.board-editor .spare-top {
+    margin-bottom: 10px !important;
+}
+
+.board-editor {
+    grid-column-gap: 10px !important;
+}
+
+.board-editor__tools {
+    background: var(--surfaceColor) !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+}
+
+.board-editor__tools .metadata {
+    background: var(--surfaceColorHover) !important;
+    border-radius: 4px !important;
+}
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
