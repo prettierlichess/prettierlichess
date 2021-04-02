@@ -109,16 +109,23 @@ document.querySelector('#exportButton').addEventListener('click', () => {
         let json = {}
         let color;
         for (let i = 0; i < colorScheme.length; i++) {
-            color = result[colorScheme[i]] ? result[colorScheme[i]] : colorDefaults[i]
-            json[colorScheme[i]] = color
+            color = result[colorScheme[i]]
+            if (color){
+                json[colorScheme[i]] = color
+            }
         }
-        json = new Blob([JSON.stringify(json, null, 2)], {
-            type: "application/json"
-        });
-        let url = URL.createObjectURL(json);
-        chrome.downloads.download({
-            url: url // The object URL can be used as download URL
-        });
+        if (Object.keys(json).length > 0) {
+            json = new Blob([JSON.stringify(json, null, 2)], {
+                type: "application/json"
+            });
+            let url = URL.createObjectURL(json);
+            chrome.downloads.download({
+                url: url // The object URL can be used as download URL
+            });
+        }
+        else{
+            alert("No custom colors have been set.")
+        }
     });
 })
 
