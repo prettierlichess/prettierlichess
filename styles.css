@@ -281,6 +281,11 @@ cg-helper cg-container cg-board {
     overflow: hidden !important;
 }
 
+.is3d cg-helper cg-container cg-board {
+    border-radius: 0px !important;
+    overflow: visible !important;
+}
+
 .ranks {
     font-size: 16px !important;
     right: -25px !important;
@@ -3519,6 +3524,11 @@ text {
 .board-editor__tools .metadata {
     background: var(--surfaceColorHover) !important;
     border-radius: 4px !important;
+}
+
+.tour-chart .timeline {
+    min-height: auto !important;
+    overflow: visible !important;
 }
 
 /*Responsive Sizes*/
