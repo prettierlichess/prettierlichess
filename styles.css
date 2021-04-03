@@ -335,6 +335,7 @@ cg-resize::after {
     transition: opacity .2s ease-in-out !important;
     font-family: 'Red Hat Display' !important;
     text-shadow: none !important;
+    z-index: 9 !important;
 }
 
 .site-title:hover {
@@ -352,11 +353,13 @@ div h1 a {
 #topnav {
     display: flex !important;
     position: absolute !important;
-    width: 500px !important;
+    width: 100vw !important;
     align-items: center !important;
     justify-content: center !important;
-    left: 50% !important;
-    margin-left: -250px !important;
+    margin-left: 0 15vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    max-width: 1800px !important;
 }
 
 #clinput input {
@@ -455,6 +458,23 @@ signal>i {
     color: var(--primaryColor) !important;
 }
 
+.dasher #dasher_app .langs .current {
+    background-color: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+#dasher_app .langs .accepted {
+    border-left: 2px solid var(--primaryColor) !important;
+}
+
+#dasher_app .langs button:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+#dasher_app .langs .help {
+    color: var(--primaryColor) !important;
+}
+
 #dasher_app .sub::before {
     color: var(--primaryColor) !important;
 }
@@ -486,6 +506,10 @@ signal>i {
 #dasher_app .links button:hover {
     background: var(--tertiaryColor) !important;
     color: var(--backgroundColor) !important;
+}
+
+.site-buttons {
+    z-index: 9 !important;
 }
 
 .site-buttons .dropdown a {
@@ -3310,7 +3334,7 @@ square.oc.move-dest {
 
 cg-board square.current-premove {
     background: var(--secondaryColor) !important;
-    opacity: .5 !important;
+    opacity: .25 !important;
 }
 
 /* Selects Default Arrow */
@@ -3529,6 +3553,10 @@ text {
 .tour-chart .timeline {
     min-height: auto !important;
     overflow: visible !important;
+}
+
+.plan .plan_checkout group.freq input:checked+label::before {
+    background: none !important;
 }
 
 /*Responsive Sizes*/
