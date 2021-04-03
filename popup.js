@@ -64,7 +64,7 @@ const importScheme = (data) => {
     let schemeCode, scheme, color
     for (let i = 0; i < colorScheme.length; i++) {
         scheme = colorScheme[i]
-        color = json[scheme]
+        color = json[scheme] ? json[scheme] : colorDefaults[i]
         if (color) {
             schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
             tabScript(schemeCode);
