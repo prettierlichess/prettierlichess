@@ -232,10 +232,15 @@ html {
     --tertiaryColor: #d36d6d !important;
     --defaultWhite: #F2F5F3 !important;
     --main-shadow: 0 4px 76px -15px rgba(0, 0, 0, 0.5) !important;
-    --arrowPrimary: #5CD567 !important;
+    --arrowPrimary: #68C07B !important;
     --arrowSecondary: #E8A43F !important;
     --arrowTertiary: #EF4747 !important;
     --arrowAlternate: #4B81E6 !important;
+    --lastMove: #99d69e !important;
+    --preMove: #487292 !important;
+    --moveIndicator: #99d69e !important;
+    --boardDark: #71828F !important;
+    --boardLight: #c7c7c7 !important;
     scrollbar-color: var(--surfaceColorHover) var(--surfaceColor) !important;
     scrollbar-width: thin !important;
 }
@@ -266,13 +271,31 @@ body {
     text-shadow: 0px 0px 0px transparent !important;
 }
 
-h2 {
+h1,
+h2,
+h3,
+h4,
+.mini-game .rating,
+.mini-game__clock,
+.btn-rack__btn i,
+.btn-rack form i {
     font-family: 'Red Hat Display', sans-serif !important;
 }
 
 p {
     line-height: 20px !important;
     font-size: 14px !important;
+}
+
+cg-helper cg-container cg-board::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+    background: repeating-conic-gradient(var(--boardDark) 0% 25%, var(--boardLight) 0% 50%) 50% / 25% 25% !important;
 }
 
 cg-helper cg-container cg-board {
@@ -3319,21 +3342,21 @@ cg-container .cg-shapes {
 }
 
 square.last-move {
-    background: var(--primaryColor) !important;
+    background: var(--lastMove) !important;
     opacity: .4 !important;
 }
 
 square.move-dest {
-    background: radial-gradient(var(--primaryColor) 19%, rgba(0, 0, 0, 0) 20%) !important;
+    background: radial-gradient(var(--moveIndicator) 19%, rgba(0, 0, 0, 0) 20%) !important;
     opacity: .8 !important;
 }
 
 square.oc.move-dest {
-    background: radial-gradient(transparent 0%, transparent 79%, var(--primaryColor) 80%) !important;
+    background: radial-gradient(transparent 0%, transparent 79%, var(--moveIndicator) 80%) !important;
 }
 
 cg-board square.current-premove {
-    background: var(--secondaryColor) !important;
+    background: var(--preMove) !important;
     opacity: .25 !important;
 }
 
@@ -3415,7 +3438,7 @@ line[opacity="0.4"] {
 }
 
 square.selected {
-    background: var(--primaryColor) !important;
+    background: var(--lastMove) !important;
     opacity: .2 !important;
 }
 
@@ -3557,6 +3580,48 @@ text {
 
 .plan .plan_checkout group.freq input:checked+label::before {
     background: none !important;
+}
+
+.challenge-page .details {
+    position: relative !important;
+    background: none !important;
+    border: 1px solid var(--primaryColor) !important;
+    color: var(--defaultWhite) !important;
+}
+
+.challenge-page .details::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: .4 !important;
+    z-index: 1 !important;
+    background: var(--primaryColor) !important;
+    border-radius: 99px !important;
+}
+
+.challenge-page .details>div {
+    font-family: 'Red Hat Display', sans-serif !important;
+}
+
+.challenge-page .details>div::before,
+.challenge-page .details .mode {
+    color: var(--defaultWhite) !important;
+}
+
+.challenge-page .waiting .spinner {
+    width: 5em !important;
+    height: 5em !important;
+}
+
+#challenge-app .challenge .owner:hover .view {
+    width: 100% !important;
+    height: 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 /*Responsive Sizes*/

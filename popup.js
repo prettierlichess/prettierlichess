@@ -1,10 +1,11 @@
-const colorScheme = ["primaryColor", "secondaryColor", "tertiaryColor", "backgroundColor", "surfaceColor", "surfaceColorHover", "defaultWhite", "arrowPrimary", "arrowSecondary", "arrowTertiary", "arrowAlternate"]
-const colorDefaults = ["#9FC0A2", "#f5c276", "#d36d6d", "#2B343B", "#3F474D", "#4e565c", "#F2F5F3", "#35c554", "#f3ae48", "#d64d4d", "#4b81e6"]
+const colorScheme = ["primaryColor", "secondaryColor", "tertiaryColor", "backgroundColor", "surfaceColor", "surfaceColorHover", "defaultWhite", "arrowPrimary", "arrowSecondary", "arrowTertiary", "arrowAlternate", "lastMove", "preMove", "moveIndicator", "boardDark", "boardLight"]
+const colorDefaults = ["#9FC0A2", "#f5c276", "#d36d6d", "#2B343B", "#3F474D", "#4e565c", "#F2F5F3", "#68C07B", "#f3ae48", "#d64d4d", "#4b81e6", "#99d69e", "#487292", "#99d69e", "#71828F", "#c7c7c7"]
 const styleTernary = 'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--'
 const basicImportExportContainer = document.getElementById('basicImportExportContainer')
 const basicImportExportInput = document.getElementById('basicImportExport')
 const importExportActionButton = document.getElementById('importExportAction')
 const useBasicImportExport = navigator.userAgent.indexOf("Firefox") !== -1
+const transparent = "FFFFFF00";
 
 
 
@@ -110,7 +111,7 @@ document.querySelector('#exportButton').addEventListener('click', () => {
         let color;
         for (let i = 0; i < colorScheme.length; i++) {
             color = result[colorScheme[i]]
-            if (color){
+            if (color) {
                 json[colorScheme[i]] = color
             }
         }
@@ -123,7 +124,7 @@ document.querySelector('#exportButton').addEventListener('click', () => {
                 url: url // The object URL can be used as download URL
             });
         }
-        else{
+        else {
             alert("No custom colors have been set.")
         }
     });
@@ -175,8 +176,8 @@ function tabScript(code) {
     }, function (tabs) {
         chrome.tabs.executeScript(
             tabs[0].id, {
-                code: code
-            });
+            code: code
+        });
     });
 }
 

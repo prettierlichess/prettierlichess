@@ -95,6 +95,13 @@ input[type="color"]::-webkit-color-swatch {
     transform: scale(2);
 }
 
+.customBoardGroup {
+    background: #3F474D;
+    border-radius: 4px;
+    padding: 20px 20px 8px;
+    margin-bottom: 20px;
+}
+
 /* Tabs */
 
 .tabGroup {
@@ -133,6 +140,11 @@ input[type="color"]::-webkit-color-swatch {
 
 .hideGroup {
     display: none;
+}
+
+#hideBoardColors {
+    background: #4e565c;
+    margin-bottom: 10px;
 }
 
 /* Picker Styles Overrides */
