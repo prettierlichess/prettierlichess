@@ -416,7 +416,19 @@ nav section a:target-within {
     border-radius: 4px !important;
 }
 
-[role="group"] {
+html a {
+    color: var(--primaryColor);
+}
+
+html a:hover {
+    color: var(--primaryColor);
+}
+
+#topnav div {
+    opacity: 0 !important;
+    margin-top: -10px !important;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0) !important;
+    transition: all .3s ease-in-out !important;
     border-left: none !important;
     box-shadow: none !important;
     border-radius: 8px !important;
@@ -427,12 +439,19 @@ nav section a:target-within {
     margin-left: -6.125rem !important;
 }
 
+#topnav div.topnavHover {
+    opacity: 1 !important;
+    margin-top: 0 !important;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%) !important;
+}
+
 #topnav div a {
     height: 50px !important;
     display: flex !important;
     align-items: center !important;
     letter-spacing: .05em !important;
     border-radius: 0px !important;
+    transition: all .2s ease-in-out !important;
 }
 
 #topnav div a:hover {
@@ -3740,7 +3759,10 @@ text {
         margin-bottom: 10px !important;
     }
 
-    [role="group"] {
+    #topnav div {
+        opacity: 1 !important;
+        margin-top: 0 !important;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%) !important;
         box-shadow: none !important;
         background-color: none !important;
         width: auto !important;
