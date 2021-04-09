@@ -16,14 +16,14 @@ const siteTab = document.querySelector('#siteTab');
 const boardTab = document.querySelector('#boardTab');
 const siteColorGroup = document.querySelector('#siteColorGroup');
 const boardColorGroup = document.querySelector('#boardColorGroup');
-
+const boardColorSelector = document.querySelectorAll('.boardColorSelector');
 const hideBoardColors = document.querySelector('#hideBoardColors')
 
 //refocus hack
 chrome.storage.sync.get('hideCustomBoard', function (result) {
-    if(result['hideCustomBoard']){
+    if (result['hideCustomBoard']) {
         focusBoardTab()
-        syncSet('hideCustomBoard',false)
+        syncSet('hideCustomBoard', false)
     }
 })
 
@@ -98,7 +98,7 @@ const importScheme = (data) => {
         if (color) {
             schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
             tabScript(schemeCode);
-            syncSet(scheme,color)
+            syncSet(scheme, color)
         }
     }
     location.reload()
@@ -159,12 +159,12 @@ document.querySelector('#exportButton').addEventListener('click', () => {
 })
 
 chrome.storage.sync.get('customBoardSwitch', function (result) {
-    if (result['customBoardSwitch']){
+    if (result['customBoardSwitch']) {
         hideBoardColors.textContent = "Use Custom Board Colors"
         hideBoardColors.addEventListener('click', () => {
             boardSwitch(false)
         })
-    } else{
+    } else {
         hideBoardColors.addEventListener('click', () => {
             boardSwitch(true)
         })
@@ -172,20 +172,20 @@ chrome.storage.sync.get('customBoardSwitch', function (result) {
 })
 
 //Functions
-function boardSwitch(toggle){
+function boardSwitch(toggle) {
     let schemeCode, color
 
     color = toggle ? transparent : boardDarkDefault
     schemeCode = styleTernary + boardDark + ': ' + color + ' !important;")'
     tabScript(schemeCode)
-    syncSet(boardDark,color)
+    syncSet(boardDark, color)
 
     color = toggle ? transparent : boardLightDefault
     schemeCode = styleTernary + boardLight + ': ' + color + ' !important;")'
     tabScript(schemeCode)
-    syncSet(boardLight,color)
+    syncSet(boardLight, color)
 
-    syncSet('hideCustomBoard',true)
+    syncSet('hideCustomBoard', true)
     window.location.reload()
 
     syncSet('customBoardSwitch', toggle)
@@ -222,7 +222,7 @@ function pickrCreate(scheme, color) {
 
             tabScript(schemeCode);
 
-            syncSet(scheme,color)
+            syncSet(scheme, color)
 
         });
     });
@@ -240,7 +240,7 @@ function tabScript(code) {
     });
 }
 
-function syncSet(scheme, value){
+function syncSet(scheme, value) {
     chrome.storage.sync.set({
         [scheme]: value
     })
@@ -258,4 +258,16 @@ function focusBoardTab() {
     boardTab.classList.add('active');
     siteColorGroup.classList.add('hideGroup');
     boardColorGroup.classList.remove('hideGroup');
+}
+
+const hideBoardColorSelectors = () => {
+    boardColorSelector.forEach(item => {
+        item.style.display = 'none';
+    })
+}
+
+const showBoardColorSelectors = () => {
+    boardColorSelector.forEach(item => {
+        item.style.display = 'flex';
+    })
 }
