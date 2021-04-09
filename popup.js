@@ -91,7 +91,7 @@ const setImportExportMode = (mode) => {
 const importScheme = (data) => {
     chrome.storage.sync.get(null, function (result) {
         let json = JSON.parse(data)
-        if(result['customBoardSwitch']){
+        if(result['defaultBoardSwitch']){
             json[boardLight] = transparent
             json[boardDark] = transparent
         }
@@ -149,7 +149,7 @@ document.querySelector('#exportButton').addEventListener('click', () => {
                 json[colorScheme[i]] = color
             }
         }
-        if(result['customBoardSwitch']){
+        if(result['defaultBoardSwitch']){
             delete json[boardLight]
             delete json[boardDark]
         }
@@ -168,8 +168,8 @@ document.querySelector('#exportButton').addEventListener('click', () => {
     });
 })
 
-chrome.storage.sync.get('customBoardSwitch', function (result) {
-    if (result['customBoardSwitch']) {
+chrome.storage.sync.get('defaultBoardSwitch', function (result) {
+    if (result['defaultBoardSwitch']) {
         hideBoardColors.textContent = "Use Custom Board Colors"
         hideBoardColorSelectors()
         hideBoardColors.addEventListener('click', () => {
@@ -199,7 +199,7 @@ function boardSwitch(toggle) {
     syncSet('hideCustomBoard', true)
     window.location.reload()
 
-    syncSet('customBoardSwitch', toggle)
+    syncSet('defaultBoardSwitch', toggle)
 }
 
 function pickrCreate(scheme, color) {
