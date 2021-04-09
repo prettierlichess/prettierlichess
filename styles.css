@@ -1028,6 +1028,7 @@ rm6 {
 rm6 u8t.a1t {
     background: var(--backgroundColor) !important;
     border: 1px solid var(--defaultWhite) !important;
+    box-sizing: border-box !important;
 }
 
 .buttons {
@@ -1049,7 +1050,6 @@ rm6 l4x u8t:hover {
 l4x {
     flex-grow: 1 !important;
     line-height: 40px !important;
-    padding-bottom: 1px !important;
 }
 
 button.fbt.rematch.white {
