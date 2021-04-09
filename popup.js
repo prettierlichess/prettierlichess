@@ -89,18 +89,24 @@ const setImportExportMode = (mode) => {
 }
 
 const importScheme = (data) => {
-    let json = JSON.parse(data)
-    console.log(json["primaryColor"])
-    let schemeCode, scheme, color
-    for (let i = 0; i < colorScheme.length; i++) {
-        scheme = colorScheme[i]
-        color = json[scheme] ? json[scheme] : colorDefaults[i]
-        if (color) {
-            schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
-            tabScript(schemeCode);
-            syncSet(scheme, color)
+    chrome.storage.sync.get(null, function (result) {
+        let json = JSON.parse(data)
+        if(result['customBoardSwitch']){
+            json[boardLight] = transparent
+            json[boardDark] = transparent
         }
-    }
+        console.log(json["primaryColor"])
+        let schemeCode, scheme, color
+        for (let i = 0; i < colorScheme.length; i++) {
+            scheme = colorScheme[i]
+            color = json[scheme] ? json[scheme] : colorDefaults[i]
+            if (color) {
+                schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
+                tabScript(schemeCode);
+                syncSet(scheme, color)
+            }
+        }
+    });
     location.reload()
 }
 
@@ -143,6 +149,10 @@ document.querySelector('#exportButton').addEventListener('click', () => {
                 json[colorScheme[i]] = color
             }
         }
+        if(result['customBoardSwitch']){
+            delete json[boardLight]
+            delete json[boardDark]
+        }
         if (Object.keys(json).length > 0) {
             json = new Blob([JSON.stringify(json, null, 2)], {
                 type: "application/json"
@@ -161,6 +171,7 @@ document.querySelector('#exportButton').addEventListener('click', () => {
 chrome.storage.sync.get('customBoardSwitch', function (result) {
     if (result['customBoardSwitch']) {
         hideBoardColors.textContent = "Use Custom Board Colors"
+        hideBoardColorSelectors()
         hideBoardColors.addEventListener('click', () => {
             boardSwitch(false)
         })
