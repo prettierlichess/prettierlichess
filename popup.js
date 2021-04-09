@@ -6,9 +6,38 @@ const basicImportExportInput = document.getElementById('basicImportExport')
 const importExportActionButton = document.getElementById('importExportAction')
 const useBasicImportExport = navigator.userAgent.indexOf("Firefox") !== -1
 const transparent = "FFFFFF00";
+const boardDark = colorScheme[14]
+const boardDarkDefault = colorDefaults[14]
+const boardLight = colorScheme[15]
+const boardLightDefault = colorDefaults[15]
 
+//tab elements
+const siteTab = document.querySelector('#siteTab');
+const boardTab = document.querySelector('#boardTab');
+const siteColorGroup = document.querySelector('#siteColorGroup');
+const boardColorGroup = document.querySelector('#boardColorGroup');
 
+const hideBoardColors = document.querySelector('#hideBoardColors')
 
+//refocus hack
+chrome.storage.sync.get('hideCustomBoard', function (result) {
+    if(result['hideCustomBoard']){
+        focusBoardTab()
+        syncSet('hideCustomBoard',false)
+    }
+})
+
+//Tab Switch
+
+siteTab.addEventListener('click', () => {
+    focusSiteTab();
+})
+
+boardTab.addEventListener('click', () => {
+    focusBoardTab();
+})
+
+//Import File Selector
 var fileSelector = document.createElement('input');
 fileSelector.setAttribute('type', 'file');
 fileSelector.onchange = function () {
@@ -69,19 +98,18 @@ const importScheme = (data) => {
         if (color) {
             schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
             tabScript(schemeCode);
-            chrome.storage.sync.set({
-                [scheme]: color
-            });
+            syncSet(scheme,color)
         }
     }
     location.reload()
 }
 
-
+// Generate Color Pickers
 for (let i = 0; i < colorScheme.length; i++) {
     pickrCreate(colorScheme[i], colorDefaults[i]);
 }
 
+// Add button events
 document.querySelector('#resetButton').addEventListener('click', () => {
     chrome.storage.sync.clear()
     tabScript('window.location.reload();');
@@ -130,6 +158,39 @@ document.querySelector('#exportButton').addEventListener('click', () => {
     });
 })
 
+chrome.storage.sync.get('customBoardSwitch', function (result) {
+    if (result['customBoardSwitch']){
+        hideBoardColors.textContent = "Use Custom Board Colors"
+        hideBoardColors.addEventListener('click', () => {
+            boardSwitch(false)
+        })
+    } else{
+        hideBoardColors.addEventListener('click', () => {
+            boardSwitch(true)
+        })
+    }
+})
+
+//Functions
+function boardSwitch(toggle){
+    let schemeCode, color
+
+    color = toggle ? transparent : boardDarkDefault
+    schemeCode = styleTernary + boardDark + ': ' + color + ' !important;")'
+    tabScript(schemeCode)
+    syncSet(boardDark,color)
+
+    color = toggle ? transparent : boardLightDefault
+    schemeCode = styleTernary + boardLight + ': ' + color + ' !important;")'
+    tabScript(schemeCode)
+    syncSet(boardLight,color)
+
+    syncSet('hideCustomBoard',true)
+    window.location.reload()
+
+    syncSet('customBoardSwitch', toggle)
+}
+
 function pickrCreate(scheme, color) {
     chrome.storage.sync.get(scheme, function (result) {
         color = result[scheme] ? result[scheme] : color;
@@ -161,9 +222,7 @@ function pickrCreate(scheme, color) {
 
             tabScript(schemeCode);
 
-            chrome.storage.sync.set({
-                [scheme]: color
-            });
+            syncSet(scheme,color)
 
         });
     });
@@ -181,23 +240,22 @@ function tabScript(code) {
     });
 }
 
-//Tab Switch
+function syncSet(scheme, value){
+    chrome.storage.sync.set({
+        [scheme]: value
+    })
+}
 
-const siteTab = document.querySelector('#siteTab');
-const boardTab = document.querySelector('#boardTab');
-const siteColorGroup = document.querySelector('#siteColorGroup');
-const boardColorGroup = document.querySelector('#boardColorGroup');
-
-siteTab.addEventListener('click', () => {
+function focusSiteTab() {
     siteTab.classList.add('active');
     boardTab.classList.remove('active');
     siteColorGroup.classList.remove('hideGroup');
     boardColorGroup.classList.add('hideGroup');
-})
+}
 
-boardTab.addEventListener('click', () => {
+function focusBoardTab() {
     siteTab.classList.remove('active');
     boardTab.classList.add('active');
     siteColorGroup.classList.add('hideGroup');
     boardColorGroup.classList.remove('hideGroup');
-})
+}
