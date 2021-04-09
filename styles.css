@@ -428,7 +428,7 @@ html a:hover {
     opacity: 0 !important;
     margin-top: -10px !important;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0) !important;
-    transition: all .3s ease-in-out !important;
+    transition: all .2s ease-in-out !important;
     border-left: none !important;
     box-shadow: none !important;
     border-radius: 8px !important;
