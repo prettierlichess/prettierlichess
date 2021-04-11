@@ -1,6 +1,10 @@
+
 # Prettier Lichess
 
 Here is the source code for both the chrome and firefox extension! It's simple but it's mine. Feel free to download, fork, use, and mess with it all you want. No attribution or anything required.
+
+## Community Themes
+Check out the community driven theme library [here](https://github.com/algertc/prettierlichess-themes)
 
 ## Usage and General Info
 *IMPORTANT* Default theme is made to work with Lichess' dark background.
