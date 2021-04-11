@@ -1284,11 +1284,6 @@ a.loss {
 
 .analyse {
     position: relative !important;
-    grid-template-areas:
-        'side . board gauge tools'
-        'chat . board gauge tools'
-        'uchat . under . controls'
-        'uchat . under . acpl' !important;
     grid-gap: 1vmin !important;
     grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
     transform: translateX(30px) !important;
@@ -1352,7 +1347,7 @@ a.loss {
 }
 
 .analyse__underboard {
-    margin-top: 4vmin !important;
+    margin-top: 40px !important;
 }
 
 #acpl-chart,
@@ -2099,6 +2094,45 @@ a.lobby__box__top {
     padding: 0 !important;
     border: none !important;
     box-shadow: none !important;
+}
+
+.practice__side {
+    background: var(--surfaceColor) !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+}
+
+.ps__chapter:hover {
+    background: var(--backgroundColor) !important;
+}
+
+.practice__side__title {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.practice__side .finally {
+    background: var(--surfaceColor) !important;
+}
+
+.ps__chapter .status {
+    color: var(--primaryColor) !important;
+    opacity: .5 !important;
+}
+
+.ps__chapter.active .status {
+    background: none !important;
+    opacity: 1 !important;
+    color: var(--primaryColor) !important;
+}
+
+.ps__chapter {
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
+    padding: 10px !important;
+}
+
+.ps__chapter.active {
+    background: var(--surfaceColorHover) !important;
 }
 
 .learn__side-home {
@@ -3644,6 +3678,13 @@ text {
 }
 
 /*Responsive Sizes*/
+
+@media (min-width: 1261px) {
+    .gamebook {
+        margin-left: -60px !important;
+        margin-right: 60px !important;
+    }
+}
 
 @media (max-width: 1260px) {
     .lobby {
