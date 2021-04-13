@@ -1957,6 +1957,10 @@ a.button.button-metal:hover {
     border-radius: 8px !important;
 }
 
+.blog .body .embed>* {
+    position: absolute !important;
+}
+
 a.lobby__box__top {
     border: none !important;
 }
