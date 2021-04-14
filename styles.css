@@ -738,6 +738,21 @@ div.lobby__app__content.lpools {
     flex: 1 1 100% !important;
 }
 
+.lobby__app__content {
+    background: var(--surfaceColor) !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+}
+
+.data-count::after,
+.unread,
+.button.active,
+.btn-rack__btn.active {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    text-shadow: none !important;
+}
+
 .lpools .active {
     background: var(--surfaceColor) !important;
     border-radius: 8px !important;
