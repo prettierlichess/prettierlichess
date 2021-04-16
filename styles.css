@@ -238,7 +238,7 @@ html {
     --arrowAlternate: #4B81E6 !important;
     --lastMove: #99d69e !important;
     --preMove: #487292 !important;
-    --moveIndicator: #99d69e !important;
+    --moveIndicator: #389840 !important;
     --boardDark: #71828F !important;
     --boardLight: #c7c7c7 !important;
     scrollbar-color: var(--surfaceColorHover) var(--surfaceColor) !important;
