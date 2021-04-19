@@ -1121,6 +1121,7 @@ a.user-link:hover {
 }
 
 .mchat.mchat-optional {
+    margin-top: 0 !important;
     background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     box-shadow: none !important;
@@ -1333,6 +1334,7 @@ a.loss {
 }
 
 .analyse {
+    margin-top: 10px !important;
     position: relative !important;
     grid-gap: 1vmin !important;
     grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
@@ -1350,7 +1352,7 @@ a.loss {
     border-radius: 8px !important;
     box-shadow: none !important;
     border: 1px solid var(--surfaceColor) !important;
-    left: -60px !important;
+    left: calc(-60px + 1vmin) !important;
     transition: left .3s ease-in-out !important;
 }
 
@@ -1669,7 +1671,7 @@ path[fill="none"][stroke="black"] {
 }
 
 .tabs-horiz {
-    margin-top: 26px !important;
+    margin-top: 40px !important;
     background: var(--surfaceColor) !important;
     border-radius: 8px !important;
     margin-bottom: 8px !important;
@@ -2483,6 +2485,10 @@ input {
     border-radius: 8px !important;
 }
 
+.study__player-top {
+    top: -2rem !important;
+}
+
 .study__player-bot {
     bottom: -4.5rem !important;
 }
@@ -2537,6 +2543,10 @@ input {
 
 .study__buttons {
     border: none !important;
+}
+
+.study__buttons .tabs-horiz {
+    width: 100% !important;
 }
 
 .study__metadata {
@@ -2820,8 +2830,8 @@ input {
     background: var(--surfaceColorHover) !important;
 }
 
-.slist tbody tr:nth-child(even):hover {
-    background: var(--surfaceColorHover) !important;
+.slist thead th {
+    border: none !important;
 }
 
 #announce {
