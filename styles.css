@@ -1408,6 +1408,10 @@ a.loss {
     bottom: -2.2rem !important;
 }
 
+.study__side .tabs-horiz {
+    margin-top: 0px !important;
+}
+
 #acpl-chart,
 #movetimes-chart {
     background: none !important;
