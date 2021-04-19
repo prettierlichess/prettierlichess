@@ -1050,7 +1050,7 @@ div.game__meta {
     background: var(--surfaceColor) !important;
     box-shadow: none !important;
     border-radius: 8px !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 8px !important;
 }
 
 .mchat__messages .color,
@@ -1236,13 +1236,13 @@ input.mchat__say {
 }
 
 .rclock.rclock-bottom {
-    margin-top: -.8vmin !important;
+    margin-top: -.7vmin !important;
     width: 90% !important;
     margin-left: 1vw !important;
 }
 
 .rclock.rclock-top {
-    margin-bottom: -.8vmin !important;
+    margin-bottom: -.7vmin !important;
     width: 90% !important;
     margin-left: 1vw !important;
 }
@@ -2897,7 +2897,7 @@ input {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
     border-radius: 8px !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 8px !important;
     padding: 10px !important;
     height: 3em !important;
 }
