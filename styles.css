@@ -335,6 +335,10 @@ cg-container coords.files coord,
     color: var(--defaultWhite) !important;
 }
 
+.ruser {
+    padding: 20px 10px !important;
+}
+
 .coords-in .files {
     font-size: calc(8px + 4 * ((100vw - 320px) / 880)) !important;
     bottom: 0px !important;
@@ -1022,7 +1026,7 @@ select {
 div.round__app {
     grid-column-gap: 40px !important;
     grid-template-rows: .2fr auto auto min-content auto 4fr auto auto min-content auto auto .2fr !important;
-    grid-row-gap: 1.5vmin !important;
+    grid-row-gap: 0vmin !important;
 }
 
 .crosstable__score {
@@ -1229,13 +1233,13 @@ input.mchat__say {
 }
 
 .rclock.rclock-bottom {
-    margin-top: -2.1vmin !important;
+    margin-top: -.8vmin !important;
     width: 90% !important;
     margin-left: 1vw !important;
 }
 
 .rclock.rclock-top {
-    margin-bottom: -2.1vmin !important;
+    margin-bottom: -.8vmin !important;
     width: 90% !important;
     margin-left: 1vw !important;
 }
@@ -1408,6 +1412,10 @@ a.loss {
 
 .coords-in .study__player-bot {
     bottom: -2.2rem !important;
+}
+
+.lobby__app .tabs-horiz {
+    margin-top: 25px !important;
 }
 
 .study__side .tabs-horiz {
@@ -3088,8 +3096,8 @@ g.highcharts-button rect {
     color: var(--defaultWhite) !important;
 }
 
-.round {
-    grid-row-gap: 4vmin !important;
+.coords-out .round {
+    grid-row-gap: 45px !important;
 }
 
 .tv-channel.active>span>span {
