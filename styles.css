@@ -339,6 +339,10 @@ cg-container coords.files coord,
     padding: 20px 10px !important;
 }
 
+.ruser-bottom {
+    padding-bottom: 25px !important;
+}
+
 .coords-in .files {
     font-size: calc(8px + 4 * ((100vw - 320px) / 880)) !important;
     bottom: 0px !important;
@@ -1025,8 +1029,7 @@ select {
 
 div.round__app {
     grid-column-gap: 40px !important;
-    grid-template-rows: .2fr auto auto min-content auto 4fr auto auto min-content auto auto .2fr !important;
-    grid-row-gap: 0vmin !important;
+    grid-template-rows: 0fr auto auto min-content auto 5fr auto auto min-content auto auto 0fr !important;
 }
 
 .crosstable__score {
