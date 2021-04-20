@@ -385,7 +385,7 @@ cg-container coords.files coord,
 
 cg-resize::before,
 cg-resize::after {
-    background-color: var(--boardDark) !important;
+    background-color: var(--coordDark) !important;
 }
 
 cg-resize {
