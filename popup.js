@@ -200,6 +200,7 @@ function boardSwitch(toggle) {
     window.location.reload()
 
     syncSet('defaultBoardSwitch', toggle)
+    tabScript('window.location.reload();');
 }
 
 function pickrCreate(scheme, color) {

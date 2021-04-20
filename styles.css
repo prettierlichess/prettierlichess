@@ -241,6 +241,8 @@ html {
     --moveIndicator: #389840 !important;
     --boardDark: #71828F !important;
     --boardLight: #c7c7c7 !important;
+    --coordDark: var(--boardDark) !important;
+    --coordLight: var(--boardLight) !important;
     scrollbar-color: var(--surfaceColorHover) var(--surfaceColor) !important;
     scrollbar-width: thin !important;
 }
@@ -366,14 +368,14 @@ cg-container coords.files coord,
 .coords-in .orientation-white .ranks coord:nth-child(2n+1),
 .coords-in .orientation-black .files coord:nth-child(2n+1),
 .coords-in .orientation-black .ranks coord:nth-child(2n) {
-    color: var(--boardDark) !important;
+    color: var(--coordDark) !important;
 }
 
 .coords-in .orientation-white .files coord:nth-child(2n+1),
 .coords-in .orientation-white .ranks coord:nth-child(2n),
 .coords-in .orientation-black .files coord:nth-child(2n),
 .coords-in .orientation-black .ranks coord:nth-child(2n+1) {
-    color: var(--boardLight) !important;
+    color: var(--coordLight) !important;
 }
 
 .coords-in .eval-gauge {

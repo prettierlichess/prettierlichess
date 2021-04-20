@@ -43,3 +43,17 @@ tabSelector.forEach((item, index) => {
         }
     })
 })
+
+// Coordinates
+
+//Check if using default board
+//if true, use lichess variable
+//else use custom variables
+
+chrome.storage.sync.get(null, function (result) {
+    let darkCoord = result['defaultBoardSwitch'] ? 'var(--cg-coord-color-black)' : 'var(--boardDark)';
+    let lightCoord = result['defaultBoardSwitch'] ? 'var(--cg-coord-color-white)' : 'var(--boardLight)';
+    let getStyle = document.documentElement.getAttribute('style');
+    let appendStyle = getStyle ? getStyle : '';
+    document.documentElement.setAttribute("style", `${appendStyle} --coordDark: ${darkCoord} !important; --coordLight: ${lightCoord} !important;`);
+})
