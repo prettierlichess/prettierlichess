@@ -91,7 +91,7 @@ const setImportExportMode = (mode) => {
 const importScheme = (data) => {
     chrome.storage.sync.get(null, function (result) {
         let json = JSON.parse(data)
-        if(result['defaultBoardSwitch']){
+        if (result['defaultBoardSwitch']) {
             json[boardLight] = transparent
             json[boardDark] = transparent
         }
@@ -149,7 +149,7 @@ document.querySelector('#exportButton').addEventListener('click', () => {
                 json[colorScheme[i]] = color
             }
         }
-        if(result['defaultBoardSwitch']){
+        if (result['defaultBoardSwitch']) {
             delete json[boardLight]
             delete json[boardDark]
         }

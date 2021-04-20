@@ -2425,6 +2425,10 @@ input {
     height: 100% !important;
 }
 
+.study__server-eval {
+    background: none !important;
+}
+
 .box {
     background: var(--surfaceColor) !important;
     border-radius: 8px !important;
@@ -2520,6 +2524,7 @@ input {
 
 .study__chapters>div {
     padding: 8px !important;
+    align-items: center !important;
 }
 
 .study__chapters>div:hover,
@@ -2535,6 +2540,8 @@ input {
     border-radius: 100px !important;
     flex: 0 0 2em !important;
     transform: scale(.9) !important;
+    width: 28px !important;
+    height: 28px !important;
 }
 
 .study__chapters>div.active>span,
@@ -2886,7 +2893,10 @@ input {
 }
 
 .streamers {
-    padding-top: 8px !important;
+    margin-top: 8px !important;
+    max-height: 130px !important;
+    overflow-y: auto !important;
+    border-radius: 8px !important;
 }
 
 .context-streamers {
