@@ -3776,6 +3776,25 @@ text {
     justify-content: center !important;
 }
 
+.pagination,
+.pagination span,
+.pagination a,
+.pagination span {
+    color: var(--backgroundColor) !important;
+}
+
+.pagination a:hover,
+.pagination .current {
+    color: var(--primaryColor) !important;
+    background: var(--backgroundColor) !important;
+}
+
+.forum .slist td:last-child time,
+.forum-post__metas .anchor,
+.form3 .captcha .success {
+    color: var(--primaryColor) !important;
+}
+
 /*Responsive Sizes*/
 
 @media (min-width: 1261px) {
