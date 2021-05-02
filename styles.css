@@ -1770,6 +1770,10 @@ div.perf {
     color: #bababa !important;
 }
 
+.tour__standing:not(.created):not(.loading) tbody tr:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
 .lobby__streams .more:hover,
 .timeline .more:hover {
     color: var(--primaryColor) !important;
@@ -3166,6 +3170,7 @@ g.highcharts-button rect {
 }
 
 .rcontrols .follow-up {
+    padding-top: 20px !important;
     border-bottom: 1px solid var(--backgroundColor) !important;
 }
 
