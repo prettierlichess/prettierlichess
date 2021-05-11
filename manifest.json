@@ -19,7 +19,18 @@
         "scripts": ["background.js"],
         "persistant": false
     },
-    "content_security_policy": "font-src 'self' https://fonts.gstatic.com; script-src 'self' https://cdn.jsdelivr.net/; object-src 'self';",
+    "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net/; object-src 'self';",
+    "web_accessible_resources": [
+        "styles.css",
+        "fonts/RedHatDisplay-Regular.ttf",
+        "fonts/RedHatDisplay-Bold.ttf",
+        "fonts/RedHatText-Medium.ttf",
+        "fonts/RedHatText-MediumItalic.ttf",
+        "fonts/RedHatText-Bold.ttf",
+        "fonts/RedHatText-BoldItalic.ttf",
+        "fonts/RedHatText-Regular.ttf",
+        "fonts/RedHatText-Italic.ttf"
+    ],
     "browser_specific_settings": {
         "gecko": {
             "id": "{8ad4bea8-ad8d-4e98-b434-a76065dee6cb}",

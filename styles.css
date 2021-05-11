@@ -1,5 +1,61 @@
+@font-face {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 400;
+    src: url(chrome-extension://eahlcccjbehdjjbepeambbdhhoddahap/fonts/RedHatText-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    font-style: italic;
+    font-weight: 400;
+    src: url(chrome-extension://eahlcccjbehdjjbepeambbdhhoddahap/fonts/RedHatText-Italic.ttf);
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    src: url(chrome-extension://eahlcccjbehdjjbepeambbdhhoddahap/fonts/RedHatText-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    font-style: italic;
+    font-weight: 500;
+    src: url(chrome-extension://eahlcccjbehdjjbepeambbdhhoddahap/fonts/RedHatText-MediumItalic.ttf);
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 700;
+    src: url(chrome-extension://eahlcccjbehdjjbepeambbdhhoddahap/fonts/RedHatText-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    font-style: italic;
+    font-weight: 700;
+    src: url(chrome-extension://eahlcccjbehdjjbepeambbdhhoddahap/fonts/RedHatText-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 400;
+    src: url(chrome-extension://eahlcccjbehdjjbepeambbdhhoddahap/fonts/RedHatDisplay-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 700;
+    src: url(chrome-extension://eahlcccjbehdjjbepeambbdhhoddahap/fonts/RedHatDisplay-Bold.ttf);
+}
+
 html {
-    font-family: 'Helvetica', sans-serif !important;
+    font-family: 'Red Hat Text', sans-serif !important;
     --primaryColor: #9FC0A2 !important;
     --backgroundColor: #2B343B !important;
     --surfaceColor: #3F474D !important;
@@ -44,7 +100,7 @@ html {
 
 body {
     background: var(--backgroundColor) !important;
-    font-family: 'Helvetica', sans-serif !important;
+    font-family: 'Red Hat Text', sans-serif !important;
     --main-margin: .2vw !important;
     text-shadow: 0px 0px 0px transparent !important;
 }
@@ -57,7 +113,7 @@ h4,
 .mini-game__clock,
 .btn-rack__btn i,
 .btn-rack form i {
-    font-family: 'Century Gothic', sans-serif !important;
+    font-family: 'Red Hat Display', sans-serif !important;
 }
 
 p {
@@ -177,7 +233,8 @@ cg-resize:hover {
 
 .site-title {
     transition: opacity .2s ease-in-out !important;
-    font-family: 'Century Gothic', sans-serif !important;
+    font-family: "Red Hat Display", serif !important;
+    font-weight: 400 !important;
     text-shadow: none !important;
     z-index: 9 !important;
 }
@@ -482,7 +539,7 @@ div.puzzle__side__theme {
 }
 
 .puzzle__side__theme h2 {
-    font-family: 'Helvetica', sans-serif !important;
+    font-family: 'Red Hat Text', sans-serif !important;
     margin-bottom: 1rem !important;
     font-weight: 500 !important;
     text-transform: initial !important;
@@ -1787,7 +1844,7 @@ a.button.button-metal:hover {
 }
 
 .button {
-    font-family: 'Helvetica', sans-serif !important;
+    font-family: 'Red Hat Text', sans-serif !important;
     font-weight: 500 !important;
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
@@ -1871,7 +1928,7 @@ a.lobby__box__top {
 }
 
 .intro__text h1 {
-    font-family: 'Century Gothic', sans-serif !important;
+    font-family: 'Red Hat Display', sans-serif !important;
     font-weight: 500 !important;
 }
 
@@ -2093,7 +2150,7 @@ a.lobby__box__top {
 
 .learn__screen h1 {
     color: var(--defaultWhite) !important;
-    font-family: 'Century Gothic', sans-serif !important;
+    font-family: 'Red Hat Display', sans-serif !important;
     font-weight: 500 !important;
 }
 
@@ -3432,7 +3489,7 @@ a.variant-link {
 
 .puzzle__side__streak__info h1 {
     color: var(--primaryColor) !important;
-    font-family: 'Century Gothic', sans-serif !important;
+    font-family: 'Red Hat Display', sans-serif !important;
 }
 
 .puzzle__feedback.after .complete .game-over {
@@ -3552,7 +3609,7 @@ text {
 }
 
 .challenge-page .details>div {
-    font-family: 'Century Gothic', sans-serif !important;
+    font-family: 'Red Hat Display', sans-serif !important;
 }
 
 .challenge-page .details>div::before,
