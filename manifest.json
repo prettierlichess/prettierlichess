@@ -19,7 +19,7 @@
         "scripts": ["background.js"],
         "persistant": false
     },
-    "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net/; object-src 'self'",
+    "content_security_policy": "font-src 'self' https://fonts.gstatic.com; script-src 'self' https://cdn.jsdelivr.net/; object-src 'self';",
     "browser_specific_settings": {
         "gecko": {
             "id": "{8ad4bea8-ad8d-4e98-b434-a76065dee6cb}",
