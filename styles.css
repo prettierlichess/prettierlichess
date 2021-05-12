@@ -354,6 +354,45 @@ signal>i {
     text-shadow: none !important;
 }
 
+.relay-tour__text {
+    background: var(--surfaceColor) !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    margin-bottom: 20px !important;
+}
+
+.relay-tour__round {
+    background: var(--surfaceColorHover) !important;
+    border-radius: 8px !important;
+}
+
+.study__relay__rounds {
+    background: var(--surfaceColor) !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+}
+
+.study__relay__rounds>div {
+    padding: 10px !important;
+}
+
+.study__relay__rounds>div:hover {
+    background: var(--surfaceColorHover) !important;
+    padding: 12px !important;
+}
+
+.study__relay__rounds>div.active {
+    background: var(--surfaceColorHover) !important;
+}
+
+.study__relay__rounds .link {
+    margin-left: 0 !important;
+}
+
+.study__relay__rounds ongoing {
+    color: var(--primaryColor) !important;
+}
+
 .tour-spotlight i.img::before {
     text-shadow: none !important;
     color: var(--secondaryColor) !important;
