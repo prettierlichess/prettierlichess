@@ -126,6 +126,25 @@ bad {
     color: var(--secondaryColor) !important;
 }
 
+.button {
+    font-family: 'Red Hat Text', sans-serif !important;
+    font-weight: 500 !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    box-shadow: none !important;
+    border-radius: var(--borderRadiusSmall) !important;
+    outline: none !important;
+    font-size: 1em !important;
+    padding: 10px 14px !important;
+    text-transform: lowercase !important;
+}
+
+.button:hover {
+    background: none !important;
+    color: var(--primaryColor) !important;
+    box-shadow: 0 0 0 1px var(--primaryColor) inset !important;
+}
+
 /* Board */
 
 cg-helper cg-container cg-board::before {
@@ -502,7 +521,8 @@ signal>i {
     border-left: 2px solid var(--primaryColor) !important;
 }
 
-#dasher_app .langs button:hover {
+#dasher_app .langs button:hover,
+.lobby__blog .post:hover {
     background: var(--surfaceColorHover) !important;
 }
 
@@ -651,6 +671,10 @@ signal>i {
     }
 }
 
+#main-wrap {
+    --main-max-width: 1600px !important;
+}
+
 .lobby__app,
 .lobby__side {
     width: 23vw !important;
@@ -662,13 +686,17 @@ signal>i {
     background: var(--surfaceColor) !important;
 }
 
+.lobby__app.lobby__app-real_time {
+    min-width: 400px !important;
+}
+
 .lobby__app__content {
     border-radius: 0 !important;
     background: none !important;
 }
 
 .lpools {
-    grid-gap: 2px !important;
+    grid-gap: 3px !important;
     padding: 4px !important;
 }
 
@@ -718,7 +746,8 @@ signal>i {
     box-shadow: none !important;
 }
 
-.lobby__spotlights {
+.lobby__spotlights,
+.lobby__streams {
     border-bottom: 2px solid var(--surfaceColorHover) !important;
 }
 
@@ -745,4 +774,172 @@ signal>i {
 
 .timeline .entry:hover a {
     color: var(--primaryColor) !important;
+}
+
+.lobby__streams .more {
+    display: none !important;
+}
+
+.lobby__streams .stream {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 20px 20px !important;
+    transition: background .2s ease-in-out !important;
+    text-overflow: ellipsis !important;
+    margin: 0 !important;
+}
+
+.lobby__streams .stream:hover {
+    background-color: var(--surfaceColorHover) !important;
+}
+
+.lobby__streams .stream.highlight strong {
+    color: var(--secondaryColor) !important;
+    margin-bottom: 8px !important;
+}
+
+.mini-game__player {
+    height: 20px !important;
+}
+
+.lobby__box {
+    background: var(--surfaceColor) !important;
+    border-radius: var(--borderRadiusSmall) !important;
+    box-shadow: none !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    height: auto !important;
+}
+
+.lobby__box__top {
+    background: var(--surfaceColor) !important;
+    border-bottom: 2px solid var(--surfaceColorHover) !important;
+}
+
+.lobby__box__content {
+    background: none !important;
+    overflow: auto !important;
+}
+
+.lobby__box td {
+    border: none !important;
+    padding: 10px !important;
+}
+
+.lobby__box tr:nth-child(even) {
+    background: var(--surfaceColorHover) !important;
+}
+
+.lobby__support {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.lobby__support a {
+    display: flex !important;
+    flex-grow: 1 !important;
+    margin-bottom: 4px !important;
+    box-shadow: none !important;
+    background: var(--surfaceColor) !important;
+    padding: 20px !important;
+    border-radius: var(--borderRadiusSmall) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+}
+
+.lobby__support a:hover {
+    transform: scale(.98) !important;
+}
+
+.lobby__support i::before,
+.lobby__support__text {
+    color: var(--secondaryColor) !important;
+}
+
+.lobby__table {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: var(--surfaceColor) !important;
+    border-radius: var(--borderRadiusSmall) !important;
+    border: 2px solid var(--surfaceColorHover);
+    padding: 40px 0 !important;
+}
+
+.lobby__start {
+    margin: 0 !important;
+    order: 2 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    margin-top: 40px !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    flex-grow: 0 !important;
+}
+
+.lobby__counters {
+    position: relative !important;
+    order: 1 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 80% !important;
+}
+
+#nb_connected_players {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-right: 0px !important;
+    width: 50% !important;
+}
+
+#nb_connected_players:hover {
+    color: var(--primaryColor) !important;
+}
+
+#nb_games_in_play {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: 0px !important;
+    width: 50% !important;
+}
+
+#nb_games_in_play:hover {
+    color: var(--primaryColor) !important;
+}
+
+#nb_games_in_play strong,
+#nb_connected_players strong {
+    font-size: 4rem !important;
+    color: var(--defaultWhite) !important;
+}
+
+a.button.button-metal {
+    background: var(--backgroundColor) !important;
+    color: var(--defaultWhite) !important;
+    box-shadow: none !important;
+    margin: 4px !important;
+    border-radius: var(--borderRadiusSmall) !important;
+}
+
+a.button.button-metal:hover {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.bg-switch {
+    display: none !important;
+}
+
+.lobby__blog .post {
+    padding: 20px !important;
+    transition: background .2s ease-in-out !important;
+}
+
+.lobby__blog .post img {
+    border-radius: var(--borderRadiusSmall) !important;
 }
