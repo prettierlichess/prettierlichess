@@ -57,9 +57,9 @@
 html {
     font-family: 'Red Hat Text', sans-serif !important;
     --primaryColor: #9FC0A2 !important;
-    --backgroundColor: #292e33 !important;
-    --surfaceColor: #2f353a !important;
-    --surfaceColorHover: #3e454b !important;
+    --backgroundColor: #272a2c !important;
+    --surfaceColor: #333538 !important;
+    --surfaceColorHover: #404246 !important;
     --secondaryColor: #f5c276 !important;
     --tertiaryColor: #d36d6d !important;
     --defaultWhite: #F2F5F3 !important;
@@ -75,8 +75,7 @@ html {
     --boardLight: #c7c7c7 !important;
     --coordDark: var(--boardDark) !important;
     --coordLight: var(--boardLight) !important;
-    --borderRadiusSmall: 4px !important;
-    --borderRadiusLarge: 8px !important;
+    --borderRadius: 4px !important;
     scrollbar-color: var(--surfaceColorHover) var(--surfaceColor) !important;
     scrollbar-width: thin !important;
 }
@@ -107,9 +106,21 @@ body {
     background: var(--backgroundColor) !important;
 }
 
+h1,
+h2,
+h3,
+h4,
+.mini-game .rating,
+.mini-game__clock,
+.btn-rack__btn i,
+.btn-rack form i {
+    font-family: 'Red Hat Display', sans-serif !important;
+}
+
 .user-link.online .line,
 .is-green::before,
-good {
+good,
+a.user-link:hover {
     color: var(--primaryColor) !important;
 }
 
@@ -132,17 +143,57 @@ bad {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
     box-shadow: none !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
     outline: none !important;
     font-size: 1em !important;
     padding: 10px 14px !important;
     text-transform: lowercase !important;
+    transition: all .2s ease-in-out !important;
 }
 
 .button:hover {
     background: none !important;
     color: var(--primaryColor) !important;
     box-shadow: 0 0 0 1px var(--primaryColor) inset !important;
+}
+
+.cmn-toggle+label {
+    border: 1px solid var(--surfaceColorHover) !important;
+}
+
+.cmn-toggle--subtle:hover {
+    box-shadow: none !important;
+}
+
+.cmn-toggle--subtle:not(:checked)+label {
+    background: var(--surfaceColorHover) !important;
+}
+
+.cmn-toggle--subtle:not(:checked)+label::before {
+    color: var(--surfaceColorHover) !important;
+}
+
+.cmn-toggle+label::after,
+.cmn-toggle:checked+label::after,
+.cmn-toggle+label::before {
+    box-shadow: none !important;
+    background: var(--surfaceColor) !important;
+    border: 1px solid var(--surfaceColorHover) !important;
+    border-radius: 100% !important;
+}
+
+.cmn-toggle:checked+label {
+    background: var(--primaryColor) !important;
+}
+
+.cmn-toggle:checked+label::before {
+    color: var(--primaryColor) !important;
+}
+
+select {
+    background: var(--backgroundColor) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-radius: var(--borderRadius) !important;
 }
 
 /* Board */
@@ -384,7 +435,7 @@ nav section a {
     transition-property: padding, background !important;
     padding: 0px 10px !important;
     height: auto !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
     text-shadow: none !important;
     font-size: 12px !important;
 }
@@ -393,13 +444,13 @@ nav section a:hover {
     border-left: none !important;
     background: var(--surfaceColor) !important;
     padding: 0px 20px !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
 }
 
 nav section a:target-within {
     border-left: none !important;
     background-color: var(--surfaceColor) !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
 }
 
 #topnav div {
@@ -409,7 +460,7 @@ nav section a:target-within {
     transition: all .2s ease-in-out !important;
     border-left: none !important;
     box-shadow: none !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
     background-color: var(--surfaceColor) !important;
     overflow: hidden !important;
     width: 12.25rem !important;
@@ -452,12 +503,12 @@ nav section a:target-within {
 .site-buttons .shown .toggle,
 .site-buttons .dropdown {
     background: var(--surfaceColor) !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
     box-shadow: none !important;
 }
 
 #dasher_app {
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
     overflow: hidden !important;
 }
 
@@ -537,7 +588,7 @@ signal>i {
 
 #notify-app .site_notification {
     border-bottom: none !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
     padding: 1rem !important;
 }
 
@@ -570,7 +621,7 @@ signal>i {
 
 #challenge-app .empty {
     background: var(--surfaceColor) !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
     box-shadow: var(--main-shadow) !important;
 }
 
@@ -586,7 +637,7 @@ signal>i {
 #challenge-app .challenge {
     background: var(--surfaceColor) !important;
     box-shadow: var(--main-shadow) !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
     padding: 10px !important;
 }
 
@@ -659,16 +710,14 @@ signal>i {
 
 /* Homepage */
 
-@media (min-width: 1260px) {
-    main.lobby {
-        grid-template-areas:
-            'app tv tv side'
-            'leader puzzle puzzle winner'
-            'tours tours forum forum'
-            'support table table blog'
-            '. simuls simuls .'
-            '. about about .';
-    }
+main.lobby {
+    grid-template-areas:
+        'app tv tv side'
+        'leader puzzle puzzle winner'
+        'tours tours forum forum'
+        'support table table blog'
+        '. simuls simuls .'
+        '. about about .' !important;
 }
 
 #main-wrap {
@@ -680,10 +729,19 @@ signal>i {
     width: 23vw !important;
     height: calc(100% - 40px) !important;
     border: 2px solid var(--surfaceColorHover) !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
     overflow: hidden !important;
     margin-top: 20px !important;
     background: var(--surfaceColor) !important;
+}
+
+.lobby__leaderboard .lobby__box__content,
+.lobby__winners .lobby__box__content {
+    overflow: hidden !important;
+}
+
+.lobby__side {
+    overflow: auto !important;
 }
 
 .lobby__app.lobby__app-real_time {
@@ -709,7 +767,7 @@ signal>i {
 .lpools>div:hover {
     transform: scale(.95) !important;
     opacity: .9 !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
 }
 
 .lpools .clock {
@@ -765,6 +823,7 @@ signal>i {
 }
 
 .timeline {
+    min-height: 200px !important;
     overflow: overlay !important;
 }
 
@@ -804,7 +863,7 @@ signal>i {
 
 .lobby__box {
     background: var(--surfaceColor) !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
     box-shadow: none !important;
     border: 2px solid var(--surfaceColorHover) !important;
     height: auto !important;
@@ -841,7 +900,7 @@ signal>i {
     box-shadow: none !important;
     background: var(--surfaceColor) !important;
     padding: 20px !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
 }
 
@@ -860,7 +919,7 @@ signal>i {
     align-items: center !important;
     justify-content: center !important;
     background: var(--surfaceColor) !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover);
     padding: 40px 0 !important;
 }
@@ -923,7 +982,7 @@ a.button.button-metal {
     color: var(--defaultWhite) !important;
     box-shadow: none !important;
     margin: 4px !important;
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
 }
 
 a.button.button-metal:hover {
@@ -941,5 +1000,398 @@ a.button.button-metal:hover {
 }
 
 .lobby__blog .post img {
-    border-radius: var(--borderRadiusSmall) !important;
+    border-radius: var(--borderRadius) !important;
+}
+
+#friend_box {
+    background: var(--surfaceColor) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
+}
+
+#friend_box .content a.user-link .line::before {
+    color: var(--primaryColor) !important;
+}
+
+#friend_box .content div:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+#friend_box .friend_box_title {
+    background: var(--surfaceColor) !important;
+    border: none !important;
+    padding: 8px 14px !important;
+}
+
+#friend_box .content a.tv {
+    color: var(--primaryColor) !important;
+}
+
+#powerTip,
+#miniGame {
+    background: var(--surfaceColor) !important;
+    padding: 10px !important;
+    border-radius: var(--borderRadius) !important;
+    box-shadow: var(--main-shadow) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+}
+
+.upt__info {
+    border-bottom: none !important;
+}
+
+.upt__actions.btn-rack {
+    box-shadow: none !important;
+    background: var(--surfaceColor);
+}
+
+.upt__actions.btn-rack a {
+    transition: background .2s ease-in-out !important;
+}
+
+.btn-rack__btn,
+.btn-rack form {
+    background: var(--surfaceColor) !important;
+    border: 1px solid var(--surfaceColorHover) !important;
+    border-right: 1px solid var(--surfaceColorHover) !important;
+}
+
+.upt__actions.btn-rack a:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+/* Puzzles */
+
+.puzzle__tools {
+    background: var(--surfaceColor) !important;
+    box-shadow: none !important;
+    border-radius: var(--borderRadius) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+}
+
+.puzzle__feedback {
+    background: none !important;
+    border-top: 1px solid var(--surfaceColorHover) !important;
+}
+
+.puzzle__moves {
+    border: none !important;
+}
+
+.tview2 shapes,
+.tview2 move.parent,
+.tview2 move.inaccuracy {
+    color: var(--primaryColor) !important;
+}
+
+.tview2 move.current {
+    border: 1px solid var(--primaryColor) !important;
+}
+
+.tview2 move.active {
+    background: var(--backgroundColor) !important;
+    border: 1px solid var(--defaultWhite) !important;
+}
+
+.tview2-column comment.inaccuracy {
+    border-color: var(--primaryColor) !important;
+}
+
+.tview2 move.mistake {
+    color: var(--secondaryColor) !important;
+}
+
+.tview2-column comment.mistake {
+    border-color: var(--secondaryColor) !important;
+}
+
+.tview2 move.blunder {
+    color: var(--tertiaryColor) !important;
+}
+
+.tview2-column comment.blunder {
+    border-color: var(--tertiaryColor) !important;
+}
+
+.tview2 lines {
+    border-left: 0 solid var(--backgroundColor) !important;
+}
+
+.tview2 lines line::before {
+    border-top: 2px solid var(--backgroundColor) !important;
+}
+
+.tview2-column>index {
+    background: var(--surfaceColor) !important;
+    color: var(--defaultWhite) !important;
+    line-height: 40px !important;
+    border-right: 1px solid var(--backgroundColor) !important;
+}
+
+.tview2 move.active {
+    background: var(--surfaceColorHover);
+}
+
+.tview2 move:not(.empty):hover,
+.tview2 move:not(.empty):hover index,
+.tview2 move:not(.empty):hover eval {
+    background: var(--surfaceColorHover) !important;
+}
+
+.tview2 eval {
+    background: none !important;
+}
+
+.tview2-column>interrupt {
+    background: var(--backgroundColor) !important;
+    border: none !important;
+}
+
+.tview2-column>interrupt>comment {
+    padding: 10px 14px !important;
+}
+
+.puzzle__side {
+    grid-gap: 0 !important;
+}
+
+.puzzle__side__metas,
+.puzzle__side__user,
+.puzzle__side__config,
+.puzzle__side__theme {
+    background: var(--surfaceColor) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.puzzle__side__metas {
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
+}
+
+.puzzle__side__config {
+    border-radius: 0 0 var(--borderRadius) var(--borderRadius) !important;
+}
+
+.fbt:hover:not(.disabled):not([disabled]) {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+/*Responsive Sizes*/
+
+@media (max-width: 1260px) {
+    main.lobby {
+        grid-template-columns: 50% repeat(2, 1fr) !important;
+        grid-template-rows: repeat(2, fit-content(0)) !important;
+        grid-template-areas:
+            'tv   app     app'
+            'side    app     app'
+            'puzzle   leader  leader'
+            'winner  tours   tours'
+            'table table table'
+            'support blog    blog '
+            'simuls   simuls  simuls'
+            'forum forum about' !important;
+    }
+
+    .lobby__app,
+    .lobby__side {
+        width: 100% !important;
+    }
+
+    .lobby__side {
+        display: none !important;
+    }
+}
+
+@media (max-width: 979px) {
+    .topnav-toggle:checked~.hbg {
+        background: var(--surfaceColor) !important;
+    }
+
+    .hbg__in {
+        background: var(--defaultWhite) !important;
+        width: 30px !important;
+        height: 2px !important;
+        left: 15px !important;
+    }
+
+    .hbg__in::before {
+        background: var(--defaultWhite) !important;
+        top: -6px !important;
+        width: 30px !important;
+        height: 2px !important;
+    }
+
+    .hbg__in::after {
+        background: var(--defaultWhite) !important;
+        bottom: -8px !important;
+        width: 30px !important;
+        height: 2px !important;
+    }
+
+    .topnav-toggle:checked~.hbg .hbg__in::after {
+        bottom: 0 !important;
+    }
+
+    #topnav {
+        display: flex !important;
+        flex-flow: row wrap !important;
+        align-items: flex-start !important;
+        justify-content: flex-start;
+        position: fixed !important;
+        top: var(--site-header-height) !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        background: #262421 !important;
+        transition: transform 200ms !important;
+        padding-bottom: 1.2rem !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain !important;
+        box-shadow: none !important;
+        border-radius: 0 var(--borderRadius) 0 0 !important;
+        max-width: none !important;
+        width: 60vw !important;
+        z-index: 110 !important;
+        background: var(--surfaceColor) !important;
+        padding-left: 7% !important;
+        padding-top: 2rem !important;
+        transform: translateX(-60vw) !important;
+        margin-left: 0 !important;
+    }
+
+    .topnav-toggle:checked~#topnav {
+        transform: translateX(0vw) !important;
+    }
+
+    #topnav section>a {
+        margin-bottom: 10px !important;
+    }
+
+    #topnav div {
+        opacity: 1 !important;
+        margin-top: 0 !important;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%) !important;
+        box-shadow: none !important;
+        background-color: none !important;
+        width: auto !important;
+        left: auto !important;
+        margin-left: 0 !important;
+        border-left: none !important;
+        border-radius: var(--borderRadius) !important;
+        overflow: hidden !important;
+    }
+
+    #topnav div a {
+        height: auto !important;
+        margin: 5px 0px;
+    }
+}
+
+@media (max-width: 713px) {
+    ::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        display: none !important;
+    }
+
+    ::-webkit-scrollbar-track {
+        display: none !important;
+    }
+
+    header#top {
+        width: 100vw !important;
+        max-width: 100vw !important;
+    }
+
+    #main-wrap {
+        width: 100% !important;
+        margin: 0 !important;
+        grid-template-columns: var(--main-margin) 1fr minmax(auto, var(--main-max-width)) 1fr var(--main-margin) !important;
+        margin-top: var(--site-header-margin) !important;
+    }
+
+    #topnav {
+        width: 90vw !important;
+        transform: translateX(-90vw) !important;
+    }
+
+    #topnav div a {
+        height: 3em !important;
+        margin: 0 !important;
+    }
+
+    main.lobby {
+        grid-template-areas:
+            'tv'
+            'app'
+            'side'
+            'blog'
+            'table'
+            'puzzle'
+            'leader'
+            'winner'
+            'tours'
+            'simuls'
+            'forum'
+            'support'
+            'about'
+            '.' !important;
+        grid-template-columns: 100% !important;
+        max-width: 100vw !important;
+        grid-gap: 5vmin !important;
+    }
+
+    .lobby__app {
+        min-height: 70vh !important;
+    }
+
+    div.lobby__app__content.lpools {
+        height: 100% !important;
+        margin-bottom: 0 !important;
+    }
+
+    .lpools .clock {
+        font-size: 1.3em !important;
+    }
+
+    .tabs-horiz {
+        padding-top: 1rem !important;
+        margin-top: 0 !important;
+    }
+
+    .tabs-horiz span {
+        text-shadow: none !important;
+        font-size: 1.2rem !important;
+    }
+
+    .about-side,
+    .lobby__streams,
+    .lobby__about {
+        margin-left: 0 !important;
+    }
+
+    .lobby__counters {
+        background: none !important;
+        width: 100vw !important;
+    }
+
+    .lobby__start {
+        flex-direction: column !important;
+        width: 90vw !important;
+    }
+
+    .lobby__start a.button.button-metal {
+        min-width: 100% !important;
+        margin: 4px 0 !important;
+    }
+
+    #nb_games_in_play strong,
+    #nb_connected_players strong {
+        font-size: 2.5rem !important;
+    }
 }

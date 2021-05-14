@@ -1,5 +1,5 @@
 const colorScheme = ["primaryColor", "secondaryColor", "tertiaryColor", "backgroundColor", "surfaceColor", "surfaceColorHover", "defaultWhite", "arrowPrimary", "arrowSecondary", "arrowTertiary", "arrowAlternate", "lastMove", "preMove", "moveIndicator", "boardDark", "boardLight"]
-const colorDefaults = ["#9FC0A2", "#f5c276", "#d36d6d", "#2B343B", "#3F474D", "#4e565c", "#F2F5F3", "#68C07B", "#f3ae48", "#d64d4d", "#4b81e6", "#99d69e", "#1B7CC7", "#99d69e", "#71828F", "#c7c7c7"]
+const colorDefaults = ["#9FC0A2", "#f5c276", "#d36d6d", "#272a2c", "#333538", "#404246", "#F2F5F3", "#68C07B", "#f3ae48", "#d64d4d", "#4b81e6", "#99d69e", "#1B7CC7", "#99d69e", "#71828F", "#c7c7c7"]
 const styleTernary = 'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--'
 const basicImportExportContainer = document.getElementById('basicImportExportContainer')
 const basicImportExportInput = document.getElementById('basicImportExport')
