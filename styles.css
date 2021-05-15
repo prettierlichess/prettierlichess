@@ -794,7 +794,7 @@ main.lobby {
 
 .lpools>div:hover {
     transform: scale(.95) !important;
-    opacity: .9 !important;
+    background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
 }
 
