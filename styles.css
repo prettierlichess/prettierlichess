@@ -211,6 +211,14 @@ select {
     position: relative !important;
 }
 
+input,
+textarea,
+select {
+    background: var(--backgroundColor) !important;
+    border: 1px solid var(--surfaceColorHover) !important;
+    outline: none !important;
+}
+
 /* Board */
 
 cg-helper cg-container cg-board::before {
@@ -504,6 +512,10 @@ nav section a:target-within {
     border-left: none !important;
     background-color: var(--surfaceColor) !important;
     border-radius: 4px 4px 0 0 !important;
+}
+
+#clinput input {
+    border: none !important;
 }
 
 .site-buttons {
@@ -1190,7 +1202,9 @@ a.button.button-metal:hover {
     border-radius: 0 0 var(--borderRadius) var(--borderRadius) !important;
 }
 
-.fbt:hover:not(.disabled):not([disabled]) {
+.fbt:hover:not(.disabled):not([disabled]),
+.puzzle__session a.result-true,
+.puzzle__feedback.after .continue {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
@@ -1202,6 +1216,15 @@ a.button.button-metal:hover {
 
 .puzzle__side__streak__score {
     margin-right: 20px !important;
+}
+
+.puzzle__session a.current {
+    background: var(--secondaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.puzzle__feedback.after .continue i::before {
+    font-size: 1.5em !important;
 }
 
 /* Game View */
@@ -1617,6 +1640,10 @@ a.context-streamer:hover {
     padding: 10px !important;
 }
 
+.analyse__underboard__panels {
+    padding: 10px !important;
+}
+
 /* Analysis Graph */
 
 #acpl-chart,
@@ -1668,6 +1695,171 @@ path[fill="none"][stroke="black"] {
 
 path[stroke="#b2b1b6"] {
     stroke: var(--surfaceColorHover) !important;
+}
+
+/* Studies */
+
+.study__chapters,
+.study__members,
+.board-editor__tools .metadata,
+.study-desc,
+.study__metadata,
+.study__comment,
+.study__glyphs,
+.study__share,
+.study__multiboard,
+.study__server-eval,
+.study__message,
+.crosstable,
+.mchat,
+.analyse__tools,
+#modal-wrap .close:hover,
+.context-streamer,
+.study__player,
+.study__comments #comment-text,
+.study__relay__rounds {
+    box-shadow: none !important;
+}
+
+.study__chapters,
+.study__members,
+.study__relay__rounds {
+    background: none !important;
+}
+
+.study__chapters>div:hover,
+.study__members>div:hover,
+.study__chapters>div.active,
+.study__members>div.active,
+.study__relay__rounds>div.active,
+.study__relay__rounds>div:hover {
+    background: var(--surfaceColorHover) !important;
+    padding: 12px !important;
+}
+
+.study__chapters>div>span {
+    color: var(--backgroundColor) !important;
+    background: var(--primaryColor) !important;
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 100% !important;
+    font-size: 12px !important;
+}
+
+.study__chapters>div,
+.study__relay__rounds>div {
+    padding: 10px !important;
+    align-items: center !important;
+}
+
+.analyse__underboard {
+    border-radius: var(--borderRadius) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    background: var(--surfaceColor) !important;
+}
+
+.analyse__underboard .tabs-horiz {
+    width: 100% !important;
+}
+
+.study__metadata,
+.study__metadata h2,
+.study__message,
+.study__multiboard,
+.study__multiboard .now-playing a:nth-child(even),
+.study__multiboard .now-playing a,
+.study__share,
+.study__player,
+.study__player.ticking .analyse__clock {
+    background: none !important;
+}
+
+.study__player.ticking .analyse__clock {
+    color: var(--secondaryColor) !important;
+}
+
+.study__multiboard .now-playing a.active,
+.study__multiboard .now-playing a:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.study__multiboard .now-playing a {
+    border-radius: 0 !important;
+}
+
+.study__metadata h2 {
+    border-bottom: 2px solid var(--surfaceColorHover) !important;
+}
+
+.study__topics .topic {
+    background: var(--backgroundColor) !important;
+}
+
+.study__topics .topic:hover,
+.slist tbody tr:nth-child(even) {
+    background: var(--surfaceColorHover) !important;
+}
+
+.study__metadata h2 .liking:hover,
+.study__chapters ongoing,
+.study__relay__rounds ongoing {
+    color: var(--tertiaryColor) !important;
+}
+
+.study__relay__rounds finished {
+    color: var(--primaryColor) !important;
+}
+
+.relay-tour__text,
+.study__multiboard .now-playing {
+    background: var(--surfaceColor) !important;
+    border-radius: var(--borderRadius) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    box-shadow: none !important;
+}
+
+.study__multiboard .now-playing {
+    padding: 10px !important;
+}
+
+.analyse__underboard .study__multiboard .now-playing {
+    background: none !important;
+    border: none !important;
+}
+
+.relay-tour__round {
+    border: 1px solid var(--surfaceColorHover) !important;
+    background: none !important;
+    border-radius: var(--borderRadius) !important;
+}
+
+.slist thead th {
+    border: none !important;
+    padding: 10px !important;
+}
+
+.slist thead {
+    background: none !important;
+    border: 1px solid var(--surfaceColorHover) !important;
+}
+
+.mchat__messages .color,
+.mchat__messages .user-link {
+    color: var(--defaultWhite) !important;
+    opacity: .8 !important;
+    letter-spacing: .5px !important;
+    font-weight: 500 !important;
+}
+
+.mchat__messages t {
+    color: var(--defaultWhite) !important;
+    opacity: .65 !important;
+    line-height: 16px !important;
+}
+
+.mchat__messages i {
+    text-shadow: none !important;
+    color: var(--tertiaryColor) !important;
 }
 
 /*Responsive Sizes*/
