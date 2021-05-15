@@ -1035,6 +1035,7 @@ a.button.button-metal:hover {
 #friend_box {
     background: var(--surfaceColor) !important;
     border: 2px solid var(--surfaceColorHover) !important;
+    border-bottom: 0 !important;
     border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
 }
 
