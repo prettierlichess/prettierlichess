@@ -606,6 +606,7 @@ signal>i {
 #notify-app,
 #dasher_app {
     box-shadow: var(--main-shadow) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
 }
 
 #notify-app .site_notification {
@@ -645,6 +646,7 @@ signal>i {
     background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
     box-shadow: var(--main-shadow) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
 }
 
 #challenge-app .challenge .buttons {
@@ -1085,6 +1087,109 @@ a.button.button-metal:hover {
 
 .upt__actions.btn-rack a:hover {
     background: var(--surfaceColorHover) !important;
+}
+
+.mini-game__clock.clock--run {
+    color: var(--secondaryColor) !important;
+}
+
+#modal-wrap {
+    background: var(--surfaceColor) !important;
+    border-radius: var(--borderRadius) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+}
+
+.game-setup .optional_config,
+.game-setup .ratings,
+#modal-wrap .close {
+    background: var(--surfaceColorHover) !important;
+    border: none !important;
+}
+
+#modal-wrap .close:hover {
+    background: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.game-setup .color-submits__button.random {
+    padding: 10px !important;
+}
+
+.game-setup .color-submits__button {
+    padding: 7px !important;
+}
+
+.game-setup group.radio input:checked+label {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.game-setup .range input {
+    background: none !important;
+}
+
+group.radio label {
+    background: var(--backgroundColor) !important;
+}
+
+group.radio {
+    box-shadow: none !important;
+}
+
+/* Challenge Page */
+
+main.page-small {
+    background: var(--surfaceColor) !important;
+    border-radius: var(--borderRadius) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    box-shadow: none !important;
+}
+
+.challenge-page .details {
+    position: relative !important;
+    background: none !important;
+    border: 1px solid var(--primaryColor) !important;
+    color: var(--defaultWhite) !important;
+}
+
+.challenge-page .details::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: .4 !important;
+    z-index: 1 !important;
+    background: var(--primaryColor) !important;
+    border-radius: 99px !important;
+}
+
+.challenge-page .details>div {
+    font-family: 'Red Hat Display', sans-serif !important;
+}
+
+.challenge-page .details>div::before,
+.challenge-page .details .mode {
+    color: var(--defaultWhite) !important;
+}
+
+.challenge-page .waiting .spinner {
+    width: 5em !important;
+    height: 5em !important;
+}
+
+#challenge-app .challenge:hover>i,
+#challenge-app .challenge .owner {
+    color: var(--primaryColor) !important;
+}
+
+#challenge-app .challenge .owner:hover .view {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    border-radius: var(--borderRadius) !important;
 }
 
 /* Puzzles */
@@ -1776,6 +1881,10 @@ path[stroke="#b2b1b6"] {
 
 .study__player.ticking .analyse__clock {
     color: var(--secondaryColor) !important;
+}
+
+.study__player .result {
+    border-right: 2px solid var(--surfaceColorHover) !important;
 }
 
 .study__multiboard .now-playing a.active,
