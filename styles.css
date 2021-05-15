@@ -166,7 +166,8 @@ bad {
     border: 1px solid var(--surfaceColorHover) !important;
 }
 
-.cmn-toggle--subtle:hover {
+.cmn-toggle:focus+label,
+.cmn-toggle:hover+label {
     box-shadow: none !important;
 }
 
@@ -195,10 +196,19 @@ bad {
     color: var(--primaryColor) !important;
 }
 
+.cmn-toggle:not(:checked)+label::before,
+.cmn-toggle:checked+label::before {
+    content: '' !important;
+}
+
 select {
     background: var(--backgroundColor) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     border-radius: var(--borderRadius) !important;
+}
+
+.switch {
+    position: relative !important;
 }
 
 /* Board */
@@ -282,11 +292,6 @@ coords coord {
 .coords-in .orientation-black .files coord:nth-child(2n),
 .coords-in .orientation-black .ranks coord:nth-child(2n+1) {
     color: var(--coordLight) !important;
-}
-
-.coords-in .eval-gauge {
-    margin-left: 0 !important;
-    width: 100% !important;
 }
 
 cg-resize::before,
@@ -1360,9 +1365,309 @@ rm6 u8t.a1t {
     padding: 10px !important;
 }
 
-.buttons .fbt.active {
+.buttons .fbt.active,
+.mchat__presets span:not(.disabled):hover {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
+}
+
+.mchat__presets span.disabled {
+    background: var(--tertiaryColor) !important;
+}
+
+a.context-streamer {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    border-radius: 0 !important;
+    height: 3em !important;
+}
+
+a.context-streamer:hover {
+    height: 3.5em !important;
+}
+
+/* Analysis */
+
+.analyse {
+    position: relative !important;
+    grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
+    transform: translateX(40px) !important;
+    transition: transform .3s ease-in-out !important;
+}
+
+.analyse.gauge-on {
+    transform: translateX(0px) !important;
+}
+
+.analyse__tools {
+    background: var(--surfaceColor) !important;
+    border-radius: var(--borderRadius) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    box-shadow: none !important;
+}
+
+.analyse__acpl,
+.analyse__tools,
+.analyse__controls {
+    position: relative !important;
+    left: calc(-80px + 1vmin) !important;
+    transition: left .3s ease-in-out !important;
+}
+
+.gauge-on .analyse__tools,
+.gauge-on .analyse__acpl,
+.gauge-on .analyse__controls {
+    left: 0px !important;
+}
+
+.analyse__moves {
+    border-top: 2px solid var(--surfaceColorHover) !important;
+}
+
+.ceval,
+.analyse__moves .result,
+.analyse__moves .status {
+    background: var(--surfaceColor) !important;
+}
+
+.analyse__moves .result {
+    border-top: 2px solid var(--surfaceColorHover) !important;
+}
+
+.pv_box .pv {
+    border-top: 2px solid var(--surfaceColorHover) !important;
+    background: var(--backgroundColor) !important;
+}
+
+.pv_box .pv[data-uci] {
+    background: var(--backgroundColor) !important;
+}
+
+.pv_box .pv .pv-wrap-toggle:hover {
+    background: var(--backgroundColor) !important;
+    color: var(--defaultWhite) !important;
+}
+
+.analyse__fork move,
+.analyse__fork move:nth-child(odd) {
+    background: var(--surfaceColorHover) !important;
+    border: none !important;
+}
+
+.pv_box .pv[data-uci]:hover,
+.ceval .bar span,
+.ceval .engine .cloud,
+.analyse__fork move:hover,
+.analyse__fork:not(:hover) move.selected {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.ceval .show-threat:hover:not(.hidden),
+.ceval .show-threat.active {
+    color: var(--tertiaryColor) !important;
+}
+
+.ceval .technology.good,
+.advice-summary__side>div.symbol:hover {
+    color: var(--primaryColor) !important;
+}
+
+.tview2-column>index {
+    background: var(--surfaceColorHover) !important;
+    border: 0 !important;
+}
+
+.tview2-column>move {
+    align-items: center !important;
+}
+
+.eval-gauge {
+    width: calc(100% - 20px) !important;
+    margin-left: 10px !important;
+    background: none !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+    background: none !important;
+    border: 1px solid var(--surfaceColorHover) !important;
+}
+
+.eval-gauge::after {
+    box-shadow: none !important;
+}
+
+.eval-gauge::before {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgb(225, 225, 225) !important;
+    border-radius: var(--borderRadius) !important;
+    z-index: -1 !important;
+}
+
+.eval-gauge .black {
+    background: rgb(26, 26, 26) !important;
+    border-radius: 0px !important;
+    z-index: 9 !important;
+}
+
+.eval-gauge tick {
+    border-bottom: 0 !important;
+}
+
+.eval-gauge tick.zero {
+    border-bottom: 3px solid var(--secondaryColor) !important;
+}
+
+.analyse__side,
+.analyse .mchat {
+    background: var(--surfaceColor) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+}
+
+.analyse__side {
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
+}
+
+.analyse .mchat {
+    border-radius: 0 0 var(--borderRadius) var(--borderRadius) !important;
+}
+
+.action-menu__tools .button,
+.action-menu .autoplay a {
+    color: var(--primaryColor) !important;
+    background: none !important;
+}
+
+.cmn-toggle:not(:checked)+label {
+    background: var(--tertiaryColor) !important;
+}
+
+.cmn-toggle:not(:checked)+label::before {
+    color: var(--tertiaryColor) !important;
+}
+
+.cmn-toggle:checked+label::before,
+.cmn-toggle:checked+label::after {
+    margin-left: 16px !important;
+}
+
+.analyse__controls .fbt.active {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.analyse__tools .sub-box,
+.action-menu {
+    border-bottom: 2px solid var(--primaryColor) !important;
+}
+
+.explorer-box {
+    border-top: 2px solid var(--primaryColor) !important;
+}
+
+.explorer-box .toconf {
+    top: 10px !important;
+    right: 10px !important;
+}
+
+.explorer-box td {
+    padding: 10px !important;
+}
+
+.explorer-box tr:nth-child(even) {
+    background: var(--backgroundColor) !important;
+}
+
+.explorer-box tr:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.explorer-box .black {
+    background: rgb(26, 26, 26) !important;
+}
+
+.explorer-box .bar span {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.explorer-box .bar {
+    background: none !important;
+}
+
+.explorer-box .config .choices span.selected {
+    background: var(--primaryColor) !important;
+    box-shadow: none !important;
+    color: var(--backgroundColor) !important;
+    font-weight: 500 !important;
+}
+
+.explorer-box .config .choices span:hover {
+    background: var(--surfaceColorHover) !important;
+    color: var(--defaultWhite) !important;
+}
+
+.analyse__tools .sub-box .title {
+    background: var(--backgroundColor) !important;
+    padding: 10px !important;
+}
+
+/* Analysis Graph */
+
+#acpl-chart,
+#movetimes-chart {
+    background: none !important;
+}
+
+.analyse__underboard__menu>span.active {
+    color: var(--primaryColor) !important;
+}
+
+.analyse__underboard__menu>span::after {
+    background: var(--primaryColor) !important;
+}
+
+path[fill="rgba(0,0,0,1)"] {
+    fill: rgb(26, 26, 26) !important;
+}
+
+path[fill="#d85000"],
+path[fill="#3893E8"] {
+    fill: none !important;
+}
+
+path[stroke="#d85000"] {
+    stroke: var(--primaryColor) !important;
+}
+
+path[stroke="#639B24"],
+path[stroke="#3893E8"] {
+    stroke: var(--primaryColor) !important;
+}
+
+path[stroke="#3093cc"] {
+    stroke: var(--secondaryColor) !important;
+}
+
+path[stroke="#cc9730"] {
+    stroke: var(--tertiaryColor) !important;
+}
+
+path[fill="url(#highcharts-1)"] {
+    fill: var(--surfaceColor) !important;
+}
+
+path[fill="none"][stroke="black"] {
+    stroke-opacity: 0 !important;
+}
+
+path[stroke="#b2b1b6"] {
+    stroke: var(--surfaceColorHover) !important;
 }
 
 /*Responsive Sizes*/
@@ -1388,6 +1693,21 @@ rm6 u8t.a1t {
     }
 
     .lobby__side {
+        display: none !important;
+    }
+
+    .analyse {
+        grid-template-columns: minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) var(--gauge-gap) minmax(240px, 400px) !important;
+        transform: translateX(0px) !important;
+    }
+
+    .analyse__acpl,
+    .analyse__tools,
+    .analyse__controls {
+        left: 0px !important;
+    }
+
+    .eval-gauge {
         display: none !important;
     }
 }
@@ -1492,6 +1812,10 @@ rm6 u8t.a1t {
 
     rm6 l4x {
         box-shadow: none !important;
+    }
+
+    .analyse {
+        grid-template-columns: 100vw !important;
     }
 }
 
