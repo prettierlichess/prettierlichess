@@ -1971,6 +1971,175 @@ path[stroke="#b2b1b6"] {
     color: var(--tertiaryColor) !important;
 }
 
+/* Profile */
+
+.activity .entry {
+    padding: 1em !important;
+}
+
+.activity section h2 time {
+    background: none !important;
+    color: var(--secondaryColor) !important;
+}
+
+.activity .entry>i {
+    border: none !important;
+    background: var(--secondaryColor) !important;
+    color: var(--backgroundColor) !important;
+    margin-left: -80px !important;
+    margin-top: -12px !important;
+}
+
+.activity .entries {
+    border-left: 2px solid var(--secondaryColor) !important;
+}
+
+.activity win strong {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.activity loss strong {
+    background: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.activity draw strong {
+    background: var(--secondaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.page-menu__content.box {
+    background: var(--surfaceColor) !important;
+    border-radius: var(--borderRadius) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    box-shadow: none !important;
+}
+
+.user-show__header,
+.user-show__social,
+.number-menu {
+    background: none !important;
+}
+
+.number-menu {
+    padding: 4px !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-radius: var(--borderRadius) !important;
+}
+
+#us_profile,
+#us_profile .insight {
+    border-top: 2px solid var(--surfaceColorHover) !important;
+}
+
+#us_profile {
+    border-bottom: 2px solid var(--surfaceColorHover) !important;
+}
+
+#us_profile .profile-side {
+    border-left: 2px solid var(--surfaceColorHover) !important;
+}
+
+#us_profile .insight {
+    color: var(--primaryColor) !important;
+}
+
+#us_profile .insight:hover::before {
+    background: none !important;
+    color: var(--backgroundColor) !important;
+}
+
+#us_profile .insight:hover {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.user-show .angles {
+    border: none !important;
+    padding: 0 !important;
+}
+
+.number-menu--tabs .nm-item.active,
+.user-show .number-menu .nm-item.to-games.active {
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-bottom: 0 !important;
+    background: var(--surfaceColorHover) !important;
+}
+
+.number-menu--tabs .nm-item:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.number-menu--tabs .nm-item {
+    border-bottom: 2px solid var(--surfaceColorHover) !important;
+    margin-top: 0 !important;
+    border-radius: 0 !important;
+}
+
+.user-show .angle-content #games.number-menu {
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+}
+
+.game-row {
+    background: none !important;
+    border-top: 1px solid var(--surfaceColorHover) !important;
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
+}
+
+.game-row:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.game-row .win {
+    color: var(--primaryColor) !important;
+}
+
+.game-row .loss {
+    color: var(--tertiaryColor) !important;
+}
+
+rect[fill="#505053"] {
+    fill: var(--surfaceColorHover) !important;
+}
+
+rect[fill="#000003"] {
+    fill: var(--primaryColor) !important;
+}
+
+.fire-trophy,
+.trophy.streaming,
+.trophy.patron,
+.trophy.patron:hover,
+.crosstable__users,
+.crosstable__score,
+.crosstable povs:hover,
+.cmn-toggle+label::after,
+.user-show .angles {
+    text-shadow: none !important;
+    color: var(--secondaryColor) !important;
+}
+
+.trophy.patron:hover {
+    margin-top: -8px !important;
+}
+
+.sub-ratings a:hover {
+    background: var(--surfaceColorHover) !important;
+    border-radius: var(--borderRadius) 0 0 var(--borderRadius) !important;
+}
+
+.sub-ratings a:hover::before,
+.sub-ratings a:hover i {
+    color: var(--primaryColor) !important;
+}
+
+.btn-rack__btn:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
