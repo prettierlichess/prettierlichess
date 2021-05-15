@@ -117,6 +117,11 @@ h4,
     font-family: 'Red Hat Display', sans-serif !important;
 }
 
+p {
+    line-height: 20px !important;
+    font-size: 14px !important;
+}
+
 .user-link.online .line,
 .is-green::before,
 good,
@@ -221,13 +226,13 @@ cg-helper cg-container cg-board {
 }
 
 .ranks {
-    font-size: 16px !important;
-    right: -25px !important;
+    font-size: 12px !important;
+    right: -18px !important;
 }
 
 .files {
-    font-size: 16px !important;
-    bottom: -35px !important;
+    font-size: 12px !important;
+    bottom: -25px !important;
 }
 
 cg-container coords.ranks coord,
@@ -708,6 +713,10 @@ signal>i {
     justify-content: center !important;
 }
 
+#topnav a[href='/patron']::after {
+    color: var(--secondaryColor) !important;
+}
+
 /* Homepage */
 
 main.lobby {
@@ -877,6 +886,7 @@ main.lobby {
 .lobby__box__content {
     background: none !important;
     overflow: auto !important;
+    overflow-x: hidden !important;
 }
 
 .lobby__box td {
@@ -1161,13 +1171,14 @@ a.button.button-metal:hover {
 .puzzle__side__theme {
     background: var(--surfaceColor) !important;
     border: 2px solid var(--surfaceColorHover) !important;
-    border-bottom: 1px solid var(--surfaceColorHover) !important;
+    border-top: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
 }
 
 .puzzle__side__metas {
     border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
+    border-top: 2px solid var(--surfaceColorHover) !important;
 }
 
 .puzzle__side__config {
@@ -1175,6 +1186,181 @@ a.button.button-metal:hover {
 }
 
 .fbt:hover:not(.disabled):not([disabled]) {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.puzzle__side__streak__info h1,
+.puzzle__side__streak__score {
+    color: var(--primaryColor) !important;
+}
+
+.puzzle__side__streak__score {
+    margin-right: 20px !important;
+}
+
+/* Game View */
+
+.round__side {
+    background: var(--surfaceColor) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-radius: var(--borderRadius) !important;
+    box-shadow: none !important;
+}
+
+.game__meta {
+    background: none !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid var(--surfaceColorHover) !important;
+    border-radius: 0 !important;
+}
+
+.mchat,
+.mchat__content {
+    background: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+.mchat-optional .mchat__tab-active,
+.mchat__tab:hover {
+    background: var(--surfaceColorHover) !important;
+    border-radius: 0 !important;
+}
+
+.mchat__tabs {
+    border-radius: 0 !important;
+    border-bottom: 2px solid var(--surfaceColorHover) !important;
+}
+
+.mchat__tab input,
+.mchat__tab input:checked {
+    border: none !important;
+    border-radius: 100% !important;
+}
+
+.mchat__tab input:checked {
+    background: var(--primaryColor) !important;
+}
+
+.mchat__say {
+    height: 40px !important;
+    outline: none !important;
+    background: var(--backgroundColor) !important;
+    border-top: 2px solid var(--surfaceColorHover) !important;
+    padding: 3px 10px !important;
+}
+
+.round__underboard {
+    background: var(--surfaceColor) !important;
+    box-shadow: none !important;
+    border-radius: var(--borderRadius) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    align-self: start !important;
+}
+
+.crosstable__users,
+.crosstable__score,
+.crosstable povs:hover,
+.cmn-toggle+label::after,
+.rcontrols .rematch.fbt,
+#powerTip .forecast-info .title {
+    background: var(--surfaceColorHover) !important;
+}
+
+.crosstable,
+.mchat,
+.game__meta,
+.context-streamer,
+.round__app__table,
+.rclock .time,
+rm6 .buttons,
+.rcontrols .rematch-decline {
+    box-shadow: none !important;
+}
+
+.crosstable fill,
+.crosstable povs {
+    background: var(--surfaceColor) !important;
+}
+
+.crosstable .win {
+    color: var(--primaryColor) !important;
+}
+
+.crosstable .loss {
+    color: var(--tertiaryColor) !important;
+}
+
+.crosstable__matchup {
+    background: var(--surfaceColor) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-top: none !important;
+}
+
+.crosstable .sep {
+    border-left: 2px solid var(--surfaceColorHover) !important;
+}
+
+div.round__app {
+    grid-template-rows: 0fr auto auto min-content auto 5fr auto auto min-content auto auto 0fr !important;
+}
+
+rm6 l4x,
+rm6 .buttons {
+    background: var(--surfaceColor) !important;
+    border-left: 2px solid var(--surfaceColorHover) !important;
+    border-right: 2px solid var(--surfaceColorHover) !important;
+}
+
+rm6 l4x {
+    flex-grow: 1 !important;
+    line-height: 40px !important;
+}
+
+rm6 .buttons {
+    height: 40px !important;
+}
+
+rm6 i5z,
+rm6 u8t:hover,
+rm6 u8t.a1t {
+    background: var(--surfaceColorHover) !important;
+}
+
+rm6 u8t.a1t {
+    box-shadow: inset 0 0 0 1px var(--defaultWhite) !important;
+}
+
+.ruser {
+    padding: 15px 10px !important;
+}
+
+.round__app__table {
+    background: var(--surfaceColor) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-radius: var(--borderRadius) !important;
+}
+
+.rclock .bar {
+    background: var(--primaryColor) !important;
+}
+
+.rclock-top .bar {
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
+}
+
+.rclock-bottom .bar {
+    border-radius: 0 0 var(--borderRadius) var(--borderRadius) !important;
+}
+
+.rclock .time {
+    background: none !important;
+    padding: 10px !important;
+}
+
+.buttons .fbt.active {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
@@ -1287,6 +1473,25 @@ a.button.button-metal:hover {
     #topnav div a {
         height: auto !important;
         margin: 5px 0px;
+    }
+}
+
+@media (max-width: 799px) {
+    .round .round__app {
+        grid-template-rows: auto auto 50px auto min-content 50px auto !important;
+    }
+
+    .ruser {
+        padding: 0 0.3em !important;
+    }
+
+    .rclock .time {
+        font-size: 3em !important;
+        padding: 0 !important;
+    }
+
+    rm6 l4x {
+        box-shadow: none !important;
     }
 }
 
