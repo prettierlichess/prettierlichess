@@ -1432,9 +1432,8 @@ rm6 .buttons,
 }
 
 .crosstable__matchup {
-    background: var(--surfaceColor) !important;
-    border: 2px solid var(--surfaceColorHover) !important;
-    border-top: none !important;
+    background: var(--backgroundColor) !important;
+    border: none !important;
 }
 
 .crosstable .sep {
@@ -2167,9 +2166,26 @@ rect[fill="#000003"] {
     background: var(--primaryColor) !important;
 }
 
+.subnav a {
+    border-top: 2px solid var(--surfaceColorHover) !important;
+    padding: 14px !important;
+}
+
+.subnav a:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
 .tv-channel>span::before {
     color: var(--defaultWhite) !important;
     opacity: .5 !important;
+}
+
+.tv-channel>span>span {
+    text-align: left !important;
+}
+
+.tv-channel>span {
+    justify-content: space-between !important;
 }
 
 /*Responsive Sizes*/
