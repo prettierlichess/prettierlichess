@@ -1344,7 +1344,7 @@ main.page-small {
 .game__meta {
     background: none !important;
     box-shadow: none !important;
-    border-bottom: 2px solid var(--surfaceColorHover) !important;
+    border: none !important;
     border-radius: 0 !important;
 }
 
@@ -1354,6 +1354,10 @@ main.page-small {
     box-shadow: none !important;
     margin: 0 !important;
     border-radius: 0 !important;
+}
+
+.mchat {
+    border-top: 2px solid var(--surfaceColorHover) !important;
 }
 
 .mchat-optional .mchat__tab-active,
@@ -1381,6 +1385,7 @@ main.page-small {
     height: 40px !important;
     outline: none !important;
     background: var(--backgroundColor) !important;
+    border: none !important;
     border-top: 2px solid var(--surfaceColorHover) !important;
     padding: 3px 10px !important;
 }
@@ -1440,6 +1445,10 @@ div.round__app {
     grid-template-rows: 0fr auto auto min-content auto 5fr auto auto min-content auto auto 0fr !important;
 }
 
+rm6 {
+    margin-bottom: 0 !important;
+}
+
 rm6 l4x,
 rm6 .buttons {
     background: var(--surfaceColor) !important;
@@ -1454,6 +1463,7 @@ rm6 l4x {
 
 rm6 .buttons {
     height: 40px !important;
+    border-bottom: 2px solid var(--surfaceColorHover) !important;
 }
 
 rm6 i5z,
@@ -1468,6 +1478,10 @@ rm6 u8t.a1t {
 
 .ruser {
     padding: 15px 10px !important;
+}
+
+.ruser-bottom {
+    border-top: 2px solid var(--surfaceColorHover) !important;
 }
 
 .round__app__table {
@@ -1655,6 +1669,7 @@ a.context-streamer:hover {
 .analyse .mchat {
     background: var(--surfaceColor) !important;
     border: 2px solid var(--surfaceColorHover) !important;
+    border-top: none !important;
 }
 
 .analyse__side {
@@ -2138,6 +2153,23 @@ rect[fill="#000003"] {
 
 .btn-rack__btn:hover {
     background: var(--surfaceColorHover) !important;
+}
+
+/* TV */
+
+.subnav a.active,
+.tv-channel.active>span::before {
+    color: var(--primaryColor) !important;
+    opacity: 1 !important;
+}
+
+.subnav a::after {
+    background: var(--primaryColor) !important;
+}
+
+.tv-channel>span::before {
+    color: var(--defaultWhite) !important;
+    opacity: .5 !important;
 }
 
 /*Responsive Sizes*/
