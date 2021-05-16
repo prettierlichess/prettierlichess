@@ -2576,7 +2576,8 @@ h1 a,
     color: var(--primaryColor) !important;
 }
 
-.pagination .current {
+.pagination .current,
+.pagination a:hover {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
@@ -2584,6 +2585,18 @@ h1 a,
 .forum.forum-categ .sticky {
     box-sizing: border-box !important;
     background: linear-gradient(to right, var(--primaryColor) 0px, var(--primaryColor) 8px, rgba(0, 0, 0, 0) 8px, rgba(0, 0, 0, 0) 100%) !important;
+}
+
+.forum-post {
+    border-top: 1px solid var(--surfaceColorHover) !important;
+}
+
+.forum-post:last-child {
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
+}
+
+iframe.analyse {
+    position: absolute !important;
 }
 
 /* Practice */
