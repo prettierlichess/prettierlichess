@@ -844,12 +844,12 @@ main.lobby {
 }
 
 .lpools .clock {
-    font-size: 1.8rem !important;
+    font-size: 100% !important;
 }
 
 .lpools .perf,
 .custom {
-    font-size: 1.25rem !important;
+    font-size: 75% !important;
 }
 
 .tabs-horiz {
@@ -2805,6 +2805,7 @@ group.radio div:last-child label {
     .lobby__app,
     .lobby__side {
         width: 100% !important;
+        min-width: 0vh !important;
     }
 
     .lobby__side {
@@ -2828,6 +2829,7 @@ group.radio div:last-child label {
 }
 
 @media (max-width: 979px) {
+
     .topnav-toggle:checked~.hbg {
         background: var(--surfaceColor) !important;
     }
