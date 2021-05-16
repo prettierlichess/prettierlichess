@@ -2062,6 +2062,84 @@ path[stroke="#b2b1b6"] {
     color: var(--tertiaryColor) !important;
 }
 
+/* Study Home */
+
+.subnav {
+    background: var(--surfaceColor) !important;
+    border-radius: var(--borderRadius) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-top: 0 !important;
+    align-self: flex-start !important;
+    margin-top: 0 !important;
+    margin-right: 5px !important;
+}
+
+.studies .study {
+    border: 2px solid var(--surfaceColorHover) !important;
+    margin: 5px !important;
+    border-radius: var(--borderRadius) !important;
+}
+
+.studies .study:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.study-index .list {
+    border-top: 0 !important;
+    padding: 0 10px !important;
+}
+
+.studies .study .top::before,
+.studies .study .top .study-name {
+    color: var(--defaultWhite) !important;
+    opacity: .7 !important;
+}
+
+.study-index .box__top>*,
+.study-index .box__top .search .button {
+    margin: 0 0 0 5px !important;
+}
+
+.study-index .box__top .new-study .button,
+.study-index .box__top .search .button {
+    padding: 0 1em !important;
+}
+
+.study-index .box__top .new-study .button::before {
+    font-size: 1.5em !important;
+}
+
+.mselect__label {
+    background: var(--backgroundColor) !important;
+    box-shadow: none !important;
+    border-radius: var(--borderRadius) !important;
+}
+
+.mselect {
+    margin: 0 !important;
+    border: 1px solid var(--surfaceColorHover) !important;
+}
+
+.mselect__label::after {
+    background: none !important;
+    color: var(--defaultWhite) !important;
+    margin-right: 10px !important;
+}
+
+.mselect__list {
+    background: var(--surfaceColor) !important;
+}
+
+.mselect__list .current,
+.mselect__list>:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.mselect__list>* {
+    color: var(--defaultWhite) !important;
+    padding: 20px !important;
+}
+
 /* Profile */
 
 .activity .entry {
@@ -2237,6 +2315,15 @@ rect[fill="#000003"] {
 .tv-channel.active>span::before {
     color: var(--primaryColor) !important;
     opacity: 1 !important;
+}
+
+.tv-channels.subnav {
+    background: none !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    align-self: stretch !important;
+    margin-top: 5px !important;
+    margin-right: 0 !important;
 }
 
 .subnav a::after {
