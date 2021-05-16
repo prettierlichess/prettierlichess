@@ -219,6 +219,29 @@ select {
     outline: none !important;
 }
 
+/* Light Theme Fixes */
+
+.site-title,
+.tour-spotlight,
+.tour-spotlight i.img::before,
+#hook .opponent,
+.lobby__box__top,
+.button.button-empty:not(.disabled):hover,
+.button.button-empty.button-green:not(.disabled):hover,
+.button.button-empty.button-red:not(.disabled):hover,
+.button.button-metal,
+#friend_box .friend_box_title,
+.btn-rack__btn,
+.btn-rack form,
+.crosstable__users,
+.crosstable__score,
+.crosstable povs:hover,
+.cmn-toggle+label::after,
+#analyse-cm .title,
+.analyse__clock {
+    text-shadow: none !important;
+}
+
 /* Board */
 
 cg-helper cg-container cg-board::before {
@@ -250,7 +273,7 @@ cg-helper cg-container cg-board {
 
 .files {
     font-size: 12px !important;
-    bottom: -25px !important;
+    bottom: -18px !important;
 }
 
 cg-container coords.ranks coord,
@@ -817,7 +840,8 @@ main.lobby {
     padding: 10px 0 !important;
 }
 
-.tabs-horiz span.active {
+.tabs-horiz span.active,
+.lobby__box td.name a:hover {
     color: var(--primaryColor) !important;
 }
 
@@ -1211,9 +1235,19 @@ main.page-small {
     border: none !important;
 }
 
+.puzzle__side__metas .infos.puzzle {
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
+}
+
+.puzzle__themes {
+    border-top: 1px solid var(--surfaceColorHover) !important;
+}
+
 .tview2 shapes,
 .tview2 move.parent,
-.tview2 move.inaccuracy {
+.tview2 move.inaccuracy,
+.puzzle__moves move.good glyph,
+.puzzle__moves move.win glyph {
     color: var(--primaryColor) !important;
 }
 
@@ -1238,7 +1272,10 @@ main.page-small {
     border-color: var(--secondaryColor) !important;
 }
 
-.tview2 move.blunder {
+.tview2 move.blunder,
+.puzzle__moves move.fail glyph,
+.puzzle__vote .vote.vote-down,
+.puzzle__feedback.fail .icon {
     color: var(--tertiaryColor) !important;
 }
 
@@ -1310,14 +1347,31 @@ main.page-small {
 
 .fbt:hover:not(.disabled):not([disabled]),
 .puzzle__session a.result-true,
-.puzzle__feedback.after .continue {
+.puzzle__feedback.after .continue,
+.puzzle__vote .vote:hover,
+.puzzle__vote .vote.active {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
 
+.puzzle__vote .vote.vote-down:hover,
+.puzzle__vote .vote.vote-down.active,
+.puzzle__session a.result-false {
+    background: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
 .puzzle__side__streak__info h1,
-.puzzle__side__streak__score {
+.puzzle__side__streak__score,
+.puzzle__vote .vote,
+.puzzle__feedback.good .icon,
+.puzzle__feedback .win .icon,
+.puzzle__feedback.after .puzzle__more a:hover {
     color: var(--primaryColor) !important;
+}
+
+.puzzle__vote .vote::before {
+    font-size: 2.5em !important;
 }
 
 .puzzle__side__streak__score {
@@ -1347,6 +1401,10 @@ main.page-small {
     box-shadow: none !important;
     border: none !important;
     border-radius: 0 !important;
+}
+
+.game__meta section:not(:last-child) {
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
 }
 
 .mchat,
@@ -1437,6 +1495,10 @@ rm6 .buttons,
     border: none !important;
 }
 
+.crosstable povs.current a {
+    background-color: var(--backgroundColor) !important;
+}
+
 .crosstable .sep {
     border-left: 2px solid var(--surfaceColorHover) !important;
 }
@@ -1478,6 +1540,7 @@ rm6 u8t.a1t {
 
 .ruser {
     padding: 15px 10px !important;
+    z-index: 1 !important;
 }
 
 .ruser-bottom {
@@ -1669,7 +1732,6 @@ a.context-streamer:hover {
 .analyse .mchat {
     background: var(--surfaceColor) !important;
     border: 2px solid var(--surfaceColorHover) !important;
-    border-top: none !important;
 }
 
 .analyse__side {
@@ -1678,6 +1740,7 @@ a.context-streamer:hover {
 
 .analyse .mchat {
     border-radius: 0 0 var(--borderRadius) var(--borderRadius) !important;
+    border-top: none !important;
 }
 
 .action-menu__tools .button,
@@ -1896,6 +1959,19 @@ path[stroke="#b2b1b6"] {
 
 .study__player.ticking .analyse__clock {
     color: var(--secondaryColor) !important;
+}
+
+.analyse__clock {
+    box-shadow: none !important;
+    background: none !important;
+}
+
+.analyse__clock.active {
+    color: var(--secondaryColor) !important;
+}
+
+.analyse__clock.top {
+    top: -15px !important;
 }
 
 .study__player .result {
@@ -2187,6 +2263,94 @@ rect[fill="#000003"] {
 
 .tv-channel>span {
     justify-content: space-between !important;
+}
+
+/* Tournaments */
+
+.tour__side,
+.box,
+.tour__duels {
+    background: var(--surfaceColor) !important;
+    border-radius: var(--borderRadius) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    box-shadow: none !important;
+}
+
+.tour__meta {
+    background: none !important;
+}
+
+.tour__meta section.conditions.accepted,
+.tour__meta section.conditions .accepted,
+.tour__standing streak {
+    color: var(--primaryColor) !important;
+}
+
+.pull-quote p {
+    border: 1px solid var(--surfaceColorHover) !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.pull-quote p:after {
+    border-left: 2px solid var(--surfaceColorHover) !important;
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
+    background: var(--surfaceColor) !important;
+}
+
+.tour-sched .tour__main__header h1,
+.tour-sched .tour__main__header .img,
+.tour__standing double,
+.is-gold::before {
+    color: var(--secondaryColor) !important;
+}
+
+.tour__meta section.conditions.refused,
+.tour__meta section.conditions .refused {
+    color: var(--tertiaryColor) !important;
+}
+
+.tour__controls {
+    box-shadow: none !important;
+    background: var(--surfaceColorHover) !important;
+}
+
+.tour__controls .highlight {
+    background: var(--primaryColor) !important;
+    border-bottom: 5px solid var(--primaryColor) !important;
+    text-shadow: none !important;
+    color: var(--backgroundColor) !important;
+    top: -3px !important;
+}
+
+.tour__controls .highlight:hover {
+    background: var(--surfaceColorHover) !important;
+    border-bottom: none !important;
+    text-shadow: none !important;
+    color: var(--defaultWhite) !important;
+    top: 0px !important;
+}
+
+.tour__standing:not(.created):not(.loading) tbody tr:hover,
+.tour__duels .rank {
+    background: var(--backgroundColor) !important;
+}
+
+.tour__duels {
+    padding: 10px !important;
+}
+
+.tour__duels a {
+    border-top: 1px solid var(--surfaceColorHover) !important;
+}
+
+.tour__duels a:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.tour-chart .timeline {
+    min-height: auto !important;
+    overflow: visible !important;
 }
 
 /*Responsive Sizes*/
