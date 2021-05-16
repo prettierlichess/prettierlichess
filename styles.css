@@ -2269,20 +2269,23 @@ rect[fill="#000003"] {
 
 .tour__side,
 .box,
-.tour__duels {
+.tour__duels,
+.tour__actor-info {
     background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     box-shadow: none !important;
 }
 
-.tour__meta {
+.tour__meta,
+.tour__actor-info .stats h2 {
     background: none !important;
 }
 
 .tour__meta section.conditions.accepted,
 .tour__meta section.conditions .accepted,
-.tour__standing streak {
+.tour__standing streak,
+.tour__player-info .pairings tr.win td:last-child {
     color: var(--primaryColor) !important;
 }
 
@@ -2306,11 +2309,14 @@ rect[fill="#000003"] {
 }
 
 .tour__meta section.conditions.refused,
-.tour__meta section.conditions .refused {
+.tour__meta section.conditions .refused,
+.tour__actor-info .close,
+.tour__player-info .pairings tr.loss td:last-child {
     color: var(--tertiaryColor) !important;
 }
 
-.tour__controls {
+.tour__controls,
+.tour__player-info .pairings tr:nth-child(odd) {
     box-shadow: none !important;
     background: var(--surfaceColorHover) !important;
 }
@@ -2332,7 +2338,8 @@ rect[fill="#000003"] {
 }
 
 .tour__standing:not(.created):not(.loading) tbody tr:hover,
-.tour__duels .rank {
+.tour__duels .rank,
+.tour__player-info .pairings tr:hover {
     background: var(--backgroundColor) !important;
 }
 
@@ -2351,6 +2358,18 @@ rect[fill="#000003"] {
 .tour-chart .timeline {
     min-height: auto !important;
     overflow: visible !important;
+}
+
+.tour__player-info .pairings tr.win:hover th {
+    border-color: var(--primaryColor) !important;
+}
+
+.tour__player-info .pairings tr.loss:hover th {
+    border-color: var(--tertiaryColor) !important;
+}
+
+.tour__standing tr.active td:last-child {
+    background: linear-gradient(to left, var(--primaryColor) 0px, var(--primaryColor) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 100%) !important;
 }
 
 /*Responsive Sizes*/
