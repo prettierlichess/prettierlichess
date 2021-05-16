@@ -2793,6 +2793,68 @@ group.radio div:last-child label {
     border-right: 0 !important;
 }
 
+/* Messages */
+
+.msg-app__side,
+.msg-app__side__search,
+.msg-app__convo__head {
+    background: var(--surfaceColor) !important;
+    border: 0 !important;
+}
+
+.msg-app__side__contact:active,
+.msg-app__side__contact.active,
+.msg-app__side__contact:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.msg-app__convo__msgs,
+.msg-app__convo__reply {
+    background: var(--backgroundColor) !important;
+    border: 0 !important;
+}
+
+.msg-app__convo__post__submit.connected {
+    border-radius: 100% !important;
+    padding: 10px !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin-left: 8px !important;
+}
+
+.msg-app__convo__post__submit.connected::before {
+    margin-left: 2px !important;
+}
+
+.msg-app__convo__msgs mine {
+    border: 0 !important;
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    box-shadow: none !important;
+}
+
+.msg-app__convo__msgs em {
+    color: var(--backgroundColor) !important;
+}
+
+.msg-app__convo__msgs their {
+    border: 0 !important;
+    background: var(--surfaceColor) !important;
+    box-shadow: none !important;
+}
+
+.msg-app__convo__msgs their em {
+    color: var(--defaultWhite) !important;
+    opacity: .5 !important;
+}
+
+.msg-app__convo__msgs day {
+    background: var(--secondaryColor) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: var(--backgroundColor) !important;
+}
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
