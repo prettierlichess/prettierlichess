@@ -8,6 +8,7 @@
     },
     "content_scripts": [{
         "matches": ["*://lichess.org/*"],
+        "run_at": "document_idle",
         "css": ["styles.css"],
         "js": ["content.js"]
     }],
