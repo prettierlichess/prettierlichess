@@ -791,6 +791,8 @@ main.lobby {
 .lobby__app,
 .lobby__side {
     width: 23vw !important;
+    min-width: 45vh !important;
+    min-height: 60vh !important;
     height: calc(100% - 40px) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     border-radius: var(--borderRadius) !important;
@@ -832,6 +834,7 @@ main.lobby {
     border: none !important;
     background: var(--surfaceColorHover) !important;
     border-radius: 0 !important;
+    height: 100% !important;
 }
 
 .lpools>div:hover {
