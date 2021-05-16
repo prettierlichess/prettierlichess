@@ -1389,6 +1389,48 @@ main.page-small {
 
 /* Game View */
 
+.fbt.resign:hover {
+    background: var(--tertiaryColor) !important;
+}
+
+.ricons .act-confirm .fbt.yes {
+    background: none !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    color: var(--tertiaryColor) !important;
+    border-bottom: 0 !important;
+    border: 1px solid var(--tertiaryColor) !important;
+    border-radius: var(--borderRadius) !important;
+    transition: all .2s ease-in-out !important;
+}
+
+.ricons .act-confirm .fbt.yes:active {
+    transform: translateY(0px) !important;
+    background: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.rcontrols .suggestion,
+.rcontrols .pending,
+.rcontrols .negotiation {
+    background: var(--surfaceColorHover) !important;
+    border: 0 !important;
+}
+
+.rcontrols .negotiation a {
+    background: none !important;
+}
+
+.rcontrols .negotiation a:hover {
+    background: var(--surfaceColor) !important;
+}
+
+.expiration {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    border-radius: var(--borderRadius) !important;
+}
+
 .round__side {
     background: var(--surfaceColor) !important;
     border: 2px solid var(--surfaceColorHover) !important;
@@ -1482,11 +1524,13 @@ rm6 .buttons,
     background: var(--surfaceColor) !important;
 }
 
-.crosstable .win {
+.crosstable .win,
+.rcontrols .negotiation .accept {
     color: var(--primaryColor) !important;
 }
 
-.crosstable .loss {
+.crosstable .loss,
+.rcontrols .negotiation .decline {
     color: var(--tertiaryColor) !important;
 }
 
@@ -1509,6 +1553,7 @@ div.round__app {
 
 rm6 {
     margin-bottom: 0 !important;
+    background: none !important;
 }
 
 rm6 l4x,
