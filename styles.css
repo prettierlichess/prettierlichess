@@ -162,6 +162,15 @@ bad {
     box-shadow: 0 0 0 1px var(--primaryColor) inset !important;
 }
 
+.button.button-empty {
+    background: none !important;
+    color: var(--defaultWhite) !important;
+}
+
+.button.button-empty:hover {
+    box-shadow: none !important;
+}
+
 .cmn-toggle+label {
     border: 1px solid var(--surfaceColorHover) !important;
 }
@@ -1872,6 +1881,10 @@ a.context-streamer:hover {
     padding: 10px !important;
 }
 
+.copyables {
+    padding: 10px !important;
+}
+
 /* Analysis Graph */
 
 #acpl-chart,
@@ -2502,6 +2515,35 @@ rect[fill="#000003"] {
 
 .tour__standing tr.active td:last-child {
     background: linear-gradient(to left, var(--primaryColor) 0px, var(--primaryColor) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 100%) !important;
+}
+
+/* Board Editor */
+
+.board-editor__tools,
+.board-editor .spare {
+    background: var(--surfaceColor) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-radius: var(--borderRadius) !important;
+    box-shadow: none !important;
+}
+
+.board-editor__tools {
+    padding: 10px !important;
+}
+
+.board-editor__tools .metadata {
+    background: none !important;
+    border-radius: var(--borderRadius) !important;
+    border: 1px solid var(--surfaceColorHover) !important;
+}
+
+.board-editor .spare .no-square.pointer.selected-square,
+.board-editor .spare .no-square.selected-square {
+    background: var(--primaryColor) !important;
+}
+
+.board-editor .spare .no-square:hover {
+    background: var(--surfaceColorHover) !important;
 }
 
 /*Responsive Sizes*/
