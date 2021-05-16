@@ -8,13 +8,13 @@
     },
     "content_scripts": [{
             "matches": ["*://lichess.org/*"],
-            "run_at": "document_idle",
+            "run_at": "document_start",
             "css": ["styles.css"],
             "js": ["content.js"]
         },
         {
             "matches": ["*://lichess.org/*"],
-            "run_at": "document_start",
+            "run_at": "document_idle",
             "js": ["animations.js"]
         }
     ],
