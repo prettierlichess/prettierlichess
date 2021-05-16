@@ -2739,6 +2739,43 @@ h1 a,
     border-bottom: 1px solid var(--surfaceColorHover) !important;
 }
 
+/* Preferences */
+
+.subnav .sep {
+    display: none !important;
+}
+
+.account h1 {
+    color: var(--secondaryColor) !important;
+}
+
+.account h2::after {
+    background: var(--secondaryColor) !important;
+}
+
+.account section group.radio input:checked+label,
+.plan .banner,
+.plan .plan_checkout group input:checked+label,
+.plan .plan_checkout .amount_fixed label,
+.plan .plan_checkout .lifetime-check input+label {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+group.radio {
+    border-radius: var(--borderRadius) !important;
+}
+
+group.radio label {
+    border-right: 1px solid var(--surfaceColorHover) !important;
+}
+
+group.radio div:last-child label {
+    border-right: 0 !important;
+}
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
