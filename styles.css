@@ -291,6 +291,10 @@ cg-container coords.files coord,
     color: var(--defaultWhite) !important;
 }
 
+coords {
+    text-shadow: none !important;
+}
+
 coords coord {
     display: flex !important;
     justify-content: center !important;
@@ -2544,6 +2548,195 @@ rect[fill="#000003"] {
 
 .board-editor .spare .no-square:hover {
     background: var(--surfaceColorHover) !important;
+}
+
+/* Forum */
+
+h1 a,
+.forum .slist td:last-child time,
+.forum-post__metas .anchor,
+.reactions button {
+    color: var(--primaryColor) !important;
+}
+
+.pagination .current {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.forum.forum-categ .sticky {
+    box-sizing: border-box !important;
+    background: linear-gradient(to right, var(--primaryColor) 0px, var(--primaryColor) 8px, rgba(0, 0, 0, 0) 8px, rgba(0, 0, 0, 0) 100%) !important;
+}
+
+/* Practice */
+
+.practice-side,
+.practice__side {
+    background: var(--surfaceColor) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-radius: var(--borderRadius) !important;
+    box-shadow: none !important;
+}
+
+.practice-side .progress,
+.ps__chapter.active,
+.ps__chapter:hover {
+    background: var(--surfaceColorHover) !important;
+    box-shadow: none !important;
+}
+
+.practice-app .study.ongoing {
+    background: var(--surfaceColor) !important;
+    box-shadow: none !important;
+}
+
+.practice-app .ribbon {
+    background: var(--surfaceColorHover) !important;
+    color: var(--defaultWhite) !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.practice-app .ribbon:before,
+.practice-app .ribbon:after {
+    border-top: none !important;
+}
+
+.practice-app .studies .study.done,
+.practice-side .progress .bar,
+.practice__side__title {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.feedback,
+.practice-box .comment,
+.practice__side .finally,
+.ps__chapter.active .status {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+.analyse__underboard .setting {
+    margin: 10px !important;
+}
+
+.practice__side .finally {
+    border-top: 2px solid var(--surfaceColorHover) !important;
+}
+
+.ps__chapter.active h3,
+.ps__chapter.active .status {
+    color: var(--primaryColor) !important;
+}
+
+.ps__chapter {
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
+    padding: 10px !important;
+}
+
+/* Learn */
+
+.learn__side-home,
+.learn-stages .stage,
+.learn__table .wrap,
+.learn__side-map,
+.learn__screen {
+    background: var(--surfaceColor) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-radius: var(--borderRadius) !important;
+    box-shadow: none !important;
+}
+
+.learn__side-home .progress,
+.learn__side-map .stage.done:hover,
+.learn__side-map .stage.active,
+.learn__side-map .stage.future:hover {
+    background: var(--surfaceColorHover) !important;
+    box-shadow: none !important;
+}
+
+.learn-stages .stage.done,
+.learn__table .title,
+.learn__table .progress a.done,
+.learn__side-map .categ.active>h2,
+.learn__side-home .progress .bar,
+.learn__side-map .back img,
+.learn__side-map .stage.done img,
+.learn__screen .buttons .next,
+.learn__table .result.completed {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.learn-stages .stage.ongoing,
+.learn__table .progress a.active,
+.learn__side-map .stage.active img,
+.learn__side-map .stage.future img,
+.learn__screen .round-svg {
+    background: var(--secondaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.learn__table .result.failed {
+    background: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.learn__table .result.failed button {
+    color: var(--tertiaryColor) !important;
+    font-size: 20px !important;
+}
+
+.learn-stages .ribbon.ongoing {
+    background: var(--surfaceColor) !important;
+    color: var(--defaultWhite) !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.learn-stages .ribbon.ongoing:before,
+.learn-stages .ribbon.ongoing:after {
+    border-top: none !important;
+}
+
+.learn-stages .ribbon.done,
+.learn__side-map .categ>h2:hover {
+    background: var(--surfaceColorHover) !important;
+    box-shadow: none !important;
+}
+
+.learn-stages .ribbon.done:before,
+.learn-stages .ribbon.done:after {
+    border-top: none !important;
+}
+
+.learn-stages .ribbon i {
+    color: var(--defaultWhite) !important;
+}
+
+.learn__table .goal,
+.learn__table .progress a {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+.learn__table .progress,
+.learn__table .goal,
+.learn__side-map .categ.active,
+.learn__side-map .categ>h2,
+.learn__table .result.completed,
+.learn__table .progress a:first-child {
+    border: 0 !important;
+}
+
+.learn__table .progress a {
+    border-left: 1px solid var(--surfaceColorHover) !important;
+}
+
+.learn__table .goal {
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
 }
 
 /*Responsive Sizes*/
