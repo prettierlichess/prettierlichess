@@ -799,18 +799,23 @@ main.lobby {
         'support table table blog'
         '. simuls simuls .'
         '. about about .' !important;
+    grid-template-columns: minmax(400px, 1fr) 1fr 1fr minmax(400px, 1fr) !important;
+    grid-template-rows: minmax(1fr, 800px) repeat(2, fit-content(0)) !important;
+}
+
+.lobby--no-simuls .lobby__forum {
+    grid-area: forum !important;
 }
 
 #main-wrap {
-    --main-max-width: 1600px !important;
+    --main-max-width: 1500px !important;
 }
 
 .lobby__app,
 .lobby__side {
-    width: 23vw !important;
-    min-width: 45vh !important;
-    min-height: 60vh !important;
+    width: 100% !important;
     height: calc(100% - 40px) !important;
+    max-height: auto !important;
     border: 2px solid var(--surfaceColorHover) !important;
     border-radius: var(--borderRadius) !important;
     overflow: hidden !important;
