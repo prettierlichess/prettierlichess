@@ -236,6 +236,15 @@ select {
     outline: none !important;
 }
 
+.hook__filters .regular-checkbox:checked {
+    background: var(--primaryColor) !important;
+}
+
+.hook__filters .rating-range input {
+    background: none !important;
+    border: 0 !important;
+}
+
 /* Light Theme Fixes */
 
 .site-title,
@@ -1689,11 +1698,21 @@ a.context-streamer:hover {
     transform: translateX(0px) !important;
 }
 
-.analyse__tools {
+.analyse__tools,
+#analyse-cm {
     background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     box-shadow: none !important;
+}
+
+#analyse-cm {
+    box-shadow: var(--main-shadow) !important;
+}
+
+#analyse-cm .title {
+    background: var(--surfaceColorHover) !important;
+    border: none !important;
 }
 
 .analyse__acpl,
@@ -1763,13 +1782,19 @@ a.context-streamer:hover {
     color: var(--primaryColor) !important;
 }
 
-.tview2-column>index {
+.tview2-column>index,
+#analyse-cm a:hover {
     background: var(--surfaceColorHover) !important;
     border: 0 !important;
 }
 
 .tview2-column>move {
     align-items: center !important;
+}
+
+.tview2 move.context-menu {
+    background: var(--secondaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 .eval-gauge {
