@@ -1613,6 +1613,10 @@ rm6 u8t.a1t {
     box-shadow: inset 0 0 0 1px var(--defaultWhite) !important;
 }
 
+rm6 .result {
+    border-top: 2px solid var(--surfaceColorHover) !important;
+}
+
 .ruser {
     padding: 15px 10px !important;
     z-index: 1 !important;
@@ -1664,6 +1668,12 @@ a.context-streamer {
 
 a.context-streamer:hover {
     height: 3.5em !important;
+}
+
+#zentog.fbt.active {
+    background: none !important;
+    border: 1px solid var(--primaryColor) !important;
+    color: var(--primaryColor) !important;
 }
 
 /* Analysis */
@@ -2022,6 +2032,10 @@ path[stroke="#b2b1b6"] {
 
 .analyse__underboard .tabs-horiz {
     width: 100% !important;
+}
+
+.analyse__underboard__menu {
+    border-top: 2px solid var(--surfaceColorHover) !important;
 }
 
 .study__metadata,
