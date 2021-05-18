@@ -1,0 +1,82 @@
+@media (min-width: 800px),
+(orientation: landscape) {
+    div.round__app {
+        grid-template-columns: minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) minmax(240px, 400px);
+        grid-template-rows: 60px 1fr auto min-content 3fr auto min-content auto 1fr 60px !important;
+        grid-template-areas: 'user-top .''board .''board mat-top''board expi-top''board moves''board controls''board expi-bot''board mat-bot''board .''user-bot .''kb-move .';
+        margin-top: -0.5em;
+    }
+
+    rm6 {
+        background: var(--surfaceColor);
+        border-top: 2px solid var(--surfaceColorHover);
+        border-bottom: 2px solid var(--surfaceColorHover);
+        border-radius: var(--borderRadius);
+    }
+
+    .round__app .rclock-top {
+        padding-bottom: 10px;
+        grid-area: 1/ 2;
+    }
+
+    .round__app .rclock-bottom {
+        padding-top: 10px;
+        grid-area: 10 / 2;
+    }
+
+    .round__app .round__app__table {
+        grid-area: 4 / 2 / 6 / 3;
+    }
+
+    .rclock {
+        /* that weird shit is required so the clock goes above the player since they share the same grid cell */
+        justify-self: flex-end;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        padding-right: calc(100% + 30px);
+    }
+
+    .rclock .tour-rank,
+    .rclock .moretime,
+    .rclock .berserked {
+        order: -1;
+    }
+
+    .rclock .bar {
+        display: none;
+    }
+
+    .rclock .time {
+        font-size: 1.3em;
+        line-height: 0px;
+        background: none;
+
+    }
+
+    .ruser {
+        font-size: 16px;
+        padding: 0em .5em !important;
+        line-height: 14px;
+        background: var(--surfaceColor);
+        border: 2px solid var(--surfaceColorHover);
+        border-radius: var(--borderRadius);
+        align-items: center;
+    }
+
+    .ruser-bottom {
+        margin-top: 10px;
+    }
+
+    .ruser-top {
+        margin-bottom: 10px;
+    }
+
+    .ruser a {
+        flex: none;
+    }
+}
+
+#top .site-buttons a[title="Moderation"] {
+    display: none;
+}

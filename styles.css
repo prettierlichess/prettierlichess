@@ -1011,6 +1011,7 @@ main.lobby {
 }
 
 .lobby__table {
+    position: relative !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -1030,6 +1031,7 @@ main.lobby {
     justify-content: center !important;
     align-items: flex-start !important;
     flex-grow: 0 !important;
+    flex-wrap: wrap !important;
 }
 
 .lobby__counters {
@@ -1070,7 +1072,7 @@ main.lobby {
 
 #nb_games_in_play strong,
 #nb_connected_players strong {
-    font-size: 4rem !important;
+    font-size: 3.5vw !important;
     color: var(--defaultWhite) !important;
 }
 
@@ -1432,7 +1434,7 @@ main.page-small {
 }
 
 /* Centering game board in puzzle storm */
-.storm--play{
+.storm--play {
     justify-content: center;
 }
 

@@ -16,7 +16,7 @@
         {
             "matches": ["*://lichess.org/*"],
             "run_at": "document_idle",
-            "js": ["animations.js"]
+            "js": ["postLoad.js"]
         }
     ],
     "browser_action": {
