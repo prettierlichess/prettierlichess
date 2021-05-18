@@ -1431,6 +1431,11 @@ main.page-small {
     font-size: 1.5em !important;
 }
 
+/* Centering game board in puzzle storm */
+.storm--play{
+    justify-content: center;
+}
+
 /* Game View */
 
 .fbt.resign:hover {
