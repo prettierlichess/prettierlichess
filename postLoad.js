@@ -82,7 +82,7 @@ var styles = `
     }
 
     .rclock .time {
-        font-size: 1.3em;
+        font-size: 1.5em;
         line-height: 0px;
         height: 100%;
         display: flex;
