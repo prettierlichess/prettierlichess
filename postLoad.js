@@ -38,7 +38,6 @@ var styles = `
         grid-template-columns: minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) minmax(240px, 400px);
         grid-template-rows: 60px 1fr auto min-content 3fr auto min-content auto 1fr 60px !important;
         grid-template-areas: 'user-top .''board .''board mat-top''board expi-top''board moves''board controls''board expi-bot''board mat-bot''board .''user-bot .''kb-move .';
-        margin-top: -0.5em;
     }
 
     rm6 {
