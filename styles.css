@@ -181,7 +181,7 @@ bad {
 
 .streamerButton {
     background: none !important;
-    box-shadow: 0 0 0 2px var(--surfaceColorHover) inset !important;
+    box-shadow: 0 0 0 1px var(--surfaceColorHover) inset !important;
     color: var(--defaultWhite) !important;
     font-weight: 400 !important;
     max-height: 40px !important;
@@ -1213,7 +1213,8 @@ a.button.button-metal:hover {
     box-shadow: none !important;
 }
 
-.game-setup .range input, .game-setup .rating-range input{
+.game-setup .range input,
+.game-setup .rating-range input {
     background: none !important;
 }
 
