@@ -179,6 +179,22 @@ bad {
     box-shadow: none !important;
 }
 
+.streamerButton {
+    background: none !important;
+    box-shadow: 0 0 0 2px var(--surfaceColorHover) inset !important;
+    color: var(--defaultWhite) !important;
+    font-weight: 400 !important;
+    max-height: 40px !important;
+    max-width: 200px !important;
+    align-self: end !important;
+    justify-self: end !important;
+    opacity: .3 !important;
+}
+
+.streamerButton:hover {
+    opacity: 1 !important;
+}
+
 .cmn-toggle+label {
     border: 1px solid var(--surfaceColorHover) !important;
 }
@@ -1011,6 +1027,7 @@ main.lobby {
 }
 
 .lobby__table {
+    position: relative !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -1030,6 +1047,7 @@ main.lobby {
     justify-content: center !important;
     align-items: flex-start !important;
     flex-grow: 0 !important;
+    flex-wrap: wrap !important;
 }
 
 .lobby__counters {
@@ -1070,7 +1088,7 @@ main.lobby {
 
 #nb_games_in_play strong,
 #nb_connected_players strong {
-    font-size: 4rem !important;
+    font-size: 3.5vw !important;
     color: var(--defaultWhite) !important;
 }
 
@@ -1432,7 +1450,7 @@ main.page-small {
 }
 
 /* Centering game board in puzzle storm */
-.storm--play{
+.storm--play {
     justify-content: center;
 }
 
