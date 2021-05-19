@@ -1195,7 +1195,7 @@ a.button.button-metal:hover {
     box-shadow: none !important;
 }
 
-.game-setup .range input {
+.game-setup .range input, .game-setup .rating-range input{
     background: none !important;
 }
 
