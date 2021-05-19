@@ -3371,3 +3371,7 @@ group.radio div:last-child label {
     border: none !important;
     border-bottom: 1px solid var(--primaryColor) !important;
 }
+
+img.sc-fzpdyU.lexfvL {
+    filter: invert(0.8);
+}
