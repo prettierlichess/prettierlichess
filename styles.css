@@ -3179,6 +3179,10 @@ group.radio div:last-child label {
     }
 }
 
+/* Styling the API Documentation page */
+
+/* main content */
+
 .jveiGz,
 .CvVzT {
     color: #48cae4;
@@ -3192,6 +3196,9 @@ group.radio div:last-child label {
     border-color: var(--primaryColor);
     color: var(--primaryColor);
 }
+.hTmvgG:hover {
+    color: var(--defaultWhite);
+}
 
 .cDQnzz a,
 .dTfQqd a,
@@ -3201,7 +3208,7 @@ group.radio div:last-child label {
 
 .cDQnzz a:visited,
 .kTjICZ a:visited {
-    color: #517b54;
+    color: #659a69;
 }
 
 .dTfQqd a:visited {
@@ -3230,7 +3237,7 @@ group.radio div:last-child label {
 .giGCsS,
 .kTjICZ code {
     background-color: #222;
-    padding: 0.2 0.4em;
+    padding: 0.2em 0.4em;
     border-radius: 6px;
     color: #c77dff;
 }
@@ -3298,6 +3305,7 @@ group.radio div:last-child label {
 }
 
 /*Left pane*/
+
 .WRXpA {
     background-color: var(--surfaceColor);
 }
@@ -3312,7 +3320,8 @@ group.radio div:last-child label {
 
 .buCtgC:hover,
 .iMTjtc:hover,
-.eqSEf:hover {
+.eqSEf:hover,
+.jPKYZB:hover {
     background-color: #585b5f;
 }
 
@@ -3329,7 +3338,9 @@ group.radio div:last-child label {
 .gdtRWl .sc-fznKkj polygon,
 .eKKNtP .sc-egiSv polygon,
 .EBHFd path,
-.jTjaYG .sc-egiSv polygon {
+.jTjaYG .sc-egiSv polygon,
+.sc-egiSv .ekRynv polygon,
+.sc-egiSv polygon {
     fill: var(--primaryColor);
 }
 

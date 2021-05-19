@@ -1,0 +1,168 @@
+.jveiGz,
+.CvVzT {
+    color: #48cae4;
+}
+
+.epDZfL {
+    color: #bababa;
+}
+
+.hTmvgG {
+    border-color: var(--primaryColor);
+    color: var(--primaryColor);
+}
+.hTmvgG:hover {
+    color: var(--defaultWhite);
+}
+
+.cDQnzz a,
+.dTfQqd a,
+.kTjICZ a {
+    color: var(--primaryColor);
+}
+
+.cDQnzz a:visited,
+.kTjICZ a:visited {
+    color: #659a69;
+}
+
+.dTfQqd a:visited {
+    color: var(--primaryColor);
+}
+.cDQnzz a:hover,
+.dTfQqd a:hover,
+.kTjICZ a:hover {
+    color: var(--defaultWhite);
+}
+
+.iieAzF {
+    color: var(--defaultWhite);
+}
+
+.cDQnzz code,
+.iSaGJa,
+.sc-qYSYK,
+.hbCucb {
+    background-color: #222;
+    padding: 0.4em;
+    border-radius: 6px;
+    color: #a0fbaa;
+}
+
+.giGCsS,
+.kTjICZ code {
+    background-color: #222;
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #c77dff;
+}
+
+.kTjICZ code {
+    padding: 0.4em;
+}
+
+.cDQnzz table tr {
+    background-color: var(--backgroundColor);
+}
+
+.cDQnzz table tr:nth-child(2n) {
+    background-color: var(--surfaceColor);
+}
+
+.gAECPP,
+.iQtuBN,
+.dONVW,
+.kzCYbv {
+    border-bottom: 1px solid #dee2e6 !important;
+    color: #dee2e6;
+}
+
+.cgMNyW {
+    color: var(--defaultWhite);
+}
+
+.ihvgJG,
+.ezqAQI,
+.jhLjom.jhLjom .dropdown-selector-value {
+    color: #adb5bd;
+}
+
+.ciuLQT button {
+    color: #bababa;
+}
+
+.kUYIEQ .sc-dJjZJu,
+.kUYIEQ .sc-dJjZJu .sc-dJjZJu .sc-dJjZJu,
+.kUYIEQ .sc-dJjZJu .sc-dJjZJu .sc-dJjZJu .sc-dJjZJu .sc-dJjZJu {
+    background: var(--surfaceColor) none repeat scroll 0% 0%;
+}
+
+.kUYIEQ .sc-dJjZJu .sc-dJjZJu,
+.kUYIEQ .sc-dJjZJu .sc-dJjZJu .sc-dJjZJu .sc-dJjZJu,
+.kUYIEQ .sc-dJjZJu .sc-dJjZJu .sc-dJjZJu .sc-dJjZJu .sc-dJjZJu .sc-dJjZJu {
+    background: var(--backgroundColor) none repeat scroll 0% 0%;
+}
+
+.jAudhj,
+.ehRoAS,
+.dUEjwH {
+    color: #b3b3b3;
+}
+
+.jhLjom.jhLjom .dropdown-arrow {
+    border-color: var(--primaryColor) transparent transparent;
+}
+
+.jYvhHH.jYvhHH:hover .dropdown-selector-value,
+.jYvhHH.jYvhHH:focus-within .dropdown-selector-value {
+    color: var(--primaryColor);
+    text-shadow: var(--primaryColor) 0px 0px 0px;
+}
+
+/*Left pane*/
+.WRXpA {
+    background-color: var(--surfaceColor);
+}
+
+.gdtRWl:hover,
+.eKKNtP,
+.eKKNtP:hover,
+.jTjaYG:hover {
+    background-color: var(--surfaceColorHover);
+    color: var(--defaultWhite);
+}
+
+.buCtgC:hover,
+.iMTjtc:hover,
+.eqSEf:hover,
+.jPKYZB:hover {
+    background-color: #585b5f;
+}
+
+.gdtRWl,
+.buCtgC,
+.jTjaYG,
+.iMTjtc,
+.hBzgoJ,
+.jPKYZB,
+.eqSEf {
+    color: var(--defaultWhite);
+}
+
+.gdtRWl .sc-fznKkj polygon,
+.eKKNtP .sc-egiSv polygon,
+.EBHFd path,
+.jTjaYG .sc-egiSv polygon,
+.sc-egiSv .ekRynv polygon,
+.sc-egiSv polygon {
+    fill: var(--primaryColor);
+}
+
+.search-input {
+    background-color: var(--surfaceColor) !important;
+}
+
+.hBzgoJ {
+    border: none !important;
+    border-bottom: 1px solid var(--primaryColor) !important;
+}
