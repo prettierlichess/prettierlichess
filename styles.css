@@ -179,6 +179,22 @@ bad {
     box-shadow: none !important;
 }
 
+.streamerButton {
+    background: none !important;
+    box-shadow: 0 0 0 2px var(--surfaceColorHover) inset !important;
+    color: var(--defaultWhite) !important;
+    font-weight: 400 !important;
+    max-height: 40px !important;
+    max-width: 200px !important;
+    align-self: end !important;
+    justify-self: end !important;
+    opacity: .3 !important;
+}
+
+.streamerButton:hover {
+    opacity: 1 !important;
+}
+
 .cmn-toggle+label {
     border: 1px solid var(--surfaceColorHover) !important;
 }

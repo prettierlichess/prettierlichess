@@ -130,22 +130,22 @@ TAB_SELECTOR.forEach((item, index) => {
 // Setup Streamer mode button only runs on match/tv pages
 chrome.storage.sync.get('streamerMode', function (result) {
     const round = document.querySelector('.round');
-    if(round){
+    if (round) {
         result = result['streamerMode']
-        if(result){
+        if (result) {
             enableStreamerMode()
         }
 
         var button = document.createElement("button");
         button.innerHTML = result ? "Disable Streamer Mode" : "Enable Streamer Mode";
         button.classList.add('button');
-        button.style.maxHeight = '40px';
+        button.classList.add('streamerButton');
 
         button.addEventListener("click", function () {
-            if(result){
+            if (result) {
                 syncSet('streamerMode', false)
                 window.location.reload()
-            }else{
+            } else {
                 syncSet('streamerMode', true)
                 window.location.reload()
             }
@@ -155,7 +155,7 @@ chrome.storage.sync.get('streamerMode', function (result) {
     }
 });
 
-function enableStreamerMode(){
+function enableStreamerMode() {
     var styleSheet = document.createElement("style");
     styleSheet.type = "text/css";
     styleSheet.innerText = STREAMER_STYLES;
