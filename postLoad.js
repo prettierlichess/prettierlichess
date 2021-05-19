@@ -1,37 +1,8 @@
 //Top Navigation
 
-const tabSelector = document.querySelectorAll('#topnav section>a');
-const tabGroup = document.querySelectorAll('[role="group"]');
-
-tabSelector.forEach((item, index) => {
-    item.addEventListener('mouseenter', e => {
-        if (item.nextSibling == tabGroup[index]) {
-            item.nextSibling.classList.add('topnavHover');
-        }
-    })
-
-    item.addEventListener('mouseleave', e => {
-        if (item.nextSibling == tabGroup[index]) {
-            item.nextSibling.classList.remove('topnavHover');
-        }
-    })
-
-    item.nextSibling.addEventListener('mouseenter', e => {
-        if (item.nextSibling == tabGroup[index]) {
-            item.nextSibling.classList.add('topnavHover');
-        }
-    })
-
-    item.nextSibling.addEventListener('mouseleave', e => {
-        if (item.nextSibling == tabGroup[index]) {
-            item.nextSibling.classList.remove('topnavHover');
-        }
-    })
-})
-
-//Streamer Mode
-
-var styles = `
+const TAB_SELECTOR = document.querySelectorAll('#topnav section>a');
+const TAB_GROUP = document.querySelectorAll('[role="group"]');
+const STREAMER_STYLES = `
 @media (min-width: 800px),
 (orientation: landscape) {
     div.round__app {
@@ -129,22 +100,70 @@ var styles = `
 }
 `
 
-var styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = styles;
-document.head.appendChild(styleSheet);
+// Navbar Animations
+TAB_SELECTOR.forEach((item, index) => {
+    item.addEventListener('mouseenter', e => {
+        if (item.nextSibling == TAB_GROUP[index]) {
+            item.nextSibling.classList.add('topnavHover');
+        }
+    })
 
-// 1. Create the button
-var button = document.createElement("button");
-button.innerHTML = "Enable Streamer Mode";
-button.classList.add('button');
-button.style.maxHeight = '40px';
+    item.addEventListener('mouseleave', e => {
+        if (item.nextSibling == TAB_GROUP[index]) {
+            item.nextSibling.classList.remove('topnavHover');
+        }
+    })
 
-// 2. Append somewhere
-var round = document.querySelector('.round');
-round.appendChild(button);
+    item.nextSibling.addEventListener('mouseenter', e => {
+        if (item.nextSibling == TAB_GROUP[index]) {
+            item.nextSibling.classList.add('topnavHover');
+        }
+    })
 
-// 3. Add event handler
-button.addEventListener("click", function () {
-    alert("Streamer Mode Enabled!");
+    item.nextSibling.addEventListener('mouseleave', e => {
+        if (item.nextSibling == TAB_GROUP[index]) {
+            item.nextSibling.classList.remove('topnavHover');
+        }
+    })
+})
+
+// Setup Streamer mode button only runs on match/tv pages
+chrome.storage.sync.get('streamerMode', function (result) {
+    const round = document.querySelector('.round');
+    if(round){
+        result = result['streamerMode']
+        if(result){
+            enableStreamerMode()
+        }
+
+        var button = document.createElement("button");
+        button.innerHTML = result ? "Disable Streamer Mode" : "Enable Streamer Mode";
+        button.classList.add('button');
+        button.style.maxHeight = '40px';
+
+        button.addEventListener("click", function () {
+            if(result){
+                syncSet('streamerMode', false)
+                window.location.reload()
+            }else{
+                syncSet('streamerMode', true)
+                window.location.reload()
+            }
+        });
+
+        round.appendChild(button);
+    }
 });
+
+function enableStreamerMode(){
+    var styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.innerText = STREAMER_STYLES;
+    document.head.appendChild(styleSheet);
+}
+
+function syncSet(scheme, value) {
+    chrome.storage.sync.set({
+        [scheme]: value
+    })
+}
