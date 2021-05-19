@@ -3296,3 +3296,48 @@ group.radio div:last-child label {
     color: var(--primaryColor);
     text-shadow: var(--primaryColor) 0px 0px 0px;
 }
+
+/*Left pane*/
+.WRXpA {
+    background-color: var(--surfaceColor);
+}
+
+.gdtRWl:hover,
+.eKKNtP,
+.eKKNtP:hover,
+.jTjaYG:hover {
+    background-color: var(--surfaceColorHover);
+    color: var(--defaultWhite);
+}
+
+.buCtgC:hover,
+.iMTjtc:hover,
+.eqSEf:hover {
+    background-color: #585b5f;
+}
+
+.gdtRWl,
+.buCtgC,
+.jTjaYG,
+.iMTjtc,
+.hBzgoJ,
+.jPKYZB,
+.eqSEf {
+    color: var(--defaultWhite);
+}
+
+.gdtRWl .sc-fznKkj polygon,
+.eKKNtP .sc-egiSv polygon,
+.EBHFd path,
+.jTjaYG .sc-egiSv polygon {
+    fill: var(--primaryColor);
+}
+
+.search-input {
+    background-color: var(--surfaceColor) !important;
+}
+
+.hBzgoJ {
+    border: none !important;
+    border-bottom: 1px solid var(--primaryColor) !important;
+}
