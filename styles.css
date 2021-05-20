@@ -1282,6 +1282,10 @@ main.page-small {
 
 /* Puzzles */
 
+.puzzle {
+    justify-content: center !important;
+}
+
 .puzzle__tools {
     background: var(--surfaceColor) !important;
     box-shadow: none !important;
@@ -1452,7 +1456,9 @@ main.page-small {
 
 /* Centering game board in puzzle storm and puzzle racer*/
 @media (min-width: 799px) {
-    .storm--play, .racer {
+
+    .storm--play,
+    .racer {
         justify-content: center;
     }
 }
@@ -1720,6 +1726,7 @@ a.context-streamer:hover {
 
 .analyse {
     position: relative !important;
+    justify-content: center !important;
     grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
     transform: translateX(40px) !important;
     transition: transform .3s ease-in-out !important;
@@ -2610,6 +2617,10 @@ rect[fill="#000003"] {
 
 /* Board Editor */
 
+.board-editor {
+    justify-content: center !important;
+}
+
 .board-editor__tools,
 .board-editor .spare {
     background: var(--surfaceColor) !important;
@@ -2739,6 +2750,12 @@ iframe.analyse {
 .ps__chapter .status {
     color: var(--defaultWhite) !important;
     opacity: .5 !important;
+}
+
+/* Coordinate Trainer */
+
+.coord-trainer {
+    justify-content: center !important;
 }
 
 /* Learn */
@@ -3217,6 +3234,7 @@ group.radio div:last-child label {
     border-color: var(--primaryColor);
     color: var(--primaryColor);
 }
+
 .hTmvgG:hover {
     color: var(--defaultWhite);
 }
@@ -3235,6 +3253,7 @@ group.radio div:last-child label {
 .dTfQqd a:visited {
     color: var(--primaryColor);
 }
+
 .cDQnzz a:hover,
 .dTfQqd a:hover,
 .kTjICZ a:hover {
