@@ -1450,6 +1450,33 @@ main.page-small {
     font-size: 1.5em !important;
 }
 
+/* for evaluation bar */
+
+@media (min-width: 1260px) {
+    .puzzle {
+        grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)),
+                calc(
+                    100vh * var(--board-scale) -
+                    calc(
+                        var(--site-header-height) + var(--site-header-margin)
+                    ) 
+                    - 3rem
+                )
+            ) 80px minmax(240px, 400px);
+    }
+    .puzzle-play:not(.gauge-on) .puzzle__tools {
+        transform: translateX(-63px);
+    }
+
+    .puzzle-play:not(.gauge-on) .puzzle__controls {
+        transform: translateX(-63px);
+    }
+    .puzzle__tools,
+    .puzzle__controls {
+        transition: transform 300ms ease-in-out;
+    }
+}
+
 /* Centering game board in puzzle storm */
 .storm--play {
     justify-content: center;
