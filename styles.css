@@ -1450,8 +1450,8 @@ main.page-small {
     font-size: 1.5em !important;
 }
 
-/* Centering game board in puzzle storm */
-.storm--play {
+/* Centering game board in puzzle storm and puzzle racer*/
+.storm--play, .racer {
     justify-content: center;
 }
 
