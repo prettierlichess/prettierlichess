@@ -2101,6 +2101,10 @@ path[stroke="#b2b1b6"] {
     border-top: 2px solid var(--surfaceColorHover) !important;
 }
 
+.analyse.has-players .analyse__underboard {
+    margin-top: calc(1.5rem + 1vmin) !important;
+}
+
 .study__metadata,
 .study__metadata h2,
 .study__message,
