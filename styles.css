@@ -1306,7 +1306,8 @@ main.page-small {
     border-bottom: 1px solid var(--surfaceColorHover) !important;
 }
 
-.puzzle__themes {
+.puzzle__themes,
+.puzzle__feedback.after .puzzle__more {
     border-top: 1px solid var(--surfaceColorHover) !important;
 }
 
@@ -1316,6 +1317,10 @@ main.page-small {
 .puzzle__moves move.good glyph,
 .puzzle__moves move.win glyph {
     color: var(--primaryColor) !important;
+}
+
+.puzzle__feedback.after .complete .game-over {
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
 }
 
 .tview2 move.current {
@@ -1365,8 +1370,9 @@ main.page-small {
     border-right: 1px solid var(--backgroundColor) !important;
 }
 
-.tview2 move.active {
-    background: var(--surfaceColorHover);
+.tview2 move.active,
+.puzzle__themes__list__entry:hover {
+    background: var(--surfaceColorHover) !important;
 }
 
 .tview2 move:not(.empty):hover,
@@ -1977,6 +1983,10 @@ a.context-streamer:hover {
 
 .copyables {
     padding: 10px !important;
+}
+
+.pv_box .pv[data-uci] .pv-san:hover {
+    color: var(--secondaryColor) !important;
 }
 
 /* Analysis Graph */
