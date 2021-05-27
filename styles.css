@@ -2087,6 +2087,10 @@ path[stroke="#b2b1b6"] {
     align-items: center !important;
 }
 
+.study__buttons {
+    border-bottom: 0 !important;
+}
+
 .analyse__underboard {
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
