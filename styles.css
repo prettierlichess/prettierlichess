@@ -1507,6 +1507,10 @@ main.page-small {
     background: var(--surfaceColor) !important;
 }
 
+.rclock .bar.berserk {
+    background: var(--tertiaryColor) !important;
+}
+
 .expiration {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
@@ -2068,7 +2072,8 @@ path[stroke="#b2b1b6"] {
 
 .study__chapters,
 .study__members,
-.study__relay__rounds {
+.study__relay__rounds,
+.study__server-eval {
     background: none !important;
 }
 
