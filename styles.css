@@ -1286,6 +1286,10 @@ main.page-small {
     justify-content: center !important;
 }
 
+.puzzle .eval-gauge {
+    display: none !important;
+}
+
 .puzzle__tools {
     background: var(--surfaceColor) !important;
     box-shadow: none !important;
