@@ -2512,6 +2512,7 @@ rect[fill="#000003"] {
 .subnav a {
     border-top: 2px solid var(--surfaceColorHover) !important;
     padding: 14px !important;
+    max-width: none !important;
 }
 
 .subnav a:hover {
