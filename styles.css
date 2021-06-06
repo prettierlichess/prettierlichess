@@ -1615,7 +1615,8 @@ rm6 .buttons,
 }
 
 .crosstable .win,
-.rcontrols .negotiation .accept {
+.rcontrols .negotiation .accept,
+.mchat__messages line.patron {
     color: var(--primaryColor) !important;
 }
 
