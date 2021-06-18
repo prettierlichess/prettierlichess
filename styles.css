@@ -294,7 +294,7 @@ cg-helper cg-container cg-board::before {
     width: 100% !important;
     height: 100% !important;
     z-index: 0 !important;
-    background: repeating-conic-gradient(var(--boardDark) 0% 25%, var(--boardLight) 0% 50%) 50% / 25% 25% !important;
+    background: repeating-conic-gradient(var(--boardDark) 0% 25.01%, var(--boardLight) 0% 50.01%) 50% / 25% 25% !important;
 }
 
 cg-helper cg-container cg-board {
