@@ -397,6 +397,16 @@ square.last-move {
     opacity: .4 !important;
 }
 
+square.premove-dest {
+    background: radial-gradient(var(--preMove) 19%, rgba(0, 0, 0, 0) 20%) !important;
+    opacity: .8 !important;
+}
+
+square.oc.premove-dest {
+    background: radial-gradient(transparent 0%, transparent 79%, var(--preMove) 80%) !important;
+}
+
+
 square.move-dest {
     background: radial-gradient(var(--moveIndicator) 19%, rgba(0, 0, 0, 0) 20%) !important;
     opacity: .8 !important;
@@ -1088,7 +1098,7 @@ main.lobby {
 
 #nb_games_in_play strong,
 #nb_connected_players strong {
-    font-size: 3.5vw !important;
+    font-size: 3vw !important;
     color: var(--defaultWhite) !important;
 }
 
