@@ -286,7 +286,7 @@ select {
 
 /* Board */
 
-cg-helper cg-container cg-board::before {
+cg-container cg-board::before {
     content: "" !important;
     position: absolute !important;
     left: 0 !important;
@@ -297,13 +297,13 @@ cg-helper cg-container cg-board::before {
     background: repeating-conic-gradient(var(--boardDark) 0% 25.01%, var(--boardLight) 0% 50.01%) 50% / 25% 25% !important;
 }
 
-cg-helper cg-container cg-board {
+cg-container cg-board {
     border-radius: 4px !important;
     box-shadow: var(--main-shadow) !important;
     overflow: hidden !important;
 }
 
-.is3d cg-helper cg-container cg-board {
+.is3d cg-container cg-board {
     border-radius: 0px !important;
     overflow: visible !important;
 }
