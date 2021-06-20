@@ -7,7 +7,7 @@ const STREAMER_STYLES = `
 (orientation: landscape) {
     div.round__app {
         grid-template-columns: minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) minmax(240px, 400px);
-        grid-template-rows: 60px 1fr auto min-content 3fr auto min-content auto 1fr 60px !important;
+        grid-template-rows: 50px 1fr auto min-content 3fr auto min-content auto 1fr 50px !important;
         grid-template-areas: 'user-top .''board .''board mat-top''board expi-top''board moves''board controls''board expi-bot''board mat-bot''board .''user-bot .''kb-move .';
     }
 
@@ -20,13 +20,13 @@ const STREAMER_STYLES = `
 
     .round__app .rclock-top {
         padding-bottom: 20px;
-        padding-top: 10px;
+        padding-top: 15px;
         grid-area: 1/ 2;
     }
 
     .round__app .rclock-bottom {
         padding-top: 20px;
-        padding-bottom: 10px;
+        padding-bottom: 15px;
         grid-area: 10 / 2;
     }
 
@@ -71,11 +71,11 @@ const STREAMER_STYLES = `
     }
 
     .ruser-bottom {
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .ruser-top {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
 
     .ruser a {
@@ -137,7 +137,7 @@ chrome.storage.sync.get('streamerMode', function (result) {
         }
 
         var button = document.createElement("button");
-        button.innerHTML = result ? "Disable Streamer Mode" : "Enable Streamer Mode";
+        button.innerHTML = result ? "Disable Vertical Layout" : "Enable Vertical Layout";
         button.classList.add('button');
         button.classList.add('streamerButton');
 

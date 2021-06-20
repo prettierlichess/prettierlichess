@@ -900,6 +900,16 @@ main.lobby {
     font-size: 75% !important;
 }
 
+.hooks__list tr.join:hover td {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.hooks__list thead,
+.hooks__list td {
+    border-bottom: 2px solid var(--surfaceColorHover) !important;
+}
+
 .tabs-horiz {
     background: var(--surfaceColor) !important;
     border-bottom: 2px solid var(--surfaceColorHover) !important;
@@ -908,6 +918,11 @@ main.lobby {
 
 .tabs-horiz span {
     padding: 10px 0 !important;
+}
+
+.lobby__streams:empty,
+.lobby__spotlights:empty {
+    display: none !important;
 }
 
 .tabs-horiz span.active,
@@ -949,7 +964,8 @@ main.lobby {
     overflow: overlay !important;
 }
 
-.timeline .entry::after {
+.timeline .entry::after,
+.hooks__list td {
     background: none !important;
 }
 
@@ -1487,6 +1503,19 @@ main.page-small {
 
 .fbt.resign:hover {
     background: var(--tertiaryColor) !important;
+}
+
+.fbt.rematch {
+    margin: 0 !important;
+}
+
+.follow-up {
+    border: 0 !important;
+}
+
+.follow-up .fbt {
+    margin: 0 !important;
+    border: 0 !important;
 }
 
 .ricons .act-confirm .fbt.yes {
@@ -2464,12 +2493,20 @@ path[stroke="#b2b1b6"] {
     color: var(--tertiaryColor) !important;
 }
 
+path[stroke="#404040"] {
+    stroke: var(--surfaceColorHover) !important;
+}
+
 rect[fill="#505053"] {
     fill: var(--surfaceColorHover) !important;
 }
 
 rect[fill="#000003"] {
     fill: var(--primaryColor) !important;
+}
+
+hr {
+    background: var(--surfaceColorHover) !important;
 }
 
 .fire-trophy,
