@@ -2724,7 +2724,7 @@ hr {
     background: var(--surfaceColorHover) !important;
 }
 
-/* Forum */
+/* Forum/Blog */
 
 h1 a,
 .forum .slist td:last-child time,
@@ -2754,6 +2754,37 @@ h1 a,
 
 iframe.analyse {
     position: absolute !important;
+}
+
+.page-menu.page-small {
+    background: none !important;
+    border: none !important;
+    justify-self: center !important;
+    margin-right: 70px !important;
+}
+
+.blog .meta-headline {
+    padding: 20px !important;
+}
+
+.blog .meta {
+    margin: 0 !important;
+}
+
+.blog-cards>a,
+.blog .meta-headline,
+.blog-cards>a time {
+    background: var(--surfaceColorHover) !important;
+    box-shadow: none !important;
+}
+
+.blog-cards>a {
+    border-radius: var(--borderRadius) !important;
+}
+
+.blog-cards>a:hover {
+    transform: scale(1.02) !important;
+    box-shadow: var(--main-shadow) !important;
 }
 
 /* Practice */
