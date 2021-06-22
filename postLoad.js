@@ -5,6 +5,11 @@ const TAB_GROUP = document.querySelectorAll('[role="group"]');
 const STREAMER_STYLES = `
 @media (min-width: 800px),
 (orientation: landscape) {
+
+    cg-container cg-board {
+        box-shadow: none !important;
+    }
+
     div.round__app {
         grid-template-columns: minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) minmax(240px, 400px);
         grid-template-rows: 50px 1fr auto min-content 3fr auto min-content auto 1fr 50px !important;
