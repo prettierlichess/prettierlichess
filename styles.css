@@ -71,6 +71,7 @@ html {
     --secondaryColor: #f5c276 !important;
     --tertiaryColor: #d36d6d !important;
     --defaultWhite: #F2F5F3 !important;
+    --textColor: #c5c5c5 !important;
     --main-shadow: 0 4px 76px -15px rgba(0, 0, 0, 0.5) !important;
     --arrowPrimary: #68C07B !important;
     --arrowSecondary: #E8A43F !important;
@@ -105,6 +106,78 @@ html {
     box-shadow: inset 0 0 10px 10px var(--surfaceColor) !important;
     border: solid 5px transparent !important;
     border-radius: 8px !important;
+}
+
+/* Text Coloring */
+
+body,
+.tabs-horiz,
+.lobby__counters,
+.lobby__streams .stream,
+.timeline,
+.lobby__about a,
+.timeline .entry a,
+.lobby__box__top .title,
+.lobby__box .user-link,
+.tour-spotlight,
+.user-link .line,
+.lpools>div,
+.lobby__box__top .more,
+.lobby__box td.name a,
+.lobby__blog .post,
+.lobby__blog .post time,
+.lobby__counters a,
+.subnav a,
+.mini-game,
+.mini-game:hover,
+.ruser a,
+.user-link,
+rm6 u8t.a1t,
+.fbt,
+.tv-single .tv-history h2,
+.site-buttons .link,
+.site-buttons .dropdown a,
+.site-buttons .dropdown button,
+.lobby__puzzle .text,
+.tour__duels strong,
+.tour__duels a,
+.btn-rack__btn,
+.btn-rack form,
+.number-menu--tabs .nm-item.active,
+.number-menu .nm-item,
+.sub-ratings a,
+.study__relay__rounds .link,
+.study__chapters>div.active,
+.study__chapters>div:active,
+.study__chapters>div:hover,
+.study__members>div:hover,
+.study__relay__rounds>div:hover,
+.study__chapters>div.active,
+.study__members>div.active,
+.study__relay__rounds>div.active,
+.study__tags th,
+.chat__members__number::before,
+.tabs-horiz,
+.chat__members,
+.analyse__controls .fbt,
+.study__buttons .mode,
+.learn__side-map .stage,
+.learn__side-map .back,
+.learn__side-map .categ>h2,
+p,
+button,
+input,
+optgroup,
+select,
+textarea,
+.lobby__streams .more,
+.timeline .more,
+.puzzle__side__metas .hidden,
+.studies .study li,
+.studies .study .top span,
+.studies .study li::before,
+.crosstable povs a {
+    color: var(--textColor) !important;
 }
 
 /* General */
@@ -277,10 +350,21 @@ select {
 .btn-rack form,
 .crosstable__users,
 .crosstable__score,
-.crosstable povs:hover,
 .cmn-toggle+label::after,
 #analyse-cm .title,
-.analyse__clock {
+.analyse__clock,
+.crosstable povs:hover,
+.cmn-toggle+label::after,
+.slist thead,
+#analyse-cm .title,
+.study__player,
+.study__metadata h2,
+.cmn-toggle+label::after,
+.rcontrols .rematch.fbt,
+#powerTip .forecast-info .title,
+.mselect__label,
+group.radio label,
+.slist thead {
     text-shadow: none !important;
 }
 
@@ -301,6 +385,10 @@ cg-container cg-board {
     border-radius: 4px !important;
     box-shadow: var(--main-shadow) !important;
     overflow: hidden !important;
+}
+
+.mini-board cg-board {
+    box-shadow: none !important;
 }
 
 .is3d cg-container cg-board {
@@ -1552,6 +1640,19 @@ main.page-small {
 
 .rclock .bar.berserk {
     background: var(--tertiaryColor) !important;
+}
+
+.rclock.emerg .time {
+    color: var(--tertiaryColor) !important;
+}
+
+.rclock.running .time {
+    opacity: 1 !important;
+}
+
+.rclock .time {
+    color: var(--defaultWhite) !important;
+    opacity: .5 !important;
 }
 
 .expiration {

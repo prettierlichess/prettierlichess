@@ -1,4 +1,4 @@
-const colorScheme = ["primaryColor", "secondaryColor", "tertiaryColor", "backgroundColor", "surfaceColor", "surfaceColorHover", "defaultWhite", "arrowPrimary", "arrowSecondary", "arrowTertiary", "arrowAlternate", "lastMove", "preMove", "moveIndicator", "boardDark", "boardLight"]
+const colorScheme = ["primaryColor", "secondaryColor", "tertiaryColor", "backgroundColor", "surfaceColor", "surfaceColorHover", "defaultWhite", "textColor", "arrowPrimary", "arrowSecondary", "arrowTertiary", "arrowAlternate", "lastMove", "preMove", "moveIndicator", "boardDark", "boardLight"]
 
 colorScheme.forEach(scheme => schemeSet(scheme));
 
