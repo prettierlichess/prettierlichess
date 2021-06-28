@@ -176,7 +176,19 @@ textarea,
 .studies .study li,
 .studies .study .top span,
 .studies .study li::before,
-.crosstable povs a {
+.crosstable povs a,
+.mchat__say::placeholder,
+.tour-spotlight i.img::before,
+.puzzle__feedback.after .puzzle__more a,
+.ceval help,
+.ceval .engine,
+.ceval .show-threat,
+.mchat__tab,
+textarea::placeholder,
+.tview2 eval,
+.tview2 line move,
+.tview2 move index,
+#analyse-cm a {
     color: var(--textColor) !important;
 }
 
@@ -381,7 +393,8 @@ cg-container cg-board::before {
     background: repeating-conic-gradient(var(--boardDark) 0% 25.01%, var(--boardLight) 0% 50.01%) 50% / 25% 25% !important;
 }
 
-cg-container cg-board {
+cg-container cg-board,
+.lobby__puzzle .mini-board cg-board {
     border-radius: 4px !important;
     box-shadow: var(--main-shadow) !important;
     overflow: hidden !important;
@@ -1014,7 +1027,8 @@ main.lobby {
 }
 
 .tabs-horiz span.active,
-.lobby__box td.name a:hover {
+.lobby__box td.name a:hover,
+.lobby__app .gamesFiltered {
     color: var(--primaryColor) !important;
 }
 
@@ -1053,7 +1067,8 @@ main.lobby {
 }
 
 .timeline .entry::after,
-.hooks__list td {
+.hooks__list td,
+.hook__filters {
     background: none !important;
 }
 
@@ -1422,11 +1437,17 @@ main.page-small {
 
 .puzzle__side__metas .infos.puzzle {
     border-bottom: 1px solid var(--surfaceColorHover) !important;
+    justify-content: flex-start !important;
 }
 
 .puzzle__themes,
 .puzzle__feedback.after .puzzle__more {
     border-top: 1px solid var(--surfaceColorHover) !important;
+}
+
+.tview2 eval,
+.tview2 move index {
+    opacity: .5 !important;
 }
 
 .tview2 shapes,
@@ -2369,14 +2390,14 @@ path[stroke="#b2b1b6"] {
 
 .mchat__messages .color,
 .mchat__messages .user-link {
-    color: var(--defaultWhite) !important;
+    color: var(--textColor) !important;
     opacity: .8 !important;
     letter-spacing: .5px !important;
     font-weight: 500 !important;
 }
 
 .mchat__messages t {
-    color: var(--defaultWhite) !important;
+    color: var(--textColor) !important;
     opacity: .65 !important;
     line-height: 16px !important;
 }
