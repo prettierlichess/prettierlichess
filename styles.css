@@ -71,7 +71,7 @@ html {
     --secondaryColor: #f5c276 !important;
     --tertiaryColor: #d36d6d !important;
     --defaultWhite: #F2F5F3 !important;
-    --textColor: #c5c5c5 !important;
+    --textColor: #AAAAAA !important;
     --main-shadow: 0 4px 76px -15px rgba(0, 0, 0, 0.5) !important;
     --arrowPrimary: #68C07B !important;
     --arrowSecondary: #E8A43F !important;
@@ -188,7 +188,17 @@ textarea::placeholder,
 .tview2 eval,
 .tview2 line move,
 .tview2 move index,
-#analyse-cm a {
+#analyse-cm a,
+.chat__members,
+.rclock .tour-rank,
+.round__now-playing .now-playing,
+input::placeholder,
+.tour__main__header .time,
+.study__multiboard .now-playing a,
+.form-help,
+.password-complexity-label,
+.study__share .ply-wrap,
+rm6 .message::before {
     color: var(--textColor) !important;
 }
 
@@ -376,7 +386,8 @@ select {
 #powerTip .forecast-info .title,
 .mselect__label,
 group.radio label,
-.slist thead {
+.slist thead,
+.explorer-box .config .choices span {
     text-shadow: none !important;
 }
 
@@ -1288,10 +1299,12 @@ a.button.button-metal:hover {
 .upt__actions.btn-rack {
     box-shadow: none !important;
     background: var(--surfaceColor);
+    border-radius: var(--borderRadius) !important;
 }
 
 .upt__actions.btn-rack a {
     transition: background .2s ease-in-out !important;
+    border: 0 !important;
 }
 
 .btn-rack__btn,
@@ -1424,6 +1437,10 @@ main.page-small {
     box-shadow: none !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
+}
+
+button.rematch-decline::before {
+    color: var(--backgroundColor) !important;
 }
 
 .puzzle__feedback {
@@ -1659,7 +1676,8 @@ main.page-small {
     background: var(--surfaceColor) !important;
 }
 
-.rclock .bar.berserk {
+.rclock .bar.berserk,
+.rcontrols .rematch-decline {
     background: var(--tertiaryColor) !important;
 }
 
@@ -1869,6 +1887,10 @@ rm6 .result {
 .rclock .time {
     background: none !important;
     padding: 10px !important;
+}
+
+.mchat__presets span {
+    border: 1px solid var(--surfaceColorHover) !important;
 }
 
 .buttons .fbt.active,
@@ -2142,6 +2164,15 @@ a.context-streamer:hover {
     color: var(--defaultWhite) !important;
 }
 
+.explorer-box .config .choices {
+    border: 1px solid var(--backgroundColor) !important;
+    border-radius: var(--borderRadius) !important;
+}
+
+.explorer-box .config .choices span {
+    border: 0px !important;
+}
+
 .analyse__tools .sub-box .title {
     background: var(--backgroundColor) !important;
     padding: 10px !important;
@@ -2398,7 +2429,7 @@ path[stroke="#b2b1b6"] {
 
 .mchat__messages t {
     color: var(--textColor) !important;
-    opacity: .65 !important;
+    opacity: .7 !important;
     line-height: 16px !important;
 }
 
@@ -2491,7 +2522,17 @@ path[stroke="#b2b1b6"] {
     padding: 1em !important;
 }
 
-.activity section h2 time {
+.btn-rack {
+    border: 1px solid var(--surfaceColorHover) !important;
+}
+
+.btn-rack__btn,
+.user-show__social .relation-actions {
+    border: 0 !important;
+}
+
+.activity section h2 time,
+.sub-ratings strong {
     background: none !important;
     color: var(--secondaryColor) !important;
 }
@@ -2538,8 +2579,9 @@ path[stroke="#b2b1b6"] {
 
 .number-menu {
     padding: 4px !important;
-    border: 2px solid var(--surfaceColorHover) !important;
+    border: 1px solid var(--surfaceColorHover) !important;
     border-radius: var(--borderRadius) !important;
+    margin-bottom: 10px !important;
 }
 
 #us_profile,
@@ -2662,12 +2704,17 @@ hr {
     background: var(--surfaceColorHover) !important;
 }
 
-/* TV */
+/* TV Page */
 
 .subnav a.active,
 .tv-channel.active>span::before {
     color: var(--primaryColor) !important;
     opacity: 1 !important;
+}
+
+.now-playing>a {
+    padding: 1.5em !important;
+    overflow: visible !important;
 }
 
 .tv-channels.subnav {
@@ -2718,6 +2765,19 @@ hr {
     box-shadow: none !important;
 }
 
+.tour__stats,
+.mchat,
+.tour__meta,
+.tour__actor-info,
+.context-streamer,
+.tour__controls {
+    box-shadow: none !important;
+}
+
+.context-streamers {
+    overflow: overlay !important;
+}
+
 .tour__meta,
 .tour__actor-info .stats h2 {
     background: none !important;
@@ -2728,6 +2788,10 @@ hr {
 .tour__standing streak,
 .tour__player-info .pairings tr.win td:last-child {
     color: var(--primaryColor) !important;
+}
+
+.tour__featured {
+    overflow: visible !important;
 }
 
 .pull-quote p {
@@ -2853,6 +2917,10 @@ h1 a,
 .forum-post__metas .anchor,
 .reactions button {
     color: var(--primaryColor) !important;
+}
+
+.slist {
+    border: 0 !important;
 }
 
 .pagination .current,
