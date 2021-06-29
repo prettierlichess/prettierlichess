@@ -198,7 +198,9 @@ input::placeholder,
 .form-help,
 .password-complexity-label,
 .study__share .ply-wrap,
-rm6 .message::before {
+rm6 .message::before,
+.tview2-column line comment,
+.copyables .name {
     color: var(--textColor) !important;
 }
 
@@ -2279,9 +2281,25 @@ path[stroke="#b2b1b6"] {
 .study__chapters>div.active,
 .study__members>div.active,
 .study__relay__rounds>div.active,
-.study__relay__rounds>div:hover {
+.study__relay__rounds>div:hover,
+.gamebook .feedback.end a:hover {
     background: var(--surfaceColorHover) !important;
     padding: 12px !important;
+}
+
+.gamebook .feedback.end a:hover {
+    color: var(--textColor) !important;
+}
+
+.gamebook .comment div.hint,
+.gamebook .feedback.end a {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
+.gamebook .feedback.end a {
+    border: 0 !important;
+    transition: all .2s ease-in-out !important;
 }
 
 .study__chapters>div>span {
@@ -2303,7 +2321,16 @@ path[stroke="#b2b1b6"] {
     border-bottom: 0 !important;
 }
 
-.analyse__underboard {
+.gamebook .comment::after {
+    display: none !important;
+}
+
+a.analyse {
+    transform: translateX(0) !important;
+}
+
+.analyse__underboard,
+.gamebook .comment .content {
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     background: var(--surfaceColor) !important;
@@ -2333,17 +2360,15 @@ path[stroke="#b2b1b6"] {
     background: none !important;
 }
 
-.study__player.ticking .analyse__clock {
-    color: var(--secondaryColor) !important;
-}
-
-.analyse__clock {
-    box-shadow: none !important;
-    background: none !important;
-}
-
+.study__player.ticking .analyse__clock,
 .analyse__clock.active {
     color: var(--secondaryColor) !important;
+}
+
+.analyse__clock,
+.gamebook .comment {
+    box-shadow: none !important;
+    background: none !important;
 }
 
 .analyse__clock.top {
@@ -2382,7 +2407,8 @@ path[stroke="#b2b1b6"] {
     color: var(--tertiaryColor) !important;
 }
 
-.study__relay__rounds finished {
+.study__relay__rounds finished,
+.gamebook .comment a.hint {
     color: var(--primaryColor) !important;
 }
 
