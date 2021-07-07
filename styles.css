@@ -203,7 +203,12 @@ rm6 .message::before,
 .copyables .name,
 .pagination span,
 .swiss__standing .pairings late,
-.swiss__main__header .ongoing {
+.swiss__main__header .ongoing,
+.advice-summary,
+.button.button-metal:not(.disabled):hover,
+#friend_box .friend_box_title:hover,
+.btn-rack__btn:hover,
+.btn-rack form:hover {
     color: var(--textColor) !important;
 }
 
@@ -1747,6 +1752,10 @@ button.rematch-decline::before {
     border-bottom: 2px solid var(--surfaceColorHover) !important;
 }
 
+.mchat__messages li.me {
+    border-left: 3px solid var(--primaryColor) !important;
+}
+
 .mchat__tab input,
 .mchat__tab input:checked {
     border: none !important;
@@ -2237,16 +2246,23 @@ path[stroke="#cc9730"] {
     stroke: var(--tertiaryColor) !important;
 }
 
-path[fill="url(#highcharts-1)"] {
-    fill: var(--surfaceColor) !important;
-}
-
 path[fill="none"][stroke="black"] {
     stroke-opacity: 0 !important;
 }
 
 path[stroke="#b2b1b6"] {
     stroke: var(--surfaceColorHover) !important;
+}
+
+path[fill="url(#highcharts-14)"],
+path[fill="url(#highcharts-1)"],
+path[fill="url(#highcharts-7)"] {
+    fill: var(--backgroundColor) !important;
+}
+
+.highcharts-tooltip text {
+    fill: var(--textColor) !important;
+    color: var(--textColor) !important;
 }
 
 /* Studies */
@@ -3000,7 +3016,8 @@ h1 a,
     background: linear-gradient(to right, var(--primaryColor) 0px, var(--primaryColor) 8px, rgba(0, 0, 0, 0) 8px, rgba(0, 0, 0, 0) 100%) !important;
 }
 
-.forum-post {
+.forum-post,
+.form-actions {
     border-top: 1px solid var(--surfaceColorHover) !important;
 }
 
