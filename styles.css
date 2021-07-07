@@ -200,7 +200,10 @@ input::placeholder,
 .study__share .ply-wrap,
 rm6 .message::before,
 .tview2-column line comment,
-.copyables .name {
+.copyables .name,
+.pagination span,
+.swiss__standing .pairings late,
+.swiss__main__header .ongoing {
     color: var(--textColor) !important;
 }
 
@@ -413,7 +416,8 @@ cg-container cg-board,
     overflow: hidden !important;
 }
 
-.mini-board cg-board {
+.mini-board cg-board,
+#miniGame cg-board {
     box-shadow: none !important;
 }
 
@@ -2397,7 +2401,9 @@ a.analyse {
 }
 
 .study__topics .topic:hover,
-.slist tbody tr:nth-child(even) {
+.slist tbody tr:nth-child(even),
+.study-desc,
+.study__comment {
     background: var(--surfaceColorHover) !important;
 }
 
@@ -2767,7 +2773,7 @@ hr {
 }
 
 .tv-channel>span::before {
-    color: var(--defaultWhite) !important;
+    color: var(--textColor) !important;
     opacity: .5 !important;
 }
 
@@ -2784,7 +2790,9 @@ hr {
 .tour__side,
 .box,
 .tour__duels,
-.tour__actor-info {
+.tour__actor-info,
+.swiss__side,
+.swiss__boards {
     background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
@@ -2796,8 +2804,22 @@ hr {
 .tour__meta,
 .tour__actor-info,
 .context-streamer,
-.tour__controls {
+.tour__controls,
+.swiss__board,
+.swiss__board cg-board {
     box-shadow: none !important;
+}
+
+.swiss__board__top cg-board {
+    box-shadow: var(--main-shadow) !important;
+}
+
+.swiss__board__top .swiss__board {
+    overflow: visible !important;
+}
+
+.swiss__standing .pairings r {
+    border-left: 1px dotted var(--backgroundColor) !important;
 }
 
 .context-streamers {
@@ -2805,14 +2827,17 @@ hr {
 }
 
 .tour__meta,
-.tour__actor-info .stats h2 {
+.tour__actor-info .stats h2,
+.swiss__meta {
     background: none !important;
 }
 
 .tour__meta section.conditions.accepted,
 .tour__meta section.conditions .accepted,
 .tour__standing streak,
-.tour__player-info .pairings tr.win td:last-child {
+.tour__player-info .pairings tr.win td:last-child,
+.swiss__standing .pairings .win,
+.swiss__main__header .ongoing .nb {
     color: var(--primaryColor) !important;
 }
 
@@ -2835,24 +2860,33 @@ hr {
 .tour-sched .tour__main__header h1,
 .tour-sched .tour__main__header .img,
 .tour__standing double,
-.is-gold::before {
+.is-gold::before,
+.swiss__standing .pairings .ongoing {
     color: var(--secondaryColor) !important;
 }
 
 .tour__meta section.conditions.refused,
 .tour__meta section.conditions .refused,
 .tour__actor-info .close,
-.tour__player-info .pairings tr.loss td:last-child {
+.tour__player-info .pairings tr.loss td:last-child,
+.swiss__standing .pairings .loss,
+.swiss__meta section.conditions.refused,
+.swiss__meta section.conditions .refused {
     color: var(--tertiaryColor) !important;
 }
 
 .tour__controls,
-.tour__player-info .pairings tr:nth-child(odd) {
+.tour__player-info .pairings tr:nth-child(odd),
+.swiss__standing .pairings .win:hover,
+.swiss__standing .pairings .loss:hover,
+.swiss__standing .pairings .ongoing:hover,
+.swiss__controls {
     box-shadow: none !important;
     background: var(--surfaceColorHover) !important;
 }
 
-.tour__controls .highlight {
+.tour__controls .highlight,
+.swiss__controls .highlight {
     background: var(--primaryColor) !important;
     border-bottom: 5px solid var(--primaryColor) !important;
     text-shadow: none !important;
@@ -2870,11 +2904,13 @@ hr {
 
 .tour__standing:not(.created):not(.loading) tbody tr:hover,
 .tour__duels .rank,
-.tour__player-info .pairings tr:hover {
+.tour__player-info .pairings tr:hover,
+.swiss__standing:not(.created):not(.loading) tbody tr:hover {
     background: var(--backgroundColor) !important;
 }
 
-.tour__duels {
+.tour__duels,
+.swiss__boards {
     padding: 10px !important;
 }
 
@@ -2901,6 +2937,10 @@ hr {
 
 .tour__standing tr.active td:last-child {
     background: linear-gradient(to left, var(--primaryColor) 0px, var(--primaryColor) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 100%) !important;
+}
+
+.swiss__meta {
+    border-radius: 0 !important;
 }
 
 /* Board Editor */
@@ -3001,6 +3041,10 @@ iframe.analyse {
 .blog-cards>a:hover {
     transform: scale(1.02) !important;
     box-shadow: var(--main-shadow) !important;
+}
+
+.pagination span.disabled {
+    opacity: .25 !important;
 }
 
 /* Practice */
