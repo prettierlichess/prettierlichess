@@ -208,7 +208,9 @@ rm6 .message::before,
 .button.button-metal:not(.disabled):hover,
 #friend_box .friend_box_title:hover,
 .btn-rack__btn:hover,
-.btn-rack form:hover {
+.btn-rack form:hover,
+.swiss__main__header .clock,
+.tour__main__header .clock {
     color: var(--textColor) !important;
 }
 
@@ -2621,7 +2623,8 @@ a.analyse {
 
 .user-show__header,
 .user-show__social,
-.number-menu {
+.number-menu,
+.perf-stat .counter tr.full td:last-child {
     background: none !important;
 }
 
@@ -2637,7 +2640,13 @@ a.analyse {
     border-top: 2px solid var(--surfaceColorHover) !important;
 }
 
-#us_profile {
+.perf-stat__content [title] {
+    border-bottom: 1px dashed var(--primaryColor) !important;
+}
+
+#us_profile,
+.perf-stat .counter tr:first-child,
+.perf-stat .result thead tr {
     border-bottom: 2px solid var(--surfaceColorHover) !important;
 }
 
@@ -2701,11 +2710,15 @@ a.analyse {
     color: var(--primaryColor) !important;
 }
 
-.game-row .loss {
+.game-row .loss,
+.perf-stat red {
     color: var(--tertiaryColor) !important;
 }
 
-path[stroke="#404040"] {
+path[stroke="#404040"],
+.highcharts-navigator-handle-right path,
+.highcharts-navigator-handle-left path,
+.highcharts-navigator path {
     stroke: var(--surfaceColorHover) !important;
 }
 
@@ -2715,6 +2728,18 @@ rect[fill="#505053"] {
 
 rect[fill="#000003"] {
     fill: var(--primaryColor) !important;
+}
+
+.highcharts-button text,
+.highcharts-axis-labels text {
+    fill: var(--textColor) !important;
+    color: var(--textColor) !important;
+}
+
+.highcharts-navigator-handle-right rect,
+.highcharts-navigator-handle-left rect {
+    fill: var(--primaryColor) !important;
+    stroke: none !important;
 }
 
 hr {
@@ -2738,13 +2763,17 @@ hr {
     margin-top: -8px !important;
 }
 
-.sub-ratings a:hover {
+.sub-ratings a:hover,
+.sub-ratings a.active {
     background: var(--surfaceColorHover) !important;
     border-radius: var(--borderRadius) 0 0 var(--borderRadius) !important;
+    box-shadow: none !important;
 }
 
 .sub-ratings a:hover::before,
-.sub-ratings a:hover i {
+.sub-ratings a:hover i,
+.sub-ratings a.active::before,
+.perf-stat green {
     color: var(--primaryColor) !important;
 }
 
@@ -2853,7 +2882,9 @@ hr {
 .tour__standing streak,
 .tour__player-info .pairings tr.win td:last-child,
 .swiss__standing .pairings .win,
-.swiss__main__header .ongoing .nb {
+.swiss__main__header .ongoing .nb,
+.swiss__meta section.conditions.accepted,
+.swiss__meta section.conditions .accepted {
     color: var(--primaryColor) !important;
 }
 
