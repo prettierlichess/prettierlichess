@@ -210,7 +210,8 @@ rm6 .message::before,
 .btn-rack__btn:hover,
 .btn-rack form:hover,
 .swiss__main__header .clock,
-.tour__main__header .clock {
+.tour__main__header .clock,
+.activity .line a {
     color: var(--textColor) !important;
 }
 
@@ -399,7 +400,11 @@ select {
 .mselect__label,
 group.radio label,
 .slist thead,
-.explorer-box .config .choices span {
+.explorer-box .config .choices span,
+.data-count::after,
+.unread,
+.button.active,
+.btn-rack__btn.active {
     text-shadow: none !important;
 }
 
@@ -1943,12 +1948,12 @@ a.context-streamer:hover {
     position: relative !important;
     justify-content: center !important;
     grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
-    transform: translateX(40px) !important;
-    transition: transform .3s ease-in-out !important;
+    margin-left: 40px !important;
+    transition: margin-left .3s ease-in-out !important;
 }
 
 .analyse.gauge-on {
-    transform: translateX(0px) !important;
+    margin-left: 0px !important;
 }
 
 .analyse__tools,
@@ -2572,6 +2577,14 @@ a.analyse {
     padding: 1em !important;
 }
 
+.activity .line a {
+    opacity: .75 !important;
+}
+
+.activity .line a:hover {
+    opacity: 1 !important;
+}
+
 .btn-rack {
     border: 1px solid var(--surfaceColorHover) !important;
 }
@@ -2599,7 +2612,11 @@ a.analyse {
     border-left: 2px solid var(--secondaryColor) !important;
 }
 
-.activity win strong {
+.activity win strong,
+.data-count::after,
+.unread,
+.button.active,
+.btn-rack__btn.active {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
@@ -3404,7 +3421,7 @@ group.radio div:last-child label {
 
     .analyse {
         grid-template-columns: minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) var(--gauge-gap) minmax(240px, 400px) !important;
-        transform: translateX(0px) !important;
+        margin-left: 0px !important;
     }
 
     .analyse__acpl,
