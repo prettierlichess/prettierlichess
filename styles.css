@@ -1718,21 +1718,42 @@ button.rematch-decline::before {
 }
 
 .color-icon.black::before,
-.color-icon.white::before {
+.color-icon.white::before,
+.color-icon.random::before,
+.color-icon.random::after {
     display: inline-block !important;
     content: '' !important;
-    width: 12.5px !important;
-    height: 12.5px !important;
-    border-radius: 12.5px !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 12px !important;
     color: rgba(0, 0, 0, 0) !important;
+    opacity: .75 !important;
+}
+
+.color-icon.random::before {
+    border: 2px solid rgb(26, 26, 26) !important;
+    border-right: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    width: 6px !important;
+    transform: translateY(-2px) !important;
+}
+
+.color-icon.random::after {
+    border: 2px solid rgb(225, 225, 225) !important;
+    border-left: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    width: 6px !important;
+    transform: translateY(1px) !important;
 }
 
 .color-icon.black::before {
-    border: 2px solid rgb(26, 26, 26);
+    border: 2px solid rgb(26, 26, 26) !important;
 }
 
 .color-icon.white::before {
-    border: 2px solid rgb(225, 225, 225);
+    border: 2px solid rgb(225, 225, 225) !important;
 }
 
 .ricons .act-confirm .fbt.yes {
@@ -2933,7 +2954,8 @@ hr {
 .tour__duels,
 .tour__actor-info,
 .swiss__side,
-.swiss__boards {
+.swiss__boards,
+.tour__stats {
     background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
