@@ -211,7 +211,9 @@ rm6 .message::before,
 .btn-rack form:hover,
 .swiss__main__header .clock,
 .tour__main__header .clock,
-.activity .line a {
+.activity .line a,
+.hooks__chart .label,
+#hook .opponent {
     color: var(--textColor) !important;
 }
 
@@ -360,7 +362,18 @@ select {
     outline: none !important;
 }
 
-.hook__filters .regular-checkbox:checked {
+input[type='range']::-webkit-slider-runnable-track {
+    background: var(--backgroundColor) !important;
+    border: 1px solid var(--surfaceColorHover) !important;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    border: none !important;
+    margin-top: -1px !important;
+}
+
+.hook__filters .regular-checkbox:checked,
+input[type='range']::-webkit-slider-thumb {
     background: var(--primaryColor) !important;
 }
 
@@ -1041,6 +1054,29 @@ main.lobby {
     border-bottom: 2px solid var(--surfaceColorHover) !important;
 }
 
+.hooks__chart .grid.vert {
+    border-right: 1px dashed var(--surfaceColorHover) !important;
+}
+
+.hooks__chart .grid.horiz {
+    border-top: 1px dashed var(--surfaceColorHover) !important;
+}
+
+.hooks__list td {
+    max-width: 100px !important;
+    text-overflow: ellipsis !important;
+}
+
+.hook__filters tr.variant td:last-child,
+.hook__filters .range,
+.hook__filters .rating-range {
+    width: 100% !important;
+}
+
+.hooks__chart .label {
+    z-index: 2 !important;
+}
+
 .tabs-horiz {
     background: var(--surfaceColor) !important;
     border-bottom: 2px solid var(--surfaceColorHover) !important;
@@ -1102,8 +1138,20 @@ main.lobby {
     background: none !important;
 }
 
-.timeline .entry:hover a {
+.timeline .entry:hover a,
+.hooks__chart .plot.rated,
+.lobby__app .toggle:hover {
     color: var(--primaryColor) !important;
+}
+
+.hooks__chart {
+    width: 95% !important;
+    left: 0 !important;
+    overflow: visible !important;
+}
+
+.hooks__chart .grid.horiz {
+    width: 105% !important;
 }
 
 .lobby__streams .more {
@@ -1333,7 +1381,8 @@ a.button.button-metal:hover {
     border-right: 1px solid var(--surfaceColorHover) !important;
 }
 
-.upt__actions.btn-rack a:hover {
+.upt__actions.btn-rack a:hover,
+#hook .opponent {
     background: var(--surfaceColorHover) !important;
 }
 
@@ -1341,10 +1390,15 @@ a.button.button-metal:hover {
     color: var(--secondaryColor) !important;
 }
 
-#modal-wrap {
+#modal-wrap,
+#hook {
     background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
+}
+
+#hook {
+    box-shadow: var(--main-shadow) !important;
 }
 
 .game-setup .optional_config,
