@@ -429,7 +429,8 @@ cg-container cg-board,
 }
 
 .mini-board cg-board,
-#miniGame cg-board {
+#miniGame cg-board,
+#powerTip .mini-game cg-board {
     box-shadow: none !important;
 }
 
