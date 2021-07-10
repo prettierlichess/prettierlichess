@@ -1717,6 +1717,24 @@ button.rematch-decline::before {
     border: 0 !important;
 }
 
+.color-icon.black::before,
+.color-icon.white::before {
+    display: inline-block !important;
+    content: '' !important;
+    width: 12.5px !important;
+    height: 12.5px !important;
+    border-radius: 12.5px !important;
+    color: rgba(0, 0, 0, 0) !important;
+}
+
+.color-icon.black::before {
+    border: 2px solid rgb(26, 26, 26);
+}
+
+.color-icon.white::before {
+    border: 2px solid rgb(225, 225, 225);
+}
+
 .ricons .act-confirm .fbt.yes {
     background: none !important;
     text-shadow: none !important;
@@ -2012,11 +2030,16 @@ a.context-streamer:hover {
 }
 
 .analyse__tools,
-#analyse-cm {
+#analyse-cm,
+#acpl-chart-loader {
     background: var(--surfaceColor) !important;
-    border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     box-shadow: none !important;
+}
+
+.analyse__tools,
+#analyse-cm {
+    border-radius: var(--borderRadius) !important;
 }
 
 #analyse-cm {
@@ -2322,7 +2345,8 @@ path[fill="url(#highcharts-7)"] {
     fill: var(--backgroundColor) !important;
 }
 
-.highcharts-tooltip text {
+.highcharts-tooltip text,
+.highcharts-container text {
     fill: var(--textColor) !important;
     color: var(--textColor) !important;
 }
