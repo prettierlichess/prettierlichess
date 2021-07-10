@@ -205,7 +205,6 @@ rm6 .message::before,
 .swiss__standing .pairings late,
 .swiss__main__header .ongoing,
 .advice-summary,
-.button.button-metal:not(.disabled):hover,
 #friend_box .friend_box_title:hover,
 .btn-rack__btn:hover,
 .btn-rack form:hover,
@@ -1699,6 +1698,42 @@ button.rematch-decline::before {
 }
 
 /* Game View */
+
+.material mpiece {
+    background: var(--textColor) !important;
+    mask-size: contain !important;
+    mask-position: center !important;
+    mask-repeat: no-repeat !important;
+    -webkit-mask-size: contain !important;
+    -webkit-mask-position: center !important;
+    -webkit-mask-repeat: no-repeat !important;
+    opacity: .5 !important;
+}
+
+.material mpiece.knight {
+    -webkit-mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/N.svg) !important;
+    mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/N.svg) !important;
+}
+
+.material mpiece.bishop {
+    -webkit-mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/B.svg) !important;
+    mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/B.svg) !important;
+}
+
+.material mpiece.pawn {
+    -webkit-mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/P.svg) !important;
+    mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/P.svg) !important;
+}
+
+.material mpiece.rook {
+    -webkit-mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/R.svg) !important;
+    mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/R.svg) !important;
+}
+
+.material mpiece.queen {
+    -webkit-mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/Q.svg) !important;
+    mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/Q.svg) !important;
+}
 
 .fbt.resign:hover {
     background: var(--tertiaryColor) !important;
