@@ -526,8 +526,10 @@ cg-resize {
     z-index: 999999999 !important;
 }
 
-cg-resize:hover {
+cg-resize:hover,
+.resizing cg-resize {
     background: var(--primaryColor) !important;
+    opacity: .5 !important;
 }
 
 
