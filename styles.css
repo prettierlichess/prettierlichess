@@ -1737,6 +1737,11 @@ button.rematch-decline::before {
     mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/Q.svg) !important;
 }
 
+.material mpiece.king {
+    -webkit-mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/K.svg) !important;
+    mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/K.svg) !important;
+}
+
 .fbt.resign:hover {
     background: var(--tertiaryColor) !important;
 }
@@ -2984,7 +2989,7 @@ hr {
     justify-content: space-between !important;
 }
 
-/* Tournaments */
+/* Tournaments  / Simuls*/
 
 .tour__side,
 .box,
@@ -2992,7 +2997,8 @@ hr {
 .tour__actor-info,
 .swiss__side,
 .swiss__boards,
-.tour__stats {
+.tour__stats,
+.simul__side {
     background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
@@ -3028,7 +3034,8 @@ hr {
 
 .tour__meta,
 .tour__actor-info .stats h2,
-.swiss__meta {
+.swiss__meta,
+.simul__meta {
     background: none !important;
 }
 
@@ -3053,9 +3060,13 @@ hr {
     border-right: none !important;
 }
 
+.simul__meta .game-infos,
+.pull-quote p:after {
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
+}
+
 .pull-quote p:after {
     border-left: 2px solid var(--surfaceColorHover) !important;
-    border-bottom: 1px solid var(--surfaceColorHover) !important;
     background: var(--surfaceColor) !important;
 }
 
@@ -3063,7 +3074,8 @@ hr {
 .tour-sched .tour__main__header .img,
 .tour__standing double,
 .is-gold::before,
-.swiss__standing .pairings .ongoing {
+.swiss__standing .pairings .ongoing,
+.simul .game-list .host .mini-game__clock.clock--run {
     color: var(--secondaryColor) !important;
 }
 
@@ -3082,9 +3094,28 @@ hr {
 .swiss__standing .pairings .win:hover,
 .swiss__standing .pairings .loss:hover,
 .swiss__standing .pairings .ongoing:hover,
-.swiss__controls {
+.swiss__controls,
+.simul .simul-text {
     box-shadow: none !important;
     background: var(--surfaceColorHover) !important;
+}
+
+.simul .game-list .host {
+    background: var(--primaryColor) !important;
+}
+
+.simul .game-list .host,
+.simul .game-list .host a,
+.simul .game-list .host .mini-game__clock {
+    color: var(--backgroundColor) !important;
+}
+
+.simul .half:first-child {
+    border-right: 1px solid var(--surfaceColorHover) !important;
+}
+
+.simul__main .mini-game {
+    overflow: visible !important;
 }
 
 .tour__controls .highlight,
