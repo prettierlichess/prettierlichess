@@ -2460,12 +2460,33 @@ path[fill="url(#highcharts-7)"] {
     padding: 12px !important;
 }
 
+.floor::after {
+    content: '' !important;
+    width: 120px !important;
+    height: 120px !important;
+    background: var(--primaryColor) !important;
+    mask-size: contain !important;
+    mask-position: center !important;
+    mask-repeat: no-repeat !important;
+    -webkit-mask-size: contain !important;
+    -webkit-mask-position: center !important;
+    -webkit-mask-repeat: no-repeat !important;
+    -webkit-mask-image: url(https://lichess1.org/assets/_PFQXbw/images/mascot/octopus.svg) !important;
+    mask-image: url(https://lichess1.org/assets/_PFQXbw/images/mascot/octopus.svg) !important;
+}
+
+.mascot {
+    display: none !important;
+}
+
+
 .gamebook .feedback.end a:hover {
     color: var(--textColor) !important;
 }
 
 .gamebook .comment div.hint,
-.gamebook .feedback.end a {
+.gamebook .feedback.end a,
+.gamebook .feedback.info.good {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
@@ -2499,7 +2520,7 @@ path[fill="url(#highcharts-7)"] {
 }
 
 a.analyse {
-    transform: translateX(0) !important;
+    margin-left: 0 !important;
 }
 
 .analyse__underboard,
@@ -2542,6 +2563,7 @@ a.analyse {
 .gamebook .comment {
     box-shadow: none !important;
     background: none !important;
+    border: 0 !important;
 }
 
 .analyse__clock.top {
@@ -2583,7 +2605,8 @@ a.analyse {
 }
 
 .study__relay__rounds finished,
-.gamebook .comment a.hint {
+.gamebook .comment a.hint,
+.gamebook .feedback.act {
     color: var(--primaryColor) !important;
 }
 

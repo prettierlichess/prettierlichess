@@ -8,7 +8,7 @@
     },
     "content_scripts": [{
             "matches": ["*://lichess.org/*"],
-            "exclude_matches": ["*://lichess.org/api/*"],
+            "exclude_matches": ["*://lichess.org/api*"],
             "run_at": "document_start",
             "css": ["styles.css"],
             "js": ["content.js"]
