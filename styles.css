@@ -2092,6 +2092,10 @@ a.context-streamer:hover {
     margin-left: 0px !important;
 }
 
+.analyse__side .mselect {
+    border: 0 !important;
+}
+
 .analyse__tools,
 #analyse-cm,
 #acpl-chart-loader {
@@ -2948,7 +2952,7 @@ hr {
     opacity: 1 !important;
 }
 
-.now-playing>a {
+.tv-history .now-playing>a {
     padding: 1.5em !important;
     overflow: visible !important;
 }
@@ -2998,7 +3002,8 @@ hr {
 .swiss__side,
 .swiss__boards,
 .tour__stats,
-.simul__side {
+.simul__side,
+.swiss__player-info {
     background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
@@ -3020,6 +3025,10 @@ hr {
     box-shadow: var(--main-shadow) !important;
 }
 
+.swiss__standing tr.active td:last-child {
+    background: linear-gradient(to left, var(--primaryColor) 0px, var(--primaryColor) 5px, rgba(0, 0, 0, 0) 5px, rgba(0, 0, 0, 0) 100%) !important;
+}
+
 .swiss__board__top .swiss__board {
     overflow: visible !important;
 }
@@ -3035,7 +3044,11 @@ hr {
 .tour__meta,
 .tour__actor-info .stats h2,
 .swiss__meta,
-.simul__meta {
+.simul__meta,
+.slist thead,
+.swiss__controls,
+.swiss__player-info .stats h2,
+.swiss__player-info .pairings tr:nth-child(odd) {
     background: none !important;
 }
 
@@ -3046,12 +3059,26 @@ hr {
 .swiss__standing .pairings .win,
 .swiss__main__header .ongoing .nb,
 .swiss__meta section.conditions.accepted,
-.swiss__meta section.conditions .accepted {
+.swiss__meta section.conditions .accepted,
+.swiss__player-info .pairings tr.win td:last-child {
     color: var(--primaryColor) !important;
 }
 
 .tour__featured {
     overflow: visible !important;
+}
+
+.swiss__player-info .pairings tr.win:hover th {
+    border-left: 3px solid var(--primaryColor) !important;
+}
+
+.swiss__player-info .pairings tr:hover th,
+.tour__player-info .pairings tr:hover th {
+    border-left: 3px solid var(--textColor) !important;
+}
+
+.swiss__player-info .pairings tr.loss:hover th {
+    border-left: 3px solid var(--tertiaryColor) !important;
 }
 
 .pull-quote p {
@@ -3061,7 +3088,9 @@ hr {
 }
 
 .simul__meta .game-infos,
-.pull-quote p:after {
+.pull-quote p:after,
+.swiss__player-info .stats h2,
+.tour__actor-info .stats h2 {
     border-bottom: 1px solid var(--surfaceColorHover) !important;
 }
 
@@ -3085,7 +3114,8 @@ hr {
 .tour__player-info .pairings tr.loss td:last-child,
 .swiss__standing .pairings .loss,
 .swiss__meta section.conditions.refused,
-.swiss__meta section.conditions .refused {
+.swiss__meta section.conditions .refused,
+.swiss__player-info .pairings tr.loss td:last-child {
     color: var(--tertiaryColor) !important;
 }
 
@@ -3095,7 +3125,8 @@ hr {
 .swiss__standing .pairings .loss:hover,
 .swiss__standing .pairings .ongoing:hover,
 .swiss__controls,
-.simul .simul-text {
+.simul .simul-text,
+.swiss__player-info .pairings tr:hover {
     box-shadow: none !important;
     background: var(--surfaceColorHover) !important;
 }
@@ -3174,6 +3205,10 @@ hr {
 
 .swiss__meta {
     border-radius: 0 !important;
+}
+
+.swiss__standing .pairings r {
+    border-left: 1px dotted var(--backgroundColor) !important;
 }
 
 /* Board Editor */
@@ -3589,18 +3624,7 @@ group.radio div:last-child label {
     }
 
     .analyse {
-        grid-template-columns: minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) var(--gauge-gap) minmax(240px, 400px) !important;
-        margin-left: 0px !important;
-    }
-
-    .analyse__acpl,
-    .analyse__tools,
-    .analyse__controls {
-        left: 0px !important;
-    }
-
-    .eval-gauge {
-        display: none !important;
+        grid-template-columns: minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
     }
 }
 
