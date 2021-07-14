@@ -980,6 +980,7 @@ main.lobby {
 
 #main-wrap {
     --main-max-width: 1500px !important;
+    justify-items: center !important;
 }
 
 .lobby__app,
