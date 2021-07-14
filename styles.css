@@ -2445,7 +2445,8 @@ path[fill="url(#highcharts-7)"] {
 .study__chapters,
 .study__members,
 .study__relay__rounds,
-.study__server-eval {
+.study__server-eval,
+.slist-invert tbody tr:nth-child(odd) {
     background: none !important;
 }
 
@@ -2600,13 +2601,15 @@ a.analyse {
 
 .study__metadata h2 .liking:hover,
 .study__chapters ongoing,
-.study__relay__rounds ongoing {
+.study__relay__rounds ongoing,
+.relay-tour__text .slist ongoing {
     color: var(--tertiaryColor) !important;
 }
 
 .study__relay__rounds finished,
 .gamebook .comment a.hint,
-.gamebook .feedback.act {
+.gamebook .feedback.act,
+.relay-tour__text .slist finished {
     color: var(--primaryColor) !important;
 }
 
@@ -3040,7 +3043,9 @@ hr {
 .context-streamer,
 .tour__controls,
 .swiss__board,
-.swiss__board cg-board {
+.swiss__board cg-board,
+.simul .simul-text,
+.simul__meta {
     box-shadow: none !important;
 }
 
@@ -3296,12 +3301,18 @@ h1 a,
     border-top: 1px solid var(--surfaceColorHover) !important;
 }
 
-.forum-post:last-child {
+.forum-post:last-child,
+.blog .body h2 {
     border-bottom: 1px solid var(--surfaceColorHover) !important;
+}
+
+.blog .body img {
+    border: 1px solid var(--surfaceColorHover) !important;
 }
 
 iframe.analyse {
     position: absolute !important;
+    margin-left: 0 !important;
 }
 
 .page-menu.page-small {
