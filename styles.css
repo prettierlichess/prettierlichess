@@ -239,6 +239,10 @@ p {
     font-size: 14px !important;
 }
 
+main {
+    width: 100% !important;
+}
+
 .user-link.online .line,
 .is-green::before,
 good,
@@ -3155,7 +3159,8 @@ hr {
 .swiss__standing .pairings .ongoing:hover,
 .swiss__controls,
 .simul .simul-text,
-.swiss__player-info .pairings tr:hover {
+.swiss__player-info .pairings tr:hover,
+.mchat__messages li.host {
     box-shadow: none !important;
     background: var(--surfaceColorHover) !important;
 }
