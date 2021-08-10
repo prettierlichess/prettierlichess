@@ -2407,6 +2407,7 @@ path[fill="none"][stroke="black"] {
     stroke-opacity: 0 !important;
 }
 
+path[stroke="#707070"],
 path[stroke="#b2b1b6"] {
     stroke: var(--surfaceColorHover) !important;
 }
