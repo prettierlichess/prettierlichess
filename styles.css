@@ -2359,7 +2359,7 @@ a.context-streamer:hover {
 }
 
 .pv_box .pv[data-uci] .pv-san:hover {
-    color: var(--secondaryColor) !important;
+    color: var(--textColor) !important;
 }
 
 /* Analysis Graph */
