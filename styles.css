@@ -2467,6 +2467,18 @@ path[fill="url(#highcharts-7)"] {
     padding: 12px !important;
 }
 
+.study__chapters {
+    overflow: overlay !important;
+}
+
+.study__chapters::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 10px 10px var(--backgroundColor) !important;
+}
+
+.study__chapters::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 10px 10px var(--primaryColor) !important;
+}
+
 .floor::after {
     content: '' !important;
     width: 120px !important;
