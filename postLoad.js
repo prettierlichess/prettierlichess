@@ -24,14 +24,14 @@ const STREAMER_STYLES = `
     }
 
     .round__app .rclock-top {
-        padding-bottom: 20px;
-        padding-top: 15px;
+        padding-bottom: 10px;
+        padding-top: 5px;
         grid-area: 1/ 2;
     }
 
     .round__app .rclock-bottom {
-        padding-top: 20px;
-        padding-bottom: 15px;
+        padding-top: 10px;
+        padding-bottom: 5px;
         grid-area: 10 / 2;
     }
 
@@ -44,7 +44,7 @@ const STREAMER_STYLES = `
         z-index: 1;
         display: flex;
         align-items: center;
-        padding-right: calc(100% + 30px);
+        padding-right: calc(100% + 20px);
     }
 
     .rclock .tour-rank,
@@ -58,6 +58,7 @@ const STREAMER_STYLES = `
     }
 
     .rclock .time {
+        position: relative;
         font-size: 1.5em;
         line-height: 0px;
         height: 100%;
@@ -65,13 +66,40 @@ const STREAMER_STYLES = `
         align-items: center;
     }
 
+    .rclock.running .time {
+        opacity: 1;
+        color: var(--defaultWhite) !important;
+    }
+
+    .rclock .time::before {
+        content: '';
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 98%;
+        height: 100%;
+        background: var(--defaultWhite);
+        opacity: .1;
+        border-radius: var(--borderRadius);
+        z-index: -1;
+    }
+
+    .rclock.running .time::before {
+        background: var(--primaryColor);
+        opacity: .5;
+    }
+
+    .rclock.emerg.running .time::before {
+        background: var(--tertiaryColor);
+    }
+
     .ruser {
         font-size: 16px;
-        padding: 0em .5em !important;
+        padding: 0em !important;
         line-height: 14px;
-        background: var(--surfaceColor);
-        border: 2px solid var(--surfaceColorHover);
-        border-radius: var(--borderRadius);
+        background:none;
+        border: none !important;
+        border-radius: 0;
         align-items: center;
     }
 

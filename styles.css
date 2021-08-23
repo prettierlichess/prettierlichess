@@ -212,7 +212,8 @@ rm6 .message::before,
 .tour__main__header .clock,
 .activity .line a,
 .hooks__chart .label,
-#hook .opponent {
+#hook .opponent,
+.material score {
     color: var(--textColor) !important;
 }
 
