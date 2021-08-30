@@ -562,6 +562,11 @@ square.move-dest {
     opacity: .8 !important;
 }
 
+square.move-dest:hover {
+    background: var(--moveIndicator) !important;
+    opacity: 0.3 !important;
+}
+
 square.oc.move-dest {
     background: radial-gradient(transparent 0%, transparent 79%, var(--moveIndicator) 80%) !important;
 }
