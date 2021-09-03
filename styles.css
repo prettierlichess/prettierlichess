@@ -2253,9 +2253,13 @@ a.context-streamer:hover {
     border: 2px solid var(--surfaceColorHover) !important;
 }
 
-.analyse__side,
+.analyse__side {
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
+}
+
 .analyse .mchat {
-    border-radius: var(--borderRadius) !important;
+    border-radius: 0 0 var(--borderRadius) var(--borderRadius) !important;
+    border-top: none !important;
 }
 
 .action-menu__tools .button,
