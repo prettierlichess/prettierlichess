@@ -213,7 +213,10 @@ rm6 .message::before,
 .activity .line a,
 .hooks__chart .label,
 #hook .opponent,
-.material score {
+.material score,
+.ublog-post-card__title,
+.ublog-post-card__over-image,
+.ublog-post-card__intro {
     color: var(--textColor) !important;
 }
 
@@ -421,7 +424,8 @@ group.radio label,
 .data-count::after,
 .unread,
 .button.active,
-.btn-rack__btn.active {
+.btn-rack__btn.active,
+.ublog-post-card__over-image {
     text-shadow: none !important;
 }
 
@@ -975,9 +979,10 @@ signal>i {
 main.lobby {
     grid-template-areas:
         'app tv tv side'
+        'blog blog blog blog'
         'leader puzzle puzzle winner'
         'tours tours forum forum'
-        'support table table blog'
+        'support table table table'
         '. simuls simuls .'
         '. about about .' !important;
     grid-template-columns: minmax(400px, 1fr) 1fr 1fr minmax(400px, 1fr) !important;
@@ -1117,7 +1122,8 @@ main.lobby {
 .lobby__app__content,
 .lobby__support a,
 .lobby__spotlights,
-.lobby__box {
+.lobby__box,
+.ublog-post-card {
     box-shadow: none !important;
 }
 
@@ -1328,6 +1334,12 @@ a.button.button-metal:hover {
     display: none !important;
 }
 
+.lobby__blog {
+    grid-gap: minmax(4%, 20px) !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    max-height: 300px !important;
+}
+
 .lobby__blog .post {
     padding: 20px !important;
     transition: background .2s ease-in-out !important;
@@ -1335,6 +1347,64 @@ a.button.button-metal:hover {
 
 .lobby__blog .post img {
     border-radius: var(--borderRadius) !important;
+}
+
+.lobby__blog h2 {
+    font-size: 1.5em !important;
+    font-weight: 800 !important;
+}
+
+.ublog-post-card {
+    position: relative !important;
+    background: var(--surfaceColor) !important;
+    text-shadow: none !important;
+    border-radius: 8px !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    transition: all .2s ease-in-out !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding-bottom: 0 !important;
+    justify-content: flex-start !important;
+}
+
+.ublog-post-card__image {
+    flex: 1 !important;
+    object-fit: cover !important;
+    order: 2 !important;
+    height: 10px !important;
+}
+
+.ublog-post-card:hover {
+    transform: scale(1.01) !important;
+    box-shadow: var(--main-shadow) !important;
+    z-index: 5 !important;
+}
+
+.ublog-post-card__over-image {
+    background: none !important;
+}
+
+.ublog-post-card time,
+.ublog-post-card .user-link {
+    z-index: 1 !important;
+}
+
+.ublog-post-card__over-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--surfaceColorHover);
+    opacity: .8;
+    z-index: -1;
+    border-bottom-right-radius: var(--borderRadius) !important;
+}
+
+.ublog-post-card__content {
+    padding: 10% 8% 6% 8% !important;
+    order: 1 !important;
 }
 
 #friend_box {
@@ -2260,6 +2330,7 @@ a.context-streamer:hover {
 
 .analyse__side {
     border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
+    height: 100% !important;
 }
 
 .analyse .mchat {
@@ -3327,7 +3398,8 @@ h1 a,
 }
 
 .forum-post:last-child,
-.blog .body h2 {
+.blog .body h2,
+.ublog-post__markup h2 {
     border-bottom: 1px solid var(--surfaceColorHover) !important;
 }
 
@@ -3357,7 +3429,9 @@ iframe.analyse {
 
 .blog-cards>a,
 .blog .meta-headline,
-.blog-cards>a time {
+.blog-cards>a time,
+.ublog-topics__topic:hover,
+.ublog-post__topics a {
     background: var(--surfaceColorHover) !important;
     box-shadow: none !important;
 }
@@ -3373,6 +3447,33 @@ iframe.analyse {
 
 .pagination span.disabled {
     opacity: .25 !important;
+}
+
+.ublog-post-card__title,
+.ublog-post-card__content {
+    background: none !important;
+}
+
+.ublog-topics__topic .ublog-post-card__title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--surfaceColorHover);
+    opacity: .9;
+    z-index: -1;
+    border-bottom-right-radius: var(--borderRadius) !important;
+}
+
+.user-link.ublog-post-card__over-image::before {
+    border-bottom-left-radius: var(--borderRadius) !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.ublog-post-card__title {
+    font-weight: 700 !important;
 }
 
 /* Practice */
