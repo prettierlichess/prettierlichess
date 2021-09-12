@@ -216,7 +216,11 @@ rm6 .message::before,
 .material score,
 .ublog-post-card__title,
 .ublog-post-card__over-image,
-.ublog-post-card__intro {
+.ublog-post-card__intro,
+.msg-app__convo__msgs mine,
+.msg-app__convo__msgs their,
+.msg-app__convo__msgs day,
+.msg-app__side__contact__name {
     color: var(--textColor) !important;
 }
 
@@ -1587,11 +1591,34 @@ main.page-small {
     display: none !important;
 }
 
-.puzzle__tools {
+.puzzle__tools,
+.puz-side,
+.storm-dashboard__high__period {
     background: var(--surfaceColor) !important;
     box-shadow: none !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
+}
+
+.puz-side__top::before {
+    -webkit-mask-image: url(https://lichess1.org/assets/_coe7PY/images/icons/tornado.svg) !important;
+    mask-image: url(https://lichess1.org/assets/_coe7PY/images/icons/tornado.svg) !important;
+    background: var(--primaryColor) !important;
+}
+
+.puz-combo__bar__in,
+.puz-combo__level.active {
+    box-shadow: 0 0 15px var(--primaryColor) !important;
+}
+
+.puz-combo__bar,
+.puz-combo__level {
+    background: var(--backgroundColor) !important;
+    border: 1px solid var(--surfaceColorHover) !important;
+}
+
+.puz-combo__level.active {
+    border: none !important;
 }
 
 button.rematch-decline::before {
@@ -1626,7 +1653,10 @@ button.rematch-decline::before {
 .tview2 move.parent,
 .tview2 move.inaccuracy,
 .puzzle__moves move.good glyph,
-.puzzle__moves move.win glyph {
+.puzzle__moves move.win glyph,
+.puz-side__start,
+.puz-clock__pov,
+.puz-side__solved__text {
     color: var(--primaryColor) !important;
 }
 
@@ -1733,7 +1763,9 @@ button.rematch-decline::before {
 .puzzle__session a.result-true,
 .puzzle__feedback.after .continue,
 .puzzle__vote .vote:hover,
-.puzzle__vote .vote.active {
+.puzzle__vote .vote.active,
+.puz-combo__bar__in,
+.puz-combo__level.active {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
