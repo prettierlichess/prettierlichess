@@ -3409,6 +3409,10 @@ h1 a,
     color: var(--primaryColor) !important;
 }
 
+.ublog-topics .ublog-post-card--mini {
+    height: 300px !important;
+}
+
 .slist {
     border: 0 !important;
 }
