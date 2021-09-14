@@ -1811,6 +1811,7 @@ button.rematch-decline::before {
 
 .material mpiece {
     background: var(--textColor) !important;
+    margin-left: 0 !important;
     mask-size: contain !important;
     mask-position: center !important;
     mask-repeat: no-repeat !important;
@@ -1818,6 +1819,10 @@ button.rematch-decline::before {
     -webkit-mask-position: center !important;
     -webkit-mask-repeat: no-repeat !important;
     opacity: .5 !important;
+}
+
+.material div {
+    margin-left: 0 !important;
 }
 
 .material mpiece.knight {
