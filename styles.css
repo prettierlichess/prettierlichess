@@ -1361,20 +1361,12 @@ a.button.button-metal:hover {
 }
 
 .lobby__support a,
-.ublog-post-card,
-.lobby__table,
-.lobby__side,
-.lobby__app,
-.lobby__box {
+.ublog-post-card {
     transition: all .2s ease-in-out !important;
 }
 
 .ublog-post-card:hover,
-.lobby__support a:hover,
-.lobby__table:hover,
-.lobby__side:hover,
-.lobby__app:hover,
-.lobby__box:hover {
+.lobby__support a:hover {
     transform: scale(1.01) !important;
     box-shadow: var(--main-shadow) !important;
     z-index: 5 !important;
