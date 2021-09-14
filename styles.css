@@ -220,7 +220,10 @@ rm6 .message::before,
 .msg-app__convo__msgs mine,
 .msg-app__convo__msgs their,
 .msg-app__convo__msgs day,
-.msg-app__side__contact__name {
+.msg-app__side__contact__name,
+.gamebook .comment button,
+.gamebook .feedback,
+.gamebook .feedback.end button {
     color: var(--textColor) !important;
 }
 
@@ -983,10 +986,9 @@ signal>i {
 main.lobby {
     grid-template-areas:
         'app tv tv side'
-        'blog blog blog blog'
+        'table blog blog support'
         'leader puzzle puzzle winner'
         'tours tours forum forum'
-        'support table table table'
         '. simuls simuls .'
         '. about about .' !important;
     grid-template-columns: minmax(400px, 1fr) 1fr 1fr minmax(400px, 1fr) !important;
@@ -1246,10 +1248,6 @@ main.lobby {
     border: 2px solid var(--surfaceColorHover) !important;
 }
 
-.lobby__support a:hover {
-    transform: scale(.98) !important;
-}
-
 .lobby__support i::before,
 .lobby__support__text {
     color: var(--secondaryColor) !important;
@@ -1289,26 +1287,18 @@ main.lobby {
     width: 80% !important;
 }
 
-#nb_connected_players {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin-right: 0px !important;
-    width: 50% !important;
-}
-
-#nb_connected_players:hover {
-    color: var(--primaryColor) !important;
-}
-
+#nb_connected_players,
 #nb_games_in_play {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    margin-left: 0px !important;
+    margin: 0px !important;
     width: 50% !important;
+}
+
+#nb_connected_players:hover {
+    color: var(--primaryColor) !important;
 }
 
 #nb_games_in_play:hover {
@@ -1317,7 +1307,7 @@ main.lobby {
 
 #nb_games_in_play strong,
 #nb_connected_players strong {
-    font-size: 3vw !important;
+    font-size: 1.75vw !important;
     color: var(--defaultWhite) !important;
 }
 
@@ -1364,11 +1354,30 @@ a.button.button-metal:hover {
     text-shadow: none !important;
     border-radius: 8px !important;
     border: 2px solid var(--surfaceColorHover) !important;
-    transition: all .2s ease-in-out !important;
     display: flex !important;
     flex-direction: column !important;
     padding-bottom: 0 !important;
     justify-content: flex-start !important;
+}
+
+.lobby__support a,
+.ublog-post-card,
+.lobby__table,
+.lobby__side,
+.lobby__app,
+.lobby__box {
+    transition: all .2s ease-in-out !important;
+}
+
+.ublog-post-card:hover,
+.lobby__support a:hover,
+.lobby__table:hover,
+.lobby__side:hover,
+.lobby__app:hover,
+.lobby__box:hover {
+    transform: scale(1.01) !important;
+    box-shadow: var(--main-shadow) !important;
+    z-index: 5 !important;
 }
 
 .ublog-post-card__image {
@@ -1376,12 +1385,6 @@ a.button.button-metal:hover {
     object-fit: cover !important;
     order: 2 !important;
     height: 10px !important;
-}
-
-.ublog-post-card:hover {
-    transform: scale(1.01) !important;
-    box-shadow: var(--main-shadow) !important;
-    z-index: 5 !important;
 }
 
 .ublog-post-card__over-image {
@@ -1407,7 +1410,7 @@ a.button.button-metal:hover {
 }
 
 .ublog-post-card__content {
-    padding: 10% 8% 6% 8% !important;
+    padding: 12% 8% 6% 8% !important;
     order: 1 !important;
 }
 
@@ -1872,6 +1875,10 @@ button.rematch-decline::before {
     border: 0 !important;
 }
 
+main.round {
+    justify-content: center !important;
+}
+
 .color-icon.black::before,
 .color-icon.white::before,
 .color-icon.random::before,
@@ -1995,6 +2002,7 @@ button.rematch-decline::before {
 
 .mchat {
     border-top: 2px solid var(--surfaceColorHover) !important;
+    height: 100% !important;
 }
 
 .mchat-optional .mchat__tab-active,
@@ -2089,7 +2097,7 @@ rm6 .buttons,
 }
 
 div.round__app {
-    grid-template-rows: 0fr auto auto min-content auto 5fr auto auto min-content auto auto 0fr !important;
+    grid-template-rows: 0fr auto auto min-content 54px 1fr auto 54px 0fr !important;
 }
 
 rm6 {
@@ -2557,6 +2565,14 @@ path[fill="url(#highcharts-7)"] {
     box-shadow: none !important;
 }
 
+.study__side {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
 .study__chapters,
 .study__members,
 .study__relay__rounds,
@@ -2578,6 +2594,7 @@ path[fill="url(#highcharts-7)"] {
 
 .study__chapters {
     overflow: overlay !important;
+    min-height: calc(100% - 37px) !important;
 }
 
 .study__chapters::-webkit-scrollbar-track {
@@ -2614,7 +2631,8 @@ path[fill="url(#highcharts-7)"] {
 
 .gamebook .comment div.hint,
 .gamebook .feedback.end a,
-.gamebook .feedback.info.good {
+.gamebook .floor .feedback.info.good,
+.gamebook .floor .feedback.good {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
@@ -3409,6 +3427,12 @@ h1 a,
     color: var(--primaryColor) !important;
 }
 
+.ublog-post__image {
+    box-shadow: none !important;
+    border-radius: var(--borderRadius) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+}
+
 .ublog-topics .ublog-post-card--mini {
     height: 300px !important;
 }
@@ -3822,6 +3846,12 @@ group.radio div:last-child label {
     .analyse {
         grid-template-columns: minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
     }
+
+    .analyse__side {
+        margin-top: 0 !important;
+        margin-left: -70px !important;
+        width: 100% !important;
+    }
 }
 
 @media (max-width: 979px) {
@@ -3929,6 +3959,13 @@ group.radio div:last-child label {
 
     .analyse {
         grid-template-columns: 100vw !important;
+        margin: 0 !important;
+    }
+
+    .analyse__acpl,
+    .analyse__tools,
+    .analyse__controls {
+        left: 0 !important;
     }
 }
 
