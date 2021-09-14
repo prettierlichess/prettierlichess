@@ -223,7 +223,8 @@ rm6 .message::before,
 .msg-app__side__contact__name,
 .gamebook .comment button,
 .gamebook .feedback,
-.gamebook .feedback.end button {
+.gamebook .feedback.end button,
+.gamebook .feedback.end button:hover {
     color: var(--textColor) !important;
 }
 
@@ -2584,7 +2585,8 @@ path[fill="url(#highcharts-7)"] {
 .study__members>div.active,
 .study__relay__rounds>div.active,
 .study__relay__rounds>div:hover,
-.gamebook .feedback.end a:hover {
+.gamebook .feedback.end a:hover,
+.gamebook .feedback.end button:hover {
     background: var(--surfaceColorHover) !important;
     padding: 12px !important;
 }
@@ -2629,12 +2631,14 @@ path[fill="url(#highcharts-7)"] {
 .gamebook .comment div.hint,
 .gamebook .feedback.end a,
 .gamebook .floor .feedback.info.good,
-.gamebook .floor .feedback.good {
+.gamebook .floor .feedback.good,
+.gamebook .feedback.end button {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
 
-.gamebook .feedback.end a {
+.gamebook .feedback.end a,
+.gamebook .feedback.end button {
     border: 0 !important;
     transition: all .2s ease-in-out !important;
 }
@@ -2826,7 +2830,10 @@ a.analyse {
 }
 
 .studies .study:hover {
-    background: var(--surfaceColorHover) !important;
+    transform: scale(1.01) !important;
+    box-shadow: var(--main-shadow) !important;
+    background: none !important;
+    z-index: 5 !important;
 }
 
 .study-index .list {
@@ -2854,7 +2861,12 @@ a.analyse {
     font-size: 1.5em !important;
 }
 
-.mselect__label {
+button.analyse {
+    margin: 0 !important;
+}
+
+.mselect__label,
+.topic-list a {
     background: var(--backgroundColor) !important;
     box-shadow: none !important;
     border-radius: var(--borderRadius) !important;
