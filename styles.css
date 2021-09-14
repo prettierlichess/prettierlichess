@@ -2369,11 +2369,15 @@ a.context-streamer:hover {
 .analyse__side {
     border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
     height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
 }
 
 .analyse .mchat {
     border-radius: 0 0 var(--borderRadius) var(--borderRadius) !important;
     border-top: none !important;
+    min-height: 300px !important;
 }
 
 .action-menu__tools .button,
@@ -2566,7 +2570,6 @@ path[fill="url(#highcharts-7)"] {
 .study__side {
     display: flex !important;
     flex-direction: column !important;
-    height: 100% !important;
     position: relative !important;
     overflow: hidden !important;
 }
@@ -2593,7 +2596,6 @@ path[fill="url(#highcharts-7)"] {
 
 .study__chapters {
     overflow: overlay !important;
-    min-height: calc(100% - 37px) !important;
 }
 
 .study__chapters::-webkit-scrollbar-track {
