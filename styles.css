@@ -2822,7 +2822,6 @@ a.analyse {
     background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
-    border-top: 0 !important;
     align-self: flex-start !important;
     margin-top: 0 !important;
     margin-right: 5px !important;
@@ -3151,12 +3150,15 @@ hr {
     margin-right: 0 !important;
 }
 
+.tv-single .round__side {
+    height: min-content !important;
+}
+
 .subnav a::after {
     background: var(--primaryColor) !important;
 }
 
 .subnav a {
-    border-top: 2px solid var(--surfaceColorHover) !important;
     padding: 14px !important;
     max-width: none !important;
 }
