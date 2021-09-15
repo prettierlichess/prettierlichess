@@ -224,7 +224,8 @@ rm6 .message::before,
 .gamebook .comment button,
 .gamebook .feedback,
 .gamebook .feedback.end button,
-.gamebook .feedback.end button:hover {
+.gamebook .feedback.end button:hover,
+.msg-app__side__contact__msg {
     color: var(--textColor) !important;
 }
 
