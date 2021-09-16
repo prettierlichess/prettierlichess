@@ -2206,6 +2206,7 @@ a.context-streamer:hover {
     grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
     margin-left: 40px !important;
     transition: margin-left .3s ease-in-out !important;
+    --meta-height: minmax(auto, 300px) !important;
 }
 
 .analyse.gauge-on {
