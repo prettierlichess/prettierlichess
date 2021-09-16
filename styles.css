@@ -2597,6 +2597,14 @@ path[fill="url(#highcharts-7)"] {
     padding: 12px !important;
 }
 
+.gamebook .feedback.end {
+    margin-right: 20px !important;
+}
+
+.gamebook {
+    margin-left: -50px !important;
+}
+
 .study__chapters {
     overflow: overlay !important;
     max-height: none !important;
