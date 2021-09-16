@@ -2829,8 +2829,8 @@ a.analyse {
 
 .studies .study {
     border: 2px solid var(--surfaceColorHover) !important;
-    margin: 5px !important;
-    border-radius: var(--borderRadius) !important;
+    margin: 10px !important;
+    border-radius: 8px !important;
 }
 
 .studies .study:hover {
@@ -2840,25 +2840,65 @@ a.analyse {
     z-index: 5 !important;
 }
 
-.study-index .list {
-    border-top: 0 !important;
-    padding: 0 10px !important;
+.study-index .box__top {
+    margin: 0 !important;
+    padding: 30px 20px !important;
+    background: var(--surfaceColorHover) !important;
 }
 
-.studies .study .top::before,
+.study-index .list {
+    border-top: 0 !important;
+    padding:
+        0 10px !important;
+}
+
+.studies .study .top {
+    margin-bottom: 15px !important;
+}
+
+.studies .study .top::before {
+    display: none !important;
+}
+
 .studies .study .top .study-name {
-    color: var(--defaultWhite) !important;
-    opacity: .7 !important;
+    color: var(--textColor) !important;
+    opacity: 1 !important;
+    white-space: pre-wrap !important;
+    margin-bottom: 5px !important;
+    font-size: 1.1em !important;
+    font-weight: 700 !important;
 }
 
 .study-index .box__top>*,
 .study-index .box__top .search .button {
-    margin: 0 0 0 5px !important;
+    margin: 0 !important;
 }
 
-.study-index .box__top .new-study .button,
-.study-index .box__top .search .button {
-    padding: 0 1em !important;
+.study-index .box__top .search {
+    align-items: center !important;
+    margin-right: 40px !important;
+}
+
+.study-index .box__top .search .button,
+.study-index .box__top .new-study .button {
+    border-radius: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.study-index .box__top .search .button::before {
+    margin-bottom: 2px !important;
+}
+
+.study-index .box__top .search input,
+.study-index .box__top .mselect {
+    margin-right: 10px !important;
+    border-radius: 45px !important;
+    background: var(--surfaceColor) !important;
 }
 
 .study-index .box__top .new-study .button::before {
@@ -2867,6 +2907,10 @@ a.analyse {
 
 button.analyse {
     margin: 0 !important;
+}
+
+.study-index .box__top .new-study {
+    margin-top: 1px !important;
 }
 
 .mselect__label,
@@ -2881,8 +2925,12 @@ button.analyse {
     border: 1px solid var(--surfaceColorHover) !important;
 }
 
+.study-index .box__top .mselect__label,
 .mselect__label::after {
     background: none !important;
+}
+
+.mselect__label::after {
     color: var(--defaultWhite) !important;
     margin-right: 10px !important;
 }
@@ -3134,6 +3182,7 @@ hr {
 .tv-channel.active>span::before {
     color: var(--primaryColor) !important;
     opacity: 1 !important;
+    background: var(--surfaceColorHover) !important;
 }
 
 .tv-history .now-playing>a {
