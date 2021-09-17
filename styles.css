@@ -2429,7 +2429,8 @@ a.context-streamer:hover {
     background: var(--backgroundColor) !important;
 }
 
-.explorer-box tr:hover {
+.explorer-box tr:hover,
+.explorer-box .moves tbody tr.expl-uci- {
     background: var(--surfaceColorHover) !important;
 }
 
