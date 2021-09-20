@@ -1060,6 +1060,10 @@ main.lobby {
     border-radius: var(--borderRadius) !important;
 }
 
+g[stroke="#888"] {
+    stroke: var(--primaryColor) !important;
+}
+
 .lpools .clock {
     font-size: 100% !important;
 }
