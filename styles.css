@@ -225,7 +225,13 @@ rm6 .message::before,
 .gamebook .feedback,
 .gamebook .feedback.end button,
 .gamebook .feedback.end button:hover,
-.msg-app__side__contact__msg {
+.msg-app__side__contact__msg,
+.tsht.tsht-shield,
+.tour__links a,
+.leaderboard a,
+.scheduled strong,
+.scheduled a,
+.arena-list .slist a {
     color: var(--textColor) !important;
 }
 
@@ -3249,7 +3255,7 @@ hr {
     justify-content: space-between !important;
 }
 
-/* Tournaments  / Simuls*/
+/* Tournaments / Simuls*/
 
 .tour__side,
 .box,
@@ -3275,8 +3281,17 @@ hr {
 .swiss__board,
 .swiss__board cg-board,
 .simul .simul-text,
-.simul__meta {
+.simul__meta,
+.tsht {
     box-shadow: none !important;
+}
+
+.tsht-weekly,
+.tsht-weekend,
+.tsht-monthly,
+.tsht-marathon,
+.tsht-yearly {
+    text-shadow: none !important;
 }
 
 .swiss__board__top cg-board {
@@ -3309,18 +3324,6 @@ hr {
 .swiss__player-info .stats h2,
 .swiss__player-info .pairings tr:nth-child(odd) {
     background: none !important;
-}
-
-.tour__meta section.conditions.accepted,
-.tour__meta section.conditions .accepted,
-.tour__standing streak,
-.tour__player-info .pairings tr.win td:last-child,
-.swiss__standing .pairings .win,
-.swiss__main__header .ongoing .nb,
-.swiss__meta section.conditions.accepted,
-.swiss__meta section.conditions .accepted,
-.swiss__player-info .pairings tr.win td:last-child {
-    color: var(--primaryColor) !important;
 }
 
 .tour__featured {
@@ -3358,6 +3361,23 @@ hr {
     background: var(--surfaceColor) !important;
 }
 
+.tour__meta section.conditions.accepted,
+.tour__meta section.conditions .accepted,
+.tour__standing streak,
+.tour__player-info .pairings tr.win td:last-child,
+.swiss__standing .pairings .win,
+.swiss__main__header .ongoing .nb,
+.swiss__meta section.conditions.accepted,
+.swiss__meta section.conditions .accepted,
+.swiss__player-info .pairings tr.win td:last-child,
+.leaderboard li:hover a,
+.arena-list .slist td i,
+.arena-list .slist a:hover,
+.scheduled a::before,
+.tour__links a:hover {
+    color: var(--primaryColor) !important;
+}
+
 .tour-sched .tour__main__header h1,
 .tour-sched .tour__main__header .img,
 .tour__standing double,
@@ -3386,18 +3406,38 @@ hr {
 .swiss__controls,
 .simul .simul-text,
 .swiss__player-info .pairings tr:hover,
-.mchat__messages li.host {
+.mchat__messages li.host,
+.tour__prize,
+.tour__duels a:hover,
+.tsht-shield,
+.scheduled a:hover {
     box-shadow: none !important;
     background: var(--surfaceColorHover) !important;
 }
 
-.simul .game-list .host {
+.simul .game-list .host,
+.tsht-hourly {
     background: var(--primaryColor) !important;
+}
+
+.tsht-max-rating {
+    background: var(--secondaryColor) !important;
+}
+
+.tsht-daily,
+.tsht-eastern,
+.tsht-weekly {
+    background: var(--tertiaryColor) !important;
+}
+
+.tsht-weekly {
+    filter: hue-rotate(90deg) !important;
 }
 
 .simul .game-list .host,
 .simul .game-list .host a,
-.simul .game-list .host .mini-game__clock {
+.simul .game-list .host .mini-game__clock,
+.tsht {
     color: var(--backgroundColor) !important;
 }
 
@@ -3442,10 +3482,6 @@ hr {
     border-top: 1px solid var(--surfaceColorHover) !important;
 }
 
-.tour__duels a:hover {
-    background: var(--surfaceColorHover) !important;
-}
-
 .tour-chart .timeline {
     min-height: auto !important;
     overflow: visible !important;
@@ -3469,6 +3505,20 @@ hr {
 
 .swiss__standing .pairings r {
     border-left: 1px dotted var(--backgroundColor) !important;
+}
+
+.tour-chart .timeheader.now {
+    border-left: 3px dashed var(--secondaryColor) !important;
+}
+
+.tour-chart .timeheader.now::after {
+    border-top: 8px solid var(--secondaryColor) !important;
+}
+
+.arena-list.box .slist thead {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
 }
 
 /* Board Editor */
