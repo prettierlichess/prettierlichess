@@ -84,7 +84,7 @@ html {
     --boardLight: #c7c7c7 !important;
     --coordDark: var(--boardDark) !important;
     --coordLight: var(--boardLight) !important;
-    --borderRadius: 4px !important;
+    --borderRadius: 8px !important;
     scrollbar-color: var(--surfaceColorHover) var(--surfaceColor) !important;
     scrollbar-width: thin !important;
 }
@@ -470,6 +470,10 @@ cg-container cg-board,
     box-shadow: none !important;
 }
 
+.main-board {
+    z-index: 1 !important;
+}
+
 .is3d cg-container cg-board {
     border-radius: 0px !important;
     overflow: visible !important;
@@ -731,12 +735,14 @@ nav section a:target-within {
     transition: all .2s ease-in-out !important;
     border-left: none !important;
     box-shadow: none !important;
+    border: 2px solid var(--surfaceColorHover) !important;
     border-radius: var(--borderRadius) !important;
     background-color: var(--surfaceColor) !important;
     overflow: hidden !important;
     width: 12.25rem !important;
     left: 50% !important;
     margin-left: -6.125rem !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 #topnav div.topnavHover {
@@ -860,6 +866,7 @@ signal>i {
 #dasher_app {
     box-shadow: var(--main-shadow) !important;
     border: 2px solid var(--surfaceColorHover) !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 #notify-app .site_notification {
@@ -900,6 +907,7 @@ signal>i {
     border-radius: var(--borderRadius) !important;
     box-shadow: var(--main-shadow) !important;
     border: 2px solid var(--surfaceColorHover) !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 #challenge-app .challenge .buttons {
@@ -916,6 +924,7 @@ signal>i {
     box-shadow: var(--main-shadow) !important;
     border-radius: var(--borderRadius) !important;
     padding: 10px !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 #challenge-app .challenge button,
@@ -1456,6 +1465,8 @@ a.button.button-metal:hover {
     border-radius: var(--borderRadius) !important;
     box-shadow: var(--main-shadow) !important;
     border: 2px solid var(--surfaceColorHover) !important;
+    backdrop-filter: blur(16px) !important;
+    z-index: 2 !important;
 }
 
 .upt__info {
@@ -2963,6 +2974,7 @@ button.analyse {
 
 .mselect__list {
     background: var(--surfaceColor) !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .mselect__list .current,
