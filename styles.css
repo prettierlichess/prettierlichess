@@ -231,7 +231,10 @@ rm6 .message::before,
 .leaderboard a,
 .scheduled strong,
 .scheduled a,
-.arena-list .slist a {
+.arena-list .slist a,
+.ublog-post__meta__disclaimer,
+.study__chapters .act,
+.study__members .act {
     color: var(--textColor) !important;
 }
 
@@ -440,7 +443,24 @@ group.radio label,
 .unread,
 .button.active,
 .btn-rack__btn.active,
-.ublog-post-card__over-image {
+.ublog-post-card__over-image,
+.subnav a,
+.site-buttons .link,
+#clinput input,
+.mini-game__player,
+.tabs-horiz,
+.lobby__counters,
+.lobby__streams .stream,
+.timeline,
+.lobby__about a,
+.about-side,
+.lobby__puzzle .text,
+.tabs-horiz,
+.chat__members,
+.analyse__controls .fbt,
+.study__buttons .mode,
+.board-editor__tools select,
+.board-editor__tools .actions .button {
     text-shadow: none !important;
 }
 
@@ -1031,6 +1051,7 @@ main.lobby {
     overflow: hidden !important;
     margin-top: 20px !important;
     background: var(--surfaceColor) !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .lobby__leaderboard,
@@ -1160,7 +1181,7 @@ g[stroke="#888"] {
 }
 
 .tour-spotlight {
-    background: var(--surfaceColor) !important;
+    background: none !important;
     padding: 10px !important;
 }
 
@@ -1231,6 +1252,7 @@ g[stroke="#888"] {
     box-shadow: none !important;
     border: 2px solid var(--surfaceColorHover) !important;
     height: auto !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .lobby__box__top {
@@ -1281,6 +1303,7 @@ g[stroke="#888"] {
     align-items: center !important;
     justify-content: center !important;
     background: var(--surfaceColor) !important;
+    backdrop-filter: blur(16px) !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover);
     padding: 40px 0 !important;
@@ -1390,6 +1413,7 @@ a.button.button-metal:hover {
 .lobby__support a,
 .ublog-post-card {
     transition: all .2s ease-in-out !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .ublog-post-card:hover,
@@ -1623,6 +1647,7 @@ main.page-small {
     box-shadow: none !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .puz-side__top::before {
@@ -1773,6 +1798,7 @@ button.rematch-decline::before {
     border-top: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .puzzle__side__metas {
@@ -2006,6 +2032,7 @@ main.round {
     border: 2px solid var(--surfaceColorHover) !important;
     border-radius: var(--borderRadius) !important;
     box-shadow: none !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .game__meta {
@@ -2072,6 +2099,7 @@ main.round {
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     align-self: start !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .crosstable__users,
@@ -2134,7 +2162,7 @@ rm6 {
 
 rm6 l4x,
 rm6 .buttons {
-    background: var(--surfaceColor) !important;
+    background: none !important;
     border-left: 2px solid var(--surfaceColorHover) !important;
     border-right: 2px solid var(--surfaceColorHover) !important;
 }
@@ -2176,18 +2204,14 @@ rm6 .result {
     background: var(--surfaceColor) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     border-radius: var(--borderRadius) !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .rclock .bar {
     background: var(--primaryColor) !important;
-}
-
-.rclock-top .bar {
-    border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
-}
-
-.rclock-bottom .bar {
-    border-radius: 0 0 var(--borderRadius) var(--borderRadius) !important;
+    width: calc(100% - 30px) !important;
+    left: 15px !important;
+    border-radius: 2px !important;
 }
 
 .rclock .time {
@@ -2251,6 +2275,7 @@ a.context-streamer:hover {
     background: var(--surfaceColor) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     box-shadow: none !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .analyse__tools,
@@ -2354,7 +2379,7 @@ a.context-streamer:hover {
     width: calc(100% - 20px) !important;
     margin-left: 10px !important;
     background: none !important;
-    border-radius: 4px !important;
+    border-radius: var(--borderRadius) !important;
     overflow: hidden !important;
     background: none !important;
     border: 1px solid var(--surfaceColorHover) !important;
@@ -2395,6 +2420,7 @@ a.context-streamer:hover {
 .analyse .mchat {
     background: var(--surfaceColor) !important;
     border: 2px solid var(--surfaceColorHover) !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .analyse__side {
@@ -2719,13 +2745,16 @@ a.analyse {
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     background: var(--surfaceColor) !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .analyse__underboard .tabs-horiz {
     width: 100% !important;
 }
 
-.analyse__underboard__menu {
+.analyse__underboard__menu,
+.study__chapters .add,
+.study__members .add {
     border-top: 2px solid var(--surfaceColorHover) !important;
 }
 
@@ -2809,6 +2838,7 @@ a.analyse {
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     box-shadow: none !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .study__multiboard .now-playing {
@@ -2864,6 +2894,7 @@ a.analyse {
     align-self: flex-start !important;
     margin-top: 0 !important;
     margin-right: 5px !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .studies .study {
@@ -3054,6 +3085,7 @@ button.analyse {
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     box-shadow: none !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .user-show__header,
@@ -3222,7 +3254,14 @@ hr {
 .tv-channel.active>span::before {
     color: var(--primaryColor) !important;
     opacity: 1 !important;
+}
+
+.subnav a.active {
     background: var(--surfaceColorHover) !important;
+}
+
+.tv-channel.active>span::before {
+    background: none !important;
 }
 
 .tv-history .now-playing>a {
@@ -3237,6 +3276,7 @@ hr {
     align-self: stretch !important;
     margin-top: 5px !important;
     margin-right: 0 !important;
+    backdrop-filter: none !important;
 }
 
 .tv-single .round__side {
