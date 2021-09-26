@@ -1438,6 +1438,7 @@ a.button.button-metal:hover {
     border: 2px solid var(--surfaceColorHover) !important;
     border-bottom: 0 !important;
     border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 #friend_box .content a.user-link .line::before {
@@ -2195,7 +2196,7 @@ rm6 .result {
 }
 
 .mchat__presets span {
-    border: 1px solid var(--surfaceColorHover) !important;
+    border: 0px !important;
 }
 
 .buttons .fbt.active,
@@ -2259,6 +2260,7 @@ a.context-streamer:hover {
 
 #analyse-cm {
     box-shadow: var(--main-shadow) !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 #analyse-cm .title {
