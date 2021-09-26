@@ -461,7 +461,8 @@ group.radio label,
 .study__buttons .mode,
 .board-editor__tools select,
 .board-editor__tools .actions .button,
-.tv-single .tv-history h2 {
+.tv-single .tv-history h2,
+.sub-ratings a {
     text-shadow: none !important;
 }
 
@@ -1501,7 +1502,7 @@ a.button.button-metal:hover {
 
 .upt__actions.btn-rack {
     box-shadow: none !important;
-    background: var(--surfaceColor);
+    background: none !important;
     border-radius: var(--borderRadius) !important;
 }
 
@@ -1512,7 +1513,7 @@ a.button.button-metal:hover {
 
 .btn-rack__btn,
 .btn-rack form {
-    background: var(--surfaceColor) !important;
+    background: none !important;
     border: 1px solid var(--surfaceColorHover) !important;
     border-right: 1px solid var(--surfaceColorHover) !important;
 }
