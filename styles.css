@@ -460,7 +460,8 @@ group.radio label,
 .analyse__controls .fbt,
 .study__buttons .mode,
 .board-editor__tools select,
-.board-editor__tools .actions .button {
+.board-editor__tools .actions .button,
+.tv-single .tv-history h2 {
     text-shadow: none !important;
 }
 
@@ -1583,6 +1584,7 @@ main.page-small {
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     box-shadow: none !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .challenge-page .details {
@@ -2175,6 +2177,7 @@ rm6 l4x {
 rm6 .buttons {
     height: 40px !important;
     border-bottom: 2px solid var(--surfaceColorHover) !important;
+    z-index: 1 !important;
 }
 
 rm6 i5z,
@@ -3324,6 +3327,7 @@ hr {
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     box-shadow: none !important;
+    backdrop-filter: blur(16px) !important;
 }
 
 .tour__stats,
