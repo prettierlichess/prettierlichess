@@ -234,7 +234,8 @@ rm6 .message::before,
 .arena-list .slist a,
 .ublog-post__meta__disclaimer,
 .study__chapters .act,
-.study__members .act {
+.study__members .act,
+.explorer-box .explorer-title .active {
     color: var(--textColor) !important;
 }
 
@@ -2479,21 +2480,19 @@ a.context-streamer:hover {
     border-top: 2px solid var(--primaryColor) !important;
 }
 
-.explorer-box .toconf {
-    top: 10px !important;
-    right: 10px !important;
-}
-
 .explorer-box td {
     padding: 10px !important;
 }
 
-.explorer-box tr:nth-child(even) {
+.explorer-box tr:nth-child(even),
+.explorer-box .explorer-title button:hover {
     background: var(--backgroundColor) !important;
 }
 
 .explorer-box tr:hover,
-.explorer-box .moves tbody tr.expl-uci- {
+.explorer-box .moves tbody tr.expl-uci-,
+.explorer-title,
+.explorer-box .moves tbody tr.sum {
     background: var(--surfaceColorHover) !important;
 }
 
@@ -2501,20 +2500,26 @@ a.context-streamer:hover {
     background: rgb(26, 26, 26) !important;
 }
 
-.explorer-box .bar span {
+.explorer-box .bar span,
+.explorer__config .choices button {
     border: none !important;
     box-shadow: none !important;
 }
 
-.explorer-box .bar {
+.explorer-box .bar,
+.explorer__config .choices button {
     background: none !important;
 }
 
-.explorer-box .config .choices span.selected {
+.explorer-box .config .choices span.selected,
+.explorer-box .explorer-title .active,
+.explorer-box .moves th,
+.explorer__config .choices button[aria-pressed='true'],
+.explorer__config .choices button.active {
     background: var(--primaryColor) !important;
     box-shadow: none !important;
     color: var(--backgroundColor) !important;
-    font-weight: 500 !important;
+    font-weight: 200 !important;
 }
 
 .explorer-box .config .choices span:hover {
