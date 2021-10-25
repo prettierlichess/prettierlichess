@@ -2211,6 +2211,7 @@ rm6 .result {
     border: 2px solid var(--surfaceColorHover) !important;
     border-radius: var(--borderRadius) !important;
     backdrop-filter: blur(16px) !important;
+    z-index: -1 !important;
 }
 
 .rclock .bar {
