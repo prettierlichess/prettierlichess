@@ -2268,6 +2268,10 @@ a.context-streamer:hover {
     --meta-height: minmax(auto, 300px) !important;
 }
 
+.analyse.has-players {
+    margin-top: 18px !important;
+}
+
 .analyse.gauge-on {
     margin-left: 0px !important;
 }
@@ -2807,6 +2811,18 @@ a.analyse {
 
 .study__player .result {
     border-right: 2px solid var(--surfaceColorHover) !important;
+}
+
+.study__player {
+    font-size: 16px !important;
+}
+
+.study__player-bot {
+    margin-top: 8px !important;
+}
+
+.study__player-top {
+    margin-top: -4px !important;
 }
 
 .study__multiboard .now-playing a.active,
