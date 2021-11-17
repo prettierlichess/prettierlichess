@@ -15,7 +15,11 @@ module.exports = {
             ignore: ['./popup.js']
           }
         },
+        {
+          from: "./node_modules/@simonwep/pickr/dist/themes/nano.min.css",
+          to: "./nano.min.css",
+        }
       ],
     }),
-  ],
+  ]
 };
