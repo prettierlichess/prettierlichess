@@ -1,6 +1,7 @@
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
+  mode: "production",
   entry: {
     popup: "./src/popup.js"
   },
