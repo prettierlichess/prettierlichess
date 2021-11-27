@@ -483,7 +483,6 @@ cg-container cg-board::before {
 cg-container cg-board,
 .lobby__puzzle .mini-board cg-board {
     border-radius: 4px !important;
-    box-shadow: var(--main-shadow) !important;
     overflow: hidden !important;
 }
 
@@ -491,6 +490,10 @@ cg-container cg-board,
 #miniGame cg-board,
 #powerTip .mini-game cg-board {
     box-shadow: none !important;
+}
+
+.manipulable cg-board {
+    cursor: grab !important;
 }
 
 .main-board {
@@ -1916,6 +1919,22 @@ button.rematch-decline::before {
     mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/K.svg) !important;
 }
 
+cg-board piece {
+    transition: all .1s !important;
+}
+
+cg-board piece.dragging {
+    cursor: -webkit-grabbing !important;
+}
+
+.ricons {
+    margin-bottom: 8px !important;
+}
+
+.ricons button {
+    border-radius: var(--borderRadius) !important;
+}
+
 .fbt.resign:hover {
     background: var(--tertiaryColor) !important;
 }
@@ -2263,8 +2282,6 @@ a.context-streamer:hover {
     position: relative !important;
     justify-content: center !important;
     grid-template-columns: minmax(230px, 20vw) 2vmin minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) 80px minmax(240px, 400px) !important;
-    margin-left: 40px !important;
-    transition: margin-left .3s ease-in-out !important;
     --meta-height: minmax(auto, 300px) !important;
 }
 
@@ -2272,16 +2289,12 @@ a.context-streamer:hover {
     margin-top: 18px !important;
 }
 
-.analyse.gauge-on {
-    margin-left: 0px !important;
-}
-
 .analyse__side .mselect {
     border: 0 !important;
 }
 
 .analyse__side .analyse__wiki {
-    padding: 0.5em 1em 0 1em;
+    padding: 0.5em 1em 0 1em !important;
 }
 
 .analyse__tools,
@@ -2445,6 +2458,7 @@ a.context-streamer:hover {
     flex-direction: column !important;
     justify-content: space-between !important;
     align-self: stretch !important;
+    overflow: hidden !important;
 }
 
 .analyse .mchat {
@@ -2778,7 +2792,7 @@ a.analyse {
 }
 
 .analyse.has-players .analyse__underboard {
-    margin-top: calc(1.5rem + 1vmin) !important;
+    margin-top: calc(2rem + 1vmin) !important;
 }
 
 .study__metadata,
