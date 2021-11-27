@@ -1920,7 +1920,7 @@ button.rematch-decline::before {
 }
 
 cg-board piece {
-    transition: all .1s !important;
+    transition: all .09s !important;
 }
 
 cg-board piece.dragging {
@@ -2057,6 +2057,7 @@ main.round {
     border-radius: var(--borderRadius) !important;
     box-shadow: none !important;
     backdrop-filter: blur(16px) !important;
+    overflow: hidden !important;
 }
 
 .game__meta {
@@ -2182,6 +2183,7 @@ div.round__app {
 rm6 {
     margin-bottom: 0 !important;
     background: none !important;
+    overflow: hidden !important;
 }
 
 rm6 l4x,
