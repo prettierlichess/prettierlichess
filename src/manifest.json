@@ -30,14 +30,8 @@
     "content_security_policy": "script-src 'self'; object-src 'self';",
     "web_accessible_resources": [
         "styles.css",
-        "fonts/RedHatDisplay-Regular.ttf",
-        "fonts/RedHatDisplay-Bold.ttf",
-        "fonts/RedHatText-Medium.ttf",
-        "fonts/RedHatText-MediumItalic.ttf",
-        "fonts/RedHatText-Bold.ttf",
-        "fonts/RedHatText-BoldItalic.ttf",
-        "fonts/RedHatText-Regular.ttf",
-        "fonts/RedHatText-Italic.ttf"
+        "fonts/*",
+        "pieces/*"
     ],
     "browser_specific_settings": {
         "gecko": {

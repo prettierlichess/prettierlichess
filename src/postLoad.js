@@ -80,7 +80,7 @@ const STREAMER_STYLES = `
         height: 100%;
         background: var(--defaultWhite);
         opacity: .1;
-        border-radius: var(--borderRadius);
+        border-radius: 4px;
         z-index: -1;
     }
 
