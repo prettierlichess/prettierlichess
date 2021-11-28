@@ -2814,6 +2814,10 @@ a.analyse {
     color: var(--secondaryColor) !important;
 }
 
+.analyse__clock {
+    padding-right: 4px !important;
+}
+
 .analyse__clock,
 .gamebook .comment {
     box-shadow: none !important;
@@ -2839,6 +2843,10 @@ a.analyse {
 
 .study__player-top {
     margin-top: -4px !important;
+}
+
+.study__player .info {
+    margin-left: 4px !important;
 }
 
 .study__multiboard .now-playing a.active,
