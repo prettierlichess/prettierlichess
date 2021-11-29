@@ -627,7 +627,7 @@ cg-board square.current-premove {
 
 /* Pieces */
 
-.is2d piece.black.king {
+/* .is2d piece.black.king {
     background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/king.svg') !important;
 }
 
@@ -673,7 +673,7 @@ cg-board square.current-premove {
 
 .is2d piece.white.bishop {
     background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/bishop.svg') !important;
-}
+} */
 
 /* Selects Default Arrow */
 
