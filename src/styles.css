@@ -1969,16 +1969,6 @@ button.rematch-decline::before {
     mask-image: url(https://lichess1.org/assets/_PFQXbw/piece/mono/K.svg) !important;
 }
 
-cg-board piece {
-    transition: all .09s !important;
-}
-
-/* cg-board piece.dragging {
-    cursor: grabbing !important;
-    cursor: -moz-grabbing !important;
-    cursor: -webkit-grabbing !important;
-} */
-
 .ricons {
     margin-bottom: 8px !important;
 }
