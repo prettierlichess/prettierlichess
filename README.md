@@ -1,3 +1,4 @@
+[![Node.js CI](https://github.com/prettierlichess/prettierlichess/actions/workflows/node.js.yml/badge.svg)](https://github.com/prettierlichess/prettierlichess/actions/workflows/node.js.yml)
 
 # Prettier Lichess
 
