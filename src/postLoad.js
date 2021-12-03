@@ -124,7 +124,11 @@ const STREAMER_STYLES = `
     }
 
     .ricons {
-        margin-top: 0;
+        margin-top: 8px;
+    }
+
+    .round__underboard:empty {
+        display: none;
     }
 }
 
