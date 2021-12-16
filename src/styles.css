@@ -3432,6 +3432,10 @@ hr {
     backdrop-filter: blur(16px) !important;
 }
 
+.tour__side {
+    overflow: hidden !important;
+}
+
 .tour__stats,
 .mchat,
 .tour__meta,
