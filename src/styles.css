@@ -235,7 +235,8 @@ rm6 .message::before,
 .ublog-post__meta__disclaimer,
 .study__chapters .act,
 .study__members .act,
-.explorer-box .explorer-title .active {
+.explorer-box .explorer-title .active,
+.tview2 move.active {
     color: var(--textColor) !important;
 }
 
@@ -484,16 +485,13 @@ cg-container cg-board,
 .lobby__puzzle .mini-board cg-board {
     border-radius: 4px !important;
     overflow: hidden !important;
+    box-shadow: var(--main-shadow) !important;
 }
 
 .mini-board cg-board,
 #miniGame cg-board,
 #powerTip .mini-game cg-board {
     box-shadow: none !important;
-}
-
-.manipulable cg-board {
-    cursor: grab !important;
 }
 
 .main-board {
@@ -1752,6 +1750,13 @@ button.rematch-decline::before {
     border-top: 1px solid var(--surfaceColorHover) !important;
 }
 
+.puzzle__themes__vote:hover,
+.puzzle__themes__vote.active,
+.puzzle__side__replay__bar::before {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+}
+
 .tview2 eval,
 .tview2 move index {
     opacity: .5 !important;
@@ -1820,7 +1825,8 @@ button.rematch-decline::before {
 }
 
 .tview2 move.active,
-.puzzle__themes__list__entry:hover {
+.puzzle__themes__list__entry:hover,
+.puzzle__side__replay__bar {
     background: var(--surfaceColorHover) !important;
 }
 
@@ -1845,12 +1851,14 @@ button.rematch-decline::before {
 
 .puzzle__side {
     grid-gap: 0 !important;
+    grid-template-rows: min-content min-content min-content min-content !important;
 }
 
 .puzzle__side__metas,
 .puzzle__side__user,
 .puzzle__side__config,
-.puzzle__side__theme {
+.puzzle__side__theme,
+.puzzle__side__replay {
     background: var(--surfaceColor) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     border-top: none !important;
@@ -3474,7 +3482,8 @@ hr {
 .slist thead,
 .swiss__controls,
 .swiss__player-info .stats h2,
-.swiss__player-info .pairings tr:nth-child(odd) {
+.swiss__player-info .pairings tr:nth-child(odd),
+.tour__team-standing tbody tr:nth-child(odd) {
     background: none !important;
 }
 
@@ -3621,7 +3630,8 @@ hr {
 .tour__standing:not(.created):not(.loading) tbody tr:hover,
 .tour__duels .rank,
 .tour__player-info .pairings tr:hover,
-.swiss__standing:not(.created):not(.loading) tbody tr:hover {
+.swiss__standing:not(.created):not(.loading) tbody tr:hover,
+.tour .tour__main .tour__team-standing tr:hover {
     background: var(--backgroundColor) !important;
 }
 
