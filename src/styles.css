@@ -481,6 +481,18 @@ cg-container cg-board::before {
     background: repeating-conic-gradient(var(--boardDark) 0% 25.01%, var(--boardLight) 0% 50.01%) 50% / 25% 25% !important;
 }
 
+.manipulable cg-board {
+    cursor: grab !important;
+}
+
+piece {
+    pointer-events: auto !important;
+}
+
+piece.dragging {
+    cursor: grabbing !important;
+}
+
 cg-container cg-board,
 .lobby__puzzle .mini-board cg-board {
     border-radius: 4px !important;
@@ -1146,8 +1158,17 @@ main.lobby {
 
 .lpools>div:hover {
     transform: scale(.95) !important;
+}
+
+.complete-list, .lpools>div:hover {
     background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
+}
+
+.complete-list {
+    border: var(--surfaceColorHover) !important;
+    box-shadow: var(--main-shadow) !important;
+    overflow: hidden !important;
 }
 
 g[stroke="#888"] {
@@ -1239,7 +1260,7 @@ g[stroke="#888"] {
     padding: 10px !important;
 }
 
-.tour-spotlight:hover {
+.tour-spotlight:hover, .complete-result:hover, .complete-result:focus, .complete-result.complete-selected {
     background: var(--surfaceColorHover) !important;
 }
 
@@ -1545,7 +1566,6 @@ a.button.button-metal:hover {
     box-shadow: var(--main-shadow) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     backdrop-filter: blur(16px) !important;
-    z-index: 2 !important;
 }
 
 .upt__info {
@@ -3424,7 +3444,7 @@ hr {
 .swiss__boards,
 .tour__stats,
 .simul__side,
-.swiss__player-info {
+.swiss__player-info, .tournament-leaderboards, .tournament-shields, .community__leaders .leaderboards {
     background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
@@ -3487,7 +3507,7 @@ hr {
 .swiss__controls,
 .swiss__player-info .stats h2,
 .swiss__player-info .pairings tr:nth-child(odd),
-.tour__team-standing tbody tr:nth-child(odd) {
+.tour__team-standing tbody tr:nth-child(odd), .tournament-leaderboards__item, .tournament-shields__item {
     background: none !important;
 }
 
@@ -3575,7 +3595,7 @@ hr {
 .tour__prize,
 .tour__duels a:hover,
 .tsht-shield,
-.scheduled a:hover {
+.scheduled a:hover, .tournament-leaderboards h2, .tournament-shields h2, .tournament-leaderboards li:nth-child(even), .tournament-shields li:nth-child(even), .tournament-categ-shields li:nth-child(odd), .community__leaders .leaderboards h2, .community__leaders .leaderboards li:nth-child(even) {
     box-shadow: none !important;
     background: var(--surfaceColorHover) !important;
 }
@@ -3606,7 +3626,11 @@ hr {
     color: var(--backgroundColor) !important;
 }
 
-.simul .half:first-child {
+.community__leaders .leaderboards h2 a, .community__leaders .leaderboards h2 {
+    color: var(--defaultWhite) !important;
+}
+
+.simul .half:first-child, .tournament-leaderboards__item, .tournament-shields__item, .community__leaders .leaderboards .user-top {
     border-right: 1px solid var(--surfaceColorHover) !important;
 }
 
@@ -4153,6 +4177,10 @@ group.radio div:last-child label {
         margin-top: 0 !important;
         margin-left: -70px !important;
         width: 100% !important;
+    }
+
+    .round__side {
+        height: min-content !important;
     }
 }
 
