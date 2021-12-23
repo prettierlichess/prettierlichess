@@ -55,8 +55,12 @@ const STREAMER_STYLES = `
         font-size: 1.5em;
         line-height: 0px;
         height: 100%;
+        width: 10ch;
         display: flex;
         align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-family: 'Red Hat Display', sans-serif;
     }
 
     .rclock.running .time {

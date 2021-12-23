@@ -2195,6 +2195,11 @@ main.round {
     border: 2px solid var(--surfaceColorHover) !important;
     align-self: start !important;
     backdrop-filter: blur(16px) !important;
+    overflow: hidden !important;
+}
+
+.round__underboard:empty {
+    display: none !important;
 }
 
 .crosstable__users,
@@ -2650,6 +2655,10 @@ a.context-streamer:hover {
 #acpl-chart,
 #movetimes-chart {
     background: none !important;
+}
+
+.analyse__underboard__menu>span {
+    padding: 1em 0 !important;
 }
 
 .analyse__underboard__menu>span.active {
