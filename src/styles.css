@@ -4292,16 +4292,61 @@ group.radio div:last-child label {
 
 @media (max-width: 799px) {
     .round .round__app {
-        grid-template-rows: auto auto 50px auto min-content 50px auto !important;
+        grid-template-rows: auto auto 30px 20px auto auto 20px 30px auto !important;
     }
 
     .ruser {
         padding: 0 0.3em !important;
     }
 
+    .ruser-bottom {
+        border: 0 !important;
+    }
+
     .rclock .time {
-        font-size: 3em !important;
-        padding: 0 !important;
+        position: relative !important;
+        font-size: 1.5em !important;
+        line-height: 0px !important;
+        height: 70% !important;
+        margin-top: 8% !important;
+        width: 10ch !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 600 !important;
+        font-family: 'Red Hat Display', sans-serif !important;
+    }
+
+    .rclock.running .time {
+        opacity: 1 !important;
+        color: var(--defaultWhite) !important;
+    }
+
+    .rclock .time::before {
+        content: '' !important;
+        top: 0 !important;
+        left: 0 !important;
+        position: absolute !important;
+        width: 98% !important;
+        height: 100% !important;
+        background: var(--defaultWhite) !important;
+        opacity: .1 !important;
+        border-radius: 4px !important;
+        z-index: -1 !important;
+    }
+
+    .rclock.running .time::before {
+        background: var(--primaryColor) !important;
+        opacity: .5 !important;
+    }
+
+    .rclock.emerg.running .time::before {
+        background: var(--tertiaryColor) !important;
+    }
+
+    .subnav a {
+        box-shadow: none !important;
+        background: none !important;
     }
 
     rm6 l4x {
@@ -4347,6 +4392,7 @@ group.radio div:last-child label {
         margin: 0 !important;
         grid-template-columns: var(--main-margin) 1fr minmax(auto, var(--main-max-width)) 1fr var(--main-margin) !important;
         margin-top: var(--site-header-margin) !important;
+        padding: 0 16px !important;
     }
 
     #topnav {
