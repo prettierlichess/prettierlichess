@@ -1067,11 +1067,6 @@ signal>i {
     color: var(--defaultWhite) !important;
 }
 
-.challenge-page .waiting .spinner {
-    width: 5em !important;
-    height: 5em !important;
-}
-
 #challenge-app .challenge .owner:hover .view {
     width: 100% !important;
     height: 30px !important;
@@ -1695,6 +1690,10 @@ main.page-small {
     height: 5em !important;
 }
 
+.spinner path {
+    stroke: var(--primaryColor) !important;
+}
+
 #challenge-app .challenge:hover>i,
 #challenge-app .challenge .owner {
     color: var(--primaryColor) !important;
@@ -2121,12 +2120,15 @@ main.round {
     border-radius: var(--borderRadius) !important;
 }
 
-.round__side {
+.round__side, .pocket {
     background: var(--surfaceColor) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     border-radius: var(--borderRadius) !important;
     box-shadow: none !important;
     backdrop-filter: blur(16px) !important;
+}
+
+.round__side {
     overflow: hidden !important;
 }
 
@@ -2209,6 +2211,16 @@ main.round {
 .rcontrols .rematch.fbt,
 #powerTip .forecast-info .title {
     background: var(--surfaceColorHover) !important;
+}
+
+.pocket.usable piece:hover {
+    background-color: var(--surfaceColorHover) !important;
+}
+
+.round .pocket piece::after {
+    color: var(--backgroundColor) !important;
+    background: var(--primaryColor) !important;
+    text-shadow: none !important;
 }
 
 .crosstable,
