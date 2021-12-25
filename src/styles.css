@@ -4207,8 +4207,9 @@ group.radio div:last-child label {
 
 @media (max-width: 979px) {
 
-    .topnav-toggle:checked~.hbg {
-        background: var(--surfaceColor) !important;
+    .hbg {
+        background: none !important;
+        transform: scale(.75) !important;
     }
 
     .hbg__in {
@@ -4279,20 +4280,20 @@ group.radio div:last-child label {
         width: auto !important;
         left: auto !important;
         margin-left: 0 !important;
-        border-left: none !important;
-        border-radius: var(--borderRadius) !important;
+        border: none !important;
+        border-radius: 0 !important;
         overflow: hidden !important;
     }
 
     #topnav div a {
-        height: auto !important;
+        height: 30px !important;
         margin: 5px 0px;
     }
 }
 
 @media (max-width: 799px) {
     .round .round__app {
-        grid-template-rows: auto auto 30px 20px auto auto 20px 30px auto !important;
+        grid-template-rows: auto auto 50px 20px auto auto 20px 30px auto !important;
     }
 
     .ruser {
@@ -4303,12 +4304,16 @@ group.radio div:last-child label {
         border: 0 !important;
     }
 
+    .rclock-top {
+        margin-top: 8px !important;
+    }
+
     .rclock .time {
         position: relative !important;
         font-size: 1.5em !important;
         line-height: 0px !important;
-        height: 70% !important;
-        margin-top: 8% !important;
+        height: 40px !important;
+        margin-top: 10px !important;
         width: 10ch !important;
         display: flex !important;
         align-items: center !important;
@@ -4398,11 +4403,6 @@ group.radio div:last-child label {
     #topnav {
         width: 90vw !important;
         transform: translateX(-90vw) !important;
-    }
-
-    #topnav div a {
-        height: 3em !important;
-        margin: 0 !important;
     }
 
     main.lobby {
