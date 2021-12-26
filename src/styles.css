@@ -236,7 +236,9 @@ rm6 .message::before,
 .study__chapters .act,
 .study__members .act,
 .explorer-box .explorer-title .active,
-.tview2 move.active {
+.tview2 move.active,
+.team-events .slist a,
+.team-events .slist .setup {
     color: var(--textColor) !important;
 }
 
@@ -3503,6 +3505,10 @@ hr {
     box-shadow: var(--main-shadow) !important;
 }
 
+.tour__standing tr.me td:first-child {
+    background: linear-gradient(to right, var(--primaryColor) 0px, var(--primaryColor) 5px, rgba(0,0,0,0) 5px, rgba(0,0,0,0) 100%) !important;
+}
+
 .swiss__standing tr.active td:last-child {
     background: linear-gradient(to left, var(--primaryColor) 0px, var(--primaryColor) 5px, rgba(0, 0, 0, 0) 5px, rgba(0, 0, 0, 0) 100%) !important;
 }
@@ -3622,7 +3628,9 @@ hr {
 }
 
 .simul .game-list .host,
-.tsht-hourly {
+.tsht-hourly,
+.tour__notice,
+.pager .fbt.active {
     background: var(--primaryColor) !important;
 }
 
@@ -3643,7 +3651,9 @@ hr {
 .simul .game-list .host,
 .simul .game-list .host a,
 .simul .game-list .host .mini-game__clock,
-.tsht {
+.tsht, 
+.tour__notice,
+.pager .fbt.active {
     color: var(--backgroundColor) !important;
 }
 
@@ -3730,6 +3740,45 @@ hr {
     border-top: none !important;
     border-left: none !important;
     border-right: none !important;
+}
+
+/* Teams and Clubs */
+
+.team-show__desc,
+.team-show__tour .slist,
+.team-show .mchat {
+    background: var(--surfaceColor) !important;
+    border: 2px solid var(--surfaceColorHover) !important;
+    border-radius: var(--borderRadius) !important;
+    box-shadow: none !important;
+    border-collapse: separate !important;
+    overflow: hidden !important;
+}
+
+.team-events .slist .icon i {
+    color: var(--secondaryColor) !important;
+}
+
+.team-events .slist .soon .icon i {
+    color: var(--primaryColor) !important;
+}
+
+.team-show.box .mchat__tabs, .team-show.box .mchat__content, .team-show.box .mchat__say, .team-show.box .mchat__tab-active {
+    background: none !important;
+}
+
+tbody tr.enterable:hover,
+.team-show__forum__post:hover {
+    background: var(--backgroundColor) !important;
+}
+
+.team-show__forum__post:nth-child(odd) {
+    background: var(--surfaceColorHover) !important;
+}
+
+.team-show .mchat {
+    height: 40vh !important;
+    margin-bottom: 3vh !important;
 }
 
 /* Board Editor */
