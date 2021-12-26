@@ -4356,9 +4356,15 @@ group.radio div:last-child label {
         display: none !important;
     }
 
-    .round {
+    body #main-wrap {
+        padding: 0 !important;
+    }
+
+    main {
         width: 100% !important;
+        max-width: 100% !important;
         grid-template-columns: 100% !important;
+        padding: 0 8px !important;
     }
 
     .round__underboard {
@@ -4471,7 +4477,8 @@ group.radio div:last-child label {
         border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
     }
 
-    .puzzle__side__theme {
+    .puzzle__side__theme,
+    .puzzle__side__user {
         border-bottom: 0 !important;
     }
 
@@ -4503,7 +4510,6 @@ group.radio div:last-child label {
         margin: 0 !important;
         grid-template-columns: var(--main-margin) 1fr minmax(auto, var(--main-max-width)) 1fr var(--main-margin) !important;
         margin-top: var(--site-header-margin) !important;
-        padding: 0 8px !important;
     }
 
     #topnav {
