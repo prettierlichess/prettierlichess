@@ -3349,7 +3349,7 @@ rect[fill="#505053"] {
 }
 
 rect[fill="#000003"] {
-    fill: var(--primaryColor) !important;
+    fill: var(--backgroundColor) !important;
 }
 
 .highcharts-button text,
@@ -4451,23 +4451,16 @@ group.radio div:last-child label {
         box-shadow: none !important;
     }
 
-    .analyse {
-        grid-template-columns: 100vw !important;
-        margin: 0 !important;
-    }
-
-    .analyse__acpl,
-    .analyse__tools,
-    .analyse__controls {
-        left: 0 !important;
-    }
-
-    .analyse__side {
-        margin: 0 !important;
-    }
-
     rm6 i5z, rm6 u8t:hover, rm6 u8t.a1t {
         background: var(--surfaceColor) !important;
+    }
+
+    .mchat {
+        height: 40vh !important;
+    }
+
+    .round__side {
+        min-height: 75vh !important;
     }
 
     /* Puzzles Mobile */
@@ -4484,6 +4477,87 @@ group.radio div:last-child label {
 
     .puzzle__side__metas {
         border-radius: 0 !important;
+    }
+
+    /* Profile Page */
+
+    .sub-ratings {
+        margin-bottom: 20px !important;
+    }
+
+    #us_profile .profile-side,
+    .activity .entries {
+        border: 0 !important;
+    }
+
+    .activity .entry {
+        padding-left: 0 !important;
+    }
+
+    .activity .entry > i {
+        display: none !important;
+    }
+
+    /* Analysis */
+
+    .analyse {
+        grid-template-columns: 100% !important;
+        grid-template-rows: auto !important;
+        margin: 0 !important;
+    }
+
+    .analyse__acpl,
+    .analyse__tools,
+    .analyse__controls {
+        left: 0 !important;
+    }
+
+    .analyse__side {
+        margin: 0 !important;
+    }
+
+    .analyse .mchat,
+    .analyse__side {
+        border-radius: var(--borderRadius) !important;
+    }
+
+    .analyse__tools {
+        height: 50vh !important;
+    }
+
+    .analyse__tools,
+    .analyse__side,
+    .analyse__underboard {
+        margin-bottom: 20px !important;
+    }
+
+    .tview2 move,
+    .advice-summary__side {
+        font-size: 14px !important;
+    }
+
+    .tview2-inline comment {
+        font-size: 12px !important;
+    }
+
+    .advice-summary__side > * {
+        margin-bottom: 8px !important;
+    }
+
+    .advice-summary .button {
+        margin: 20px !important;
+    }
+
+    .advice-summary {
+        border: 0 !important;
+    }
+
+    .analyse .mchat {
+        border: 2px solid var(--surfaceColorHover) !important;
+    }
+
+    .analyse__tools .sub-box {
+        min-height: 100% !important;
     }
 }
 
