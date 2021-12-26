@@ -1181,7 +1181,8 @@ g[stroke="#888"] {
     font-size: 75% !important;
 }
 
-.hooks__list tr.join:hover td {
+.hooks__list tr.join:hover td,
+.online.reconnected #reconnecting {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
@@ -1646,6 +1647,11 @@ group.radio label {
 
 group.radio {
     box-shadow: none !important;
+}
+
+#reconnecting {
+    background: var(--tertiaryColor) !important;
+    color: var(--backgroundColor) !important;
 }
 
 /* Challenge Page */
@@ -4320,6 +4326,7 @@ group.radio div:last-child label {
 
     #topnav section>a {
         margin-bottom: 10px !important;
+        font-size: 14px !important;
     }
 
     #topnav div {
@@ -4331,6 +4338,7 @@ group.radio div:last-child label {
         width: auto !important;
         left: auto !important;
         margin-left: 0 !important;
+        margin-bottom: 20px !important;
         border: none !important;
         border-radius: 0 !important;
         overflow: hidden !important;
@@ -4343,6 +4351,11 @@ group.radio div:last-child label {
 }
 
 @media (max-width: 799px) {
+
+    .streamerButton {
+        display: none !important;
+    }
+
     .round {
         width: 100% !important;
         grid-template-columns: 100% !important;
@@ -4445,6 +4458,25 @@ group.radio div:last-child label {
 
     .analyse__side {
         margin: 0 !important;
+    }
+
+    rm6 i5z, rm6 u8t:hover, rm6 u8t.a1t {
+        background: var(--surfaceColor) !important;
+    }
+
+    /* Puzzles Mobile */
+
+    .puzzle__side__user {
+        border-top: 2px solid var(--surfaceColorHover) !important;
+        border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
+    }
+
+    .puzzle__side__theme {
+        border-bottom: 0 !important;
+    }
+
+    .puzzle__side__metas {
+        border-radius: 0 !important;
     }
 }
 
