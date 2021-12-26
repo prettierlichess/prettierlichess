@@ -1773,7 +1773,8 @@ button.rematch-decline::before {
 
 .puzzle__themes__vote:hover,
 .puzzle__themes__vote.active,
-.puzzle__side__replay__bar::before {
+.puzzle__side__replay__bar::before,
+.puzzle__session a.session-new {
     background: var(--primaryColor) !important;
     color: var(--backgroundColor) !important;
 }
@@ -3887,7 +3888,8 @@ iframe.analyse {
 .blog .meta-headline,
 .blog-cards>a time,
 .ublog-topics__topic:hover,
-.ublog-post__topics a {
+.ublog-post__topics a,
+.forum-post__metas a.author--op {
     background: var(--surfaceColorHover) !important;
     box-shadow: none !important;
 }
@@ -4341,8 +4343,31 @@ group.radio div:last-child label {
 }
 
 @media (max-width: 799px) {
+    .round {
+        width: 100% !important;
+        grid-template-columns: 100% !important;
+    }
+
+    .round__underboard {
+        margin-top: 10px !important;
+    }
+
     .round .round__app {
         grid-template-rows: auto auto 50px 20px auto auto 20px 30px auto !important;
+    }
+
+    rm6 {
+        border: 2px solid var(--surfaceColorHover) !important;
+        border-radius: var(--borderRadius) !important;
+    }
+
+    .subnav a,
+    .tv-channels.subnav strong {
+        letter-spacing: 0px !important;
+    }
+
+    .round .material mpiece {
+        margin-left: 0px !important;
     }
 
     .ruser {
@@ -4446,7 +4471,7 @@ group.radio div:last-child label {
         margin: 0 !important;
         grid-template-columns: var(--main-margin) 1fr minmax(auto, var(--main-max-width)) 1fr var(--main-margin) !important;
         margin-top: var(--site-header-margin) !important;
-        padding: 0 16px !important;
+        padding: 0 8px !important;
     }
 
     #topnav {
