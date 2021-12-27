@@ -519,7 +519,7 @@ cg-container cg-board,
     box-shadow: none !important;
 }
 
-#powerTip, #miniGame, input, textarea, select, .data-count::after, .unread, .button, .btn-rack {
+#powerTip, #miniGame, textarea, select, .data-count::after, .unread, .button, .btn-rack {
     border-radius: var(--borderRadius) !important;
 }
 
@@ -2212,6 +2212,7 @@ main.round {
     border: none !important;
     border-top: 2px solid var(--surfaceColorHover) !important;
     padding: 3px 10px !important;
+    border-radius: none !important;
 }
 
 .round__underboard {
