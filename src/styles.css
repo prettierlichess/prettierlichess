@@ -62,6 +62,16 @@
         url(moz-extension://__MSG_@@extension_id__/fonts/RedHatDisplay-Bold.ttf);
 }
 
+:root {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 html {
     font-family: 'Red Hat Text', sans-serif !important;
     --primaryColor: #9FC0A2 !important;
@@ -238,7 +248,8 @@ rm6 .message::before,
 .explorer-box .explorer-title .active,
 .tview2 move.active,
 .team-events .slist a,
-.team-events .slist .setup {
+.team-events .slist .setup,
+.relay-widget::before {
     color: var(--textColor) !important;
 }
 
@@ -506,6 +517,10 @@ cg-container cg-board,
 #miniGame cg-board,
 #powerTip .mini-game cg-board {
     box-shadow: none !important;
+}
+
+#powerTip, #miniGame, input, textarea, select, .data-count::after, .unread, .button, .btn-rack {
+    border-radius: var(--borderRadius) !important;
 }
 
 .main-board {
@@ -2881,6 +2896,7 @@ a.analyse {
     border: 2px solid var(--surfaceColorHover) !important;
     background: var(--surfaceColor) !important;
     backdrop-filter: blur(16px) !important;
+    overflow: hidden !important;
 }
 
 .analyse__underboard .tabs-horiz {
@@ -3840,6 +3856,11 @@ h1 a,
     height: 300px !important;
 }
 
+.forum .slist thead {
+    border-left: 0 !important;
+    border-right: 0 !important;
+}
+
 .slist {
     border: 0 !important;
 }
@@ -4220,6 +4241,48 @@ group.radio div:last-child label {
     color: var(--backgroundColor) !important;
 }
 
+/* Broadcasts */
+
+.relay-widget.tour-tier--5.relay-widget--active,
+.relay-widget.tour-tier--5.relay-widget--active::before,
+.relay-widget.tour-tier--5.relay-widget--active:hover h2,
+.relay-widget.tour-tier--5.relay-widget--active p {
+    background: var(--primaryColor) !important;
+    color: var(--backgroundColor) !important;
+    box-shadow: none !important;
+    transition: all .2s ease-in-out !important;
+}
+
+.relay-widget.tour-tier--5.relay-widget--active:hover {
+    transform: scale(1.01) !important;
+    box-shadow: var(--main-shadow) !important;
+    z-index: 9 !important;
+}
+
+.relay-widget {
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
+    border-radius: 0 !important;
+}
+
+.relay-widget:hover {
+    background: var(--surfaceColorHover) !important;
+}
+
+.relay-widget--active::before,
+.relay-widget:hover h2 {
+    color: var(--primaryColor) !important;
+}
+
+.relay-widget.tour-tier--5 {
+    border: 0 !important;
+    border-bottom: 1px solid var(--surfaceColorHover) !important;
+    box-shadow: var(--main-shadow) !important;
+}
+
+.box__top>h1, .box__top>div, .box__top>form {
+    margin-top: 0 !important;
+}
+
 /* Glowing */
 
 body .glowing {
@@ -4335,6 +4398,7 @@ body .glowing {
         padding-top: 2rem !important;
         transform: translateX(-60vw) !important;
         margin-left: 0 !important;
+        backdrop-filter: blur(16px) !important;
     }
 
     .topnav-toggle:checked~#topnav {
@@ -4351,7 +4415,7 @@ body .glowing {
         margin-top: 0 !important;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%) !important;
         box-shadow: none !important;
-        background-color: none !important;
+        background-color: rgba(0, 0, 0, 0) !important;
         width: auto !important;
         left: auto !important;
         margin-left: 0 !important;
@@ -4359,6 +4423,7 @@ body .glowing {
         border: none !important;
         border-radius: 0 !important;
         overflow: hidden !important;
+        backdrop-filter: none !important;
     }
 
     #topnav div a {
@@ -4476,8 +4541,22 @@ body .glowing {
         height: 40vh !important;
     }
 
+    .chat__members {
+        margin-top: 10px !important;
+    }
+
     .round__side {
         min-height: 75vh !important;
+    }
+
+    /* Studies Mobile */
+
+    .study__chapters {
+        max-height: 50vh !important;
+    }
+
+    .study__multiboard {
+        margin-bottom: 20px !important;
     }
 
     /* Puzzles Mobile */
@@ -4496,7 +4575,11 @@ body .glowing {
         border-radius: 0 !important;
     }
 
-    /* Profile Page */
+    .puzzle__feedback {
+        border-top: 0 !important;
+    }
+
+    /* Profile Page Mobile */
 
     .sub-ratings {
         margin-bottom: 20px !important;
@@ -4515,7 +4598,7 @@ body .glowing {
         display: none !important;
     }
 
-    /* Analysis */
+    /* Analysis Mobile */
 
     .analyse {
         grid-template-columns: 100% !important;
@@ -4575,6 +4658,17 @@ body .glowing {
 
     .analyse__tools .sub-box {
         min-height: 100% !important;
+    }
+
+    /* Blog Mobile */
+
+    .page-menu__menu {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    .page-menu.page-small {
+        margin: 0 !important;
     }
 }
 
