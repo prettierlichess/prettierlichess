@@ -4220,6 +4220,23 @@ group.radio div:last-child label {
     color: var(--backgroundColor) !important;
 }
 
+/* Glowing */
+
+body .glowing {
+    -webkit-animation: glowingCustom 3s ease-in-out infinite;
+    animation: glowingCustom 3s ease-in-out infinite;
+}
+
+@keyframes glowingCustom {
+    30%, 70% {
+      background: none;
+    }
+  
+    50% {
+      background: var(--surfaceColorHover);
+    }
+  }
+
 /*Responsive Sizes*/
 
 @media (max-width: 1260px) {
