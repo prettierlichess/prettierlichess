@@ -2181,6 +2181,7 @@ main.round {
 }
 
 .mchat-optional .mchat__tab-active,
+.mchat .mchat__tab-active,
 .mchat__tab:hover {
     background: var(--surfaceColorHover) !important;
     border-radius: 0 !important;
@@ -2457,6 +2458,10 @@ a.context-streamer:hover {
 .analyse__moves .result,
 .analyse__moves .status {
     background: var(--surfaceColor) !important;
+}
+
+.ceval .engine .deeper {
+    color: var(--secondaryColor) !important;
 }
 
 .analyse__moves .result {
@@ -4429,7 +4434,14 @@ body .glowing {
 
     #topnav div a {
         height: 30px !important;
-        margin: 5px 0px;
+        margin: 5px 0px !important;
+        border-radius: var(--borderRadius) !important;
+    }
+
+    #topnav div a:hover,
+    nav section a {
+        padding-left: 10px !important;
+        border-radius: var(--borderRadius) !important;
     }
 }
 
@@ -4440,14 +4452,34 @@ body .glowing {
     }
 
     body #main-wrap {
+        margin: 0 !important;
         padding: 0 !important;
+        overflow-x: hidden !important;
     }
 
     main {
-        width: 100% !important;
+        width: 100vw !important;
         max-width: 100% !important;
         grid-template-columns: 100% !important;
         padding: 0 8px !important;
+    }
+
+    .lobby__side {
+        display: block !important;
+    }
+
+    .lobby__tv cg-container cg-board {
+        border-radius: 4px !important;
+    }
+
+    cg-container cg-board {
+        border-radius: 0 !important;
+    }
+
+    .main-board {
+        width: 100vw !important;
+        height: 100vw !important;
+        margin-left: -10px !important;
     }
 
     .round__underboard {
@@ -4525,7 +4557,8 @@ body .glowing {
         background: var(--tertiaryColor) !important;
     }
 
-    .subnav a {
+    .subnav a,
+    .lobby__counters {
         box-shadow: none !important;
         background: none !important;
     }
@@ -4607,6 +4640,10 @@ body .glowing {
         margin: 0 !important;
     }
 
+    .analyse.has-players {
+        margin-top: 30px !important;
+    }
+
     .analyse__acpl,
     .analyse__tools,
     .analyse__controls {
@@ -4628,7 +4665,8 @@ body .glowing {
 
     .analyse__tools,
     .analyse__side,
-    .analyse__underboard {
+    .analyse__underboard,
+    .relay-tour__text {
         margin-bottom: 20px !important;
     }
 
@@ -4670,6 +4708,18 @@ body .glowing {
 
     .page-menu.page-small {
         margin: 0 !important;
+    }
+
+    main.forum {
+        padding: 0 !important;
+        padding-top: 20px !important;
+        margin: 0 16px !important;
+        width: calc(100% - 32px) !important;
+    }
+
+    main.forum.forum-topic {
+        padding: 20px !important;
+        padding-top: 40px !important;
     }
 }
 
