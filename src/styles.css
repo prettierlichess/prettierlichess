@@ -4462,6 +4462,7 @@ body .glowing {
         max-width: 100% !important;
         grid-template-columns: 100% !important;
         padding: 0 8px !important;
+        overflow: hidden !important;
     }
 
     .lobby__side {
