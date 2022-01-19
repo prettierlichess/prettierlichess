@@ -1427,7 +1427,7 @@ g[stroke="#888"] {
     justify-content: center !important;
     align-items: center !important;
     margin: 0px !important;
-    flex: 1;
+    flex: 1 !important;
 }
 
 #nb_connected_players:hover {
