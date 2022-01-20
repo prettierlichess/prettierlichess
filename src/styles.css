@@ -1417,6 +1417,7 @@ g[stroke="#888"] {
     align-items: center !important;
     justify-content: center !important;
     width: 80% !important;
+    gap: 1em !important;
 }
 
 #nb_connected_players,
@@ -1426,7 +1427,7 @@ g[stroke="#888"] {
     justify-content: center !important;
     align-items: center !important;
     margin: 0px !important;
-    width: 50% !important;
+    flex: 1 !important;
 }
 
 #nb_connected_players:hover {
