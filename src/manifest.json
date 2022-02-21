@@ -1,43 +1,45 @@
 {
-    "name": "Prettier Lichess",
-    "version": "3.3.8",
-    "manifest_version": 2,
-    "description": "Lichess, but prettier.",
-    "icons": {
-        "128": "icon_128.png"
-    },
-    "content_scripts": [{
-            "matches": ["*://lichess.org/*"],
-            "exclude_matches": ["*://lichess.org/api*"],
-            "run_at": "document_start",
-            "css": ["styles.css"],
-            "js": ["content.js"]
-        },
-        {
-            "matches": ["*://lichess.org/*"],
-            "run_at": "document_idle",
-            "js": ["postLoad.js"]
-        }
-    ],
-    "browser_action": {
-        "default_popup": "popup.html"
-    },
-    "permissions": ["activeTab", "storage", "declarativeContent", "downloads", "*://lichess.org/*"],
-    "background": {
-        "scripts": ["background.js"],
-        "persistant": false
-    },
-    "content_security_policy": "script-src 'self'; object-src 'self';",
-    "web_accessible_resources": [
-        "styles.css",
-        "fonts/*",
-        "pieces/*"
-    ],
-    "browser_specific_settings": {
-        "gecko": {
-            "id": "{8ad4bea8-ad8d-4e98-b434-a76065dee6cb}",
-            "strict_min_version": "42.0"
-        }
-    }
-
+	"name": "Prettier Lichess",
+	"version": "3.3.9",
+	"manifest_version": 2,
+	"description": "Lichess, but prettier.",
+	"icons": {
+		"128": "icon_128.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://lichess.org/*"],
+			"exclude_matches": ["*://lichess.org/api*"],
+			"run_at": "document_start",
+			"css": ["styles.css"],
+			"js": ["content.js"]
+		},
+		{
+			"matches": ["*://lichess.org/*"],
+			"run_at": "document_idle",
+			"js": ["postLoad.js"]
+		}
+	],
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"activeTab",
+		"storage",
+		"declarativeContent",
+		"downloads",
+		"*://lichess.org/*"
+	],
+	"background": {
+		"scripts": ["background.js"],
+		"persistant": false
+	},
+	"content_security_policy": "script-src 'self'; object-src 'self';",
+	"web_accessible_resources": ["styles.css", "fonts/*", "pieces/*"],
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "{8ad4bea8-ad8d-4e98-b434-a76065dee6cb}",
+			"strict_min_version": "42.0"
+		}
+	}
 }
