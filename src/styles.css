@@ -1396,7 +1396,6 @@ g[stroke="#888"] {
     align-items: center !important;
     justify-content: center !important;
     background: var(--surfaceColor) !important;
-    backdrop-filter: blur(16px) !important;
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover);
     padding: 40px 0 !important;
