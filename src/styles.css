@@ -1060,6 +1060,13 @@ signal>i {
     align-items: center !important;
 }
 
+#challenge-app .challenge .buttons button::before{
+    color: var(--backgroundColor) !important;
+}
+#challenge-app .challenge .buttons button:hover::before{
+    color: var(--textColor) !important;
+}
+
 .challenge-page .details {
     position: relative !important;
     background: none !important;
