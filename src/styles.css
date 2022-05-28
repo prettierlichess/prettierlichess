@@ -1063,6 +1063,7 @@ signal>i {
 #challenge-app .challenge .buttons button::before{
     color: var(--backgroundColor) !important;
 }
+
 #challenge-app .challenge .buttons button:hover::before{
     color: var(--textColor) !important;
 }
@@ -4183,6 +4184,10 @@ iframe.analyse {
     color: var(--backgroundColor) !important;
     box-shadow: none !important;
     text-shadow: none !important;
+}
+
+.plan .banner div p {
+    color: var(--backgroundColor) !important;
 }
 
 group.radio {
