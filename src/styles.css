@@ -3510,7 +3510,8 @@ hr {
 }
 
 .left-side .filters .items .box .ms-parent .ms-choice,
-.left-side .filters .items .box .ms-parent .ms-drop li{
+.left-side .filters .items .box .ms-parent .ms-drop li,
+.left-side .filters .items .box .ms-parent .ms-drop .ms-search input {
     background-color: var(--surfaceColor) !important;
 }
 
