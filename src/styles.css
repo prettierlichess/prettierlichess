@@ -3509,6 +3509,11 @@ hr {
     backdrop-filter: blur(16px) !important;
 }
 
+.left-side .filters .items .box .ms-parent .ms-choice,
+.left-side .filters .items .box .ms-parent .ms-drop li{
+    background-color: var(--surfaceColor) !important;
+}
+
 .tour__side {
     overflow: hidden !important;
 }
