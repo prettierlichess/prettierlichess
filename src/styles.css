@@ -1968,6 +1968,10 @@ button.rematch-decline::before {
     font-size: 1.5em !important;
 }
 
+.storm--end__stats th {
+    padding: 10px;
+}
+
 /* Centering game board in puzzle storm and puzzle racer*/
 @media (min-width: 799px) {
 
