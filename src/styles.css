@@ -1757,6 +1757,15 @@ main.page-small {
     backdrop-filter: blur(16px) !important;
 }
 
+.storm--end__score>p{
+    color: var(--defaultWhite) !important;
+}
+
+.puz-history__rounds .puz-history__round .puz-history__round__result bad,
+.puz-history__rounds .puz-history__round .puz-history__round__result good{
+    color: var(--defaultWhite) !important;
+}
+
 .puz-side__top::before {
     -webkit-mask-image: url(https://lichess1.org/assets/_coe7PY/images/icons/tornado.svg) !important;
     mask-image: url(https://lichess1.org/assets/_coe7PY/images/icons/tornado.svg) !important;
