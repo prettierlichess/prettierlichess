@@ -4074,6 +4074,7 @@ iframe.analyse {
 .learn-stages .stage.done,
 .learn-stages .stage.done .text>.subtitle,
 .learn__table .title,
+.learn__table .title .text>.subtitle,
 .learn__table .progress a.done,
 .learn__side-map .categ.active>h2,
 .learn__side-home .progress .bar,
