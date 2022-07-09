@@ -4072,6 +4072,7 @@ iframe.analyse {
 }
 
 .learn-stages .stage.done,
+.learn-stages .stage.done .text>.subtitle,
 .learn__table .title,
 .learn__table .progress a.done,
 .learn__side-map .categ.active>h2,
@@ -4085,6 +4086,7 @@ iframe.analyse {
 }
 
 .learn-stages .stage.ongoing,
+.learn-stages .stage.ongoing .text>.subtitle,
 .learn__table .progress a.active,
 .learn__side-map .stage.active img,
 .learn__side-map .stage.future img,
