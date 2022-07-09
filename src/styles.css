@@ -1722,6 +1722,10 @@ main.page-small {
     stroke: var(--primaryColor) !important;
 }
 
+.fbt:hover .spinner path {
+    stroke: var(--backgroundColor) !important;
+}
+
 #challenge-app .challenge:hover>i,
 #challenge-app .challenge .owner {
     color: var(--primaryColor) !important;
@@ -1970,6 +1974,7 @@ button.rematch-decline::before {
 
 .puzzle-history__round__result>bad,
 .puzzle-history__round__result>good {
+    color: var(--defaultWhite) !important;
 }
 
 /* Centering game board in puzzle storm and puzzle racer*/
