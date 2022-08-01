@@ -977,6 +977,10 @@ signal>i {
     backdrop-filter: blur(16px) !important;
 }
 
+#dasher_app {
+    box-sizing: content-box !important;
+}
+
 #notify-app .site_notification {
     border-bottom: none !important;
     border-radius: var(--borderRadius) !important;
