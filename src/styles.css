@@ -1060,6 +1060,14 @@ signal>i {
     align-items: center !important;
 }
 
+#challenge-app .challenge .buttons button::before {
+    color: var(--backgroundColor) !important;
+}
+
+#challenge-app .challenge .buttons button:hover::before {
+    color: var(--textColor) !important;
+}
+
 .challenge-page .details {
     position: relative !important;
     background: none !important;
@@ -2065,6 +2073,7 @@ main.round {
     border-radius: 12px !important;
     color: rgba(0, 0, 0, 0) !important;
     opacity: .75 !important;
+    vertical-align: baseline !important;
 }
 
 .color-icon.random::before {
@@ -2074,6 +2083,7 @@ main.round {
     border-bottom-right-radius: 0 !important;
     width: 6px !important;
     transform: translateY(-2px) !important;
+    vertical-align: middle !important;
 }
 
 .color-icon.random::after {
@@ -2083,6 +2093,7 @@ main.round {
     border-bottom-left-radius: 0 !important;
     width: 6px !important;
     transform: translateY(1px) !important;
+    vertical-align: baseline !important;
 }
 
 .color-icon.black::before {
@@ -4184,6 +4195,10 @@ iframe.analyse {
     color: var(--backgroundColor) !important;
     box-shadow: none !important;
     text-shadow: none !important;
+}
+
+.plan .banner div p {
+    color: var(--backgroundColor) !important;
 }
 
 group.radio {
