@@ -4044,6 +4044,14 @@ iframe.analyse {
     opacity: .5 !important;
 }
 
+.ps__chapter .status.done {
+    color: var(--primaryColor) !important;
+}
+
+.ps__chapter.active .status.ongoing {
+    color: var(--defaultWhite) !important;
+}
+
 /* Coordinate Trainer */
 
 .coord-trainer {
