@@ -1730,6 +1730,10 @@ main.page-small {
     stroke: var(--primaryColor) !important;
 }
 
+.fbt:hover .spinner path {
+    stroke: var(--backgroundColor) !important;
+}
+
 #challenge-app .challenge:hover>i,
 #challenge-app .challenge .owner {
     color: var(--primaryColor) !important;
@@ -1759,6 +1763,15 @@ main.page-small {
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     backdrop-filter: blur(16px) !important;
+}
+
+.storm--end__score>p{
+    color: var(--defaultWhite) !important;
+}
+
+.puz-history__rounds .puz-history__round .puz-history__round__result bad,
+.puz-history__rounds .puz-history__round .puz-history__round__result good{
+    color: var(--defaultWhite) !important;
 }
 
 .puz-side__top::before {
@@ -1974,6 +1987,11 @@ button.rematch-decline::before {
 
 .puzzle__feedback.after .continue i::before {
     font-size: 1.5em !important;
+}
+
+.puzzle-history__round__result>bad,
+.puzzle-history__round__result>good {
+    color: var(--defaultWhite) !important;
 }
 
 /* Centering game board in puzzle storm and puzzle racer*/
@@ -4097,7 +4115,9 @@ iframe.analyse {
 }
 
 .learn-stages .stage.done,
+.learn-stages .stage.done .text>.subtitle,
 .learn__table .title,
+.learn__table .title .text>.subtitle,
 .learn__table .progress a.done,
 .learn__side-map .categ.active>h2,
 .learn__side-home .progress .bar,
@@ -4110,6 +4130,7 @@ iframe.analyse {
 }
 
 .learn-stages .stage.ongoing,
+.learn-stages .stage.ongoing .text>.subtitle,
 .learn__table .progress a.active,
 .learn__side-map .stage.active img,
 .learn__side-map .stage.future img,
