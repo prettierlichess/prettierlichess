@@ -4284,6 +4284,10 @@ group.radio div:last-child label {
     box-shadow: none !important;
 }
 
+.msg-app__convo__msgs mine a {
+    color: var(--defaultWhite) !important;
+}
+
 .msg-app__convo__msgs em {
     color: var(--backgroundColor) !important;
 }
@@ -4292,6 +4296,10 @@ group.radio div:last-child label {
     border: 0 !important;
     background: var(--surfaceColor) !important;
     box-shadow: none !important;
+}
+
+.msg-app__convo__msgs their a {
+    color: var(--primaryColor) !important;
 }
 
 .msg-app__convo__msgs their em {
