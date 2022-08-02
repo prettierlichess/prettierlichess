@@ -1189,6 +1189,10 @@ main.lobby {
     transform: scale(.95) !important;
 }
 
+.lpools>.custom {
+    text-align: center !important;
+}
+
 .complete-list, .lpools>div:hover {
     background: var(--surfaceColor) !important;
     border-radius: var(--borderRadius) !important;
