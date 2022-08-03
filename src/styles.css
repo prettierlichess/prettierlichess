@@ -2839,16 +2839,19 @@ path[fill="url(#highcharts-7)"] {
     background: none !important;
 }
 
-.study__chapters>div:hover,
 .study__members>div:hover,
-.study__chapters>div.active,
 .study__members>div.active,
-.study__relay__rounds>div.active,
-.study__relay__rounds>div:hover,
 .gamebook .feedback.end a:hover,
 .gamebook .feedback.end button:hover {
     background: var(--surfaceColorHover) !important;
     padding: 12px !important;
+}
+
+.study__chapters>div.active,
+.study__relay__rounds>div.active,
+.study__chapters>div:hover,
+.study__relay__rounds>div:hover {
+    background: var(--surfaceColorHover) !important;
 }
 
 .gamebook .feedback.end {
@@ -2922,8 +2925,14 @@ path[fill="url(#highcharts-7)"] {
 
 .study__chapters>div,
 .study__relay__rounds>div {
-    padding: 10px !important;
+    padding: 2px 4px 2px 4px !important;
     align-items: center !important;
+}
+
+.study__chapters>div:hover,
+.study__relay__rounds>div:hover {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }
 
 .study__buttons {
