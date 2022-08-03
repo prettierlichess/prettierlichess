@@ -165,7 +165,7 @@ chrome.storage.sync.get(null, function (result) {
 chrome.storage.sync.get('streamerMode', function (result) {
     const round = document.querySelector('.round');
     if (round) {
-        result = result['streamerMode']
+        result = result['streamerMode'];
         if (result) {
             enableStreamerMode()
         }
