@@ -1969,7 +1969,7 @@ button.rematch-decline::before {
 }
 
 .storm--end__stats th {
-    padding: 10px;
+    padding-left: 10px !important;
 }
 
 /* Centering game board in puzzle storm and puzzle racer*/
