@@ -1997,6 +1997,10 @@ button.rematch-decline::before {
     font-size: 1.5em !important;
 }
 
+.storm--end__stats th {
+    padding-left: 10px !important;
+}
+
 .puzzle-history__round__result>bad,
 .puzzle-history__round__result>good {
     color: var(--defaultWhite) !important;
