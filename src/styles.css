@@ -977,6 +977,10 @@ signal>i {
     backdrop-filter: blur(16px) !important;
 }
 
+#dasher_app {
+    box-sizing: content-box !important;
+}
+
 #notify-app .site_notification {
     border-bottom: none !important;
     border-radius: var(--borderRadius) !important;
@@ -1058,6 +1062,14 @@ signal>i {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+}
+
+#challenge-app .challenge .buttons button::before {
+    color: var(--backgroundColor) !important;
+}
+
+#challenge-app .challenge .buttons button:hover::before {
+    color: var(--textColor) !important;
 }
 
 .challenge-page .details {
@@ -1175,6 +1187,10 @@ main.lobby {
 
 .lpools>div:hover {
     transform: scale(.95) !important;
+}
+
+.lpools>.custom {
+    text-align: center !important;
 }
 
 .complete-list, .lpools>div:hover {
@@ -1722,6 +1738,10 @@ main.page-small {
     stroke: var(--primaryColor) !important;
 }
 
+.fbt:hover .spinner path {
+    stroke: var(--backgroundColor) !important;
+}
+
 #challenge-app .challenge:hover>i,
 #challenge-app .challenge .owner {
     color: var(--primaryColor) !important;
@@ -1751,6 +1771,15 @@ main.page-small {
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     backdrop-filter: blur(16px) !important;
+}
+
+.storm--end__score>p{
+    color: var(--defaultWhite) !important;
+}
+
+.puz-history__rounds .puz-history__round .puz-history__round__result bad,
+.puz-history__rounds .puz-history__round .puz-history__round__result good{
+    color: var(--defaultWhite) !important;
 }
 
 .puz-side__top::before {
@@ -1972,6 +2001,11 @@ button.rematch-decline::before {
     padding-left: 10px !important;
 }
 
+.puzzle-history__round__result>bad,
+.puzzle-history__round__result>good {
+    color: var(--defaultWhite) !important;
+}
+
 /* Centering game board in puzzle storm and puzzle racer*/
 @media (min-width: 799px) {
 
@@ -2069,6 +2103,7 @@ main.round {
     border-radius: 12px !important;
     color: rgba(0, 0, 0, 0) !important;
     opacity: .75 !important;
+    vertical-align: baseline !important;
 }
 
 .color-icon.random::before {
@@ -2078,6 +2113,7 @@ main.round {
     border-bottom-right-radius: 0 !important;
     width: 6px !important;
     transform: translateY(-2px) !important;
+    vertical-align: middle !important;
 }
 
 .color-icon.random::after {
@@ -2087,6 +2123,7 @@ main.round {
     border-bottom-left-radius: 0 !important;
     width: 6px !important;
     transform: translateY(1px) !important;
+    vertical-align: baseline !important;
 }
 
 .color-icon.black::before {
@@ -2806,16 +2843,19 @@ path[fill="url(#highcharts-7)"] {
     background: none !important;
 }
 
-.study__chapters>div:hover,
 .study__members>div:hover,
-.study__chapters>div.active,
 .study__members>div.active,
-.study__relay__rounds>div.active,
-.study__relay__rounds>div:hover,
 .gamebook .feedback.end a:hover,
 .gamebook .feedback.end button:hover {
     background: var(--surfaceColorHover) !important;
     padding: 12px !important;
+}
+
+.study__chapters>div.active,
+.study__relay__rounds>div.active,
+.study__chapters>div:hover,
+.study__relay__rounds>div:hover {
+    background: var(--surfaceColorHover) !important;
 }
 
 .gamebook .feedback.end {
@@ -2889,8 +2929,14 @@ path[fill="url(#highcharts-7)"] {
 
 .study__chapters>div,
 .study__relay__rounds>div {
-    padding: 10px !important;
+    padding: 2px 4px 2px 4px !important;
     align-items: center !important;
+}
+
+.study__chapters>div:hover,
+.study__relay__rounds>div:hover {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }
 
 .study__buttons {
@@ -3510,7 +3556,12 @@ hr {
     border-radius: var(--borderRadius) !important;
     border: 2px solid var(--surfaceColorHover) !important;
     box-shadow: none !important;
-    backdrop-filter: blur(16px) !important;
+}
+
+.left-side .filters .items .box .ms-parent .ms-choice,
+.left-side .filters .items .box .ms-parent .ms-drop li,
+.left-side .filters .items .box .ms-parent .ms-drop .ms-search input {
+    background-color: var(--surfaceColor) !important;
 }
 
 .tour__side {
@@ -4048,6 +4099,14 @@ iframe.analyse {
     opacity: .5 !important;
 }
 
+.ps__chapter .status.done {
+    color: var(--primaryColor) !important;
+}
+
+.ps__chapter.active .status.ongoing {
+    color: var(--defaultWhite) !important;
+}
+
 /* Coordinate Trainer */
 
 .coord-trainer {
@@ -4076,7 +4135,9 @@ iframe.analyse {
 }
 
 .learn-stages .stage.done,
+.learn-stages .stage.done .text>.subtitle,
 .learn__table .title,
+.learn__table .title .text>.subtitle,
 .learn__table .progress a.done,
 .learn__side-map .categ.active>h2,
 .learn__side-home .progress .bar,
@@ -4089,6 +4150,7 @@ iframe.analyse {
 }
 
 .learn-stages .stage.ongoing,
+.learn-stages .stage.ongoing .text>.subtitle,
 .learn__table .progress a.active,
 .learn__side-map .stage.active img,
 .learn__side-map .stage.future img,
@@ -4182,6 +4244,10 @@ iframe.analyse {
     text-shadow: none !important;
 }
 
+.plan .banner div p {
+    color: var(--backgroundColor) !important;
+}
+
 group.radio {
     border-radius: var(--borderRadius) !important;
 }
@@ -4234,6 +4300,10 @@ group.radio div:last-child label {
     box-shadow: none !important;
 }
 
+.msg-app__convo__msgs mine a {
+    color: var(--defaultWhite) !important;
+}
+
 .msg-app__convo__msgs em {
     color: var(--backgroundColor) !important;
 }
@@ -4242,6 +4312,10 @@ group.radio div:last-child label {
     border: 0 !important;
     background: var(--surfaceColor) !important;
     box-shadow: none !important;
+}
+
+.msg-app__convo__msgs their a {
+    color: var(--primaryColor) !important;
 }
 
 .msg-app__convo__msgs their em {
