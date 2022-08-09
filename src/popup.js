@@ -103,7 +103,13 @@ const importScheme = (data) => {
             scheme = colorScheme[i]
             color = json[scheme] ? json[scheme] : colorDefaults[i]
             if (color) {
-                schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
+                let r = parseInt(color.substring(1, 3), 16);
+                let g = parseInt(color.substring(3, 5), 16);
+                let b = parseInt(color.substring(5, 7), 16);
+
+                schemeCode = styleTernary + scheme + ': ' + color + ' !important;"';
+                schemeCode += ' + "--' + scheme + 'RGB: ' + `${r}, ${g}, ${b}` + ' !important;")';
+
                 tabScript(schemeCode);
                 syncSet(scheme, color)
             }
