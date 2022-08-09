@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pabuisson/prettierlichess.git"
+    "url": "https://github.com/prettierlichess/prettierlichess"
   },
   "author": "",
   "bugs": {
-    "url": "https://github.com/pabuisson/prettierlichess/issues"
+    "url": "https://github.com/prettierlichess/prettierlichess/issues"
   },
-  "homepage": "https://github.com/pabuisson/prettierlichess#readme",
+  "homepage": "https://prettierlichess.github.io/",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.0.0",
