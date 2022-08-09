@@ -142,7 +142,15 @@ function schemeSet(scheme) {
         if (result[scheme]) {
             let getStyle = document.documentElement.getAttribute('style');
             let appendStyle = getStyle ? getStyle : '';
-            document.documentElement.setAttribute("style", `${appendStyle} --${scheme}: ${result[scheme]} !important;`);
+
+            let r = parseInt(result[scheme].substring(1, 3), 16);
+            let g = parseInt(result[scheme].substring(3, 5), 16);
+            let b = parseInt(result[scheme].substring(5, 7), 16);
+
+            let setVar = `--${scheme}: ${result[scheme]} !important;`;
+            let setRGBVar = `--${scheme}RGB: ${r}, ${g}, ${b} !important;`;
+
+            document.documentElement.setAttribute("style", `${appendStyle} ${setVar} ${setRGBVar}`);
         }
     });
 }
