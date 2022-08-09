@@ -4247,21 +4247,29 @@ iframe.analyse {
 }
 
 .learn__side-home h1,
+.practice-side h1,
 .learn__side-home h2,
+.practice-side h2,
 .learn__side-home .text,
-.learn__side-home .confirm{
+.practice-side .text,
+.learn__side-home .confirm,
+.practice-side .do-reset {
     color: var(--defaultWhite) !important;
 }
 
-.learn__main .categ>h2 {
+.learn__main .categ>h2,
+.practice-app section>h2 {
     color: var(--textColor) !important;
 }
 
-.stage.future .text h3 {
+.stage.future .text h3,
+.study.ongoing .text h3,
+.study.ongoing .text em {
     color: var(--textColor) !important;
 }
 
-.stage.future:hover .text h3 {
+.stage.future:hover .text h3,
+.study.ongoing:hover .text h3 {
     color: var(--defaultWhite) !important;
 }
 
