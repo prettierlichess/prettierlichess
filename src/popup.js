@@ -103,7 +103,13 @@ const importScheme = (data) => {
             scheme = colorScheme[i]
             color = json[scheme] ? json[scheme] : colorDefaults[i]
             if (color) {
-                schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
+                let r = parseInt(color.substring(1, 3), 16);
+                let g = parseInt(color.substring(3, 5), 16);
+                let b = parseInt(color.substring(5, 7), 16);
+
+                schemeCode = styleTernary + scheme + ': ' + color + ' !important;"';
+                schemeCode += ' + "--' + scheme + 'RGB: ' + `${r}, ${g}, ${b}` + ' !important;")';
+
                 tabScript(schemeCode);
                 syncSet(scheme, color)
             }
@@ -228,10 +234,15 @@ function pickrCreate(scheme, color) {
         });
 
         pickr.on('save', (color) => {
+            let rgbValues = color.toRGBA();
+            let r = Math.floor(rgbValues[0]);
+            let g = Math.floor(rgbValues[1]);
+            let b = Math.floor(rgbValues[2]);
+
             color = color.toHEXA().toString();
-            console.log('setting color to: ' + color)
-            console.log(typeof color)
-            let schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
+            console.log('setting color to: ' + color);
+            let schemeCode = styleTernary + scheme + ': ' + color + ' !important;"';
+            schemeCode += ' + "--' + scheme + 'RGB: ' + `${r}, ${g}, ${b}` + ' !important;")';
 
             tabScript(schemeCode);
 
