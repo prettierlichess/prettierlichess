@@ -234,10 +234,15 @@ function pickrCreate(scheme, color) {
         });
 
         pickr.on('save', (color) => {
+            let rgbValues = color.toRGBA();
+            let r = Math.floor(rgbValues[0]);
+            let g = Math.floor(rgbValues[1]);
+            let b = Math.floor(rgbValues[2]);
+
             color = color.toHEXA().toString();
-            console.log('setting color to: ' + color)
-            console.log(typeof color)
-            let schemeCode = styleTernary + scheme + ': ' + color + ' !important;")'
+            console.log('setting color to: ' + color);
+            let schemeCode = styleTernary + scheme + ': ' + color + ' !important;"';
+            schemeCode += ' + "--' + scheme + 'RGB: ' + `${r}, ${g}, ${b}` + ' !important;")';
 
             tabScript(schemeCode);
 
