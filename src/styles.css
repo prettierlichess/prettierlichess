@@ -1242,6 +1242,14 @@ g[stroke="#888"] {
     color: var(--backgroundColor) !important;
 }
 
+.hooks__list tr.cancel td {
+    background-color: rgba(var(--tertiaryColorRGB), 0.2) !important;
+}
+
+.hooks__list tr.cancel:hover td {
+    background-color: rgba(var(--tertiaryColorRGB), 0.4) !important;
+}
+
 .hooks__list thead,
 .hooks__list td {
     border-bottom: 2px solid var(--surfaceColorHover) !important;
