@@ -4246,6 +4246,25 @@ iframe.analyse {
     border-bottom: 1px solid var(--surfaceColorHover) !important;
 }
 
+.learn__side-home h1,
+.learn__side-home h2,
+.learn__side-home .text,
+.learn__side-home .confirm{
+    color: var(--defaultWhite) !important;
+}
+
+.learn__main .categ>h2 {
+    color: var(--textColor) !important;
+}
+
+.stage.future .text h3 {
+    color: var(--textColor) !important;
+}
+
+.stage.future:hover .text h3 {
+    color: var(--defaultWhite) !important;
+}
+
 /* Preferences */
 
 .subnav .sep {
