@@ -21,6 +21,12 @@ const boardColorGroup = document.querySelector('#boardColorGroup');
 const boardColorSelector = document.querySelectorAll('.boardColorSelector');
 const hideBoardColors = document.querySelector('#hideBoardColors')
 
+const reloadIfLichess = `
+let lichessEx = new RegExp(".*lichess.org.*");
+let apiEx = new RegExp(".*lichess.org/api.*");
+let currentURL = location.href;
+if (lichessEx.test(currentURL) && !apiEx.test(currentURL)){window.location.reload();}`;
+
 //refocus hack
 chrome.storage.sync.get('hideCustomBoard', function (result) {
     if (result['hideCustomBoard']) {
@@ -126,7 +132,7 @@ for (let i = 0; i < colorScheme.length; i++) {
 // Add button events
 document.querySelector('#resetButton').addEventListener('click', () => {
     chrome.storage.sync.clear()
-    tabScript('window.location.reload();');
+    tabScript(reloadIfLichess);
 })
 document.querySelector('#importButton').addEventListener('click', () => {
     if (useBasicImportExport) {
@@ -207,7 +213,7 @@ function boardSwitch(toggle) {
     window.location.reload()
 
     syncSet('defaultBoardSwitch', toggle)
-    tabScript('window.location.reload();');
+    tabScript(reloadIfLichess);
 }
 
 function pickrCreate(scheme, color) {
