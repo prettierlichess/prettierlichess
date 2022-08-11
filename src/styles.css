@@ -2962,8 +2962,8 @@ path[fill="url(#highcharts-7)"] {
 
 .study__chapters>div:hover,
 .study__relay__rounds>div:hover {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
 }
 
 .study__buttons {
