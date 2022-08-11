@@ -4425,6 +4425,22 @@ group.radio div:last-child label {
     margin-top: 0 !important;
 }
 
+/* Coach */
+
+.coach-list .coach-widget.paginated .overview table tbody tr,
+.coach-list .coach-widget.paginated .overview table tbody tr th,
+.coach-list .coach-widget.paginated .overview table tbody tr a span {
+    color: var(--textColor) !important;
+}
+
+.coach-list .coach-widget.paginated {
+    background-color: var(--surfaceColor) !important;
+}
+
+.coach-list .coach-widget.paginated:hover {
+    background-color: var(--surfaceColorHover) !important;
+}
+
 /* Glowing */
 
 body .glowing {
