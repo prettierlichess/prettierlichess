@@ -2644,13 +2644,12 @@ a.context-streamer:hover {
 }
 
 .analyse__side {
-    border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
+    border-radius: var(--borderRadius) !important;
     height: auto !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
     align-self: stretch !important;
-    overflow: hidden !important;
 }
 
 .analyse .mchat {
