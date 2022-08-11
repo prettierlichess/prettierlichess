@@ -4425,7 +4425,7 @@ group.radio div:last-child label {
     margin-top: 0 !important;
 }
 
-/* Coach */
+/* Coach + Streamer */
 
 .coach-list .coach-widget.paginated .overview table tbody tr,
 .coach-list .coach-widget.paginated .overview table tbody tr th,
@@ -4433,12 +4433,18 @@ group.radio div:last-child label {
     color: var(--textColor) !important;
 }
 
-.coach-list .coach-widget.paginated {
+.coach-list .coach-widget.paginated,
+.streamer-list article.streamer {
     background-color: var(--surfaceColor) !important;
 }
 
-.coach-list .coach-widget.paginated:hover {
+.coach-list .coach-widget.paginated:hover,
+.streamer-list article.streamer:hover {
     background-color: var(--surfaceColorHover) !important;
+}
+
+.page-menu .streamer-edit .box-pad .status {
+    background-color: rgba(var(--secondaryColorRGB), 0.2) !important;
 }
 
 /* Glowing */
