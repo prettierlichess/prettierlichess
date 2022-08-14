@@ -1,7 +1,7 @@
 
 # Prettier Lichess
 
-[![Foo](https://img.shields.io/badge/Official%20website-prettierlichess-blue)](https://prettierlichess.github.io/)
+[![Website](https://img.shields.io/badge/Official%20website-prettierlichess-blue)](https://prettierlichess.github.io/)
 
 Here is the source code for both the chrome and firefox extension! It's simple but it's mine. Feel free to download, fork, use, and mess with it all you want. No attribution or anything required.
 
