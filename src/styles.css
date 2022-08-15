@@ -4121,7 +4121,7 @@ iframe.analyse {
 }
 
 .ps__chapter .status {
-    color: var(--defaultWhite) !important;
+    /*color: var(--defaultWhite) !important;*/
     opacity: .5 !important;
 }
 
