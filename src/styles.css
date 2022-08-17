@@ -399,7 +399,8 @@ bad {
 	background: var(--primaryColor) !important;
 }
 
-.cmn-toggle:checked + label::before {
+.cmn-toggle:checked + label::before,
+.button-link {
 	color: var(--primaryColor) !important;
 }
 
@@ -2573,7 +2574,9 @@ a.context-streamer:hover {
 	background: var(--surfaceColor) !important;
 }
 
-.ceval .engine .deeper {
+.ceval .engine .deeper,
+.advice-summary__side > div.mistake,
+.tview2-column > interrupt > comment.mistake {
 	color: var(--secondaryColor) !important;
 }
 
@@ -2612,12 +2615,16 @@ a.context-streamer:hover {
 }
 
 .ceval .show-threat:hover:not(.hidden),
-.ceval .show-threat.active {
+.ceval .show-threat.active,
+.advice-summary__side > div.blunder,
+.tview2-column > interrupt > comment.blunder {
 	color: var(--tertiaryColor) !important;
 }
 
 .ceval .technology.good,
-.advice-summary__side > div.symbol:hover {
+.advice-summary__side > div.symbol:hover,
+.advice-summary__side > div.inaccuracy,
+.tview2-column > interrupt > comment.inaccuracy {
 	color: var(--primaryColor) !important;
 }
 
@@ -2685,7 +2692,7 @@ a.context-streamer:hover {
 }
 
 .analyse__side {
-	border-radius: var(--borderRadius) !important;
+	border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
 	height: auto !important;
 	display: flex !important;
 	flex-direction: column !important;
@@ -2819,6 +2826,7 @@ a.context-streamer:hover {
 
 .analyse__underboard__menu > span.active {
 	color: var(--primaryColor) !important;
+	border-color: var(--primaryColor) !important;
 }
 
 .analyse__underboard__menu > span::after {
@@ -3031,7 +3039,6 @@ a.analyse {
 	width: 100% !important;
 }
 
-.analyse__underboard__menu,
 .study__chapters .add,
 .study__members .add {
 	border-top: 2px solid var(--surfaceColorHover) !important;
@@ -3113,7 +3120,8 @@ a.analyse {
 .study__topics .topic:hover,
 .slist tbody tr:nth-child(even),
 .study-desc,
-.study__comment {
+.study__comment,
+.analyse__underboard__menu > span:hover {
 	background: var(--surfaceColorHover) !important;
 }
 
