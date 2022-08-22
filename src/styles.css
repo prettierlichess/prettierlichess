@@ -527,9 +527,9 @@ cg-container cg-board::before {
 	cursor: grab !important;
 }
 
-piece {
+/*piece {
 	pointer-events: auto !important;
-}
+}*/
 
 piece.dragging {
 	cursor: grabbing !important;
@@ -654,30 +654,36 @@ cg-container .cg-shapes {
 }
 
 square.last-move {
-	background: var(--lastMove) !important;
+	background-color: var(--lastMove) !important;
+	opacity: 0.4 !important;
+}
+
+square.selected {
+	background-color: var(--lastMove) !important;
 	opacity: 0.4 !important;
 }
 
 square.premove-dest {
 	background: radial-gradient(
 		var(--preMove) 19%,
-		rgba(0, 0, 0, 0) 20%
+		transparent 20%
 	) !important;
 	opacity: 0.8 !important;
 }
 
 square.oc.premove-dest {
 	background: radial-gradient(
-		transparent 0%,
-		transparent 79%,
-		var(--preMove) 80%
+		transparent 52%,
+		var(--preMove) 54%,
+		var(--preMove) 68%,
+		transparent 70%
 	) !important;
 }
 
 square.move-dest {
 	background: radial-gradient(
-		var(--moveIndicator) 19%,
-		rgba(0, 0, 0, 0) 20%
+		var(--moveIndicator) 18%,
+		transparent 20%
 	) !important;
 	opacity: 0.8 !important;
 }
@@ -687,12 +693,27 @@ square.move-dest:hover {
 	opacity: 0.3 !important;
 }
 
+square.premove-dest:hover {
+	background: var(--preMove) !important;
+	opacity: 0.3 !important;
+}
+
 square.oc.move-dest {
 	background: radial-gradient(
-		transparent 0%,
-		transparent 79%,
-		var(--moveIndicator) 80%
+		transparent 52%,
+		var(--moveIndicator) 54%,
+		var(--moveIndicator) 68%,
+		transparent 70%
 	) !important;
+}
+
+square.check {
+	background: radial-gradient(
+		var(--preMove) 0,
+		var(--preMove) 25%,
+		transparent 90%,
+		transparent 100%
+	)
 }
 
 cg-board square.current-premove {
@@ -703,51 +724,63 @@ cg-board square.current-premove {
 /* Pieces */
 
 /* .is2d piece.black.king {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/king.svg') !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/king.svg'),
+	url('moz-extension://__MSG_@@extension_id__/pieces/black/king.svg') !important;
 }
 
 .is2d piece.black.queen {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/queen.svg') !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/queen.svg'),
+	url('moz-extension://__MSG_@@extension_id__/pieces/black/queen.svg') !important;
 }
 
 .is2d piece.black.pawn {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/pawn.svg') !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/pawn.svg'),
+	url('moz-extension://__MSG_@@extension_id__/pieces/black/pawn.svg') !important;
 }
 
 .is2d piece.black.knight {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/knight.svg') !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/knight.svg'),
+	url('moz-extension://__MSG_@@extension_id__/pieces/black/knight.svg') !important;
 }
 
 .is2d piece.black.rook {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/rook.svg') !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/rook.svg'),
+	url('moz-extension://__MSG_@@extension_id__/pieces/black/rook.svg') !important;
 }
 
 .is2d piece.black.bishop {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/bishop.svg') !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/black/bishop.svg'),
+	url('moz-extension://__MSG_@@extension_id__/pieces/black/bishop.svg') !important;
 }
 
 .is2d piece.white.king {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/king.svg') !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/king.svg'),
+	url('moz-extension://__MSG_@@extension_id__/pieces/white/king.svg') !important;
 }
 
 .is2d piece.white.queen {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/queen.svg') !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/queen.svg'),
+	url('moz-extension://__MSG_@@extension_id__/pieces/white/queen.svg') !important;
 }
 
 .is2d piece.white.pawn {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/pawn.svg') !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/pawn.svg'),
+	url('moz-extension://__MSG_@@extension_id__/pieces/white/pawn.svg') !important;
 }
 
 .is2d piece.white.knight {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/knight.svg') !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/knight.svg'),
+	url('moz-extension://__MSG_@@extension_id__/pieces/white/knight.svg') !important;
 }
 
 .is2d piece.white.rook {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/rook.svg') !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/rook.svg'),
+	url('moz-extension://__MSG_@@extension_id__/pieces/white/rook.svg') !important;
 }
 
 .is2d piece.white.bishop {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/bishop.svg') !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/pieces/white/bishop.svg'),
+	url('moz-extension://__MSG_@@extension_id__/pieces/white/bishop.svg') !important;
 } */
 
 /* Selects Default Arrow */
