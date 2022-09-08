@@ -995,9 +995,25 @@ signal > i {
 	border-radius: 0 !important;
 }
 
-.dasher #dasher_app .langs .current {
+.dasher #dasher_app .langs .current,
+.dasher #dasher_app .sound .active,
+.dasher #dasher_app .background .active,
+.dasher #dasher_app .board .active {
 	background-color: var(--primaryColor) !important;
 	color: var(--backgroundColor) !important;
+}
+
+.dasher #dasher_app .sound .active::before,
+.dasher #dasher_app .background .active::before,
+.dasher #dasher_app .board .active::before {
+	color: var(--backgroundColor) !important;
+}
+
+.dasher #dasher_app .langs .current:hover,
+.dasher #dasher_app .sound .active:hover,
+.dasher #dasher_app .background .active:hover,
+.dasher #dasher_app .board .active:hover {
+	background-color: rgba(var(--primaryColorRGB), 0.8) !important;
 }
 
 #dasher_app .langs .accepted {
@@ -1005,8 +1021,17 @@ signal > i {
 }
 
 #dasher_app .langs button:hover,
+.dasher #dasher_app .sound button:hover,
+.dasher #dasher_app .background button:hover,
+.dasher #dasher_app .board button:hover,
 .lobby__blog .post:hover {
 	background: var(--surfaceColorHover) !important;
+}
+
+.dasher #dasher_app .sound button::before,
+.dasher #dasher_app .background button::before,
+.dasher #dasher_app .board button::before {
+	color: var(--primaryColor) !important;
 }
 
 #dasher_app .langs .help {
