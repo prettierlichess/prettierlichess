@@ -4562,13 +4562,25 @@ group.radio div:last-child label {
 
 .coach-list .coach-widget.paginated .overview table tbody tr,
 .coach-list .coach-widget.paginated .overview table tbody tr th,
-.coach-list .coach-widget.paginated .overview table tbody tr a span {
+.coach-list .coach-widget.paginated .overview table tbody tr a span,
+.coach-show .coach-main.box .coach-widget .overview table tbody tr,
+.coach-show .coach-main.box .coach-widget .overview table tbody tr th,
+.coach-show .coach-main.box .coach-widget .overview table tbody tr a span {
 	color: var(--textColor) !important;
+}
+
+.coach-show .coach-main.box .coach-widget .overview * {
+	text-shadow: none !important;
+}
+
+.coach-show .coach-main.box .coach-widget {
+	background: var(--surfaceColor) !important;
 }
 
 .coach-list .coach-widget.paginated,
 .streamer-list article.streamer {
 	background-color: var(--surfaceColor) !important;
+	border-top: 1px solid var(--surfaceColorHover) !important;
 }
 
 .coach-list .coach-widget.paginated:hover,
