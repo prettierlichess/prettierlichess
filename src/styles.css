@@ -1020,6 +1020,10 @@ signal > i {
 	accent-color: var(--primaryColor) !important;
 }
 
+.dasher #dasher_app .theme .list button.active {
+	background-color: var(--surfaceColorHover) !important;
+}
+
 #dasher_app .langs .accepted {
 	border-left: 2px solid var(--primaryColor) !important;
 }
