@@ -3528,12 +3528,19 @@ path[stroke='#404040'],
 	stroke: var(--surfaceColorHover) !important;
 }
 
-rect[fill='#505053'] {
+rect[fill='#505053'],
+rect[fill='#f7f7f7'] {
 	fill: var(--surfaceColorHover) !important;
 }
 
-rect[fill='#000003'] {
+rect[fill='#000003'],
+rect[fill='#e7f0f9'] {
 	fill: var(--backgroundColor) !important;
+}
+
+rect[fill='#707073'],
+rect[fill='#e7e7e7'] {
+	fill: rgba(var(--primaryColorRGB), 0.25) !important;
 }
 
 .highcharts-button text,
