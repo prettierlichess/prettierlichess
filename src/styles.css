@@ -1745,6 +1745,10 @@ a.button.button-metal:hover {
 	color: var(--backgroundColor) !important;
 }
 
+#modal-wrap .optional-config {
+	background: var(--surfaceColor) !important;
+}
+
 .game-setup .color-submits__button.random {
 	padding: 10px !important;
 }
