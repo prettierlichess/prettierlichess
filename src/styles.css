@@ -1016,6 +1016,10 @@ signal > i {
 	background-color: rgba(var(--primaryColorRGB), 0.8) !important;
 }
 
+.dasher #dasher_app .sound input[type="range"] {
+	accent-color: var(--primaryColor) !important;
+}
+
 #dasher_app .langs .accepted {
 	border-left: 2px solid var(--primaryColor) !important;
 }
