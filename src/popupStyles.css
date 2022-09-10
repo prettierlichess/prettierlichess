@@ -1,187 +1,187 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 body {
-    padding: 20px 20px;
-    background: #2B343B;
-    font-family: 'Red Hat Text', sans-serif;
-    color: white;
-    font-size: 18px;
-    width: 300px;
-    overflow-x: hidden;
+	padding: 20px 20px;
+	background: #2B343B;
+	font-family: 'Red Hat Text', sans-serif;
+	color: white;
+	font-size: 18px;
+	width: 300px;
+	overflow-x: hidden;
 }
 
 .logo {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .listItem {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
 }
 
 #buttonRow {
-    display: flex;
-    margin-bottom: 8px;
+	display: flex;
+	margin-bottom: 8px;
 }
 
 button {
-    width: 100%;
-    height: 40px;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background: #3F474D;
-    color: white;
-    cursor: pointer;
-    transition: transform .2s ease-in-out;
-    font-size: 12px;
-    font-family: 'Red Hat Text', sans-serif;
+	width: 100%;
+	height: 40px;
+	border: none;
+	outline: none;
+	border-radius: 4px;
+	background: #3F474D;
+	color: white;
+	cursor: pointer;
+	transition: transform .2s ease-in-out;
+	font-size: 12px;
+	font-family: 'Red Hat Text', sans-serif;
 }
 
 button:first-child {
-    margin-right: 8px;
+	margin-right: 8px;
 }
 
 button:active {
-    transform: scale(.95);
+	transform: scale(.95);
 }
 
 .button {
-    width: 100%;
-    height: 40px;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background: #3F474D;
-    color: white;
-    cursor: pointer;
-    transition: transform .2s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
+	width: 100%;
+	height: 40px;
+	border: none;
+	outline: none;
+	border-radius: 4px;
+	background: #3F474D;
+	color: white;
+	cursor: pointer;
+	transition: transform .2s ease-in-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
 }
 
 .button:first-child {
-    margin-right: 8px;
+	margin-right: 8px;
 }
 
 .button:active {
-    transform: scale(.95);
+	transform: scale(.95);
 }
 
 
 input[type="color"] {
-    -webkit-appearance: none;
-    border: 2px solid white;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    overflow: hidden;
-    outline: none;
-    background: none;
+	-webkit-appearance: none;
+	border: 2px solid white;
+	width: 20px;
+	height: 20px;
+	border-radius: 100%;
+	overflow: hidden;
+	outline: none;
+	background: none;
 }
 
 input[type="color"]::-webkit-color-swatch-wrapper {
-    padding: 0;
-    border: none;
-    outline: none;
+	padding: 0;
+	border: none;
+	outline: none;
 }
 
 input[type="color"]::-webkit-color-swatch {
-    border: none;
-    transform: scale(2);
+	border: none;
+	transform: scale(2);
 }
 
 .customBoardGroup {
-    background: #3F474D;
-    border-radius: 4px;
-    padding: 20px 20px 8px;
-    margin-bottom: 20px;
+	background: #3F474D;
+	border-radius: 4px;
+	padding: 20px 20px 8px;
+	margin-bottom: 20px;
 }
 
 /* Tabs */
 
 .tabGroup {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    margin-bottom: 20px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	margin-bottom: 20px;
 }
 
 .tab {
-    width: 38%;
-    padding: 0px 16px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: .8em;
-    border-bottom: 1px solid #4e565c;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
+	width: 38%;
+	padding: 0px 16px 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: .8em;
+	border-bottom: 1px solid #4e565c;
+	cursor: pointer;
+	transition: all .3s ease-in-out;
 }
 
 .tab:hover {
-    border-bottom: 1px solid white;
+	border-bottom: 1px solid white;
 }
 
 .tab.active {
-    border-bottom: 1px solid #9FC0A2;
-    color: #9FC0A2;
+	border-bottom: 1px solid #9FC0A2;
+	color: #9FC0A2;
 }
 
 .tab.active:hover {
-    border-bottom: 1px solid #9FC0A2;
+	border-bottom: 1px solid #9FC0A2;
 }
 
 .hideGroup {
-    display: none;
+	display: none;
 }
 
 #hideBoardColors {
-    background: #4e565c;
-    margin-bottom: 10px;
+	background: #4e565c;
+	margin-bottom: 10px;
 }
 
 /* Picker Styles Overrides */
 
 .pickr .pcr-button:after,
 .pickr .pcr-button:before {
-    border-radius: 100% !important;
-    overflow: hidden !important;
-    outline: none !important;
-    border: 1px solid white !important;
+	border-radius: 100% !important;
+	overflow: hidden !important;
+	outline: none !important;
+	border: 1px solid white !important;
 }
 
 .pcr-app .pcr-interaction input {
-    background: #2B343B !important;
-    color: white !important;
+	background: #2B343B !important;
+	color: white !important;
 }
 
 .pcr-app .pcr-interaction .pcr-save,
 .pcr-app .pcr-interaction .pcr-type.active {
-    background: #9FC0A2 !important;
-    color: #2B343B !important;
+	background: #9FC0A2 !important;
+	color: #2B343B !important;
 }
 
 .pcr-app {
-    background: #3F474D !important;
-    font-family: 'Red Hat Text', sans-serif !important;
-    color: white !important;
-    border-radius: 8px !important;
-    overflow: hidden !important;
+	background: #3F474D !important;
+	font-family: 'Red Hat Text', sans-serif !important;
+	color: white !important;
+	border-radius: 8px !important;
+	overflow: hidden !important;
 }
 
 .pcr-app[data-theme=nano] .pcr-selection .pcr-color-preview .pcr-current-color {
-    border: 1px solid white !important;
+	border: 1px solid white !important;
 }
 
 .pcr-app button {
-    transition: transform .4s ease-in-out !important;
+	transition: transform .4s ease-in-out !important;
 }
 
 .pcr-app button.pcr-active,
@@ -192,22 +192,22 @@ input[type="color"]::-webkit-color-swatch {
 .pickr button:focus,
 .pickr input.pcr-active,
 .pickr input:focus {
-    box-shadow: none !important;
-    transform: scale(.9) !important;
+	box-shadow: none !important;
+	transform: scale(.9) !important;
 }
 
 #basicImportExportContainer {
-    margin: 8px 0 30px;
+	margin: 8px 0 30px;
 }
 
 #basicImportExport {
-    box-sizing: border-box;
-    width: 100%;
-    background-color: #4b5b67;
-    color: #fff;
-    border: 1px solid #607585;
-    border-radius: 4px;
-    margin-bottom: 8px;
-    resize: none;
-    outline: none;
+	box-sizing: border-box;
+	width: 100%;
+	background-color: #4b5b67;
+	color: #fff;
+	border: 1px solid #607585;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	resize: none;
+	outline: none;
 }
