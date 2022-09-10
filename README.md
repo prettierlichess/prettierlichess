@@ -63,7 +63,7 @@ If you have any questions, feature requests or want to report bugs, feel free to
 
 ## How to contribute
 
-For more information, see the [contribution page](https://github.com/prettierlichess/prettierlichess/blob/main/CONTRIBUTING.md).
+For more information, see the [contribution page](https://github.com/prettierlichess/prettierlichess/blob/master/CONTRIBUTING.md).
 
 ## Contributors
 
