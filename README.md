@@ -1,20 +1,20 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/prettierlichess/prettierlichess/master/res/prettierlichess-logo.svg" width=150>
-    <h1 align="center">Prettierlichess</h1>
+	<img src="https://raw.githubusercontent.com/prettierlichess/prettierlichess/master/res/prettierlichess-logo.svg" width=150>
+	<h1 align="center">Prettierlichess</h1>
 </p>
 <p align="center">
-    <a href="https://prettierlichess.github.io/">
-        <img src="https://img.shields.io/badge/Official Website-gray?logo=lichess&style=for-the-badge">
-    </a>
-    <a href="https://addons.mozilla.org/en-US/firefox/addon/prettier-lichess/">
-        <img src="https://img.shields.io/badge/firefox-gray?logo=firefox&style=for-the-badge">
-    </a>
-    <a href="https://chrome.google.com/webstore/detail/prettier-lichess/epgnobcgnmchnhgkgpedebbmhbblfcob">
-        <img src="https://img.shields.io/badge/chrome-gray?logo=googlechrome&style=for-the-badge">
-    </a>
-    <a href="https://github.com/prettierlichess/prettierlichess/releases/tag/v.3.4.0">
-        <img src="https://img.shields.io/github/v/release/prettierlichess/prettierlichess?style=for-the-badge">
-    </a>
+	<a href="https://prettierlichess.github.io/">
+		<img src="https://img.shields.io/badge/Official Website-gray?logo=lichess&style=for-the-badge">
+	</a>
+	<a href="https://addons.mozilla.org/en-US/firefox/addon/prettier-lichess/">
+		<img src="https://img.shields.io/badge/firefox-gray?logo=firefox&style=for-the-badge">
+	</a>
+	<a href="https://chrome.google.com/webstore/detail/prettier-lichess/epgnobcgnmchnhgkgpedebbmhbblfcob">
+		<img src="https://img.shields.io/badge/chrome-gray?logo=googlechrome&style=for-the-badge">
+	</a>
+	<a href="https://github.com/prettierlichess/prettierlichess/releases/tag/v.3.4.0">
+		<img src="https://img.shields.io/github/v/release/prettierlichess/prettierlichess?style=for-the-badge">
+	</a>
 </p>
 
 [Lichess](https://lichess.org/) is an amazing platform that has more than just the ability to play chess, and all for free. Unfortunately I felt like it didn't show this well with it's current design, nor did it show it was a site that resides in 2022. Now with Prettier Lichess, Lichess becomes more readable, more discoverable, and prettier (plus customizable colors)!
@@ -63,7 +63,7 @@ If you have any questions, feature requests or want to report bugs, feel free to
 
 ## How to contribute
 
-For more information, see the [contribution page](https://github.com/prettierlichess/prettierlichess/blob/main/CONTRIBUTING.md).
+For more information, see the [contribution page](https://github.com/prettierlichess/prettierlichess/blob/master/CONTRIBUTING.md).
 
 ## Contributors
 
