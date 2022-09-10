@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   version="1.1"
+   viewBox="0 0 26.458333 26.458333"
+   id="svg6"
+   sodipodi:docname="prettierlichess-logo.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   inkscape:export-filename="C:\Users\Rouven\Downloads\temp\4.png"
+   inkscape:export-xdpi="55.269821"
+   inkscape:export-ydpi="55.269821">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     id="namedview8"
+     showgrid="false"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:snap-text-baseline="true"
+     inkscape:zoom="7.9199997"
+     inkscape:cx="50.000002"
+     inkscape:cy="50.000001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6"
+     units="px" />
+  <metadata
+     id="metadata2">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     style="opacity:1;fill:#566876;fill-opacity:1;stroke:none;stroke-width:0.12927713;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect828"
+     width="26.458334"
+     height="26.458334"
+     x="0"
+     y="-7.7915428e-07"
+     rx="6.9439936"
+     ry="6.9439936" />
+  <path
+     d="m 19.534878,2.1597018 c -1.5948,0.18887 -2.915081,0.407637 -4.195692,1.348112 C 4.43429,2.7407748 1.6213184,10.307109 2.2412023,15.201119 3.5120998,24.620462 16.354856,27.137949 20.606843,20.7742 17.243612,24.251468 11.897746,24.728671 7.810217,22.167764 3.722779,19.606948 1.7053552,14.309878 4.0499349,9.8708398 6.3945144,5.4318028 10.516697,3.9828468 15.050614,4.8277328 c 1.09808,-0.640622 2.360755,-1.454739 3.458835,-1.440101 l -0.765774,2.195482 5.761486,9.6556412 c -0.198073,2.5544 -2.466116,2.761465 -2.466116,2.761465 -0.25961,-0.664568 -0.738439,-1.329046 -2.187621,-2.727173 -1.449227,-1.398082 -7.890869,-4.598074 -7.133182,-7.3224912 -0.904389,3.1478982 4.658617,6.3940212 6.343417,7.9803272 1.684711,1.586261 2.451298,2.728618 2.618106,3.052612 0,0 4.243584,-1.131334 3.541245,-4.033493 L 18.832267,5.1737288 Z"
+     style="fill:#000000;stroke:#000000;stroke-width:0.45181042;stroke-linejoin:round;paint-order:normal"
+     id="path4"
+     inkscape:connector-curvature="0" />
+</svg>

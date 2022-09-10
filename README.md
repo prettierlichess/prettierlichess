@@ -1,20 +1,70 @@
+<p align="center">
+    <img src="https://raw.githubusercontent.com/prettierlichess/prettierlichess/master/res/prettierlichess-logo.svg" width=150>
+    <h1 align="center">Prettierlichess</h1>
+</p>
+<p align="center">
+    <a href="https://prettierlichess.github.io/">
+        <img src="https://img.shields.io/badge/Official Website-gray?logo=lichess&style=for-the-badge">
+    </a>
+    <a href="https://addons.mozilla.org/en-US/firefox/addon/prettier-lichess/">
+        <img src="https://img.shields.io/badge/firefox-gray?logo=firefox&style=for-the-badge">
+    </a>
+    <a href="https://chrome.google.com/webstore/detail/prettier-lichess/epgnobcgnmchnhgkgpedebbmhbblfcob">
+        <img src="https://img.shields.io/badge/chrome-gray?logo=googlechrome&style=for-the-badge">
+    </a>
+    <a href="https://github.com/prettierlichess/prettierlichess/releases/tag/v.3.4.0">
+        <img src="https://img.shields.io/github/v/release/prettierlichess/prettierlichess?style=for-the-badge">
+    </a>
+</p>
 
-# Prettier Lichess
+[Lichess](https://lichess.org/) is an amazing platform that has more than just the ability to play chess, and all for free. Unfortunately I felt like it didn't show this well with it's current design, nor did it show it was a site that resides in 2022. Now with Prettier Lichess, Lichess becomes more readable, more discoverable, and prettier (plus customizable colors)!
 
-[![Website](https://img.shields.io/badge/Official%20website-prettierlichess-blue)](https://prettierlichess.github.io/)
+## Code and license
 
 Here is the source code for both the chrome and firefox extension! It's simple but it's mine. Feel free to download, fork, use, and mess with it all you want. No attribution or anything required.
 
+## General Usage
+
+To install the extension, go to the official website for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/prettier-lichess) or [Chrome](https://chrome.google.com/webstore/detail/prettier-lichess/epgnobcgnmchnhgkgpedebbmhbblfcob). Set Lichess to dark background to have the best compatibility with prettierlichess. \
+With the pop-up you can then customise the colours and choose themes. Have fun!
+
 ## Community Themes
-Check out the community driven theme library [here](https://github.com/algertc/prettierlichess-themes)
-
-## Usage and General Info
-
-Lichess is an amazing platform that has more than just the ability to play chess, and all for free. Unfortunately I felt like it didn't show this well with it's current design, nor did it show it was a site that resides in 2022. Now with Prettier Lichess, Lichess becomes more readable, more discoverable, and prettier (plus customizable colors)!
+Check out the community driven theme library [here](https://github.com/algertc/prettierlichess-themes).
 
 ## Development workflow
 
-- Run `npm install` to get all packages
-- Run `npm run watch` to have webpack start watching your files. All output files will be built in `./dist`
-- As an alternative, you can use `npm run build` for a one-shot build
-- That's pretty much it :)
+### Setup
+
+Execute this command for the setup to get all packages:
+
+```
+npm install
+```
+
+### Build
+
+During the build, the output files from webpack are placed in the `.dist/` folder. There are two ways to start this process. For a single build, run:
+
+```
+npm run build
+```
+
+To rebuild automatically when changes are made, run:
+
+```
+npm run watch
+```
+
+That's pretty much it :smiley:
+
+## Questions, bugs and feature requests
+
+If you have any questions, feature requests or want to report bugs, feel free to [create an issue](https://github.com/prettierlichess/prettierlichess/issues/new).
+
+## How to contribute
+
+For more information, see the [contribution page](https://github.com/prettierlichess/prettierlichess/blob/main/CONTRIBUTING.md).
+
+## Contributors
+
+Thanks to everyone who contributed to this project! Prettierlichess exists thanks to you.
