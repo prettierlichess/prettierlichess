@@ -989,6 +989,11 @@ signal > i {
 	color: var(--backgroundColor) !important;
 }
 
+#dasher_app .board .range {
+	border: none !important;
+	background-color: var(--surfaceColor) !important;
+}
+
 #dasher_app .subs,
 #dasher_app .status {
 	border-top: 1px solid var(--surfaceColorHover) !important;
