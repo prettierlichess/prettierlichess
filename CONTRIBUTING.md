@@ -108,6 +108,32 @@ npm run watch
 After you have made your changes, check that the feature you have implemented works by navigating to the changed lichess page.
 If possible, feel free to test for both Firefox and Chrome. If this is not possible, please write in your PR on which platform you tested.
 
+## Code formatting
+
+### General
+
+For automatic code formatting, [prettier](https://prettier.io/) is used. [Huskey](https://github.com/typicode/husky) adds it as a pre-commit hook. This automatically formats the code before each commit.
+If problems occur with the formatter, commits can also be executed without a hook by using `--no-verify` as a flag on the command line. In principle, however, the formatter should always be used.
+
+Code formatting is limited to CSS, JS, TS, HTML in `src/` and to Markdown and JS in the main folder.
+To start the formatting, use:
+
+```
+npm run formatter:fix
+```
+
+or to check the formatting:
+
+```
+npm run formatter:check
+```
+
+### Github Actions
+
+[![Format Code](https://github.com/prettierlichess/prettierlichess/actions/workflows/formatter.yaml/badge.svg)](https://github.com/prettierlichess/prettierlichess/actions/workflows/formatter.yaml)
+
+In addition, formatter is also connected to Github Actions. This checks for each push and pull request whether the formatting is correct with `npm run formatter:check`.
+
 <hr>
 
 That is basically all. If you still have questions, feel free to open an issue.
