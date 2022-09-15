@@ -20,6 +20,8 @@
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "2.7.1",
     "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1"
