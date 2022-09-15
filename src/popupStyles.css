@@ -2,7 +2,7 @@
 
 body {
 	padding: 20px 20px;
-	background: #2B343B;
+	background: #2b343b;
 	font-family: 'Red Hat Text', sans-serif;
 	color: white;
 	font-size: 18px;
@@ -32,10 +32,10 @@ button {
 	border: none;
 	outline: none;
 	border-radius: 4px;
-	background: #3F474D;
+	background: #3f474d;
 	color: white;
 	cursor: pointer;
-	transition: transform .2s ease-in-out;
+	transition: transform 0.2s ease-in-out;
 	font-size: 12px;
 	font-family: 'Red Hat Text', sans-serif;
 }
@@ -45,7 +45,7 @@ button:first-child {
 }
 
 button:active {
-	transform: scale(.95);
+	transform: scale(0.95);
 }
 
 .button {
@@ -54,10 +54,10 @@ button:active {
 	border: none;
 	outline: none;
 	border-radius: 4px;
-	background: #3F474D;
+	background: #3f474d;
 	color: white;
 	cursor: pointer;
-	transition: transform .2s ease-in-out;
+	transition: transform 0.2s ease-in-out;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -69,11 +69,10 @@ button:active {
 }
 
 .button:active {
-	transform: scale(.95);
+	transform: scale(0.95);
 }
 
-
-input[type="color"] {
+input[type='color'] {
 	-webkit-appearance: none;
 	border: 2px solid white;
 	width: 20px;
@@ -84,19 +83,19 @@ input[type="color"] {
 	background: none;
 }
 
-input[type="color"]::-webkit-color-swatch-wrapper {
+input[type='color']::-webkit-color-swatch-wrapper {
 	padding: 0;
 	border: none;
 	outline: none;
 }
 
-input[type="color"]::-webkit-color-swatch {
+input[type='color']::-webkit-color-swatch {
 	border: none;
 	transform: scale(2);
 }
 
 .customBoardGroup {
-	background: #3F474D;
+	background: #3f474d;
 	border-radius: 4px;
 	padding: 20px 20px 8px;
 	margin-bottom: 20px;
@@ -119,10 +118,10 @@ input[type="color"]::-webkit-color-swatch {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: .8em;
+	font-size: 0.8em;
 	border-bottom: 1px solid #4e565c;
 	cursor: pointer;
-	transition: all .3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 .tab:hover {
@@ -130,12 +129,12 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .tab.active {
-	border-bottom: 1px solid #9FC0A2;
-	color: #9FC0A2;
+	border-bottom: 1px solid #9fc0a2;
+	color: #9fc0a2;
 }
 
 .tab.active:hover {
-	border-bottom: 1px solid #9FC0A2;
+	border-bottom: 1px solid #9fc0a2;
 }
 
 .hideGroup {
@@ -158,30 +157,33 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .pcr-app .pcr-interaction input {
-	background: #2B343B !important;
+	background: #2b343b !important;
 	color: white !important;
 }
 
 .pcr-app .pcr-interaction .pcr-save,
 .pcr-app .pcr-interaction .pcr-type.active {
-	background: #9FC0A2 !important;
-	color: #2B343B !important;
+	background: #9fc0a2 !important;
+	color: #2b343b !important;
 }
 
 .pcr-app {
-	background: #3F474D !important;
+	background: #3f474d !important;
 	font-family: 'Red Hat Text', sans-serif !important;
 	color: white !important;
 	border-radius: 8px !important;
 	overflow: hidden !important;
 }
 
-.pcr-app[data-theme=nano] .pcr-selection .pcr-color-preview .pcr-current-color {
+.pcr-app[data-theme='nano']
+	.pcr-selection
+	.pcr-color-preview
+	.pcr-current-color {
 	border: 1px solid white !important;
 }
 
 .pcr-app button {
-	transition: transform .4s ease-in-out !important;
+	transition: transform 0.4s ease-in-out !important;
 }
 
 .pcr-app button.pcr-active,
@@ -193,7 +195,7 @@ input[type="color"]::-webkit-color-swatch {
 .pickr input.pcr-active,
 .pickr input:focus {
 	box-shadow: none !important;
-	transform: scale(.9) !important;
+	transform: scale(0.9) !important;
 }
 
 #basicImportExportContainer {
