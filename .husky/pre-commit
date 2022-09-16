@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+echo '========= Starting Formatting =========';
 npm run formatter:fix
-git add -A .
-git commit --amend -C HEAD --no-verify
+git add -u
