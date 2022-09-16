@@ -5,8 +5,8 @@
   "scripts": {
     "build": "npx webpack",
     "watch": "npx webpack -w",
-    "formatter:fix": "npx prettier --write src/**.{css,js,ts,html} *.{md,js}",
-    "formatter:check": "npx prettier --check --max-warnings=0 src/**.{css,js,ts,html} *.{md,js}",
+    "formatter:fix": "npx prettier --write --ignore-unknown src/**.{css,js,ts,html} *.{md,js}",
+    "formatter:check": "npx prettier --check --ignore-unknown --max-warnings=0 src/**.{css,js,ts,html} *.{md,js}",
     "prepare": "husky install"
   },
   "repository": {
