@@ -130,7 +130,7 @@ npm run formatter:check
 
 ### Github Actions
 
-[![Format Code](https://github.com/prettierlichess/prettierlichess/actions/workflows/formatter.yaml/badge.svg)](https://github.com/prettierlichess/prettierlichess/actions/workflows/formatter.yaml)
+[![Format Code](https://github.com/prettierlichess/prettierlichess/actions/workflows/formatter.yaml/badge.svg?event=push)](https://github.com/prettierlichess/prettierlichess/actions/workflows/formatter.yaml)
 
 In addition, formatter is also connected to Github Actions. This checks for each push and pull request whether the formatting is correct with `npm run formatter:check`.
 
