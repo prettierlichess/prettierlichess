@@ -1,112 +1,111 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Prettier Lichess</title>
+		<link href="popupStyles.css" rel="stylesheet" type="text/css" />
+		<link href="nano.min.css" rel="stylesheet" type="text/css" />
+	</head>
 
-<head>
-    <title>Prettier Lichess</title>
-    <link href="popupStyles.css" rel="stylesheet" type="text/css" />
-    <link href="nano.min.css" rel="stylesheet" type="text/css" />
-</head>
+	<body>
+		<img src="./logo.svg" alt="logo" class="logo" />
+		<div class="tabGroup">
+			<div class="tab active" id="siteTab">Site Colors</div>
+			<div class="tab" id="boardTab">Board Colors</div>
+		</div>
+		<form id="list">
+			<div id="siteColorGroup">
+				<div class="listItem">
+					<span>primary color</span>
+					<div id="primaryColor"></div>
+				</div>
+				<div class="listItem">
+					<span>secondary color</span>
+					<div id="secondaryColor"></div>
+				</div>
+				<div class="listItem">
+					<span>tertiary color</span>
+					<div id="tertiaryColor"></div>
+				</div>
+				<div class="listItem">
+					<span>background color</span>
+					<div id="backgroundColor"></div>
+				</div>
+				<div class="listItem">
+					<span>surface color</span>
+					<div id="surfaceColor"></div>
+				</div>
+				<div class="listItem">
+					<span>surface color hover</span>
+					<div id="surfaceColorHover"></div>
+				</div>
+				<div class="listItem">
+					<span>default white</span>
+					<div id="defaultWhite"></div>
+				</div>
+				<div class="listItem">
+					<span>text color</span>
+					<div id="textColor"></div>
+				</div>
+			</div>
 
-<body>
-    <img src="./logo.svg" alt="logo" class="logo">
-    <div class="tabGroup">
-        <div class="tab active" id="siteTab">Site Colors</div>
-        <div class="tab" id="boardTab">Board Colors</div>
-    </div>
-    <form id="list">
-        <div id="siteColorGroup">
-            <div class="listItem">
-                <span>primary color</span>
-                <div id="primaryColor"></div>
-            </div>
-            <div class="listItem">
-                <span>secondary color</span>
-                <div id="secondaryColor"></div>
-            </div>
-            <div class="listItem">
-                <span>tertiary color</span>
-                <div id="tertiaryColor"></div>
-            </div>
-            <div class="listItem">
-                <span>background color</span>
-                <div id="backgroundColor"></div>
-            </div>
-            <div class="listItem">
-                <span>surface color</span>
-                <div id="surfaceColor"></div>
-            </div>
-            <div class="listItem">
-                <span>surface color hover</span>
-                <div id="surfaceColorHover"></div>
-            </div>
-            <div class="listItem">
-                <span>default white</span>
-                <div id="defaultWhite"></div>
-            </div>
-            <div class="listItem">
-                <span>text color</span>
-                <div id="textColor"></div>
-            </div>
-        </div>
+			<div id="boardColorGroup" class="hideGroup">
+				<div class="customBoardGroup">
+					<div class="button" id="hideBoardColors">
+						Don't Use Custom Board Colors
+					</div>
+					<div class="listItem boardColorSelector">
+						<span>dark square color</span>
+						<div id="boardDark"></div>
+					</div>
+					<div class="listItem boardColorSelector">
+						<span>light square color</span>
+						<div id="boardLight"></div>
+					</div>
+				</div>
+				<div class="listItem">
+					<span>last move color</span>
+					<div id="lastMove"></div>
+				</div>
+				<div class="listItem">
+					<span>premove color</span>
+					<div id="preMove"></div>
+				</div>
+				<div class="listItem">
+					<span>move indicator color</span>
+					<div id="moveIndicator"></div>
+				</div>
+				<div class="listItem">
+					<span>primary arrow color</span>
+					<div id="arrowPrimary"></div>
+				</div>
+				<div class="listItem">
+					<span>secondary arrow color</span>
+					<div id="arrowSecondary"></div>
+				</div>
+				<div class="listItem">
+					<span>tertiary arrow color</span>
+					<div id="arrowTertiary"></div>
+				</div>
+				<div class="listItem">
+					<span>alternate arrow color</span>
+					<div id="arrowAlternate"></div>
+				</div>
+			</div>
 
-        <div id="boardColorGroup" class="hideGroup">
-            <div class="customBoardGroup">
-                <div class="button" id="hideBoardColors">
-                    Don't Use Custom Board Colors
-                </div>
-                <div class="listItem boardColorSelector">
-                    <span>dark square color</span>
-                    <div id="boardDark"></div>
-                </div>
-                <div class="listItem boardColorSelector">
-                    <span>light square color</span>
-                    <div id="boardLight"></div>
-                </div>
-            </div>
-            <div class="listItem">
-                <span>last move color</span>
-                <div id="lastMove"></div>
-            </div>
-            <div class="listItem">
-                <span>premove color</span>
-                <div id="preMove"></div>
-            </div>
-            <div class="listItem">
-                <span>move indicator color</span>
-                <div id="moveIndicator"></div>
-            </div>
-            <div class="listItem">
-                <span>primary arrow color</span>
-                <div id="arrowPrimary"></div>
-            </div>
-            <div class="listItem">
-                <span>secondary arrow color</span>
-                <div id="arrowSecondary"></div>
-            </div>
-            <div class="listItem">
-                <span>tertiary arrow color</span>
-                <div id="arrowTertiary"></div>
-            </div>
-            <div class="listItem">
-                <span>alternate arrow color</span>
-                <div id="arrowAlternate"></div>
-            </div>
-        </div>
+			<div id="buttonRow">
+				<div class="button" id="importButton">Import Profile</div>
+				<div class="button" id="exportButton">Export Profile</div>
+			</div>
+			<button id="resetButton">Reset to Defaults</button>
 
-        <div id="buttonRow">
-            <div class="button" id="importButton">Import Profile</div>
-            <div class="button" id="exportButton">Export Profile</div>
-        </div>
-        <button id="resetButton">
-            Reset to Defaults
-        </button>
-
-        <div id="basicImportExportContainer" style="display:none;">
-            <textarea placeholder="Paste JSON/Download Contents here!" rows="8" id="basicImportExport"></textarea>
-            <div class="button" id="importExportAction">SaveOrCopy</div>
-        </div>
-    </form>
-    <script src="popup.js" type="module"></script>
-</body>
-
+			<div id="basicImportExportContainer" style="display: none">
+				<textarea
+					placeholder="Paste JSON/Download Contents here!"
+					rows="8"
+					id="basicImportExport"></textarea>
+				<div class="button" id="importExportAction">SaveOrCopy</div>
+			</div>
+		</form>
+		<script src="popup.js" type="module"></script>
+	</body>
 </html>

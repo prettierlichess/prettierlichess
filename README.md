@@ -29,6 +29,7 @@ To install the extension, go to the official website for [Firefox](https://addon
 With the pop-up you can then customise the colours and choose themes. Have fun!
 
 ## Community Themes
+
 Check out the community driven theme library [here](https://github.com/algertc/prettierlichess-themes).
 
 ## Development workflow

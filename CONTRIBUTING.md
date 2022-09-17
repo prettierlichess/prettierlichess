@@ -15,9 +15,9 @@ Please always remain friendly.
 
 ## Code Standards
 
-- Use tabs for the CSS files
-- Use ``!important`` at the end of each CSS rule to ensure that the default style is overridden
-- Try to choose CSS selectors that are clear but not unnecessarily complicated. Several parent nodes of the element you are looking for can and (most of the time) should be included, but for example, it would be unnecessary to start every selector with `#main-wrap`. For most elements, however, selectors already exist that can be used as an example.
+-   Use tabs for the CSS files
+-   Use `!important` at the end of each CSS rule to ensure that the default style is overridden
+-   Try to choose CSS selectors that are clear but not unnecessarily complicated. Several parent nodes of the element you are looking for can and (most of the time) should be included, but for example, it would be unnecessary to start every selector with `#main-wrap`. For most elements, however, selectors already exist that can be used as an example.
 
 ## Structure of the extension
 
@@ -29,10 +29,13 @@ The colours set by the user are transferred to the file by variables. The variab
 `--primaryColor`, `--backgroundColor`, `--surfaceColor`, `--surfaceColorHover`, `--secondaryColor`, `--tertiaryColor`, `--defaultWhite`, `--textColor`, `--arrowPrimary`, `--arrowSecondary`, `--arrowTertiary`, `--arrowAlternate`, `--lastMove`, `--preMove`, `--moveIndicator`, `--boardDark`, `--boardLight`, `--coordDark`, `--coordLight`
 
 The variables are then used with
+
 ```css
 var(--variable)
 ```
+
 in the CSS rules. For example:
+
 ```css
 color: var(--primaryColor) !important;
 ```
@@ -85,23 +88,51 @@ npm run watch
 ### Include the extension into the browser
 
 #### Chrome
-- Go to the `chrome://extensions` page.
-- Enable the developer mode.
-- Disable the official Prettierlichess version.
-- Click _Load unpacked extension_
-- Navigate to the `.dist/` folder and include the extension.
+
+-   Go to the `chrome://extensions` page.
+-   Enable the developer mode.
+-   Disable the official Prettierlichess version.
+-   Click _Load unpacked extension_
+-   Navigate to the `.dist/` folder and include the extension.
 
 #### Firefox
-- Go to the `about:addons` page.
-- Disable the official Prettierlichess version.
-- Go to the `about:debugging#addons` page.
-- Click _Load Temporary Add-on_
-- Navigate to the `.dist/manifest.json` file and include the extension.
+
+-   Go to the `about:addons` page.
+-   Disable the official Prettierlichess version.
+-   Go to the `about:debugging#addons` page.
+-   Click _Load Temporary Add-on_
+-   Navigate to the `.dist/manifest.json` file and include the extension.
 
 ### Testing
 
 After you have made your changes, check that the feature you have implemented works by navigating to the changed lichess page.
 If possible, feel free to test for both Firefox and Chrome. If this is not possible, please write in your PR on which platform you tested.
+
+## Code formatting
+
+### General
+
+For automatic code formatting, [prettier](https://prettier.io/) is used. [Huskey](https://github.com/typicode/husky) adds it as a pre-commit hook. This automatically formats the code before each commit.
+If problems occur with the formatter, commits can also be executed without a hook by using `--no-verify` as a flag on the command line. In principle, however, the formatter should always be used.
+
+Code formatting is limited to CSS, JS, TS, HTML in `src/` and to Markdown and JS in the main folder.
+To start the formatting, use:
+
+```
+npm run formatter:fix
+```
+
+or to check the formatting:
+
+```
+npm run formatter:check
+```
+
+### Github Actions
+
+[![Format Code](https://github.com/prettierlichess/prettierlichess/actions/workflows/formatter.yaml/badge.svg?event=push)](https://github.com/prettierlichess/prettierlichess/actions/workflows/formatter.yaml)
+
+In addition, formatter is also connected to Github Actions. This checks for each push and pull request whether the formatting is correct with `npm run formatter:check`.
 
 <hr>
 

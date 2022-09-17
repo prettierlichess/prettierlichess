@@ -4,7 +4,10 @@
   "description": "Here is the source code for both the chrome and firefox extension! It's simple but it's mine. Feel free to download, fork, use, and mess with it all you want. No attribution or anything required.",
   "scripts": {
     "build": "npx webpack",
-    "watch": "npx webpack -w"
+    "watch": "npx webpack -w",
+    "formatter:fix": "npx prettier --write --ignore-unknown src/**.{css,js,ts,html} *.{md,js}",
+    "formatter:check": "npx prettier --check --ignore-unknown --max-warnings=0 src/**.{css,js,ts,html} *.{md,js}",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -18,6 +21,9 @@
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.7.1",
     "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1"
   },
