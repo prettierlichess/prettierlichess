@@ -12,7 +12,7 @@
 	<a href="https://chrome.google.com/webstore/detail/prettier-lichess/epgnobcgnmchnhgkgpedebbmhbblfcob">
 		<img src="https://img.shields.io/badge/chrome-gray?logo=googlechrome&style=for-the-badge">
 	</a>
-	<a href="https://github.com/prettierlichess/prettierlichess/releases/tag/v.3.4.0">
+	<a href="https://github.com/prettierlichess/prettierlichess/releases/latest">
 		<img src="https://img.shields.io/github/v/release/prettierlichess/prettierlichess?style=for-the-badge">
 	</a>
 </p>
