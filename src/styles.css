@@ -1201,7 +1201,7 @@ main.lobby {
 		'app tv tv side'
 		'table blog blog support'
 		'leader puzzle puzzle winner'
-		'tours tours forum forum'
+		'. tours tours .'
 		'. simuls simuls .'
 		'. about about .' !important;
 	grid-template-columns: minmax(400px, 1fr) 1fr 1fr minmax(400px, 1fr) !important;
