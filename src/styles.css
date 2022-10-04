@@ -1230,14 +1230,21 @@ main.lobby {
 	backdrop-filter: blur(16px) !important;
 }
 
+.lobby__wide-winners {
+	/* Used for when player ratings are hidden. Default lichess takes up more grid spaces to cover empty space - we don't want to. */
+	grid-area: winner !important;
+}
+
 .lobby__leaderboard,
-.lobby__winners {
+.lobby__winners,
+.lobby__wide-winners {
 	margin-top: 20px !important;
 	height: calc(100% - 40px) !important;
 }
 
 .lobby__leaderboard .lobby__box__content,
-.lobby__winners .lobby__box__content {
+.lobby__winners .lobby__box__content,
+.lobby__wide-winners .lobby__box__content {
 	overflow: hidden !important;
 }
 
