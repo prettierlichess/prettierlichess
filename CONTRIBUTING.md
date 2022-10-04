@@ -9,7 +9,7 @@ If you want to be assigned to an open issue, feel free to ask.
 
 If you would like to contribute and have questions or need help, feel free to ping someone from the [team](https://github.com/prettierlichess/prettierlichess/blob/master/CODEOWNERS) in an issue or pull request.
 
-It is very helpful if you use screenshots of the changed you made in your pull request. This makes it easier for the reviewer to understand where your changes are important.
+It is very helpful if you use screenshots of the changes you made in your pull request. This makes it easier for the reviewer to understand where your changes are important.
 
 Please always remain friendly.
 
