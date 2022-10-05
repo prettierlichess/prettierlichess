@@ -1,6 +1,16 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo '========= Starting Formatting =========';
-npm run format:fix
-git add -u
+echo '[pre-commit] Checking formatting ...';
+{
+  npm run format:check > /dev/null 2>&1
+} || {
+  echo '[pre-commit] Needed changes were found';
+  echo '[pre-commit] Formatting ...';
+  npm run format:fix > /dev/null 2>&1
+
+  echo '[pre-commit] Files were formatted. Please commit again';
+  exit 1
+}
+
+echo '[pre-commit] Completed with no changes';

@@ -6,7 +6,7 @@
     "build": "npx webpack",
     "watch": "npx webpack -w",
     "format:fix": "npx prettier --write --ignore-unknown src/**.{css,js,ts,html} *.{md,js}",
-    "format:check": "npx prettier --check --ignore-unknown --max-warnings=0 src/**.{css,js,ts,html} *.{md,js}",
+    "format:check": "npx prettier --check --ignore-unknown src/**.{css,js,ts,html} *.{md,js}",
     "prepare": "husky install"
   },
   "repository": {
