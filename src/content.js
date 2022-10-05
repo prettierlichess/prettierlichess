@@ -153,6 +153,7 @@ const STREAMER_STYLES = `
 `;
 
 colorScheme.forEach((scheme) => schemeSet(scheme));
+console.debug('Scheme set');
 
 function schemeSet(scheme) {
 	chrome.storage.sync.get(scheme, function (result) {
@@ -200,18 +201,24 @@ chrome.storage.sync.get(null, function (result) {
 // Setup Streamer mode button only runs on match/tv pages
 chrome.storage.sync.get('streamerMode', function (result) {
 	const round = document.querySelector('.round');
+	console.debug('Round: ', round);
 	if (round) {
 		result = result['streamerMode'];
+		console.debug('Result: ', result);
 		if (result) {
+			console.debug('enableStreamerMode');
 			enableStreamerMode();
 		}
 
+		console.debug('Creating button');
 		var button = document.createElement('button');
 		button.innerHTML = result
 			? 'Disable Vertical Layout'
 			: 'Enable Vertical Layout';
 		button.classList.add('button');
 		button.classList.add('streamerButton');
+
+		console.debug('Add click event');
 
 		button.addEventListener('click', function () {
 			if (result) {
@@ -224,6 +231,8 @@ chrome.storage.sync.get('streamerMode', function (result) {
 		});
 
 		round.appendChild(button);
+
+		console.debug('Added button');
 	}
 });
 

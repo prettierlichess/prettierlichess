@@ -134,6 +134,30 @@ npm run format:check
 
 In addition, formatter is also connected to Github Actions. This checks for each push and pull request whether the formatting is correct with `npm run formatter:check`.
 
+## Debug output
+
+The extension consists mainly of CSS, but for some features (like the "enable vertical layout" button) JS is used. To better understand a bug with such features, there is a debug output with `console.debug()`.
+
+### Read debug output
+
+#### Chrome
+
+-   Go to lichess.
+-   Press _F12_ to display the developer tools.
+-   Go to the _Console_ tab.
+-   In the dropdown next to _Filter_, select only _Verbose_.
+-   Go to the lichess page where the bug occurs.
+-   Read the debug output.
+
+#### Firefox
+
+-   Go to lichess.
+-   Press _F12_ to display the developer tools.
+-   Go to the _Console_ tab.
+-   In the dropdown next to the filter, activate only _Debug_.
+-   Go to the lichess page where the bug occurs.
+-   Read the debug output.
+
 <hr>
 
 That is basically all. If you still have questions, feel free to open an issue.
