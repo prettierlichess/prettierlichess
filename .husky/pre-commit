@@ -2,5 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 echo '========= Starting Formatting =========';
-npm run formatter:fix
+npm run format:fix
 git add -u

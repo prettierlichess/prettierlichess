@@ -119,13 +119,13 @@ Code formatting is limited to CSS, JS, TS, HTML in `src/` and to Markdown and JS
 To start the formatting, use:
 
 ```
-npm run formatter:fix
+npm run format:fix
 ```
 
 or to check the formatting:
 
 ```
-npm run formatter:check
+npm run format:check
 ```
 
 ### Github Actions
