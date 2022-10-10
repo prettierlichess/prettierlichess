@@ -1672,6 +1672,7 @@ a.button.button-metal:hover {
 	border-bottom: 0 !important;
 	border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
 	backdrop-filter: blur(16px) !important;
+	z-index: 10 !important;
 }
 
 #friend_box .content a.user-link .line::before {
