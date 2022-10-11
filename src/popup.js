@@ -220,6 +220,7 @@ document.querySelector('#exportButton').addEventListener('click', () => {
 			let url = URL.createObjectURL(json);
 			chrome.downloads.download({
 				url: url, // The object URL can be used as download URL
+				filename: 'prettierlichess_config.json',
 			});
 		} else {
 			alert('No custom colors have been set.');
