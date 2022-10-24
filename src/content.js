@@ -37,25 +37,27 @@ const STREAMER_STYLES = `
     .round__app .rclock-top {
         padding-bottom: 10px;
         padding-top: 5px;
-        grid-area: 1/ 2;
+        grid-area: user-top;
     }
 
     .round__app .rclock-bottom {
         padding-top: 10px;
         padding-bottom: 5px;
-        grid-area: 10 / 2;
+        grid-area: user-bot;
     }
 
     .round__app .round__app__table {
         grid-area: 4 / 2 / 6 / 3;
     }
-
+    
     .rclock {
-        justify-self: flex-end;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        padding-right: calc(100% + 20px);
+        display: inline;
+    }
+
+    .rclock > * {
+        float: right;
+        z-index: 5;
+        position: relative;
     }
 
     .rclock .tour-rank,
@@ -69,8 +71,9 @@ const STREAMER_STYLES = `
     }
 
     .rclock .time {
-        position: relative;
-        font-size: 1.5em;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 2em;
         line-height: 0px;
         height: 100%;
         width: 10ch;
