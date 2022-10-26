@@ -201,41 +201,56 @@ chrome.storage.sync.get(null, function (result) {
 	);
 });
 
+function addVerticalLayoutButton(result) {
+	result = result['streamerMode'];
+	console.debug('Result: ', result);
+	if (result) {
+		console.debug('enableStreamerMode');
+		enableStreamerMode();
+	}
+
+	console.debug('Creating button');
+	var button = document.createElement('button');
+	button.innerHTML = result
+		? 'Disable Vertical Layout'
+		: 'Enable Vertical Layout';
+	button.classList.add('button');
+	button.classList.add('streamerButton');
+
+	console.debug('Add click event');
+
+	button.addEventListener('click', function () {
+		if (result) {
+			syncSet('streamerMode', false);
+			window.location.reload();
+		} else {
+			syncSet('streamerMode', true);
+			window.location.reload();
+		}
+	});
+
+	document.querySelector('.round').appendChild(button);
+
+	console.debug('Added button');
+}
+
 // Setup Streamer mode button only runs on match/tv pages
 chrome.storage.sync.get('streamerMode', function (result) {
 	const round = document.querySelector('.round');
 	console.debug('Round: ', round);
+
 	if (round) {
-		result = result['streamerMode'];
-		console.debug('Result: ', result);
-		if (result) {
-			console.debug('enableStreamerMode');
-			enableStreamerMode();
-		}
-
-		console.debug('Creating button');
-		var button = document.createElement('button');
-		button.innerHTML = result
-			? 'Disable Vertical Layout'
-			: 'Enable Vertical Layout';
-		button.classList.add('button');
-		button.classList.add('streamerButton');
-
-		console.debug('Add click event');
-
-		button.addEventListener('click', function () {
-			if (result) {
-				syncSet('streamerMode', false);
-				window.location.reload();
-			} else {
-				syncSet('streamerMode', true);
-				window.location.reload();
+		addVerticalLayoutButton(result);
+	} else {
+		const obs = new MutationObserver(function () {
+			if (document.querySelector('.round')) {
+				console.debug('Found .round');
+				obs.disconnect();
+				addVerticalLayoutButton(result);
 			}
 		});
-
-		round.appendChild(button);
-
-		console.debug('Added button');
+		obs.observe(document.documentElement, {childList: true, subtree: true});
+		console.debug('Connected MutationObserver');
 	}
 });
 
