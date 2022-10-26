@@ -211,7 +211,7 @@ function addVerticalLayoutButton(result) {
 
 	console.debug('Creating button');
 	var button = document.createElement('button');
-	button.innerHTML = result
+	button.textContent = result
 		? 'Disable Vertical Layout'
 		: 'Enable Vertical Layout';
 	button.classList.add('button');
