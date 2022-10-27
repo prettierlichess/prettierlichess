@@ -10,8 +10,25 @@ body {
 	overflow-x: hidden;
 }
 
-.logo {
+.topGroup {
+	display: flex;
+	align-items: center;
 	margin-bottom: 20px;
+	justify-content: space-between;
+}
+
+#layoutSelect {
+	background: #272a2c;
+	border: 2px solid #404246;
+	border-radius: 8px;
+	outline: none;
+	color: white;
+	width: 45%;
+	padding: 8px;
+}
+
+.logo {
+	width: 50%;
 }
 
 .listItem {
