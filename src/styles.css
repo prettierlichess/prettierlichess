@@ -1196,18 +1196,6 @@ signal > i {
 
 /* Homepage */
 
-main.lobby {
-	grid-template-areas:
-		'app tv tv side'
-		'table blog blog support'
-		'leader puzzle puzzle winner'
-		'. tours tours .'
-		'. simuls simuls .'
-		'. about about .' !important;
-	grid-template-columns: minmax(400px, 1fr) 1fr 1fr minmax(400px, 1fr) !important;
-	grid-template-rows: minmax(1fr, 800px) repeat(2, fit-content(0)) !important;
-}
-
 .lobby--no-simuls .lobby__forum {
 	grid-area: forum !important;
 }
@@ -1220,7 +1208,6 @@ main.lobby {
 .lobby__app,
 .lobby__side {
 	width: 100% !important;
-	height: calc(100% - 40px) !important;
 	max-height: auto !important;
 	border: 2px solid var(--surfaceColorHover) !important;
 	border-radius: var(--borderRadius) !important;
