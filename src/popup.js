@@ -66,7 +66,7 @@ let apiEx = new RegExp(".*lichess.org/api.*");
 let currentURL = location.href;
 if (lichessEx.test(currentURL) && !apiEx.test(currentURL)){window.location.reload();}`;
 
-//refocus hack
+// refocus hack
 chrome.storage.sync.get('hideCustomBoard', function (result) {
 	if (result['hideCustomBoard']) {
 		focusBoardTab();
@@ -74,7 +74,33 @@ chrome.storage.sync.get('hideCustomBoard', function (result) {
 	}
 });
 
-//Tab Switch
+// Set layout selector
+chrome.storage.sync.get('layoutPreference', function (result) {
+	result = result['layoutPreference'];
+	console.debug('Result:', result);
+	let inOptions = false;
+	let optionNodes = document.querySelector('#layoutSelect').children;
+
+	for (let i = 0; i < optionNodes.length; i++) {
+		console.debug(optionNodes[i].value);
+		if (optionNodes[i].value === result) {
+			inOptions = true;
+		}
+	}
+
+	console.debug('In options:', inOptions);
+
+	if (!inOptions) {
+		result = 'default';
+	}
+	document.querySelector('#layoutSelect').value = result;
+});
+
+document.querySelector('#layoutSelect').addEventListener('change', function () {
+	syncSet('layoutPreference', document.querySelector('#layoutSelect').value);
+});
+
+// Tab Switch
 
 siteTab.addEventListener('click', () => {
 	focusSiteTab();
