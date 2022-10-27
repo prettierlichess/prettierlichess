@@ -155,6 +155,24 @@ const STREAMER_STYLES = `
 }
 `;
 
+const LAYOUT_CHANGE = `
+main.lobby {
+	grid-template-areas:
+		'app tv tv side'
+		'table blog blog support'
+		'leader puzzle puzzle winner'
+		'. tours tours .'
+		'. simuls simuls .'
+		'. about about .' !important;
+	grid-template-columns: minmax(400px, 1fr) 1fr 1fr minmax(400px, 1fr) !important;
+	grid-template-rows: minmax(1fr, 800px) repeat(2, fit-content(0)) !important;
+}
+.lobby__app,
+.lobby__side {
+	height: calc(100% - 40px) !important;
+}
+`;
+
 colorScheme.forEach((scheme) => schemeSet(scheme));
 console.debug('Scheme set');
 
@@ -233,6 +251,15 @@ function addVerticalLayoutButton(result) {
 
 	console.debug('Added button');
 }
+
+chrome.storage.sync.get('layoutPreference', function (result) {
+	if (result['layoutPreference'] !== 'lichess') {
+		let styleSheet = document.createElement('style');
+		styleSheet.type = 'text/css';
+		styleSheet.innerText = LAYOUT_CHANGE;
+		document.head.appendChild(styleSheet);
+	}
+});
 
 // Setup Streamer mode button only runs on match/tv pages
 chrome.storage.sync.get('streamerMode', function (result) {
