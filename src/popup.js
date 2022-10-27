@@ -98,6 +98,7 @@ chrome.storage.sync.get('layoutPreference', function (result) {
 
 document.querySelector('#layoutSelect').addEventListener('change', function () {
 	syncSet('layoutPreference', document.querySelector('#layoutSelect').value);
+	tabScript(reloadIfLichess);
 });
 
 // Tab Switch
