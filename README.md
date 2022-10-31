@@ -7,10 +7,10 @@
 		<img src="https://img.shields.io/badge/Official Website-gray?logo=lichess&style=for-the-badge">
 	</a>
 	<a href="https://chrome.google.com/webstore/detail/prettier-lichess/epgnobcgnmchnhgkgpedebbmhbblfcob">
-		<img src="https://img.shields.io/chrome-web-store/rating/epgnobcgnmchnhgkgpedebbmhbblfcob?color=brightgreen&label=Chrome%20store&logo=googlechrome&style=for-the-badge">
+		<img src="https://img.shields.io/chrome-web-store/rating/epgnobcgnmchnhgkgpedebbmhbblfcob?color=blue&label=Chrome%20store&logo=googlechrome&style=for-the-badge">
 	</a>
 	<a href="https://addons.mozilla.org/en-US/firefox/addon/prettier-lichess/">
-		<img src="https://img.shields.io/amo/rating/prettier-lichess?color=brightgreen&label=Firefox%20store&logo=firefox&style=for-the-badge">
+		<img src="https://img.shields.io/amo/rating/prettier-lichess?color=blue&label=Firefox%20store&logo=firefox&style=for-the-badge">
 	</a>
 	<a href="https://github.com/prettierlichess/prettierlichess/releases/latest">
 		<img src="https://img.shields.io/github/v/release/prettierlichess/prettierlichess?style=for-the-badge">
