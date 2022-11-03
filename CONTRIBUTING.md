@@ -108,7 +108,7 @@ npm run watch
 After you have made your changes, check that the feature you have implemented works by navigating to the changed lichess page.
 If possible, feel free to test for both Firefox and Chrome. If this is not possible, please write in your PR on which platform you tested.
 
-## Code formatting
+## Linting
 
 ### General
 
@@ -128,11 +128,20 @@ or to check the formatting:
 npm run format:check
 ```
 
+### web-ext lint
+
+Web-ext is a command line tool from Mozilla that makes it easier to create browser extensions. It is used for linting in this project. To run the linting, navigate to the `src` folder and run `web-ext lint`. This tool should be available directly from the command line after `npm install`.
+The tool will then print out any problems or vulnerabilities.
+
+Note that web-ext is designed for Firefox, but the extension is designed for both Chrome and Firefox. This may cause messages about unsupported APIs to be displayed, which can simply be ignored.
+
 ### Github Actions
 
-[![Format Code](https://github.com/prettierlichess/prettierlichess/actions/workflows/formatter.yaml/badge.svg?event=push)](https://github.com/prettierlichess/prettierlichess/actions/workflows/formatter.yaml)
+[![Format Code](https://github.com/prettierlichess/prettierlichess/actions/workflows/formatter.yaml/badge.svg?event=push)](https://github.com/prettierlichess/prettierlichess/actions/workflows/formatter.yaml) [![Run web-ext lint](https://github.com/prettierlichess/prettierlichess/actions/workflows/web-ext.yaml/badge.svg?event=push)](https://github.com/prettierlichess/prettierlichess/actions/workflows/web-ext.yaml)
 
-In addition, formatter is also connected to Github Actions. This checks for each push and pull request whether the formatting is correct with `npm run formatter:check`.
+The formatter is also connected to Github Actions. This checks for each push and pull request whether the formatting is correct with `npm run formatter:check`.
+
+Also web-ext lint is executed for both source and build for each push and PR. The action is only sensitive to errors. Warning level messages are displayed but do not cause the action to fail.
 
 ## Debug output
 
