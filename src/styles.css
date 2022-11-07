@@ -2283,6 +2283,7 @@ main.round {
 	background: var(--primaryColor) !important;
 	color: var(--backgroundColor) !important;
 	border-radius: var(--borderRadius) !important;
+	height: 28px !important;
 }
 
 .round__side,
