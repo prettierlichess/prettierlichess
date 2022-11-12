@@ -163,9 +163,9 @@ main.lobby {
 		'leader puzzle puzzle winner'
 		'. tours tours .'
 		'. simuls simuls .'
-		'. about about .' !important;
-	grid-template-columns: minmax(400px, 1fr) 1fr 1fr minmax(400px, 1fr) !important;
-	grid-template-rows: minmax(1fr, 800px) repeat(2, fit-content(0)) !important;
+		'. about about .';
+	grid-template-columns: minmax(400px, 1fr) 1fr 1fr minmax(400px, 1fr);
+	grid-template-rows: minmax(1fr, 800px) repeat(2, fit-content(0));
 }
 .lobby__app,
 .lobby__side {
