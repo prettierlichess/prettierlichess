@@ -2320,7 +2320,6 @@ main.round {
 
 .mchat {
 	border-top: 2px solid var(--surfaceColorHover) !important;
-	height: 100% !important;
 }
 
 .mchat-optional .mchat__tab-active,
@@ -2539,6 +2538,10 @@ a.context-streamer:hover {
 .analyse {
 	position: relative !important;
 	justify-content: center !important;
+	--meta-height: minmax(auto, 300px) !important;
+}
+
+.analyse:not(main.has-relay-tour) {
 	grid-template-columns:
 		minmax(230px, 20vw) 2vmin minmax(
 			calc(70vmin * var(--board-scale)),
@@ -2549,7 +2552,6 @@ a.context-streamer:hover {
 			)
 		)
 		80px minmax(240px, 400px) !important;
-	--meta-height: minmax(auto, 300px) !important;
 }
 
 .analyse.has-players {
