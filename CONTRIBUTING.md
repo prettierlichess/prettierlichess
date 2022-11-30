@@ -112,7 +112,7 @@ If possible, feel free to test for both Firefox and Chrome. If this is not possi
 
 ### General
 
-For automatic code formatting, [prettier](https://prettier.io/) is used. [Huskey](https://github.com/typicode/husky) adds it as a pre-commit hook. This automatically formats the code before each commit.
+For automatic code formatting, [prettier](https://prettier.io/) is used. [Husky](https://github.com/typicode/husky) adds it as a pre-commit hook. This automatically formats the code before each commit.
 If problems occur with the formatter, commits can also be executed without a hook by using `--no-verify` as a flag on the command line. In principle, however, the formatter should always be used.
 
 Code formatting is limited to CSS, JS, TS, HTML in `src/` and to Markdown and JS in the main folder.
