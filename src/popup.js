@@ -376,9 +376,3 @@ const hideBoardColorSelectors = () => {
 		item.style.display = 'none';
 	});
 };
-
-const showBoardColorSelectors = () => {
-	boardColorSelector.forEach((item) => {
-		item.style.display = 'flex';
-	});
-};
