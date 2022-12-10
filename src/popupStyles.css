@@ -2,7 +2,7 @@
 
 body {
 	padding: 20px 20px;
-	background: #2b343b;
+	background-color: #2b343b;
 	font-family: 'Red Hat Text', sans-serif;
 	color: white;
 	font-size: 18px;
@@ -20,7 +20,7 @@ body {
 }
 
 #layoutSelect {
-	background: #272a2c;
+	background-color: #272a2c;
 	border: 2px solid #404246;
 	border-radius: 8px;
 	color: white;
@@ -88,12 +88,17 @@ button {
 	border: none;
 	outline: none;
 	border-radius: 4px;
-	background: #3f474d;
+	background-color: #3f474d;
 	color: white;
 	cursor: pointer;
 	transition: transform 0.2s ease-in-out;
 	font-size: 12px;
 	font-family: 'Red Hat Text', sans-serif;
+}
+
+button:hover,
+.button:hover {
+	background-color: #3b4248;
 }
 
 button:first-child {
@@ -110,7 +115,7 @@ button:active {
 	border: none;
 	outline: none;
 	border-radius: 4px;
-	background: #3f474d;
+	background-color: #3f474d;
 	color: white;
 	cursor: pointer;
 	transition: transform 0.2s ease-in-out;
@@ -151,7 +156,7 @@ input[type='color']::-webkit-color-swatch {
 }
 
 .customBoardGroup {
-	background: #3f474d;
+	background-color: #3f474d;
 	border-radius: 4px;
 	padding: 20px 20px 8px;
 	margin-bottom: 20px;
@@ -162,7 +167,7 @@ input[type='color']::-webkit-color-swatch {
 }
 
 #hideBoardColors {
-	background: #4e565c;
+	background-color: #4e565c;
 	margin-bottom: 10px;
 }
 
@@ -177,18 +182,18 @@ input[type='color']::-webkit-color-swatch {
 }
 
 .pcr-app .pcr-interaction input {
-	background: #2b343b !important;
+	background-color: #2b343b !important;
 	color: white !important;
 }
 
 .pcr-app .pcr-interaction .pcr-save,
 .pcr-app .pcr-interaction .pcr-type.active {
-	background: #9fc0a2 !important;
+	background-color: #9fc0a2 !important;
 	color: #2b343b !important;
 }
 
 .pcr-app {
-	background: #3f474d !important;
+	background-color: #3f474d !important;
 	font-family: 'Red Hat Text', sans-serif !important;
 	color: white !important;
 	border-radius: 8px !important;
