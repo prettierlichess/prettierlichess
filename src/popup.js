@@ -206,6 +206,7 @@ for (let i = 0; i < colorScheme.length; i++) {
 document.querySelector('#resetButton').addEventListener('click', () => {
 	chrome.storage.sync.clear();
 	tabScript(reloadIfLichess);
+	location.reload();
 });
 document.querySelector('#importButton').addEventListener('click', () => {
 	if (useBasicImportExport) {
