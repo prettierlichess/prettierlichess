@@ -106,7 +106,11 @@ body {
 	margin-bottom: 8px;
 }
 
-button {
+.button:first-child {
+	margin-right: 8px;
+}
+
+.button {
 	width: 100%;
 	height: 40px;
 	border: none;
@@ -117,39 +121,13 @@ button {
 	transition: transform 0.2s ease-in-out;
 	font-size: 12px;
 	font-family: 'Red Hat Text', sans-serif;
-}
-
-button:hover,
-.button:hover {
-	background-color: #3b4248;
-}
-
-button:first-child {
-	margin-right: 8px;
-}
-
-button:active {
-	transform: scale(0.95);
-}
-
-.button {
-	width: 100%;
-	height: 40px;
-	border: none;
-	outline: none;
-	border-radius: 4px;
-	background-color: #3f474d;
-	color: white;
-	cursor: pointer;
-	transition: transform 0.2s ease-in-out;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 12px;
 }
 
-.button:first-child {
-	margin-right: 8px;
+.button:hover {
+	background-color: #3b4248;
 }
 
 .button:active {
