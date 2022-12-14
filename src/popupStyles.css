@@ -134,12 +134,12 @@ body {
 	transform: scale(0.95);
 }
 
-#basicImportExportContainer {
+#basicImportContainer {
 	margin: 8px 0 30px;
 	display: none;
 }
 
-#basicImportExport {
+#basicImport {
 	box-sizing: border-box;
 	width: 100%;
 	background-color: #4b5b67;

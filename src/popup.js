@@ -1,5 +1,6 @@
 import Pickr from '@simonwep/pickr';
 
+const transparent = 'FFFFFF00';
 const colorScheme = [
 	'primaryColor',
 	'secondaryColor',
@@ -38,27 +39,29 @@ const colorDefaults = [
 	'#71828F',
 	'#c7c7c7',
 ];
-const styleTernary =
-	'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--';
-const basicImportExportContainer = document.getElementById(
-	'basicImportExportContainer'
-);
-const basicImportExportInput = document.getElementById('basicImportExport');
-const importExportActionButton = document.getElementById('importExportAction');
-const useBasicImportExport = navigator.userAgent.indexOf('Firefox') !== -1;
-const transparent = 'FFFFFF00';
-const boardDark = colorScheme[14];
-const boardDarkDefault = colorDefaults[14];
-const boardLight = colorScheme[15];
-const boardLightDefault = colorDefaults[15];
 
-//tab elements
+const basicImportContainer = document.querySelector('#basicImportContainer');
+const basicImportInput = document.querySelector('#basicImport');
+const importExportActionButton = document.querySelector('#importExportAction');
+
 const siteTab = document.querySelector('#siteTab');
 const boardTab = document.querySelector('#boardTab');
 const siteColorGroup = document.querySelector('#siteColorGroup');
 const boardColorGroup = document.querySelector('#boardColorGroup');
 const boardColorSelector = document.querySelectorAll('.boardColorSelector');
 const hideBoardColors = document.querySelector('#hideBoardColors');
+
+const boardDark = colorScheme[14];
+const boardDarkDefault = colorDefaults[14];
+const boardLight = colorScheme[15];
+const boardLightDefault = colorDefaults[15];
+
+// In Firefox, a different method is used for importing.
+// To do this, it is necessary to check which browser is being used
+const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1;
+
+const styleTernary =
+	'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--';
 
 const reloadIfLichess = `
 let lichessEx = new RegExp(".*lichess.org.*");
@@ -139,12 +142,12 @@ let importExportMode = null;
  * @returns
  */
 const setBasicImportExportVisibility = (isVisible) =>
-	(basicImportExportContainer.style.display = isVisible ? 'block' : 'none');
+	(basicImportContainer.style.display = isVisible ? 'block' : 'none');
 /**
  * Toggle visiblity of the basic import/export container
  */
 const toggleBasicImportExport = () => {
-	const isHidden = basicImportExportContainer.style.display === 'none';
+	const isHidden = basicImportContainer.style.display === 'none';
 	setBasicImportExportVisibility(!isHidden);
 };
 
@@ -157,9 +160,9 @@ const setImportExportMode = (mode) => {
 	importExportMode = mode;
 	importExportActionButton.textContent = label;
 	if (mode === IMPORT_EXPORT_MODE.EXPORT) {
-		basicImportExportInput.focus();
+		basicImportInput.focus();
 	} else if (mode === IMPORT_EXPORT_MODE.IMPORT) {
-		basicImportExportInput.value = '';
+		basicImportInput.value = '';
 	}
 };
 
@@ -209,7 +212,7 @@ document.querySelector('#resetButton').addEventListener('click', () => {
 	location.reload();
 });
 document.querySelector('#importButton').addEventListener('click', () => {
-	if (useBasicImportExport) {
+	if (isFirefox) {
 		setBasicImportExportVisibility(true);
 		setImportExportMode(IMPORT_EXPORT_MODE.IMPORT);
 	} else {
@@ -220,7 +223,7 @@ document.querySelector('#importButton').addEventListener('click', () => {
 
 importExportActionButton.addEventListener('click', () => {
 	if (importExportMode === 'import') {
-		importScheme(basicImportExportInput.value.trim());
+		importScheme(basicImportInput.value.trim());
 	} else {
 		setBasicImportExportVisibility(false);
 		setImportExportMode(null);
