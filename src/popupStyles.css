@@ -136,6 +136,7 @@ body {
 
 #basicImportExportContainer {
 	margin: 8px 0 30px;
+	display: none;
 }
 
 #basicImportExport {
@@ -149,6 +150,8 @@ body {
 	resize: none;
 	outline: none;
 }
+
+/* Picker Styles Overrides */
 
 input[type='color'] {
 	-webkit-appearance: none;
@@ -171,8 +174,6 @@ input[type='color']::-webkit-color-swatch {
 	border: none;
 	transform: scale(2);
 }
-
-/* Picker Styles Overrides */
 
 .pickr .pcr-button:after,
 .pickr .pcr-button:before {
