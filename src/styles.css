@@ -839,6 +839,12 @@ square.selected {
 	color: var(--defaultWhite) !important;
 }
 
+.site-title-nav__donate {
+	display: block !important;
+	position: relative !important;
+	margin-top: 0.25rem !important;
+}
+
 #topnav {
 	display: flex !important;
 	position: absolute !important;
