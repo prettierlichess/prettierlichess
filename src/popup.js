@@ -90,8 +90,28 @@ function focusBoardTab() {
 	siteColorGroup.classList.add('hideGroup');
 	boardColorGroup.classList.remove('hideGroup');
 }
+/**
+ * Set the layout options dropdown to the given value
+ * @param {string} option - Chosen option
+ */
+function setLayoutOption(option) {
+	document.querySelector('#layoutSelect').value = 'default';
+	const optionNodes = document.querySelector('#layoutSelect').children;
+
+	// Check if the chosen option exists. Set it, if it does.
+	for (let i = 0; i < optionNodes.length; i++) {
+		if (optionNodes[i].value === option) {
+			document.querySelector('#layoutSelect').value = option;
+		}
+	}
+}
+
 siteTab.addEventListener('click', focusSiteTab);
 boardTab.addEventListener('click', focusBoardTab);
+
+chrome.storage.sync.get('layoutPreference', (result) =>
+	setLayoutOption(result['layoutPreference'])
+);
 
 const styleTernary =
 	'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--';
@@ -101,28 +121,6 @@ let lichessEx = new RegExp(".*lichess.org.*");
 let apiEx = new RegExp(".*lichess.org/api.*");
 let currentURL = location.href;
 if (lichessEx.test(currentURL) && !apiEx.test(currentURL)){window.location.reload();}`;
-
-// Set layout selector
-chrome.storage.sync.get('layoutPreference', function (result) {
-	result = result['layoutPreference'];
-	console.debug('Result:', result);
-	let inOptions = false;
-	let optionNodes = document.querySelector('#layoutSelect').children;
-
-	for (let i = 0; i < optionNodes.length; i++) {
-		console.debug(optionNodes[i].value);
-		if (optionNodes[i].value === result) {
-			inOptions = true;
-		}
-	}
-
-	console.debug('In options:', inOptions);
-
-	if (!inOptions) {
-		result = 'default';
-	}
-	document.querySelector('#layoutSelect').value = result;
-});
 
 document.querySelector('#layoutSelect').addEventListener('change', function () {
 	syncSet('layoutPreference', document.querySelector('#layoutSelect').value);
