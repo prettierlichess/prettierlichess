@@ -43,6 +43,9 @@ const colorDefaults = [
 const basicImportContainer = document.querySelector('#basicImportContainer');
 const basicImportInput = document.querySelector('#basicImport');
 const importExportActionButton = document.querySelector('#importExportAction');
+const resetButton = document.querySelector('#resetButton');
+const importButton = document.querySelector('#importButton');
+const exportButton = document.querySelector('#exportButton');
 
 const siteTab = document.querySelector('#siteTab');
 const boardTab = document.querySelector('#boardTab');
@@ -60,6 +63,36 @@ const boardLightDefault = colorDefaults[15];
 // To do this, it is necessary to check which browser is being used
 const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1;
 
+// If the "custom board"-setting is toggled, the popup is reloaded.
+// To make sure that the correcttab is displayed again after reloading,
+// it is saved whether the custom board setting has just been changed.
+chrome.storage.sync.get('toggledCustomBoard', function (result) {
+	if (result['toggledCustomBoard']) {
+		focusBoardTab();
+		syncSet('toggledCustomBoard', false);
+	}
+});
+/**
+ * Switch to site tab
+ */
+function focusSiteTab() {
+	siteTab.classList.add('active');
+	boardTab.classList.remove('active');
+	siteColorGroup.classList.remove('hideGroup');
+	boardColorGroup.classList.add('hideGroup');
+}
+/**
+ * Switch to board tab
+ */
+function focusBoardTab() {
+	siteTab.classList.remove('active');
+	boardTab.classList.add('active');
+	siteColorGroup.classList.add('hideGroup');
+	boardColorGroup.classList.remove('hideGroup');
+}
+siteTab.addEventListener('click', focusSiteTab);
+boardTab.addEventListener('click', focusBoardTab);
+
 const styleTernary =
 	'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--';
 
@@ -68,14 +101,6 @@ let lichessEx = new RegExp(".*lichess.org.*");
 let apiEx = new RegExp(".*lichess.org/api.*");
 let currentURL = location.href;
 if (lichessEx.test(currentURL) && !apiEx.test(currentURL)){window.location.reload();}`;
-
-// refocus hack
-chrome.storage.sync.get('hideCustomBoard', function (result) {
-	if (result['hideCustomBoard']) {
-		focusBoardTab();
-		syncSet('hideCustomBoard', false);
-	}
-});
 
 // Set layout selector
 chrome.storage.sync.get('layoutPreference', function (result) {
@@ -102,16 +127,6 @@ chrome.storage.sync.get('layoutPreference', function (result) {
 document.querySelector('#layoutSelect').addEventListener('change', function () {
 	syncSet('layoutPreference', document.querySelector('#layoutSelect').value);
 	tabScript(reloadIfLichess);
-});
-
-// Tab Switch
-
-siteTab.addEventListener('click', () => {
-	focusSiteTab();
-});
-
-boardTab.addEventListener('click', () => {
-	focusBoardTab();
 });
 
 //Import File Selector
@@ -206,18 +221,19 @@ for (let i = 0; i < colorScheme.length; i++) {
 }
 
 // Add button events
-document.querySelector('#resetButton').addEventListener('click', () => {
+resetButton.addEventListener('click', () => {
 	chrome.storage.sync.clear();
 	tabScript(reloadIfLichess);
 	location.reload();
 });
-document.querySelector('#importButton').addEventListener('click', () => {
+importButton.addEventListener('click', () => {
 	if (isFirefox) {
 		setBasicImportExportVisibility(true);
 		setImportExportMode(IMPORT_EXPORT_MODE.IMPORT);
 	} else {
 		fileSelector.click();
 	}
+	// ???
 	return false;
 });
 
@@ -230,7 +246,7 @@ importExportActionButton.addEventListener('click', () => {
 	}
 });
 
-document.querySelector('#exportButton').addEventListener('click', () => {
+exportButton.addEventListener('click', () => {
 	chrome.storage.sync.get(null, function (result) {
 		let json = {};
 		let color;
@@ -287,7 +303,7 @@ function boardSwitch(toggle) {
 	tabScript(schemeCode);
 	syncSet(boardLight, color);
 
-	syncSet('hideCustomBoard', true);
+	syncSet('toggledCustomBoard', true);
 	window.location.reload();
 
 	syncSet('defaultBoardSwitch', toggle);
@@ -359,20 +375,6 @@ function syncSet(scheme, value) {
 	chrome.storage.sync.set({
 		[scheme]: value,
 	});
-}
-
-function focusSiteTab() {
-	siteTab.classList.add('active');
-	boardTab.classList.remove('active');
-	siteColorGroup.classList.remove('hideGroup');
-	boardColorGroup.classList.add('hideGroup');
-}
-
-function focusBoardTab() {
-	siteTab.classList.remove('active');
-	boardTab.classList.add('active');
-	siteColorGroup.classList.add('hideGroup');
-	boardColorGroup.classList.remove('hideGroup');
 }
 
 const hideBoardColorSelectors = () => {
