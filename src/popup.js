@@ -186,14 +186,6 @@ let importExportMode = null;
 const setBasicImportExportVisibility = (isVisible) =>
 	(basicImportContainer.style.display = isVisible ? 'block' : 'none');
 /**
- * Toggle visiblity of the basic import/export container
- */
-const toggleBasicImportExport = () => {
-	const isHidden = basicImportContainer.style.display === 'none';
-	setBasicImportExportVisibility(!isHidden);
-};
-
-/**
  * Set the import export color mode
  * @param {'import' | 'export'} mode
  */
