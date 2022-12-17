@@ -8,7 +8,7 @@
 
 	<body>
 		<div class="topGroup">
-			<img src="./logo.svg" alt="logo" class="logo" />
+			<img src="./logo.svg" alt="logo" id="logo" />
 			<select name="themes" id="layoutSelect">
 				<option value="default">Default layout</option>
 				<option value="lichess">Lichess layout</option>
@@ -18,7 +18,7 @@
 			<div class="tab active" id="siteTab">Site Colors</div>
 			<div class="tab" id="boardTab">Board Colors</div>
 		</div>
-		<form id="list">
+		<div id="colorPickerWrap">
 			<div id="siteColorGroup">
 				<div class="listItem">
 					<span>primary color</span>
@@ -102,16 +102,16 @@
 				<div class="button" id="importButton">Import Profile</div>
 				<div class="button" id="exportButton">Export Profile</div>
 			</div>
-			<button id="resetButton">Reset to Defaults</button>
+			<button class="button" id="resetButton">Reset to Defaults</button>
 
-			<div id="basicImportExportContainer" style="display: none">
+			<div id="basicImportContainer">
 				<textarea
 					placeholder="Paste JSON/Download Contents here!"
 					rows="8"
-					id="basicImportExport"></textarea>
-				<div class="button" id="importExportAction">SaveOrCopy</div>
+					id="basicImport"></textarea>
+				<div class="button" id="importAction">Save</div>
 			</div>
-		</form>
+		</div>
 		<script src="popup.js" type="module"></script>
 	</body>
 </html>
