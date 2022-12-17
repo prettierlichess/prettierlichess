@@ -54,10 +54,8 @@ const boardColorGroup = document.querySelector('#boardColorGroup');
 const boardColorSelector = document.querySelectorAll('.boardColorSelector');
 const hideBoardColors = document.querySelector('#hideBoardColors');
 
-const boardDark = colorScheme[14];
-const boardDarkDefault = colorDefaults[14];
-const boardLight = colorScheme[15];
-const boardLightDefault = colorDefaults[15];
+const boardDarkDefault = colorDefaults[15];
+const boardLightDefault = colorDefaults[16];
 
 // In Firefox, a different method is used for importing.
 // To do this, it is necessary to check which browser is being used
@@ -183,8 +181,8 @@ const importScheme = (data) => {
 	chrome.storage.sync.get(null, function (result) {
 		let json = JSON.parse(data);
 		if (result['defaultBoardSwitch']) {
-			json[boardLight] = transparent;
-			json[boardDark] = transparent;
+			json['boardLight'] = transparent;
+			json['boardDark'] = transparent;
 		}
 		console.log(json['primaryColor']);
 		let schemeCode, scheme, color;
@@ -255,8 +253,8 @@ exportButton.addEventListener('click', () => {
 			}
 		}
 		if (result['defaultBoardSwitch']) {
-			delete json[boardLight];
-			delete json[boardDark];
+			delete json['boardLight'];
+			delete json['boardDark'];
 		}
 		if (Object.keys(json).length > 0) {
 			json = new Blob([JSON.stringify(json, null, 2)], {
@@ -292,14 +290,14 @@ function boardSwitch(toggle) {
 	let schemeCode, color;
 
 	color = toggle ? transparent : boardDarkDefault;
-	schemeCode = styleTernary + boardDark + ': ' + color + ' !important;")';
+	schemeCode = styleTernary + 'boardDark' + ': ' + color + ' !important;")';
 	tabScript(schemeCode);
-	syncSet(boardDark, color);
+	syncSet('boardDark', color);
 
 	color = toggle ? transparent : boardLightDefault;
-	schemeCode = styleTernary + boardLight + ': ' + color + ' !important;")';
+	schemeCode = styleTernary + 'boardLight' + ': ' + color + ' !important;")';
 	tabScript(schemeCode);
-	syncSet(boardLight, color);
+	syncSet('boardLight', color);
 
 	syncSet('toggledCustomBoard', true);
 	window.location.reload();
