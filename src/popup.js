@@ -22,7 +22,7 @@ const defaultColorScheme = {
 };
 const basicImportContainer = document.querySelector('#basicImportContainer');
 const basicImportInput = document.querySelector('#basicImport');
-const importExportActionButton = document.querySelector('#importExportAction');
+const importActionButton = document.querySelector('#importAction');
 const resetButton = document.querySelector('#resetButton');
 const importButton = document.querySelector('#importButton');
 const exportButton = document.querySelector('#exportButton');
@@ -299,51 +299,24 @@ fileSelector.onchange = function () {
 	reader.readAsText(file);
 };
 
-const IMPORT_EXPORT_MODE = Object.freeze({
-	IMPORT: 'import',
-	EXPORT: 'export',
-});
-
-let importExportMode = null;
-
 /**
  * Set basic import/export container visibility
  * @param {boolean} isVisible
  * @returns
  */
-const setBasicImportExportVisibility = (isVisible) =>
-	(basicImportContainer.style.display = isVisible ? 'block' : 'none');
-/**
- * Set the import export color mode
- * @param {'import' | 'export'} mode
- */
-const setImportExportMode = (mode) => {
-	const label = mode === IMPORT_EXPORT_MODE.IMPORT ? 'Save' : 'Close';
-	importExportMode = mode;
-	importExportActionButton.textContent = label;
-	if (mode === IMPORT_EXPORT_MODE.EXPORT) {
-		basicImportInput.focus();
-	} else if (mode === IMPORT_EXPORT_MODE.IMPORT) {
-		basicImportInput.value = '';
-	}
-};
+function setBasicImportExportVisibility(isVisible) {
+	basicImportContainer.style.display = isVisible ? 'block' : 'none';
+}
 
 importButton.addEventListener('click', () => {
 	if (isFirefox) {
+		basicImportInput.value = '';
 		setBasicImportExportVisibility(true);
-		setImportExportMode(IMPORT_EXPORT_MODE.IMPORT);
 	} else {
 		fileSelector.click();
 	}
-	// ???
-	return false;
 });
 
-importExportActionButton.addEventListener('click', () => {
-	if (importExportMode === 'import') {
-		importScheme(basicImportInput.value.trim());
-	} else {
-		setBasicImportExportVisibility(false);
-		setImportExportMode(null);
-	}
+importActionButton.addEventListener('click', () => {
+	importScheme(basicImportInput.value.trim());
 });
