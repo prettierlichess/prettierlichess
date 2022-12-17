@@ -103,6 +103,14 @@ function setLayoutOption(option) {
 		}
 	}
 }
+/**
+ * Hide all selectors for board colors
+ */
+function hideBoardColorSelectors() {
+	boardColorSelector.forEach((colorSelector) => {
+		colorSelector.style.display = 'none';
+	});
+}
 
 siteTab.addEventListener('click', focusSiteTab);
 boardTab.addEventListener('click', focusBoardTab);
@@ -372,9 +380,3 @@ function syncSet(scheme, value) {
 		[scheme]: value,
 	});
 }
-
-const hideBoardColorSelectors = () => {
-	boardColorSelector.forEach((item) => {
-		item.style.display = 'none';
-	});
-};
