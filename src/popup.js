@@ -1,45 +1,25 @@
 import Pickr from '@simonwep/pickr';
 
 const transparent = '#FFFFFF00';
-const colorScheme = [
-	'primaryColor',
-	'secondaryColor',
-	'tertiaryColor',
-	'backgroundColor',
-	'surfaceColor',
-	'surfaceColorHover',
-	'defaultWhite',
-	'textColor',
-	'arrowPrimary',
-	'arrowSecondary',
-	'arrowTertiary',
-	'arrowAlternate',
-	'lastMove',
-	'preMove',
-	'moveIndicator',
-	'boardDark',
-	'boardLight',
-];
-const colorDefaults = [
-	'#9FC0A2',
-	'#f5c276',
-	'#d36d6d',
-	'#272a2c',
-	'#333538',
-	'#404246',
-	'#F2F5F3',
-	'#AAAAAA',
-	'#68C07B',
-	'#f3ae48',
-	'#d64d4d',
-	'#4b81e6',
-	'#99d69e',
-	'#1B7CC7',
-	'#99d69e',
-	'#71828F',
-	'#c7c7c7',
-];
-
+const defaultColorScheme = {
+	primaryColor: '#9FC0A2',
+	secondaryColor: '#f5c276',
+	tertiaryColor: '#d36d6d',
+	backgroundColor: '#272a2c',
+	surfaceColor: '#333538',
+	surfaceColorHover: '#404246',
+	defaultWhite: '#F2F5F3',
+	textColor: '#AAAAAA',
+	arrowPrimary: '#68C07B',
+	arrowSecondary: '#f3ae48',
+	arrowTertiary: '#d64d4d',
+	arrowAlternate: '#4b81e6',
+	lastMove: '#99d69e',
+	preMove: '#1B7CC7',
+	moveIndicator: '#99d69e',
+	boardDark: '#71828F',
+	boardLight: '#c7c7c7',
+};
 const basicImportContainer = document.querySelector('#basicImportContainer');
 const basicImportInput = document.querySelector('#basicImport');
 const importExportActionButton = document.querySelector('#importExportAction');
@@ -53,9 +33,6 @@ const siteColorGroup = document.querySelector('#siteColorGroup');
 const boardColorGroup = document.querySelector('#boardColorGroup');
 const boardColorSelector = document.querySelectorAll('.boardColorSelector');
 const hideBoardColors = document.querySelector('#hideBoardColors');
-
-const boardDarkDefault = colorDefaults[15];
-const boardLightDefault = colorDefaults[16];
 
 // In Firefox, a different method is used for importing.
 // To do this, it is necessary to check which browser is being used
@@ -137,7 +114,7 @@ function createSinglePickr(replaceElement, color) {
 /**
  * Save a variable in synced storage
  * @param {string} key
- * @param {string} value
+ * @param {string | boolean} value
  */
 function syncSet(key, value) {
 	chrome.storage.sync.set({[key]: value});
@@ -251,10 +228,9 @@ const importScheme = (data) => {
 			json['boardDark'] = transparent;
 		}
 		console.log(json['primaryColor']);
-		let scheme, color;
-		for (let i = 0; i < colorScheme.length; i++) {
-			scheme = colorScheme[i];
-			color = json[scheme] ? json[scheme] : colorDefaults[i];
+		let color;
+		for (let scheme in defaultColorScheme) {
+			color = json[scheme] ? json[scheme] : defaultColorScheme[scheme];
 			if (color) {
 				setColor(scheme, color);
 			}
@@ -264,8 +240,8 @@ const importScheme = (data) => {
 };
 
 // Generate Color Pickers
-for (let i = 0; i < colorScheme.length; i++) {
-	pickrCreate(colorScheme[i], colorDefaults[i]);
+for (let scheme in defaultColorScheme) {
+	pickrCreate(scheme, defaultColorScheme[scheme]);
 }
 
 // Add button events
@@ -298,10 +274,10 @@ exportButton.addEventListener('click', () => {
 	chrome.storage.sync.get(null, function (result) {
 		let json = {};
 		let color;
-		for (let i = 0; i < colorScheme.length; i++) {
-			color = result[colorScheme[i]];
+		for (let scheme in defaultColorScheme) {
+			color = result[scheme];
 			if (color) {
-				json[colorScheme[i]] = color;
+				json[scheme] = color;
 			}
 		}
 		if (result['defaultBoardSwitch']) {
@@ -339,13 +315,14 @@ chrome.storage.sync.get('defaultBoardSwitch', function (result) {
 
 //Functions
 function boardSwitch(toggle) {
-	let color;
-
-	color = toggle ? transparent : boardDarkDefault;
-	setColor(`boardDark`, color);
-
-	color = toggle ? transparent : boardLightDefault;
-	setColor(`boardLight`, color);
+	setColor(
+		`boardDark`,
+		toggle ? transparent : defaultColorScheme['boardDark']
+	);
+	setColor(
+		`boardLight`,
+		toggle ? transparent : defaultColorScheme['boardLight']
+	);
 
 	syncSet('toggledCustomBoard', true);
 	window.location.reload();
