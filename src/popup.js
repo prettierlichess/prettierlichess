@@ -160,6 +160,12 @@ function tabScript(code) {
 	});
 }
 /**
+ * Reload each tab for which the extension has permission
+ */
+function reloadAllTabs() {
+	tabScript('window.location.reload();');
+}
+/**
  * Changes a color by changing it in the tab and synced storage
  * @param {string} scheme - The name of the color (like primaryColor)
  * @param {string} color - Color in HEX
@@ -188,11 +194,9 @@ chrome.storage.sync.get('layoutPreference', (result) =>
 	setLayoutOption(result['layoutPreference'])
 );
 
-const reloadIfLichess = `window.location.reload();`;
-
 document.querySelector('#layoutSelect').addEventListener('change', function () {
 	syncSet('layoutPreference', document.querySelector('#layoutSelect').value);
-	tabScript(reloadIfLichess);
+	reloadAllTabs();
 });
 
 //Import File Selector
@@ -267,7 +271,7 @@ for (let i = 0; i < colorScheme.length; i++) {
 // Add button events
 resetButton.addEventListener('click', () => {
 	chrome.storage.sync.clear();
-	tabScript(reloadIfLichess);
+	reloadAllTabs();
 	location.reload();
 });
 importButton.addEventListener('click', () => {
@@ -347,7 +351,7 @@ function boardSwitch(toggle) {
 	window.location.reload();
 
 	syncSet('defaultBoardSwitch', toggle);
-	tabScript(reloadIfLichess);
+	reloadAllTabs();
 }
 
 function pickrCreate(scheme, color) {
