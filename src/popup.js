@@ -178,6 +178,30 @@ function pickrCreate(scheme) {
 		});
 	});
 }
+/**
+ * Imports a given JSON-scheme
+ * @param {string} data - The imported JSON-scheme as a string
+ */
+function importScheme(data) {
+	chrome.storage.sync.get(null, function (result) {
+		chrome.storage.sync.clear();
+		let json = JSON.parse(data);
+		if (result['defaultBoardSwitch']) {
+			json['boardLight'] = transparent;
+			json['boardDark'] = transparent;
+			// If the defaultBoardSwitch is activated it needs to be written
+			// in the synced memory again after the sync.clear()
+			syncSet('defaultBoardSwitch', true);
+		}
+		for (let scheme in defaultColorScheme) {
+			if (json[scheme]) {
+				setColor(scheme, json[scheme]);
+			}
+		}
+	});
+	location.reload();
+	reloadAllTabs();
+}
 
 siteTab.addEventListener('click', focusSiteTab);
 boardTab.addEventListener('click', focusBoardTab);
@@ -194,6 +218,12 @@ document.querySelector('#layoutSelect').addEventListener('change', function () {
 for (let scheme in defaultColorScheme) {
 	pickrCreate(scheme);
 }
+
+resetButton.addEventListener('click', () => {
+	chrome.storage.sync.clear();
+	reloadAllTabs();
+	location.reload();
+});
 
 //Import File Selector
 var fileSelector = document.createElement('input');
@@ -239,33 +269,6 @@ const setImportExportMode = (mode) => {
 	}
 };
 
-const importScheme = (data) => {
-	chrome.storage.sync.clear();
-	chrome.storage.sync.get(null, function (result) {
-		let json = JSON.parse(data);
-		if (result['defaultBoardSwitch']) {
-			json['boardLight'] = transparent;
-			json['boardDark'] = transparent;
-		}
-		console.log(json['primaryColor']);
-		let color;
-		for (let scheme in defaultColorScheme) {
-			color = json[scheme];
-			if (color) {
-				setColor(scheme, color);
-			}
-		}
-	});
-	location.reload();
-	reloadAllTabs();
-};
-
-// Add button events
-resetButton.addEventListener('click', () => {
-	chrome.storage.sync.clear();
-	reloadAllTabs();
-	location.reload();
-});
 importButton.addEventListener('click', () => {
 	if (isFirefox) {
 		setBasicImportExportVisibility(true);
