@@ -251,6 +251,13 @@ function boardSwitch(noCustomBoard) {
 	syncSet('defaultBoardSwitch', noCustomBoard);
 	reloadAllTabs();
 }
+/**
+ * Set basic import container visibility
+ * @param {boolean} isVisible
+ */
+function setBasicImportExportVisibility(isVisible) {
+	basicImportContainer.style.display = isVisible ? 'block' : 'none';
+}
 
 siteTab.addEventListener('click', focusSiteTab);
 boardTab.addEventListener('click', focusBoardTab);
@@ -284,29 +291,16 @@ chrome.storage.sync.get('defaultBoardSwitch', function (result) {
 	});
 });
 
-//Import File Selector
-var fileSelector = document.createElement('input');
+let fileSelector = document.createElement('input');
 fileSelector.setAttribute('type', 'file');
 fileSelector.onchange = function () {
-	console.log(fileSelector.value);
-	let file = fileSelector.files[0];
 	let reader = new FileReader();
 
 	reader.onload = function (e) {
-		console.log(e.target.result);
 		importScheme(e.target.result);
 	};
-	reader.readAsText(file);
+	reader.readAsText(fileSelector.files[0]);
 };
-
-/**
- * Set basic import/export container visibility
- * @param {boolean} isVisible
- * @returns
- */
-function setBasicImportExportVisibility(isVisible) {
-	basicImportContainer.style.display = isVisible ? 'block' : 'none';
-}
 
 importButton.addEventListener('click', () => {
 	if (isFirefox) {
