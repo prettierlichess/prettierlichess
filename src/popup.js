@@ -163,6 +163,21 @@ function setColor(scheme, color) {
 	// Save color in synced storage
 	syncSet(scheme, color);
 }
+/**
+ * Creates a Pickr with correct value and change event
+ * @param {string} scheme - The scheme of the pickr
+ */
+function pickrCreate(scheme) {
+	chrome.storage.sync.get(scheme, function (result) {
+		let pickr = createSinglePickr(
+			document.querySelector(`#${scheme}`),
+			result[scheme] ? result[scheme] : defaultColorScheme[scheme]
+		);
+		pickr.on('save', (color) => {
+			setColor(scheme, color.toHEXA().toString());
+		});
+	});
+}
 
 siteTab.addEventListener('click', focusSiteTab);
 boardTab.addEventListener('click', focusBoardTab);
@@ -175,6 +190,10 @@ document.querySelector('#layoutSelect').addEventListener('change', function () {
 	syncSet('layoutPreference', document.querySelector('#layoutSelect').value);
 	reloadAllTabs();
 });
+
+for (let scheme in defaultColorScheme) {
+	pickrCreate(scheme);
+}
 
 //Import File Selector
 var fileSelector = document.createElement('input');
@@ -240,11 +259,6 @@ const importScheme = (data) => {
 	location.reload();
 	reloadAllTabs();
 };
-
-// Generate Color Pickers
-for (let scheme in defaultColorScheme) {
-	pickrCreate(scheme, defaultColorScheme[scheme]);
-}
 
 // Add button events
 resetButton.addEventListener('click', () => {
@@ -331,18 +345,4 @@ function boardSwitch(toggle) {
 
 	syncSet('defaultBoardSwitch', toggle);
 	reloadAllTabs();
-}
-
-function pickrCreate(scheme, color) {
-	chrome.storage.sync.get(scheme, function (result) {
-		color = result[scheme] ? result[scheme] : color;
-
-		let pickr = createSinglePickr(
-			document.querySelector(`#${scheme}`),
-			color
-		);
-		pickr.on('save', (color) => {
-			setColor(scheme, color.toHEXA().toString());
-		});
-	});
 }
