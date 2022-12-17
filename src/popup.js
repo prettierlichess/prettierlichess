@@ -204,6 +204,35 @@ function importScheme(data) {
 	reloadAllTabs();
 }
 /**
+ * Exports the current scheme as JSON file
+ */
+function exportScheme() {
+	chrome.storage.sync.get(null, function (result) {
+		let json = {};
+		for (let scheme in defaultColorScheme) {
+			if (result[scheme]) {
+				json[scheme] = result[scheme];
+			}
+		}
+		if (result['defaultBoardSwitch']) {
+			delete json['boardLight'];
+			delete json['boardDark'];
+		}
+		if (Object.keys(json).length > 0) {
+			json = new Blob([JSON.stringify(json, null, 2)], {
+				type: 'application/json',
+			});
+			let url = URL.createObjectURL(json);
+			chrome.downloads.download({
+				url: url, // The object URL can be used as download URL
+				filename: 'prettierlichess_config.json',
+			});
+		} else {
+			alert('No custom colors have been set.');
+		}
+	});
+}
+/**
  * Toggle for default board
  * @param {boolean} noCustomBoard - If true: The default lichess board is used
  */
@@ -225,6 +254,7 @@ function boardSwitch(noCustomBoard) {
 
 siteTab.addEventListener('click', focusSiteTab);
 boardTab.addEventListener('click', focusBoardTab);
+exportButton.addEventListener('click', exportScheme);
 
 chrome.storage.sync.get('layoutPreference', (result) =>
 	setLayoutOption(result['layoutPreference'])
@@ -316,33 +346,4 @@ importExportActionButton.addEventListener('click', () => {
 		setBasicImportExportVisibility(false);
 		setImportExportMode(null);
 	}
-});
-
-exportButton.addEventListener('click', () => {
-	chrome.storage.sync.get(null, function (result) {
-		let json = {};
-		let color;
-		for (let scheme in defaultColorScheme) {
-			color = result[scheme];
-			if (color) {
-				json[scheme] = color;
-			}
-		}
-		if (result['defaultBoardSwitch']) {
-			delete json['boardLight'];
-			delete json['boardDark'];
-		}
-		if (Object.keys(json).length > 0) {
-			json = new Blob([JSON.stringify(json, null, 2)], {
-				type: 'application/json',
-			});
-			let url = URL.createObjectURL(json);
-			chrome.downloads.download({
-				url: url, // The object URL can be used as download URL
-				filename: 'prettierlichess_config.json',
-			});
-		} else {
-			alert('No custom colors have been set.');
-		}
-	});
 });
