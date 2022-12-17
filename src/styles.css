@@ -843,6 +843,7 @@ square.selected {
 	display: block !important;
 	position: relative !important;
 	margin-top: 0.25rem !important;
+	color: var(--secondaryColor) !important;
 }
 
 #topnav {
