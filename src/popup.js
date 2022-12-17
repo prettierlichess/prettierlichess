@@ -1,6 +1,6 @@
 import Pickr from '@simonwep/pickr';
 
-const transparent = 'FFFFFF00';
+const transparent = '#FFFFFF00';
 const colorScheme = [
 	'primaryColor',
 	'secondaryColor',
@@ -151,6 +151,27 @@ function tabScript(code) {
 		}
 	});
 }
+/**
+ * Changes a color by changing it in the tab and synced storage
+ * @param {string} scheme - The name of the color (like primaryColor)
+ * @param {string} color - Color in HEX
+ */
+function setColor(scheme, color) {
+	let r = parseInt(color.substring(1, 3), 16);
+	let g = parseInt(color.substring(3, 5), 16);
+	let b = parseInt(color.substring(5, 7), 16);
+
+	// Creating a script to add the two color variables to the style
+	const baseScript =
+		'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "")';
+	const colorScript = `+ "--${scheme}: ${color} !important;`;
+	const RGBcolorScript = `--${scheme}RGB: ${r}, ${g}, ${b} !important;")`;
+
+	tabScript(baseScript + colorScript + RGBcolorScript);
+
+	// Save color in synced storage
+	syncSet(scheme, color);
+}
 
 siteTab.addEventListener('click', focusSiteTab);
 boardTab.addEventListener('click', focusBoardTab);
@@ -158,9 +179,6 @@ boardTab.addEventListener('click', focusBoardTab);
 chrome.storage.sync.get('layoutPreference', (result) =>
 	setLayoutOption(result['layoutPreference'])
 );
-
-const styleTernary =
-	'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--';
 
 const reloadIfLichess = `window.location.reload();`;
 
@@ -221,26 +239,12 @@ const importScheme = (data) => {
 			json['boardDark'] = transparent;
 		}
 		console.log(json['primaryColor']);
-		let schemeCode, scheme, color;
+		let scheme, color;
 		for (let i = 0; i < colorScheme.length; i++) {
 			scheme = colorScheme[i];
 			color = json[scheme] ? json[scheme] : colorDefaults[i];
 			if (color) {
-				let r = parseInt(color.substring(1, 3), 16);
-				let g = parseInt(color.substring(3, 5), 16);
-				let b = parseInt(color.substring(5, 7), 16);
-
-				schemeCode =
-					styleTernary + scheme + ': ' + color + ' !important;"';
-				schemeCode +=
-					' + "--' +
-					scheme +
-					'RGB: ' +
-					`${r}, ${g}, ${b}` +
-					' !important;")';
-
-				tabScript(schemeCode);
-				syncSet(scheme, color);
+				setColor(scheme, color);
 			}
 		}
 	});
@@ -323,17 +327,13 @@ chrome.storage.sync.get('defaultBoardSwitch', function (result) {
 
 //Functions
 function boardSwitch(toggle) {
-	let schemeCode, color;
+	let color;
 
 	color = toggle ? transparent : boardDarkDefault;
-	schemeCode = styleTernary + 'boardDark' + ': ' + color + ' !important;")';
-	tabScript(schemeCode);
-	syncSet('boardDark', color);
+	setColor(`boardDark`, color);
 
 	color = toggle ? transparent : boardLightDefault;
-	schemeCode = styleTernary + 'boardLight' + ': ' + color + ' !important;")';
-	tabScript(schemeCode);
-	syncSet('boardLight', color);
+	setColor(`boardLight`, color);
 
 	syncSet('toggledCustomBoard', true);
 	window.location.reload();
@@ -350,27 +350,8 @@ function pickrCreate(scheme, color) {
 			document.querySelector(`#${scheme}`),
 			color
 		);
-
 		pickr.on('save', (color) => {
-			let rgbValues = color.toRGBA();
-			let r = Math.floor(rgbValues[0]);
-			let g = Math.floor(rgbValues[1]);
-			let b = Math.floor(rgbValues[2]);
-
-			color = color.toHEXA().toString();
-			console.log('setting color to: ' + color);
-			let schemeCode =
-				styleTernary + scheme + ': ' + color + ' !important;"';
-			schemeCode +=
-				' + "--' +
-				scheme +
-				'RGB: ' +
-				`${r}, ${g}, ${b}` +
-				' !important;")';
-
-			tabScript(schemeCode);
-
-			syncSet(scheme, color);
+			setColor(scheme, color.toHEXA().toString());
 		});
 	});
 }
