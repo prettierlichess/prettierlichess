@@ -62,7 +62,7 @@ const boardLightDefault = colorDefaults[16];
 const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1;
 
 // If the "custom board"-setting is toggled, the popup is reloaded.
-// To make sure that the correcttab is displayed again after reloading,
+// To make sure that the correct tab is displayed again after reloading,
 // it is saved whether the custom board setting has just been changed.
 chrome.storage.sync.get('toggledCustomBoard', function (result) {
 	if (result['toggledCustomBoard']) {
@@ -109,6 +109,29 @@ function setLayoutOption(option) {
 function hideBoardColorSelectors() {
 	boardColorSelector.forEach((colorSelector) => {
 		colorSelector.style.display = 'none';
+	});
+}
+/**
+ * Create a new Pickr element
+ * @param {string} replaceElement - The element to replace
+ * @param {string} color - The default color
+ * @returns {Pickr} - The created Pickr
+ */
+function createSinglePickr(replaceElement, color) {
+	return new Pickr({
+		el: replaceElement,
+		default: color,
+		theme: 'nano',
+		components: {
+			preview: true,
+			opacity: true,
+			hue: true,
+			interaction: {
+				hex: true,
+				input: true,
+				save: true,
+			},
+		},
 	});
 }
 
@@ -318,24 +341,10 @@ function pickrCreate(scheme, color) {
 	chrome.storage.sync.get(scheme, function (result) {
 		color = result[scheme] ? result[scheme] : color;
 
-		let schemeElement = document.querySelector(`#${scheme}`);
-		let pickr = new Pickr({
-			el: schemeElement,
-			default: color,
-			theme: 'nano',
-
-			components: {
-				preview: true,
-				opacity: true,
-				hue: true,
-
-				interaction: {
-					hex: true,
-					input: true,
-					save: true,
-				},
-			},
-		});
+		let pickr = createSinglePickr(
+			document.querySelector(`#${scheme}`),
+			color
+		);
 
 		pickr.on('save', (color) => {
 			let rgbValues = color.toRGBA();
