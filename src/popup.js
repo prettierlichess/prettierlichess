@@ -282,6 +282,8 @@ resetButton.addEventListener('click', () => {
 	location.reload();
 });
 
+// The defaultBoardSwitch attribute is true if the default
+// lichess boards should be used
 chrome.storage.sync.get('defaultBoardSwitch', function (result) {
 	if (result['defaultBoardSwitch']) {
 		hideBoardColorSelectors();
@@ -303,6 +305,9 @@ fileSelector.onchange = function () {
 };
 
 importButton.addEventListener('click', () => {
+	// The input system works differently for firefox due
+	// to this bug: https://bugzilla.mozilla.org/show_bug.cgi?id=1292701
+	// Do not try to change this before the bug is fixed
 	if (isFirefox) {
 		basicImportInput.value = '';
 		setBasicImportExportVisibility(true);
