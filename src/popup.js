@@ -134,6 +134,23 @@ function createSinglePickr(replaceElement, color) {
 		},
 	});
 }
+/**
+ * Execute code for every open tab
+ * @param {string} code - The code to execute
+ */
+function tabScript(code) {
+	chrome.tabs.query({}, function (tabs) {
+		for (let i = 0; i < tabs.length; i++) {
+			// All tabs that the extension has no permission to
+			// have undefined as url
+			if (tabs[i].url !== undefined) {
+				chrome.tabs.executeScript(tabs[i].id, {
+					code: code,
+				});
+			}
+		}
+	});
+}
 
 siteTab.addEventListener('click', focusSiteTab);
 boardTab.addEventListener('click', focusBoardTab);
@@ -145,11 +162,7 @@ chrome.storage.sync.get('layoutPreference', (result) =>
 const styleTernary =
 	'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "") + "--';
 
-const reloadIfLichess = `
-let lichessEx = new RegExp(".*lichess.org.*");
-let apiEx = new RegExp(".*lichess.org/api.*");
-let currentURL = location.href;
-if (lichessEx.test(currentURL) && !apiEx.test(currentURL)){window.location.reload();}`;
+const reloadIfLichess = `window.location.reload();`;
 
 document.querySelector('#layoutSelect').addEventListener('change', function () {
 	syncSet('layoutPreference', document.querySelector('#layoutSelect').value);
@@ -360,20 +373,6 @@ function pickrCreate(scheme, color) {
 			syncSet(scheme, color);
 		});
 	});
-}
-
-function tabScript(code) {
-	chrome.tabs.query(
-		{
-			active: true,
-			currentWindow: true,
-		},
-		function (tabs) {
-			chrome.tabs.executeScript(tabs[0].id, {
-				code: code,
-			});
-		}
-	);
 }
 
 function syncSet(scheme, value) {
