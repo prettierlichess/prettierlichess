@@ -84,6 +84,7 @@ function setLayoutOption(option) {
  * Hide all selectors for board colors
  */
 function hideBoardColorSelectors() {
+	hideBoardColors.textContent = 'Use Custom Board Colors';
 	boardColorSelector.forEach((colorSelector) => {
 		colorSelector.style.display = 'none';
 	});
@@ -202,6 +203,25 @@ function importScheme(data) {
 	location.reload();
 	reloadAllTabs();
 }
+/**
+ * Toggle for default board
+ * @param {boolean} noCustomBoard - If true: The default lichess board is used
+ */
+function boardSwitch(noCustomBoard) {
+	setColor(
+		`boardDark`,
+		noCustomBoard ? transparent : defaultColorScheme['boardDark']
+	);
+	setColor(
+		`boardLight`,
+		noCustomBoard ? transparent : defaultColorScheme['boardLight']
+	);
+	syncSet('toggledCustomBoard', true);
+	window.location.reload();
+
+	syncSet('defaultBoardSwitch', noCustomBoard);
+	reloadAllTabs();
+}
 
 siteTab.addEventListener('click', focusSiteTab);
 boardTab.addEventListener('click', focusBoardTab);
@@ -223,6 +243,15 @@ resetButton.addEventListener('click', () => {
 	chrome.storage.sync.clear();
 	reloadAllTabs();
 	location.reload();
+});
+
+chrome.storage.sync.get('defaultBoardSwitch', function (result) {
+	if (result['defaultBoardSwitch']) {
+		hideBoardColorSelectors();
+	}
+	hideBoardColors.addEventListener('click', () => {
+		boardSwitch(!result['defaultBoardSwitch']);
+	});
 });
 
 //Import File Selector
@@ -317,35 +346,3 @@ exportButton.addEventListener('click', () => {
 		}
 	});
 });
-
-chrome.storage.sync.get('defaultBoardSwitch', function (result) {
-	if (result['defaultBoardSwitch']) {
-		hideBoardColors.textContent = 'Use Custom Board Colors';
-		hideBoardColorSelectors();
-		hideBoardColors.addEventListener('click', () => {
-			boardSwitch(false);
-		});
-	} else {
-		hideBoardColors.addEventListener('click', () => {
-			boardSwitch(true);
-		});
-	}
-});
-
-//Functions
-function boardSwitch(toggle) {
-	setColor(
-		`boardDark`,
-		toggle ? transparent : defaultColorScheme['boardDark']
-	);
-	setColor(
-		`boardLight`,
-		toggle ? transparent : defaultColorScheme['boardLight']
-	);
-
-	syncSet('toggledCustomBoard', true);
-	window.location.reload();
-
-	syncSet('defaultBoardSwitch', toggle);
-	reloadAllTabs();
-}
