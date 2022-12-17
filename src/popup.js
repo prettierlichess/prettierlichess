@@ -221,6 +221,7 @@ const setImportExportMode = (mode) => {
 };
 
 const importScheme = (data) => {
+	chrome.storage.sync.clear();
 	chrome.storage.sync.get(null, function (result) {
 		let json = JSON.parse(data);
 		if (result['defaultBoardSwitch']) {
@@ -230,13 +231,14 @@ const importScheme = (data) => {
 		console.log(json['primaryColor']);
 		let color;
 		for (let scheme in defaultColorScheme) {
-			color = json[scheme] ? json[scheme] : defaultColorScheme[scheme];
+			color = json[scheme];
 			if (color) {
 				setColor(scheme, color);
 			}
 		}
 	});
 	location.reload();
+	reloadAllTabs();
 };
 
 // Generate Color Pickers
