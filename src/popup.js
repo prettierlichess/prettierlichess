@@ -135,6 +135,14 @@ function createSinglePickr(replaceElement, color) {
 	});
 }
 /**
+ * Save a variable in synced storage
+ * @param {string} key
+ * @param {string} value
+ */
+function syncSet(key, value) {
+	chrome.storage.sync.set({[key]: value});
+}
+/**
  * Execute code for every open tab
  * @param {string} code - The code to execute
  */
@@ -353,11 +361,5 @@ function pickrCreate(scheme, color) {
 		pickr.on('save', (color) => {
 			setColor(scheme, color.toHEXA().toString());
 		});
-	});
-}
-
-function syncSet(scheme, value) {
-	chrome.storage.sync.set({
-		[scheme]: value,
 	});
 }
