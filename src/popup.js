@@ -186,7 +186,13 @@ function pickrCreate(scheme) {
 function importScheme(data) {
 	chrome.storage.sync.get(null, function (result) {
 		chrome.storage.sync.clear();
-		let json = JSON.parse(data);
+		let json;
+		try {
+			json = JSON.parse(data);
+		} catch {
+			json = {};
+			console.warn('Error while reading the specified JSON input data');
+		}
 		if (result['defaultBoardSwitch']) {
 			json['boardLight'] = transparent;
 			json['boardDark'] = transparent;
