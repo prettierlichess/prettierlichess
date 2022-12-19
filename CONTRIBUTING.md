@@ -108,6 +108,17 @@ npm run watch
 After you have made your changes, check that the feature you have implemented works by navigating to the changed lichess page.
 If possible, feel free to test for both Firefox and Chrome. If this is not possible, please write in your PR on which platform you tested.
 
+## Testing the popup
+
+It is possible to run the popup on a local http server as a stand-alone website, making it easier to edit and test. The functionality for this is implemented in the `/testing` folder. There you will find a script that can start the http server. This requires a built version of the extension in the `/dist` folder. Then the script can be started with
+
+```
+npm run popup:run --port=PORT
+```
+
+on the port `PORT` (default 8000).
+There is also a mock script that is passed to the server to mock all Chrome API calls and sustain the functionality of the popup.
+
 ## Linting
 
 ### General
