@@ -1760,11 +1760,24 @@ a.button.button-metal:hover {
 	padding: 7px !important;
 }
 
-.game-setup group.radio input:checked + label {
+.game-setup group.radio input:checked + label,
+.trainer .side group.radio input:checked + label {
 	background: var(--primaryColor) !important;
 	color: var(--backgroundColor) !important;
 	text-shadow: none !important;
 	box-shadow: none !important;
+}
+
+/* Coordinate trainer */
+.trainer .side group.radio label {
+	background: var(--surfaceColor) !important;
+	color: var(--textColor) !important;
+	text-shadow: none !important;
+	box-shadow: none !important;
+}
+
+.trainer .side group.radio label:hover {
+	background: var(--surfaceColorHover) !important;
 }
 
 .game-setup .range input,
