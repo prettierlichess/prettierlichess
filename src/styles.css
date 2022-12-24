@@ -1203,10 +1203,6 @@ signal > i {
 
 /* Homepage */
 
-.lobby--no-simuls .lobby__forum {
-	grid-area: forum !important;
-}
-
 #main-wrap {
 	--main-max-width: 1500px !important;
 	justify-items: center !important;
@@ -4638,7 +4634,7 @@ body .glowing {
 			'table table table'
 			'support blog    blog '
 			'simuls   simuls  simuls'
-			'forum forum about' !important;
+			'. about about' !important;
 	}
 
 	.lobby__app,
