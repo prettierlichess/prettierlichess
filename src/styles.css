@@ -2557,17 +2557,21 @@ a.context-streamer:hover {
 	--meta-height: minmax(auto, 300px) !important;
 }
 
-.analyse:not(main.has-relay-tour) {
-	grid-template-columns:
-		minmax(230px, 20vw) 2vmin minmax(
-			calc(70vmin * var(--board-scale)),
-			calc(
-				100vh * var(--board-scale) -
-					calc(var(--site-header-height) + var(--site-header-margin)) -
-					3rem
+@media (min-width: 1261px) {
+	.analyse:not(main.has-relay-tour) {
+		grid-template-columns:
+			minmax(230px, 20vw) 2vmin minmax(
+				calc(70vmin * var(--board-scale)),
+				calc(
+					100vh * var(--board-scale) -
+						calc(
+							var(--site-header-height) +
+								var(--site-header-margin)
+						) - 3rem
+				)
 			)
-		)
-		80px minmax(240px, 400px) !important;
+			80px minmax(240px, 400px) !important;
+	}
 }
 
 .analyse.has-players {
