@@ -5166,4 +5166,8 @@ body .glowing {
 	#nb_connected_players strong {
 		font-size: 2.5rem !important;
 	}
+
+	.site-title-nav__donate {
+		visibility: hidden !important;
+	}
 }
