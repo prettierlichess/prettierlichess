@@ -17,7 +17,7 @@
 	</a>
 </p>
 
-[Lichess](https://lichess.org/) is an amazing platform that has more than just the ability to play chess, and all for free. Unfortunately I felt like it didn't show this well with it's current design, nor did it show that it was a site that resides in 2022. Now with Prettier Lichess, Lichess becomes more readable, more discoverable, and prettier (plus customizable colors)!
+[Lichess](https://lichess.org/) is an amazing platform that has more than just the ability to play chess, and all for free. Unfortunately I felt like it didn't show this well with it's current design, nor did it show that it was a site that resides in 2023. Now with Prettier Lichess, Lichess becomes more readable, more discoverable, and prettier (plus customizable colors)!
 
 ## Code and license
 
