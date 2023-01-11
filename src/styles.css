@@ -526,12 +526,16 @@ cg-container cg-board::after {
 	top: 0 !important;
 	width: 100% !important;
 	height: 100% !important;
-	z-index: 1 !important;
+	z-index: 0 !important;
 	background: var(--boardDark) !important;
 	-webkit-mask-image: url('chrome-extension://__MSG_@@extension_id__/masks/board.svg') !important;
 	-webkit-mask-size: 100% !important;
 	mask-image: url('masks/board.svg') !important;
 	mask-size: 100% !important;
+}
+
+cg-container cg-board square {
+	z-index: 1 !important;
 }
 
 .manipulable cg-board {
