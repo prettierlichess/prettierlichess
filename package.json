@@ -6,8 +6,8 @@
     "build": "npx webpack",
     "watch": "npx webpack -w",
     "popup:run": "cd dist && node ../testing/popupServer.js",
-    "format:fix": "npx prettier --write --ignore-unknown *.{css,js,ts,html,md} src/**/**.{css,js,ts,html,md} testing/**/**.{css,js,ts,html,md}",
-    "format:check": "npx prettier --check --ignore-unknown *.{css,js,ts,html,md} src/**/**.{css,js,ts,html,md} testing/**/**.{css,js,ts,html,md}",
+    "format:fix": "npx prettier --write --ignore-unknown *.{css,js,ts,html,md} src/**/**.{css,js,ts,html,md,json} testing/**/**.{css,js,ts,html,md}",
+    "format:check": "npx prettier --check --ignore-unknown *.{css,js,ts,html,md} src/**/**.{css,js,ts,html,md,json} testing/**/**.{css,js,ts,html,md}",
     "prepare": "husky install"
   },
   "repository": {
