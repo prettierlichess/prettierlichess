@@ -1,0 +1,41 @@
+name: Create build for release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - name: Set up npm cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Setup Node.js and npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - run: npm install
+
+      - name: Build the release version
+        run: |
+          npm run build
+          cd dist
+          zip -r build.zip .
+          cd ..
+
+      - name: Upload build to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./dist/build.zip
+          tag: ${{ github.ref }}
+          overwrite: true
