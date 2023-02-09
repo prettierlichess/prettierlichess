@@ -1551,6 +1551,11 @@ g[stroke='#888'] {
 	flex-wrap: wrap !important;
 }
 
+.lobby__start button {
+	margin-left: 5px !important;
+	margin-right: 5px !important;
+}
+
 .lobby__counters {
 	position: relative !important;
 	order: 1 !important;
