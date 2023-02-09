@@ -58,7 +58,7 @@ npm run watch
 
 That's pretty much it :smiley:
 
-For a more detailed description of how the extension works, have a look [here](https://github.com/prettierlichess/prettierlichess/blob/master/CONTRIBUTING.md#structure-of-the-extension).
+For a more detailed description of how the extension works, have a look [here](https://github.com/prettierlichess/prettierlichess/blob/master/.github/CONTRIBUTING.md#structure-of-the-extension).
 
 ## Questions, bugs and feature requests
 
@@ -66,7 +66,7 @@ If you have any questions, feature requests or want to report bugs, feel free to
 
 ## How to contribute
 
-For more information, see the [contribution page](https://github.com/prettierlichess/prettierlichess/blob/master/CONTRIBUTING.md).
+For more information, see the [contribution page](https://github.com/prettierlichess/prettierlichess/blob/master/.github/CONTRIBUTING.md).
 
 ## Contributors
 

@@ -7,7 +7,7 @@ Thank you for planning to work on this project and thank you for reading this su
 If you want to make very big changes, please ask if these changes will be included by opening either an issue or a draft pull request. This way we can make sure that you don't have unnecessary work.
 If you want to be assigned to an open issue, feel free to ask.
 
-If you would like to contribute and have questions or need help, feel free to ping someone from the [team](https://github.com/prettierlichess/prettierlichess/blob/master/CODEOWNERS) in an issue or pull request.
+If you would like to contribute and have questions or need help, feel free to ping someone from the [team](https://github.com/prettierlichess/prettierlichess/blob/master/.github/CODEOWNERS) in an issue or pull request.
 
 It is very helpful if you use screenshots of the changes you made in your pull request. This makes it easier for the reviewer to understand where your changes are important.
 
