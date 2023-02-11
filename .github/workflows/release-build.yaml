@@ -2,14 +2,17 @@ name: Create build for release
 
 on:
   release:
-    types: [published]
+    types: [ published ]
 
 jobs:
-  Build:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref_name }}
 
       - name: Set up npm cache
         uses: actions/cache@v3
@@ -32,10 +35,57 @@ jobs:
           zip -r build.zip .
           cd ..
 
+      - name: Upload build version as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-version
+          path: ./dist/build.zip
+
+  upload:
+    name: Upload build to github release
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build version
+        uses: actions/download-artifact@v3
+        with:
+          name: build-version
+          path: .
+
       - name: Upload build to release
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@cc92c9093e5f785e23a3d654fe2671640b851b5f
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./dist/build.zip
+          file: ./build.zip
           tag: ${{ github.ref }}
           overwrite: true
+
+  publish-firefox:
+    name: Publish for Firefox
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    environment:
+      name: publish
+      url: https://addons.mozilla.org/en-US/firefox/addon/prettier-lichess/
+
+    steps:
+      - name: Download build version
+        uses: actions/download-artifact@v3
+        with:
+          name: build-version
+          path: .
+
+  publish-chrome:
+    name: Publish for Chrome
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    environment:
+      name: publish
+      url: https://chrome.google.com/webstore/detail/prettier-lichess/epgnobcgnmchnhgkgpedebbmhbblfcob
+
+    steps:
+      - name: Download build version
+        uses: actions/download-artifact@v3
+        with:
+          name: build-version
+          path: .
