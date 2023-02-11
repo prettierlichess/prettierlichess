@@ -596,7 +596,7 @@ select,
 }
 
 .is3d cg-container cg-board {
-	border-radius: 0px !important;
+	border-radius: 0 !important;
 	overflow: visible !important;
 }
 
@@ -632,13 +632,13 @@ coords coord {
 
 .coords-in .files {
 	font-size: calc(8px + 4 * ((100vw - 320px) / 880)) !important;
-	bottom: 0px !important;
+	bottom: 0 !important;
 	opacity: 1 !important;
 }
 
 .coords-in .ranks {
 	font-size: calc(8px + 4 * ((100vw - 320px) / 880)) !important;
-	right: 0px !important;
+	right: 0 !important;
 	opacity: 1 !important;
 }
 
@@ -898,7 +898,7 @@ nav section a {
 	letter-spacing: 0.1em !important;
 	transition: 0.25s ease-in-out !important;
 	transition-property: padding, background !important;
-	padding: 0px 10px !important;
+	padding: 0 10px !important;
 	height: auto !important;
 	border-radius: var(--borderRadius) !important;
 	text-shadow: none !important;
@@ -908,7 +908,7 @@ nav section a {
 nav section a:hover {
 	border-left: none !important;
 	background: var(--surfaceColor) !important;
-	padding: 0px 20px !important;
+	padding: 0 20px !important;
 	border-radius: var(--borderRadius) !important;
 }
 
@@ -923,7 +923,6 @@ nav section a:target-within {
 	margin-top: -10px !important;
 	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0) !important;
 	transition: all 0.2s ease-in-out !important;
-	border-left: none !important;
 	box-shadow: none !important;
 	border: 2px solid var(--surfaceColorHover) !important;
 	border-radius: var(--borderRadius) !important;
@@ -946,7 +945,7 @@ nav section a:target-within {
 	display: flex !important;
 	align-items: center !important;
 	letter-spacing: 0.05em !important;
-	border-radius: 0px !important;
+	border-radius: 0 !important;
 	transition: all 0.2s ease-in-out !important;
 }
 
@@ -1573,7 +1572,7 @@ g[stroke='#888'] {
 	flex-direction: column !important;
 	justify-content: center !important;
 	align-items: center !important;
-	margin: 0px !important;
+	margin: 0 !important;
 	flex: 1 !important;
 }
 
@@ -1934,7 +1933,7 @@ main.page-small {
 }
 
 .puzzle__side__theme--daily {
-	outline: 0px !important;
+	outline: 0 !important;
 }
 
 .puz-combo__bar__in,
@@ -2287,7 +2286,6 @@ main.round {
 	text-shadow: none !important;
 	box-shadow: none !important;
 	color: var(--tertiaryColor) !important;
-	border-bottom: 0 !important;
 	border: 1px solid var(--tertiaryColor) !important;
 	border-radius: var(--borderRadius) !important;
 	transition: all 0.2s ease-in-out !important;
@@ -2556,7 +2554,7 @@ rm6 .result {
 }
 
 .mchat__presets span {
-	border: 0px !important;
+	border: 0 !important;
 }
 
 .buttons .fbt.active,
@@ -2658,7 +2656,7 @@ a.context-streamer:hover {
 .gauge-on .analyse__tools,
 .gauge-on .analyse__acpl,
 .gauge-on .analyse__controls {
-	left: 0px !important;
+	left: 0 !important;
 }
 
 .analyse__controls .jumps {
@@ -2750,7 +2748,6 @@ a.context-streamer:hover {
 	background: none !important;
 	border-radius: var(--borderRadius) !important;
 	overflow: hidden !important;
-	background: none !important;
 	border: 1px solid var(--surfaceColorHover) !important;
 }
 
@@ -2773,7 +2770,7 @@ a.context-streamer:hover {
 
 .eval-gauge .black {
 	background: rgb(26, 26, 26) !important;
-	border-radius: 0px !important;
+	border-radius: 0 !important;
 	z-index: 9 !important;
 }
 
@@ -2894,7 +2891,7 @@ a.context-streamer:hover {
 }
 
 .explorer-box .config .choices span {
-	border: 0px !important;
+	border: 0 !important;
 }
 
 .analyse__tools .sub-box .title {
@@ -3982,7 +3979,7 @@ hr {
 	border-bottom: none !important;
 	text-shadow: none !important;
 	color: var(--defaultWhite) !important;
-	top: 0px !important;
+	top: 0 !important;
 }
 
 .tour__standing:not(.created):not(.loading) tbody tr:hover,
@@ -4698,7 +4695,7 @@ body .glowing {
 	.lobby__app,
 	.lobby__side {
 		width: 100% !important;
-		min-width: 0vh !important;
+		min-width: 0 !important;
 	}
 
 	.lobby__side {
@@ -4816,7 +4813,7 @@ body .glowing {
 
 	#topnav div a {
 		height: 30px !important;
-		margin: 5px 0px !important;
+		margin: 5px 0 !important;
 		border-radius: var(--borderRadius) !important;
 	}
 
@@ -4879,11 +4876,11 @@ body .glowing {
 
 	.subnav a,
 	.tv-channels.subnav strong {
-		letter-spacing: 0px !important;
+		letter-spacing: 0 !important;
 	}
 
 	.round .material mpiece {
-		margin-left: 0px !important;
+		margin-left: 0 !important;
 	}
 
 	.ruser {
@@ -4901,7 +4898,7 @@ body .glowing {
 	.rclock .time {
 		position: relative !important;
 		font-size: 1.5em !important;
-		line-height: 0px !important;
+		line-height: 0 !important;
 		height: 40px !important;
 		margin-top: 10px !important;
 		width: 10ch !important;
