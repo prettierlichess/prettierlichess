@@ -2661,6 +2661,10 @@ a.context-streamer:hover {
 	left: 0px !important;
 }
 
+.analyse__controls .jumps {
+	flex: 1 1 auto !important;
+}
+
 .analyse__moves {
 	border-top: 2px solid var(--surfaceColorHover) !important;
 }
