@@ -232,6 +232,7 @@ function exportScheme() {
 			chrome.downloads.download({
 				url: url, // The object URL can be used as download URL
 				filename: 'prettierlichess_config.json',
+				saveAs: false,
 			});
 		} else {
 			alert('No custom colors have been set.');
