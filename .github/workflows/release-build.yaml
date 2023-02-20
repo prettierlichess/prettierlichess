@@ -64,6 +64,7 @@ jobs:
     name: Publish for Firefox
     needs: [ build ]
     runs-on: ubuntu-latest
+    if: false
     environment:
       name: publish
       url: https://addons.mozilla.org/en-US/firefox/addon/prettier-lichess/
@@ -79,6 +80,7 @@ jobs:
     name: Publish for Chrome
     needs: [ build ]
     runs-on: ubuntu-latest
+    if: false
     environment:
       name: publish
       url: https://chrome.google.com/webstore/detail/prettier-lichess/epgnobcgnmchnhgkgpedebbmhbblfcob
