@@ -9,6 +9,9 @@
     "popup:run": "npm run build && cd dist && node ../testing/popupServer.js",
     "format:fix": "npx prettier --write --ignore-unknown .",
     "format:check": "npx prettier --check --ignore-unknown .",
+    "cy:run": "cypress run --browser chrome && cypress run --browser firefox",
+    "cy:open": "cypress open",
+    "test": "start-server-and-test popup:run http://localhost:8000/ cy:run",
     "prepare": "husky install"
   },
   "repository": {
@@ -23,10 +26,12 @@
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.0.0",
+    "cypress": "^12.6.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "mime": "^3.0.0",
     "prettier": "2.7.1",
+    "start-server-and-test": "^1.15.4",
     "web-ext": "^7.3.1",
     "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1"
