@@ -301,6 +301,8 @@ chrome.storage.sync.get('defaultBoardSwitch', function (result) {
 });
 
 let fileSelector = document.createElement('input');
+fileSelector.id = 'fileSelector';
+fileSelector.style.display = 'none';
 fileSelector.setAttribute('type', 'file');
 fileSelector.onchange = function () {
 	let reader = new FileReader();
@@ -310,6 +312,7 @@ fileSelector.onchange = function () {
 	};
 	reader.readAsText(fileSelector.files[0]);
 };
+document.body.appendChild(fileSelector);
 
 importButton.addEventListener('click', () => {
 	// The input system works differently for firefox due
