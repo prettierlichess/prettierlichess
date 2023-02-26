@@ -2162,6 +2162,10 @@ button.rematch-decline::before {
 	}
 }
 
+.car::before {
+	text-transform: uppercase;
+}
+
 /* Game View */
 
 .material mpiece {
