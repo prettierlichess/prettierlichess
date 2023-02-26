@@ -2858,6 +2858,13 @@ a.context-streamer:hover {
 	background: var(--surfaceColorHover) !important;
 }
 
+/* Hide icon for small screen width */
+@media (max-width: 840px) {
+	.explorer-title .masters::before {
+		display: none !important;
+	}
+}
+
 .explorer-box .black {
 	background: rgb(26, 26, 26) !important;
 }
