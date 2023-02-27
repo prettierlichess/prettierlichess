@@ -110,6 +110,8 @@ If possible, feel free to test for both Firefox and Chrome. If this is not possi
 
 ## Testing the popup
 
+### Testing with http-server
+
 It is possible to run the popup on a local http server as a stand-alone website, making it easier to edit and test. The functionality for this is implemented in the `/testing` folder. There you will find a script that can start the http server. This requires a built version of the extension in the `/dist` folder. Then the script can be started with
 
 ```
@@ -118,6 +120,29 @@ npm run popup:run --port=PORT
 
 on the port `PORT` (default 8000).
 There is also a mock script that is passed to the server to mock all Chrome API calls and sustain the functionality of the popup.
+
+### Automated testing with cypress
+
+To test the functionality of the popup automatically, [Cypress](https://github.com/cypress-io/cypress) is used as well. The automated test system also relies on the http server concept.
+
+The concrete test cases are located in the `/cypress/e2e` folder and test as many of the popup's features as possible.
+
+To run the tests locally you can either open the Cypress test suite with
+
+```
+npm run cy:open
+```
+
+or run the tests in headless mode (Firefox and Chrome) with
+
+```
+npm run test
+```
+
+In this case, both the build of the current source and the server startup and shutdown are done completely automatically.
+
+In addition, Cypress is also tested automatically on every push event with Github Actions:
+[![E2E tests](https://github.com/prettierlichess/prettierlichess/actions/workflows/e2e-testing.yaml/badge.svg?event=push)](https://github.com/prettierlichess/prettierlichess/actions/workflows/e2e-testing.yaml)
 
 ## Linting
 
