@@ -5,6 +5,7 @@
   "scripts": {
     "build": "npx webpack",
     "watch": "npx webpack -w",
+    "popup:serve": "cd dist && node ../testing/popupServer.js",
     "popup:run": "npm run build && cd dist && node ../testing/popupServer.js",
     "format:fix": "npx prettier --write --ignore-unknown .",
     "format:check": "npx prettier --check --ignore-unknown .",
