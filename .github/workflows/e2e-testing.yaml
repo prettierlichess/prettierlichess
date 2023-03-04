@@ -6,6 +6,7 @@ on:
     branches: [ "master" ]
   schedule:
     - cron: '0 12 * * 6'
+  workflow_dispatch:
 
 jobs:
   test-popup:
@@ -16,8 +17,8 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
 
         exclude:
-          - os: ${{ github.event_name == 'schedule' && 'dummy' || 'windows-latest' }}
-          - os: ${{ github.event_name == 'schedule' && 'dummy' || 'macos-latest' }}
+          - os: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && 'dummy' || 'windows-latest' }}
+          - os: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && 'dummy' || 'macos-latest' }}
 
     runs-on: ${{ matrix.os }}
     steps:
