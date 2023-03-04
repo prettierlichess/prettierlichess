@@ -201,12 +201,14 @@ describe('Test import/export', () => {
 		cy.get('#exportButton').should('be.visible').click();
 
 		cy.then(() => {
-			cy.readFile('./cypress/downloads/prettierlichess_config.json')
-				.its('primaryColor')
-				.should('eq', '#7918D3');
-			cy.readFile('./cypress/downloads/prettierlichess_config.json')
-				.its('secondaryColor')
-				.should('not.exist');
+			cy.wait(1000).then(() => {
+				cy.readFile('./cypress/downloads/prettierlichess_config.json')
+					.its('primaryColor')
+					.should('eq', '#7918D3');
+				cy.readFile('./cypress/downloads/prettierlichess_config.json')
+					.its('secondaryColor')
+					.should('not.exist');
+			});
 		});
 	});
 	it('Test import with already set value', () => {
