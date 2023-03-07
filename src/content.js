@@ -293,3 +293,13 @@ function syncSet(scheme, value) {
 		[scheme]: value,
 	});
 }
+
+// Allowing to clear sync storage for cypress
+window.addEventListener('message', function (event) {
+	if (event.source !== window) {
+		return;
+	}
+	if (event.data.type === 'cypress' && event.data.command === 'sync.clear') {
+		chrome.storage.sync.clear();
+	}
+});

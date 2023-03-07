@@ -33,3 +33,4 @@ jobs:
           browser: ${{ matrix.browser }}
           wait-on: 'http://localhost:8000'
           wait-on-timeout: 30
+          headed: true

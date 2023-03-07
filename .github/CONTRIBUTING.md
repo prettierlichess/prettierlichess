@@ -125,9 +125,9 @@ There is also a mock script that is passed to the server to mock all Chrome API 
 
 To test the functionality of the popup automatically, [Cypress](https://github.com/cypress-io/cypress) is used as well. The automated test system also relies on the http server concept.
 
-The concrete test cases are located in the `/cypress/e2e` folder and test as many of the popup's features as possible.
+The concrete test cases are located in the `/cypress/e2e` folder and test as many of the popup's and extension's features as possible.
 
-To run the tests locally you can either open the Cypress test suite with
+To run the tests locally you can either open the Cypress test suite (this is necessary for the extension tests) with
 
 ```
 npm run cy:open
@@ -136,7 +136,7 @@ npm run cy:open
 or run the tests in headless mode (Firefox and Chrome) with
 
 ```
-npm run test
+npm run test:popup
 ```
 
 In this case, both the build of the current source and the server startup and shutdown are done completely automatically.

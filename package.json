@@ -9,9 +9,9 @@
     "popup:run": "npm run build && cd dist && node ../testing/popupServer.js",
     "format:fix": "npx prettier --write --ignore-unknown .",
     "format:check": "npx prettier --check --ignore-unknown .",
-    "cy:run": "cypress run --browser chrome && cypress run --browser firefox",
+    "cy:popup": "cypress run --browser chrome --spec 'cypress/e2e/testPopup.cy.js' && cypress run --browser firefox --spec 'cypress/e2e/testPopup.cy.js'",
     "cy:open": "cypress open",
-    "test": "start-server-and-test popup:run http://localhost:8000/ cy:run",
+    "test:popup": "start-server-and-test popup:run http://localhost:8000/ cy:popup",
     "prepare": "husky install"
   },
   "repository": {
