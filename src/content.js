@@ -257,7 +257,21 @@ chrome.storage.sync.get('layoutPreference', function (result) {
 		let styleSheet = document.createElement('style');
 		styleSheet.type = 'text/css';
 		styleSheet.innerText = LAYOUT_CHANGE;
-		document.head.appendChild(styleSheet);
+
+		if (document.head) {
+			document.head.appendChild(styleSheet);
+		} else {
+			const obs = new MutationObserver(function () {
+				if (document.head) {
+					obs.disconnect();
+					document.head.appendChild(styleSheet);
+				}
+			});
+			obs.observe(document.documentElement, {
+				childList: true,
+				subtree: true,
+			});
+		}
 	}
 });
 
