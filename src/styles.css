@@ -2651,7 +2651,8 @@ a.context-streamer:hover {
 
 .analyse__acpl,
 .analyse__tools,
-.analyse__controls {
+.analyse__controls,
+.analyse .pocket {
 	position: relative !important;
 	left: calc(-80px + 1vmin) !important;
 	transition: left 0.3s ease-in-out !important;
@@ -2659,7 +2660,8 @@ a.context-streamer:hover {
 
 .gauge-on .analyse__tools,
 .gauge-on .analyse__acpl,
-.gauge-on .analyse__controls {
+.gauge-on .analyse__controls,
+.gauge-on .pocket {
 	left: 0 !important;
 }
 
