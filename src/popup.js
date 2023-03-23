@@ -20,6 +20,7 @@ const defaultColorScheme = {
 	boardDark: '#71828F',
 	boardLight: '#c7c7c7',
 };
+const switchButton = document.querySelector('#switchButton');
 const basicImportContainer = document.querySelector('#basicImportContainer');
 const basicImportInput = document.querySelector('#basicImport');
 const importActionButton = document.querySelector('#importAction');
@@ -328,4 +329,20 @@ importButton.addEventListener('click', () => {
 
 importActionButton.addEventListener('click', () => {
 	importScheme(basicImportInput.value.trim());
+});
+
+switchButton.addEventListener('click', function () {
+	const btn = document.querySelector('#switchButton');
+	const icon = document.querySelector('#switchButtonIcon');
+	const text = document.querySelector('#switchButtonText');
+
+	if (btn.value === 'profiles') {
+		btn.value = 'colors';
+		text.textContent = 'Switch to colors';
+		icon.classList.replace('fa-list', 'fa-eyedropper');
+	} else {
+		btn.value = 'profiles';
+		text.textContent = 'Switch to profiles';
+		icon.classList.replace('fa-eyedropper', 'fa-list');
+	}
 });

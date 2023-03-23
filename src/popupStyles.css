@@ -1,22 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 body {
-	padding: 20px 20px;
+	width: 330px;
+	height: 600px;
 	background-color: #2b343b;
 	font-family: 'Red Hat Text', sans-serif;
 	color: white;
 	font-size: 18px;
-	width: 300px;
 	overflow-x: hidden;
+	--sectionColor: #21292f;
+	--buttonColor: #3f474d;
+	--buttonColorHover: #3b4248;
 }
 
-/* First row  */
+#main {
+	position: absolute;
+	width: 300px;
+	height: 580px;
+	top: 17px;
+	right: 50%;
+	transform: translateX(50%);
+}
 
-.topGroup {
+/* Icon and switch button */
+#topGroup {
 	display: flex;
 	align-items: center;
 	margin-bottom: 20px;
 	justify-content: space-between;
+}
+
+#logo {
+	width: 50%;
+}
+
+#switchButton {
+	width: 45%;
+	height: 35px;
+	margin-top: 5px;
+	border: none;
+	border-radius: 4px;
+	background-color: var(--buttonColor);
+	color: white;
+	cursor: pointer;
+	font-size: 12px;
+	font-family: 'Red Hat Text', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#switchButton > i {
+	margin-right: 5px;
+}
+
+#switchButton:hover {
+	background-color: var(--buttonColorHover);
+}
+
+/* Layout select */
+#layoutSelectGroup {
+	padding: 8px;
+	background-color: var(--sectionColor);
+	border-radius: 8px;
 }
 
 #layoutSelect {
@@ -28,8 +74,13 @@ body {
 	padding: 8px;
 }
 
-#logo {
-	width: 50%;
+/* Color group */
+
+#colorGroup {
+	padding: 10px;
+	background-color: var(--sectionColor);
+	border-radius: 8px;
+	margin-top: 10px;
 }
 
 /* Tabs */
@@ -41,6 +92,7 @@ body {
 	align-items: center;
 	position: relative;
 	margin-bottom: 20px;
+	margin-top: 5px;
 }
 
 .tab {
@@ -84,7 +136,7 @@ body {
 }
 
 .customBoardGroup {
-	background-color: #3f474d;
+	background-color: var(--buttonColor);
 	border-radius: 4px;
 	padding: 20px 20px 8px;
 	margin-bottom: 20px;
@@ -106,16 +158,12 @@ body {
 	margin-bottom: 8px;
 }
 
-.button:first-child {
-	margin-right: 8px;
-}
-
 .button {
 	width: 100%;
 	height: 40px;
 	border: none;
 	border-radius: 4px;
-	background-color: #3f474d;
+	background-color: var(--buttonColor);
 	color: white;
 	cursor: pointer;
 	transition: transform 0.2s ease-in-out;
@@ -126,8 +174,16 @@ body {
 	justify-content: center;
 }
 
+.button > i {
+	margin-right: 3px;
+}
+
+.button > span {
+	margin-right: 8px;
+}
+
 .button:hover {
-	background-color: #3b4248;
+	background-color: var(--buttonColorHover);
 }
 
 .button:active {
@@ -135,7 +191,7 @@ body {
 }
 
 #basicImportContainer {
-	margin: 8px 0 30px;
+	margin: 8px 0 0;
 	display: none;
 }
 
@@ -195,7 +251,7 @@ input[type='color']::-webkit-color-swatch {
 }
 
 .pcr-app {
-	background-color: #3f474d !important;
+	background-color: var(--buttonColor) !important;
 	font-family: 'Red Hat Text', sans-serif !important;
 	color: white !important;
 	border-radius: 8px !important;
