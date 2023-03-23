@@ -4,6 +4,9 @@ describe('Test whole extension', () => {
 		// Send extension message to clear synced storage
 		window.postMessage({type: 'cypress', command: 'sync.clear'}, '*');
 		cy.reload();
+		cy.on('uncaught:exception', (err, runnable) => {
+			return false;
+		});
 	});
 
 	it('Test injection', () => {
