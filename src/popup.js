@@ -35,6 +35,8 @@ const boardColorGroup = document.querySelector('#boardColorGroup');
 const boardColorSelector = document.querySelectorAll('.boardColorSelector');
 const hideBoardColors = document.querySelector('#hideBoardColors');
 
+const addProfileButton = document.querySelector('#addProfileButton');
+
 // In Firefox, a different method is used for importing.
 // To do this, it is necessary to check which browser is being used
 const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1;
@@ -353,4 +355,10 @@ switchButton.addEventListener('click', function () {
 		document.querySelector('#colorGroup').classList.remove('hideGroup');
 		document.querySelector('#profileGroup').classList.add('hideGroup');
 	}
+});
+
+addProfileButton.addEventListener('click', function () {
+	let cp = document.querySelector('.profile.template').cloneNode(true);
+	cp.classList.remove('template');
+	document.querySelector('#profileGroup').insertBefore(cp, addProfileButton);
 });

@@ -22,6 +22,10 @@ body {
 	transform: translateX(50%);
 }
 
+.template {
+	display: none !important;
+}
+
 /* Icon and switch button */
 #topGroup {
 	display: flex;
@@ -373,4 +377,8 @@ input[type='color']::-webkit-color-swatch {
 
 .profile > input {
 	width: 70%;
+}
+
+#addProfileButton {
+	margin-top: 12px;
 }
