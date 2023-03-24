@@ -340,9 +340,17 @@ switchButton.addEventListener('click', function () {
 		btn.value = 'colors';
 		text.textContent = 'Switch to colors';
 		icon.classList.replace('fa-list', 'fa-eyedropper');
+		document.querySelector('#layoutSelectGroup').classList.add('hideGroup');
+		document.querySelector('#colorGroup').classList.add('hideGroup');
+		document.querySelector('#profileGroup').classList.remove('hideGroup');
 	} else {
 		btn.value = 'profiles';
 		text.textContent = 'Switch to profiles';
 		icon.classList.replace('fa-eyedropper', 'fa-list');
+		document
+			.querySelector('#layoutSelectGroup')
+			.classList.remove('hideGroup');
+		document.querySelector('#colorGroup').classList.remove('hideGroup');
+		document.querySelector('#profileGroup').classList.add('hideGroup');
 	}
 });
