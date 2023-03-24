@@ -41,6 +41,9 @@ const addProfileButton = document.querySelector('#addProfileButton');
 // To do this, it is necessary to check which browser is being used
 const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1;
 
+let lastDeletePressed = undefined;
+let deletePressedTimeout = null;
+
 // If the "custom board"-setting is toggled, the popup is reloaded.
 // To make sure that the correct tab is displayed again after reloading,
 // it is saved whether the custom board setting has just been changed.
@@ -361,4 +364,49 @@ addProfileButton.addEventListener('click', function () {
 	let cp = document.querySelector('.profile.template').cloneNode(true);
 	cp.classList.remove('template');
 	document.querySelector('#profileGroup').insertBefore(cp, addProfileButton);
+	cp.querySelector('.delete').addEventListener('mousedown', deleteMouseDown);
+
+	cp.querySelector('.accept').addEventListener('click', selectProfile);
 });
+
+function deleteMouseDown() {
+	lastDeletePressed = this;
+
+	deletePressedTimeout = setTimeout(function () {
+		if (lastDeletePressed !== undefined) {
+			if (
+				document.querySelectorAll('.profile:not(.template)').length <= 1
+			) {
+				alert('There needs to be at least one profile');
+				return;
+			}
+			let selected = false;
+
+			if (lastDeletePressed.parentNode.classList.contains('selected')) {
+				selected = true;
+			}
+			lastDeletePressed.parentNode.remove();
+			lastDeletePressed = undefined;
+
+			if (selected) {
+				selectProfile.call(
+					document.querySelector('.profile:not(.template) > .accept')
+				);
+			}
+		}
+	}, 1500);
+}
+
+addEventListener('mouseup', function () {
+	lastDeletePressed = undefined;
+	clearTimeout(deletePressedTimeout);
+});
+
+function selectProfile() {
+	let profiles = document.querySelectorAll('.profile');
+
+	for (let i = 0; i < profiles.length; i++) {
+		profiles[i].classList.remove('selected');
+	}
+	this.parentNode.classList.add('selected');
+}

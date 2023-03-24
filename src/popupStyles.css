@@ -313,7 +313,7 @@ input[type='color']::-webkit-color-swatch {
 
 .profile.selected > .action.accept {
 	background-color: #9fc0a2;
-	cursor: not-allowed;
+	cursor: default;
 }
 
 .profile:not(.selected) > .action.accept:hover {
@@ -325,7 +325,7 @@ input[type='color']::-webkit-color-swatch {
 }
 
 .profile > .action.delete:active {
-	animation: turnred 3s infinite, shake 0.5s infinite;
+	animation: turnred 1.5s infinite, shake 0.5s infinite;
 }
 
 @keyframes turnred {
@@ -381,4 +381,9 @@ input[type='color']::-webkit-color-swatch {
 
 #addProfileButton {
 	margin-top: 12px;
+}
+
+#infotext {
+	font-size: 7pt;
+	margin-top: 18px;
 }
