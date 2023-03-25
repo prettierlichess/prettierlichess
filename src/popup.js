@@ -43,6 +43,8 @@ const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1;
 
 let lastDeletePressed = undefined;
 let deletePressedTimeout = null;
+let selectedProfile = 0;
+let profileList = [];
 
 // If the "custom board"-setting is toggled, the popup is reloaded.
 // To make sure that the correct tab is displayed again after reloading,
@@ -360,14 +362,24 @@ switchButton.addEventListener('click', function () {
 	}
 });
 
-addProfileButton.addEventListener('click', function () {
-	let cp = document.querySelector('.profile.template').cloneNode(true);
-	cp.classList.remove('template');
-	document.querySelector('#profileGroup').insertBefore(cp, addProfileButton);
-	cp.querySelector('.delete').addEventListener('mousedown', deleteMouseDown);
+function saveProfileInformation() {
+	let obj = {
+		profileList: profileList,
+		selected: selectedProfile,
+	};
+	syncSet('profileInformation', JSON.stringify(obj));
+}
 
-	cp.querySelector('.accept').addEventListener('click', selectProfile);
-});
+function getProfileIndex(profNode) {
+	let all = document.querySelectorAll('.profile:not(.template)');
+	for (let i = 0; i < all.length; i++) {
+		if (all[i] === profNode) {
+			return i;
+		}
+	}
+}
+
+addProfileButton.addEventListener('click', () => createProfile());
 
 function deleteMouseDown() {
 	lastDeletePressed = this;
@@ -385,6 +397,11 @@ function deleteMouseDown() {
 			if (lastDeletePressed.parentNode.classList.contains('selected')) {
 				selected = true;
 			}
+			profileList.splice(
+				getProfileIndex(lastDeletePressed.parentNode),
+				1
+			);
+
 			lastDeletePressed.parentNode.remove();
 			lastDeletePressed = undefined;
 
@@ -393,6 +410,7 @@ function deleteMouseDown() {
 					document.querySelector('.profile:not(.template) > .accept')
 				);
 			}
+			saveProfileInformation();
 		}
 	}, 1500);
 }
@@ -403,10 +421,65 @@ addEventListener('mouseup', function () {
 });
 
 function selectProfile() {
+	if (this.parentNode.classList.contains('selected')) {
+		return;
+	}
 	let profiles = document.querySelectorAll('.profile');
 
 	for (let i = 0; i < profiles.length; i++) {
 		profiles[i].classList.remove('selected');
+
+		if (profiles[i] === this.parentNode) {
+			selectedProfile = i - 1;
+		}
 	}
 	this.parentNode.classList.add('selected');
+
+	saveProfileInformation();
 }
+
+function profileNameChange() {
+	const i = getProfileIndex(this.parentNode);
+	profileList[i] = this.value;
+
+	saveProfileInformation();
+}
+
+function createProfile(name = null, selected = false) {
+	let cp = document.querySelector('.profile.template').cloneNode(true);
+	cp.classList.remove('template');
+	document.querySelector('#profileGroup').insertBefore(cp, addProfileButton);
+
+	if (name !== null) {
+		cp.querySelector('input').value = name;
+		profileList.push(name);
+	} else {
+		profileList.push('');
+		console.log(profileList);
+	}
+	if (selected) {
+		cp.classList.add('selected');
+		selectedProfile =
+			document.querySelectorAll('.profile:not(.template)').length - 1;
+	}
+	cp.querySelector('.delete').addEventListener('mousedown', deleteMouseDown);
+	cp.querySelector('.accept').addEventListener('click', selectProfile);
+	cp.querySelector('input').addEventListener('input', profileNameChange);
+
+	saveProfileInformation();
+}
+
+chrome.storage.sync.get('profileInformation', function (result) {
+	let list = ['Profile 1'];
+	let selected = 0;
+
+	if (result['profileInformation']) {
+		result = JSON.parse(result['profileInformation']);
+
+		list = result.profileList;
+		selected = result.selected;
+	}
+	for (let i = 0; i < list.length; i++) {
+		createProfile(list[i], i === selected);
+	}
+});
