@@ -446,6 +446,10 @@ function profileNameChange() {
 }
 
 function createProfile(name = null, selected = false) {
+	if (document.querySelectorAll('.profile:not(.template)').length >= 20) {
+		alert('Maximum number of profiles reached');
+		return;
+	}
 	let cp = document.querySelector('.profile.template').cloneNode(true);
 	cp.classList.remove('template');
 	document.querySelector('#profileGroup').insertBefore(cp, addProfileButton);
