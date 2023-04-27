@@ -1379,6 +1379,10 @@ g[stroke='#888'] {
 	padding: 10px 0 !important;
 }
 
+.tabs-horiz span:hover {
+	color: var(--defaultWhite) !important;
+}
+
 .lobby__streams:empty,
 .lobby__spotlights:empty {
 	display: none !important;
