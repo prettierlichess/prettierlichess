@@ -1930,6 +1930,12 @@ main.page-small {
 	color: var(--defaultWhite) !important;
 }
 
+.storm-play-scores > span,
+.puz-combo__counter__combo,
+.puz-combo__levels span {
+	color: var(--textColor) !important;
+}
+
 .puz-history__rounds .puz-history__round .puz-history__round__result bad,
 .puz-history__rounds .puz-history__round .puz-history__round__result good {
 	color: var(--defaultWhite) !important;
