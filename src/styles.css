@@ -3778,6 +3778,19 @@ hr {
 	overflow: hidden !important;
 }
 
+.slist.swisses tbody .icon > i,
+.slist.swisses tbody tr td .players.text,
+.slist.swisses tbody .header a .team,
+.swiss-home__infos .wiki > i,
+.swiss-home__infos .team > i,
+.swiss-home__infos #faq .faq > i {
+	color: var(--secondaryColor) !important;
+}
+
+.slist.swisses tbody .header a {
+	color: var(--textColor) !important;
+}
+
 .tour__stats,
 .mchat,
 .tour__meta,
