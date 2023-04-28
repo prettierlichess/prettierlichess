@@ -1394,6 +1394,11 @@ g[stroke='#888'] {
 	color: var(--primaryColor) !important;
 }
 
+.tabs-horiz span.active,
+.tabs-horiz span:hover {
+	border-color: var(--secondaryColor) !important;
+}
+
 .tabs-horiz span::after {
 	background: var(--primaryColor) !important;
 }
