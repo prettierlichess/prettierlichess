@@ -2164,6 +2164,19 @@ button.rematch-decline::before {
 	padding-left: 10px !important;
 }
 
+.puzzle-openings .puzzle-openings__mine {
+	background-color: var(--surfaceColorHover) !important;
+}
+
+.puzzle-openings .puzzle-openings__link.opening-mine {
+	color: var(--secondaryColor) !important;
+}
+
+.puzzle-openings__link em,
+.puzzle-openings em {
+	color: var(--textColor) !important;
+}
+
 .puzzle-history__round__result > bad,
 .puzzle-history__round__result > good {
 	color: var(--defaultWhite) !important;
