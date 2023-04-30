@@ -3330,10 +3330,15 @@ a.analyse {
 	background: var(--surfaceColorHover) !important;
 }
 
+.relay-tour__text h1 {
+	color: var(--secondaryColor) !important;
+}
+
 .study__metadata h2 .liking:hover,
 .study__chapters ongoing,
 .study__relay__rounds ongoing,
-.relay-tour__text .slist ongoing {
+.relay-tour__text .slist ongoing,
+.relay-tour__round.ongoing {
 	color: var(--tertiaryColor) !important;
 }
 
