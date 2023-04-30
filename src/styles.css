@@ -2175,6 +2175,23 @@ button.rematch-decline::before {
 	color: var(--primaryColor) !important;
 }
 
+.opening__beta {
+	color: var(--primaryColor) !important;
+}
+
+.opening__next__popularity > span {
+	background: var(--secondaryColor) !important;
+	color: var(--backgroundColor) !important;
+}
+
+.opening__next__title {
+	color: var(--textColor) !important;
+}
+
+.opening__next:hover .opening__next__title {
+	color: var(--primaryColor) !important;
+}
+
 /* Centering game board in puzzle storm and puzzle racer*/
 @media (min-width: 799px) {
 	.storm--play,
