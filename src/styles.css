@@ -1811,6 +1811,11 @@ a.button.button-metal:hover {
 	background: none !important;
 }
 
+.sparkline {
+	stroke: var(--secondaryColor);
+	fill: rgba(var(--secondaryColorRGB), 0.3) !important;
+}
+
 #reconnecting {
 	background: var(--tertiaryColor) !important;
 	color: var(--backgroundColor) !important;
