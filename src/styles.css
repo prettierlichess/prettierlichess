@@ -2216,6 +2216,38 @@ button.rematch-decline::before {
 	background: var(--surfaceColorHover) !important;
 }
 
+.opening__wiki {
+	background: var(--backgroundColor) !important;
+}
+
+.opening__panels .tab-list__tab:hover {
+	background: rgba(var(--primaryColorRGB), 0.5) !important;
+	color: var(--defaultWhite) !important;
+}
+
+.opening__panels .tab-list__tab[aria-selected='true'] {
+	background: var(--primaryColor) !important;
+	color: var(--defaultWhite) !important;
+}
+
+.lpv__menu.lpv__pane > * {
+	color: var(--textColor) !important;
+}
+
+.lpv__fbt.active {
+	background: var(--primaryColor) !important;
+	color: var(--defaultWhite) !important;
+}
+
+.lpv__fbt:not(.active):hover:not(.disabled):not([disabled]) {
+	background: rgba(var(--primaryColorRGB), 0.5) !important;
+	color: var(--defaultWhite) !important;
+}
+
+.lpv__pane {
+	border-bottom: 2px solid var(--primaryColor) !important;
+}
+
 /* Centering game board in puzzle storm and puzzle racer*/
 @media (min-width: 799px) {
 	.storm--play,
