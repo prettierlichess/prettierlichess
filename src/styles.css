@@ -1235,7 +1235,7 @@ signal > i {
 /* Homepage */
 
 #main-wrap {
-	--main-max-width: 1500px !important;
+	--main-max-width: 2500px !important;
 	justify-items: center !important;
 }
 
