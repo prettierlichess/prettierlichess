@@ -2580,10 +2580,6 @@ rm6 .buttons,
 	border-left: 2px solid var(--surfaceColorHover) !important;
 }
 
-div.round__app {
-	grid-template-rows: 0fr auto auto min-content 54px 1fr auto 54px 0fr !important;
-}
-
 rm6 {
 	margin-bottom: 0 !important;
 	background: none !important;
