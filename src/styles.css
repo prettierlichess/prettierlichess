@@ -2423,6 +2423,19 @@ main.round {
 	opacity: 1 !important;
 }
 
+.rclock.running .time::before {
+	content: '';
+	position: absolute;
+	top: 10%;
+	left: 0;
+	width: 100%;
+	height: 80%;
+	background: var(--primaryColor);
+	opacity: 0.15;
+	border-radius: 5px;
+	z-index: -1;
+}
+
 .rclock .time {
 	color: var(--defaultWhite) !important;
 	opacity: 0.5 !important;

@@ -103,8 +103,8 @@ const STREAMER_STYLES = `
     }
 
     .rclock.running .time::before {
-        background: var(--primaryColor);
-        opacity: .5;
+        background: var(--primaryColor) !important;
+        opacity: .5 !important;
     }
 
     .rclock.emerg.running .time::before {
