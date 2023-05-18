@@ -169,7 +169,7 @@ main.lobby {
 }
 .lobby__app,
 .lobby__side {
-	height: calc(100% - 80px) !important;
+	height: calc(100% - 40px) !important;
 }
 `;
 
@@ -259,7 +259,8 @@ chrome.storage.sync.get('layoutPreference', function (result) {
 		styleSheet.innerText = LAYOUT_CHANGE;
 
 		if (result['layoutPreference'] === 'default-1080') {
-			styleSheet.innerText += ("\n#main-wrap {--main-max-width: 1500px !important;}")
+			styleSheet.innerText +=
+				'\n#main-wrap {--main-max-width: 1500px !important;}';
 		}
 
 		if (document.head) {
