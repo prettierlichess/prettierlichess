@@ -20,6 +20,7 @@ const defaultColorScheme = {
 	boardDark: '#71828F',
 	boardLight: '#c7c7c7',
 };
+const switchButton = document.querySelector('#switchButton');
 const basicImportContainer = document.querySelector('#basicImportContainer');
 const basicImportInput = document.querySelector('#basicImport');
 const importActionButton = document.querySelector('#importAction');
@@ -34,9 +35,16 @@ const boardColorGroup = document.querySelector('#boardColorGroup');
 const boardColorSelector = document.querySelectorAll('.boardColorSelector');
 const hideBoardColors = document.querySelector('#hideBoardColors');
 
+const addProfileButton = document.querySelector('#addProfileButton');
+
 // In Firefox, a different method is used for importing.
 // To do this, it is necessary to check which browser is being used
 const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1;
+
+let lastDeletePressed = undefined;
+let deletePressedTimeout = null;
+let selectedProfile = 0;
+let profileList = [];
 
 // If the "custom board"-setting is toggled, the popup is reloaded.
 // To make sure that the correct tab is displayed again after reloading,
@@ -328,4 +336,154 @@ importButton.addEventListener('click', () => {
 
 importActionButton.addEventListener('click', () => {
 	importScheme(basicImportInput.value.trim());
+});
+
+switchButton.addEventListener('click', function () {
+	const btn = document.querySelector('#switchButton');
+	const icon = document.querySelector('#switchButtonIcon');
+	const text = document.querySelector('#switchButtonText');
+
+	if (btn.value === 'profiles') {
+		btn.value = 'colors';
+		text.textContent = 'Switch to colors';
+		icon.classList.replace('fa-list', 'fa-eyedropper');
+		document.querySelector('#layoutSelectGroup').classList.add('hideGroup');
+		document.querySelector('#colorGroup').classList.add('hideGroup');
+		document.querySelector('#profileGroup').classList.remove('hideGroup');
+	} else {
+		btn.value = 'profiles';
+		text.textContent = 'Switch to profiles';
+		icon.classList.replace('fa-eyedropper', 'fa-list');
+		document
+			.querySelector('#layoutSelectGroup')
+			.classList.remove('hideGroup');
+		document.querySelector('#colorGroup').classList.remove('hideGroup');
+		document.querySelector('#profileGroup').classList.add('hideGroup');
+	}
+});
+
+function saveProfileInformation() {
+	let obj = {
+		profileList: profileList,
+		selected: selectedProfile,
+	};
+	syncSet('profileInformation', JSON.stringify(obj));
+}
+
+function getProfileIndex(profNode) {
+	let all = document.querySelectorAll('.profile:not(.template)');
+	for (let i = 0; i < all.length; i++) {
+		if (all[i] === profNode) {
+			return i;
+		}
+	}
+}
+
+addProfileButton.addEventListener('click', () => createProfile());
+
+function deleteMouseDown() {
+	lastDeletePressed = this;
+
+	deletePressedTimeout = setTimeout(function () {
+		if (lastDeletePressed !== undefined) {
+			if (
+				document.querySelectorAll('.profile:not(.template)').length <= 1
+			) {
+				alert('There needs to be at least one profile');
+				return;
+			}
+			let selected = false;
+
+			if (lastDeletePressed.parentNode.classList.contains('selected')) {
+				selected = true;
+			}
+			profileList.splice(
+				getProfileIndex(lastDeletePressed.parentNode),
+				1
+			);
+
+			lastDeletePressed.parentNode.remove();
+			lastDeletePressed = undefined;
+
+			if (selected) {
+				selectProfile.call(
+					document.querySelector('.profile:not(.template) > .accept')
+				);
+			}
+			saveProfileInformation();
+		}
+	}, 1500);
+}
+
+addEventListener('mouseup', function () {
+	lastDeletePressed = undefined;
+	clearTimeout(deletePressedTimeout);
+});
+
+function selectProfile() {
+	if (this.parentNode.classList.contains('selected')) {
+		return;
+	}
+	let profiles = document.querySelectorAll('.profile');
+
+	for (let i = 0; i < profiles.length; i++) {
+		profiles[i].classList.remove('selected');
+
+		if (profiles[i] === this.parentNode) {
+			selectedProfile = i - 1;
+		}
+	}
+	this.parentNode.classList.add('selected');
+
+	saveProfileInformation();
+}
+
+function profileNameChange() {
+	const i = getProfileIndex(this.parentNode);
+	profileList[i] = this.value;
+
+	saveProfileInformation();
+}
+
+function createProfile(name = null, selected = false) {
+	if (document.querySelectorAll('.profile:not(.template)').length >= 20) {
+		alert('Maximum number of profiles reached');
+		return;
+	}
+	let cp = document.querySelector('.profile.template').cloneNode(true);
+	cp.classList.remove('template');
+	document.querySelector('#profileGroup').insertBefore(cp, addProfileButton);
+
+	if (name !== null) {
+		cp.querySelector('input').value = name;
+		profileList.push(name);
+	} else {
+		profileList.push('');
+		console.log(profileList);
+	}
+	if (selected) {
+		cp.classList.add('selected');
+		selectedProfile =
+			document.querySelectorAll('.profile:not(.template)').length - 1;
+	}
+	cp.querySelector('.delete').addEventListener('mousedown', deleteMouseDown);
+	cp.querySelector('.accept').addEventListener('click', selectProfile);
+	cp.querySelector('input').addEventListener('input', profileNameChange);
+
+	saveProfileInformation();
+}
+
+chrome.storage.sync.get('profileInformation', function (result) {
+	let list = ['Profile 1'];
+	let selected = 0;
+
+	if (result['profileInformation']) {
+		result = JSON.parse(result['profileInformation']);
+
+		list = result.profileList;
+		selected = result.selected;
+	}
+	for (let i = 0; i < list.length; i++) {
+		createProfile(list[i], i === selected);
+	}
 });
