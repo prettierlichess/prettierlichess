@@ -260,7 +260,7 @@ chrome.storage.sync.get('layoutPreference', function (result) {
 
 		if (result['layoutPreference'] === 'default-1080') {
 			styleSheet.innerText +=
-				'\n#main-wrap {--main-max-width: 1500px !important;}';
+				'\nbody #main-wrap {--main-max-width: 1500px !important;}';
 		}
 
 		if (document.head) {
