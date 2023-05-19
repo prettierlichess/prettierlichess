@@ -258,6 +258,11 @@ chrome.storage.sync.get('layoutPreference', function (result) {
 		styleSheet.type = 'text/css';
 		styleSheet.innerText = LAYOUT_CHANGE;
 
+		if (result['layoutPreference'] === 'default-1080') {
+			styleSheet.innerText +=
+				'\nbody #main-wrap {--main-max-width: 1500px !important;}';
+		}
+
 		if (document.head) {
 			document.head.appendChild(styleSheet);
 		} else {

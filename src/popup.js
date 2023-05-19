@@ -70,7 +70,7 @@ function focusBoardTab() {
  * @param {string} option - Chosen option
  */
 function setLayoutOption(option) {
-	document.querySelector('#layoutSelect').value = 'default';
+	document.querySelector('#layoutSelect').value = 'default-1080';
 	const optionNodes = document.querySelector('#layoutSelect').children;
 
 	// Check if the chosen option exists. Set it, if it does.
