@@ -258,9 +258,9 @@ chrome.storage.sync.get('layoutPreference', function (result) {
 		styleSheet.type = 'text/css';
 		styleSheet.innerText = LAYOUT_CHANGE;
 
-		if (result['layoutPreference'] === 'default-1080') {
+		if (result['layoutPreference'] === 'default-1440') {
 			styleSheet.innerText +=
-				'\nbody #main-wrap {--main-max-width: 1500px !important;}';
+				'\nbody #main-wrap {--main-max-width: 2500px !important;}';
 		}
 
 		if (document.head) {
