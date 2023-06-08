@@ -4800,11 +4800,21 @@ group.radio input:checked + label,
 	background-color: rgba(var(--secondaryColorRGB), 0.2) !important;
 }
 
+.chapter-name {
+	background: var(--surfaceColorHover) !important;
+}
+
 /* Glowing */
 
 body .glowing {
 	-webkit-animation: glowingCustom 3s ease-in-out infinite;
 	animation: glowingCustom 3s ease-in-out infinite;
+}
+
+/* Embeded view */
+
+:not(#main-wrap) footer {
+	background: var(--surfaceColorHover) !important;
 }
 
 @keyframes glowingCustom {
