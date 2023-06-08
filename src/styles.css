@@ -2734,6 +2734,10 @@ a.context-streamer:hover {
 	background: var(--surfaceColor) !important;
 	border: 2px solid var(--surfaceColorHover) !important;
 	box-shadow: none !important;
+}
+
+#analyse-cm,
+#acpl-chart-loader {
 	backdrop-filter: blur(16px) !important;
 }
 
