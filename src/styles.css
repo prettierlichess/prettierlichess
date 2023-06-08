@@ -2700,7 +2700,7 @@ a.context-streamer:hover {
 }
 
 @media (min-width: 1261px) {
-	.analyse:not(main.has-relay-tour) {
+	#main-wrap .analyse:not(main.has-relay-tour) {
 		grid-template-columns:
 			minmax(230px, 20vw) 2vmin minmax(
 				calc(70vmin * var(--board-scale)),
@@ -2752,10 +2752,10 @@ a.context-streamer:hover {
 	border: none !important;
 }
 
-.analyse__acpl,
-.analyse__tools,
-.analyse__controls,
-.analyse .pocket {
+#main-wrap .analyse__acpl,
+#main-wrap .analyse__tools,
+#main-wrap .analyse__controls,
+#main-wrap .analyse .pocket {
 	position: relative !important;
 	left: calc(-80px + 1vmin) !important;
 	transition: left 0.3s ease-in-out !important;
@@ -4845,7 +4845,7 @@ body .glowing {
 		display: none !important;
 	}
 
-	.analyse {
+	#main-wrap .analyse {
 		grid-template-columns:
 			minmax(
 				calc(70vmin * var(--board-scale)),
@@ -4978,7 +4978,7 @@ body .glowing {
 		overflow-x: hidden !important;
 	}
 
-	main {
+	#main-wrap main {
 		width: 100vw !important;
 		max-width: 100% !important;
 		grid-template-columns: 100% !important;
@@ -5158,7 +5158,7 @@ body .glowing {
 
 	/* Analysis Mobile */
 
-	.analyse {
+	#main-wrap .analyse {
 		grid-template-columns: 100% !important;
 		grid-template-rows: auto !important;
 		margin: 0 !important;
@@ -5279,7 +5279,7 @@ body .glowing {
 		transform: translateX(-90vw) !important;
 	}
 
-	main.lobby {
+	#main-wrap main.lobby {
 		grid-template-areas:
 			'tv'
 			'app'
