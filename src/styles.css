@@ -3244,6 +3244,14 @@ a.analyse {
 	margin-left: 0 !important;
 }
 
+.analyse__underboard .copyables .pgn .action {
+	margin-top: 2px !important;
+}
+
+.analyse__underboard {
+	padding-bottom: 20px !important;
+}
+
 .analyse__underboard,
 .gamebook .comment .content {
 	border-radius: var(--borderRadius) !important;
