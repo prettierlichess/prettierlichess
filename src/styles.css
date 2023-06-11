@@ -2593,10 +2593,17 @@ rm6 .buttons,
 	border-left: 2px solid var(--surfaceColorHover) !important;
 }
 
+#voice-bar #voice-status-row {
+	background: var(--surfaceColor) !important;
+}
+
 rm6 {
 	margin-bottom: 0 !important;
 	background: none !important;
-	overflow: hidden !important;
+}
+
+rm6 .board-menu {
+	background: var(--surfaceColorHover) !important;
 }
 
 rm6 l4x,
