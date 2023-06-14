@@ -2,64 +2,56 @@
 	font-family: 'Red Hat Text';
 	font-style: normal;
 	font-weight: 400;
-	src: url(chrome-extension://__MSG_@@extension_id__/fonts/RedHatText-Regular.ttf),
-		url(moz-extension://__MSG_@@extension_id__/fonts/RedHatText-Regular.ttf);
+	src: local(RedHatText-Regular.ttf);
 }
 
 @font-face {
 	font-family: 'Red Hat Text';
 	font-style: italic;
 	font-weight: 400;
-	src: url(chrome-extension://__MSG_@@extension_id__/fonts/RedHatText-Italic.ttf),
-		url(moz-extension://__MSG_@@extension_id__/fonts/RedHatText-Italic.ttf);
+	src: local(RedHatText-Italic.ttf);
 }
 
 @font-face {
 	font-family: 'Red Hat Text';
 	font-style: normal;
 	font-weight: 500;
-	src: url(chrome-extension://__MSG_@@extension_id__/fonts/RedHatText-Medium.ttf),
-		url(moz-extension://__MSG_@@extension_id__/fonts/RedHatText-Medium.ttf);
+	src: local(RedHatText-Medium.ttf);
 }
 
 @font-face {
 	font-family: 'Red Hat Text';
 	font-style: italic;
 	font-weight: 500;
-	src: url(chrome-extension://__MSG_@@extension_id__/fonts/RedHatText-MediumItalic.ttf),
-		url(moz-extension://__MSG_@@extension_id__/fonts/RedHatText-MediumItalic.ttf);
+	src: local(RedHatText-MediumItalic.ttf);
 }
 
 @font-face {
 	font-family: 'Red Hat Text';
 	font-style: normal;
 	font-weight: 700;
-	src: url(chrome-extension://__MSG_@@extension_id__/fonts/RedHatText-Bold.ttf),
-		url(moz-extension://__MSG_@@extension_id__/fonts/RedHatText-Bold.ttf);
+	src: local(RedHatText-Bold.ttf);
 }
 
 @font-face {
 	font-family: 'Red Hat Text';
 	font-style: italic;
 	font-weight: 700;
-	src: url(chrome-extension://__MSG_@@extension_id__/fonts/RedHatText-BoldItalic.ttf),
-		url(moz-extension://__MSG_@@extension_id__/fonts/RedHatText-BoldItalic.ttf);
+	src: local(RedHatText-BoldItalic.ttf);
 }
 
 @font-face {
 	font-family: 'Red Hat Display';
 	font-style: normal;
 	font-weight: 400;
-	src: url(chrome-extension://__MSG_@@extension_id__/fonts/RedHatDisplay-Regular.ttf),
-		url(moz-extension://__MSG_@@extension_id__/fonts/RedHatDisplay-Regular.ttf);
+	src: local(RedHatDisplay-Regular.ttf);
 }
 
 @font-face {
 	font-family: 'Red Hat Display';
 	font-style: normal;
 	font-weight: 700;
-	src: url(chrome-extension://__MSG_@@extension_id__/fonts/RedHatDisplay-Bold.ttf),
-		url(moz-extension://__MSG_@@extension_id__/fonts/RedHatDisplay-Bold.ttf);
+	src: local(RedHatDisplay-Bold.ttf);
 }
 
 :root {
