@@ -4657,7 +4657,7 @@ group.radio label:hover {
 	color: var(--defaultWhite) !important;
 }
 
-group.radio input:checked + label,
+body #main-wrap group.radio input:checked + label,
 .plan .banner,
 .plan .plan_checkout group input:checked + label,
 .plan .plan_checkout .amount_fixed label,
