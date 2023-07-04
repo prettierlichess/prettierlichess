@@ -3796,7 +3796,7 @@ hr {
 	color: var(--primaryColor) !important;
 }
 
-.btn-rack__btn:hover {
+.page-menu .btn-rack__btn:hover {
 	background: var(--surfaceColorHover) !important;
 }
 
@@ -4822,6 +4822,32 @@ body #main-wrap group.radio input:checked + label,
 
 .chapter-name {
 	background: var(--surfaceColorHover) !important;
+}
+
+/* Voice */
+
+.voice-move-help th p {
+	background: var(--secondaryColor) !important;
+	color: var(--surfaceColor) !important;
+}
+
+#voice-settings-button.active {
+	background-color: var(--primaryColor) !important;
+	color: var(--backgroundColor) !important;
+}
+
+button#microphone-button.push-to-talk,
+button#microphone-button.listening {
+	border-color: var(--primaryColor) !important;
+}
+
+#voice-settings {
+	background: var(--surfaceColor) !important;
+	border-top: 2px solid var(--primaryColor) !important;
+}
+
+.voice-setting input[type='range'] {
+	accent-color: var(--primaryColor) !important;
 }
 
 /* Glowing */
