@@ -2772,10 +2772,10 @@ a.context-streamer:hover {
 	transition: left 0.3s ease-in-out !important;
 }
 
-.gauge-on .analyse__tools,
-.gauge-on .analyse__acpl,
-.gauge-on .analyse__controls,
-.gauge-on .pocket {
+#main-wrap .gauge-on .analyse__tools,
+#main-wrap .gauge-on .analyse__acpl,
+#main-wrap .gauge-on .analyse__controls,
+#main-wrap .gauge-on .pocket {
 	left: 0 !important;
 }
 
