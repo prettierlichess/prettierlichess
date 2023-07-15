@@ -2764,20 +2764,30 @@ a.context-streamer:hover {
 	border: none !important;
 }
 
-#main-wrap .analyse__acpl,
-#main-wrap .analyse__tools,
-#main-wrap .analyse__controls,
-#main-wrap .analyse .pocket {
-	position: relative !important;
-	left: calc(-80px + 1vmin) !important;
-	transition: left 0.3s ease-in-out !important;
-}
+@media (min-width: 800px) {
+	#main-wrap .analyse__acpl,
+	#main-wrap .analyse__tools,
+	#main-wrap .analyse__controls,
+	#main-wrap .analyse .pocket {
+		position: relative !important;
+		left: calc(-80px + 1vmin) !important;
+		transition: left 0.3s ease-in-out !important;
+	}
 
-#main-wrap .gauge-on .analyse__tools,
-#main-wrap .gauge-on .analyse__acpl,
-#main-wrap .gauge-on .analyse__controls,
-#main-wrap .gauge-on .pocket {
-	left: -35px !important;
+	#main-wrap .gauge-on .analyse__tools,
+	#main-wrap .gauge-on .analyse__acpl,
+	#main-wrap .gauge-on .analyse__controls,
+	#main-wrap .gauge-on .pocket {
+		left: -35px !important;
+	}
+}
+@media (max-width: 799px) {
+	#main-wrap .analyse__acpl,
+	#main-wrap .analyse__tools,
+	#main-wrap .analyse__controls,
+	#main-wrap .analyse .pocket {
+		left: 0 !important;
+	}
 }
 
 .analyse__controls .jumps {
@@ -3163,9 +3173,10 @@ path[fill='url(#highcharts-7)'] {
 .gamebook .feedback.end {
 	margin-right: 20px !important;
 }
-
-.gamebook {
-	margin-left: -50px !important;
+@media (min-width: 800px) {
+	.gamebook {
+		margin-left: -50px !important;
+	}
 }
 
 .study__chapters {
