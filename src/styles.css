@@ -2777,7 +2777,7 @@ a.context-streamer:hover {
 #main-wrap .gauge-on .analyse__acpl,
 #main-wrap .gauge-on .analyse__controls,
 #main-wrap .gauge-on .pocket {
-	left: 0 !important;
+	left: -35px !important;
 }
 
 .analyse__controls .jumps {
@@ -2864,7 +2864,7 @@ a.context-streamer:hover {
 }
 
 .eval-gauge {
-	width: calc(100% - 20px) !important;
+	width: calc(100% - 50px) !important;
 	margin-left: 10px !important;
 	background: none !important;
 	border-radius: var(--borderRadius) !important;
