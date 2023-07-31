@@ -3576,6 +3576,44 @@ button.analyse {
 	padding: 20px !important;
 }
 
+.study__buttons .mode:hover {
+	background: var(--backgroundColor) !important;
+}
+
+.study__message {
+	background: var(--backgroundColor) !important;
+}
+
+.gamebook-edit {
+	background: var(--surfaceColorHover) !important;
+}
+
+.gamebook-edit .legend {
+	border-top: 2px solid var(--surfaceColor) !important;
+	border-bottom: none !important;
+}
+
+.gamebook-edit .legend.clickable:hover {
+	background: var(--backgroundColor) !important;
+}
+
+.gamebook-edit .hint .legend i {
+	color: var(--primaryColor) !important;
+}
+
+.gamebook-edit .todo.legend i {
+	background: var(--tertiaryColor) !important;
+	color: var(--defaultWhite) !important;
+}
+
+.gamebook-edit .done.legend i {
+	background: var(--primaryColor) !important;
+}
+
+.gamebook-edit .hint textarea {
+	background: var(--surfaceColor) !important;
+}
+
 /* Profile */
 
 .activity .entry {
