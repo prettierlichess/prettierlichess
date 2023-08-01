@@ -4685,6 +4685,11 @@ iframe.analyse {
 	background: var(--secondaryColor) !important;
 }
 
+.account .saved {
+	border: 1px solid var(--primaryColor) !important;
+	background: rgba(var(--primaryColorRGB), 0.1) !important;
+}
+
 group.radio {
 	border-radius: var(--borderRadius) !important;
 }
