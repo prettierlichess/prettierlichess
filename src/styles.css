@@ -1668,13 +1668,6 @@ a.button.button-metal:hover {
 	z-index: 5 !important;
 }
 
-.ublog-post-card__image {
-	flex: 1 !important;
-	object-fit: cover !important;
-	order: 2 !important;
-	height: 10px !important;
-}
-
 .ublog-post-card__over-image {
 	background: none !important;
 }
