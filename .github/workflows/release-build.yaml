@@ -41,9 +41,27 @@ jobs:
           name: build-version
           path: ./dist/build.zip
 
+  bundle-source:
+    name: Bundle source code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Bundle the source files
+        run: zip -r sourcecode.zip $(<'sourcelist.txt')
+
+      - name: Upload source code as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: sourcecode
+          path: ./sourcecode.zip
+
   upload:
     name: Upload build to github release
-    needs: [ build ]
+    needs: [ build, bundle-source ]
     runs-on: ubuntu-latest
     steps:
       - name: Download build version
@@ -52,11 +70,25 @@ jobs:
           name: build-version
           path: .
 
+      - name: Download source code
+        uses: actions/download-artifact@v3
+        with:
+          name: sourcecode
+          path: .
+
       - name: Upload build to release
         uses: svenstaro/upload-release-action@cc92c9093e5f785e23a3d654fe2671640b851b5f
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./build.zip
+          tag: ${{ github.ref }}
+          overwrite: true
+
+      - name: Upload sourcecode to release
+        uses: svenstaro/upload-release-action@cc92c9093e5f785e23a3d654fe2671640b851b5f
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./sourcecode.zip
           tag: ${{ github.ref }}
           overwrite: true
 
