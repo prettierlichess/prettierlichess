@@ -4867,6 +4867,14 @@ body #main-wrap group.radio input:checked + label,
 	background-color: rgba(var(--secondaryColorRGB), 0.2) !important;
 }
 
+.streamer-show .ratings {
+	background: var(--secondaryColor) !important;
+}
+
+.streamer-show .ratings span {
+	color: var(--backgroundColor) !important;
+}
+
 .chapter-name {
 	background: var(--surfaceColorHover) !important;
 }
