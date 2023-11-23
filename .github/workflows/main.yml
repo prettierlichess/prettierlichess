@@ -35,10 +35,11 @@ jobs:
           xcrun safari-web-extension-converter dist
           xcodebuild -project ./Prettier\ Lichess/Prettier\ Lichess.xcodeproj -target "Prettier Lichess (macOS)"
 
-      
-
-      - name: Upload Safari macOS app file
-        uses: actions/upload-artifact@v3
+      - name: Upload Safari build to release
+        uses: svenstaro/upload-release-action@cc92c9093e5f785e23a3d654fe2671640b851b5f
         with:
-          name: Safari app
-          path: /Users/runner/work/prettierlichess/prettierlichess/Prettier\ Lichess/build/Release/Prettier\ Lichess.app
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: /Users/runner/work/prettierlichess/prettierlichess/Prettier\ Lichess/build/Release/Prettier\ Lichess.app
+          tag: ${{ github.ref }}
+          overwrite: true
+          
