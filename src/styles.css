@@ -265,7 +265,8 @@ rm6 .message::before,
 .tview2 move.active,
 .team-events .slist a,
 .team-events .slist .setup,
-.relay-widget::before {
+.relay-widget::before,
+.keyboard-move em {
 	color: var(--textColor) !important;
 }
 
@@ -1659,13 +1660,6 @@ a.button.button-metal:hover {
 	z-index: 5 !important;
 }
 
-.ublog-post-card__image {
-	flex: 1 !important;
-	object-fit: cover !important;
-	order: 2 !important;
-	height: 10px !important;
-}
-
 .ublog-post-card__over-image {
 	background: none !important;
 }
@@ -2755,20 +2749,30 @@ a.context-streamer:hover {
 	border: none !important;
 }
 
-#main-wrap .analyse__acpl,
-#main-wrap .analyse__tools,
-#main-wrap .analyse__controls,
-#main-wrap .analyse .pocket {
-	position: relative !important;
-	left: calc(-80px + 1vmin) !important;
-	transition: left 0.3s ease-in-out !important;
-}
+@media (min-width: 800px) {
+	#main-wrap .analyse__acpl,
+	#main-wrap .analyse__tools,
+	#main-wrap .analyse__controls,
+	#main-wrap .analyse .pocket {
+		position: relative !important;
+		left: calc(-80px + 1vmin) !important;
+		transition: left 0.3s ease-in-out !important;
+	}
 
-.gauge-on .analyse__tools,
-.gauge-on .analyse__acpl,
-.gauge-on .analyse__controls,
-.gauge-on .pocket {
-	left: 0 !important;
+	#main-wrap .gauge-on .analyse__tools,
+	#main-wrap .gauge-on .analyse__acpl,
+	#main-wrap .gauge-on .analyse__controls,
+	#main-wrap .gauge-on .pocket {
+		left: -35px !important;
+	}
+}
+@media (max-width: 799px) {
+	#main-wrap .analyse__acpl,
+	#main-wrap .analyse__tools,
+	#main-wrap .analyse__controls,
+	#main-wrap .analyse .pocket {
+		left: 0 !important;
+	}
 }
 
 .analyse__controls .jumps {
@@ -2855,7 +2859,7 @@ a.context-streamer:hover {
 }
 
 .eval-gauge {
-	width: calc(100% - 20px) !important;
+	width: calc(100% - 50px) !important;
 	margin-left: 10px !important;
 	background: none !important;
 	border-radius: var(--borderRadius) !important;
@@ -3154,9 +3158,10 @@ path[fill='url(#highcharts-7)'] {
 .gamebook .feedback.end {
 	margin-right: 20px !important;
 }
-
-.gamebook {
-	margin-left: -50px !important;
+@media (min-width: 800px) {
+	.gamebook {
+		margin-left: -50px !important;
+	}
 }
 
 .study__chapters {
@@ -3556,6 +3561,44 @@ button.analyse {
 	padding: 20px !important;
 }
 
+.study__buttons .mode:hover {
+	background: var(--backgroundColor) !important;
+}
+
+.study__message {
+	background: var(--backgroundColor) !important;
+}
+
+.gamebook-edit {
+	background: var(--surfaceColorHover) !important;
+}
+
+.gamebook-edit .legend {
+	border-top: 2px solid var(--surfaceColor) !important;
+	border-bottom: none !important;
+}
+
+.gamebook-edit .legend.clickable:hover {
+	background: var(--backgroundColor) !important;
+}
+
+.gamebook-edit .hint .legend i {
+	color: var(--primaryColor) !important;
+}
+
+.gamebook-edit .todo.legend i {
+	background: var(--tertiaryColor) !important;
+	color: var(--defaultWhite) !important;
+}
+
+.gamebook-edit .done.legend i {
+	background: var(--primaryColor) !important;
+}
+
+.gamebook-edit .hint textarea {
+	background: var(--surfaceColor) !important;
+}
+
 /* Profile */
 
 .activity .entry {
@@ -3787,7 +3830,7 @@ hr {
 	color: var(--primaryColor) !important;
 }
 
-.btn-rack__btn:hover {
+.page-menu .btn-rack__btn:hover {
 	background: var(--surfaceColorHover) !important;
 }
 
@@ -4627,6 +4670,11 @@ iframe.analyse {
 	background: var(--secondaryColor) !important;
 }
 
+.account .saved {
+	border: 1px solid var(--primaryColor) !important;
+	background: rgba(var(--primaryColorRGB), 0.1) !important;
+}
+
 group.radio {
 	border-radius: var(--borderRadius) !important;
 }
@@ -4648,7 +4696,7 @@ group.radio label:hover {
 	color: var(--defaultWhite) !important;
 }
 
-group.radio input:checked + label,
+body #main-wrap group.radio input:checked + label,
 .plan .banner,
 .plan .plan_checkout group input:checked + label,
 .plan .plan_checkout .amount_fixed label,
@@ -4811,8 +4859,42 @@ group.radio input:checked + label,
 	background-color: rgba(var(--secondaryColorRGB), 0.2) !important;
 }
 
+.streamer-show .ratings {
+	background: var(--secondaryColor) !important;
+}
+
+.streamer-show .ratings span {
+	color: var(--backgroundColor) !important;
+}
+
 .chapter-name {
 	background: var(--surfaceColorHover) !important;
+}
+
+/* Voice */
+
+.voice-move-help th p {
+	background: var(--secondaryColor) !important;
+	color: var(--surfaceColor) !important;
+}
+
+#voice-settings-button.active {
+	background-color: var(--primaryColor) !important;
+	color: var(--backgroundColor) !important;
+}
+
+button#microphone-button.push-to-talk,
+button#microphone-button.listening {
+	border-color: var(--primaryColor) !important;
+}
+
+#voice-settings {
+	background: var(--surfaceColor) !important;
+	border-top: 2px solid var(--primaryColor) !important;
+}
+
+.voice-setting input[type='range'] {
+	accent-color: var(--primaryColor) !important;
 }
 
 /* Glowing */

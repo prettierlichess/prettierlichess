@@ -1,6 +1,6 @@
 {
   "name": "prettierlichess",
-  "version": "3.8.2",
+  "version": "3.11.0",
   "description": "Here is the source code for both the chrome and firefox extension! It's simple but it's mine. Feel free to download, fork, use, and mess with it all you want. No attribution or anything required.",
   "scripts": {
     "build": "npx webpack",
@@ -25,19 +25,18 @@
   "homepage": "https://prettierlichess.github.io/",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^10.0.0",
+    "copy-webpack-plugin": "^11.0.0",
     "cypress": "^12.6.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
+    "husky": "^8.0.3",
     "mime": "^3.0.0",
-    "prettier": "2.7.1",
-    "start-server-and-test": "^1.15.4",
-    "web-ext": "^7.3.1",
-    "webpack": "^5.64.1",
-    "webpack-cli": "^4.9.1"
+    "prettier": "^3.0.3",
+    "start-server-and-test": "^2.0.1",
+    "web-ext": "^7.8.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   },
   "private": true,
   "dependencies": {
-    "@simonwep/pickr": "^1.8.2"
+    "@simonwep/pickr": "^1.9.0"
   }
 }
