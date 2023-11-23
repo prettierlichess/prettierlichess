@@ -1,4 +1,4 @@
-name: Create build for releasee
+name: Create build for release
 
 on:
   release:
