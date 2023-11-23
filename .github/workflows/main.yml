@@ -34,13 +34,14 @@ jobs:
           npm run build
           xcrun safari-web-extension-converter dist
           xcodebuild -project ./Prettier\ Lichess/Prettier\ Lichess.xcodeproj -target "Prettier Lichess (macOS)"
-          zip -r ./prettierlichess-safari.zip /Users/runner/work/prettierlichess/prettierlichess/Prettier\ Lichess/build/Release/Prettier\ Lichess.app
+          cd /Users/runner/work/prettierlichess/prettierlichess/Prettier\ Lichess/build/Release/
+          zip -r ./prettierlichess-safari.zip Prettier\ Lichess.app
 
       - name: Upload build version as artifact
         uses: actions/upload-artifact@v3
         with:
           name: prettierlichess-safari
-          path: ./prettierlichess-safari.zip
+          path: /Users/runner/work/prettierlichess/prettierlichess/Prettier\ Lichess/build/Release/prettierlichess-safari.zip
           
 
   upload:
