@@ -35,9 +35,10 @@ jobs:
           zip -r build.zip .
           ls
           xcrun safari-web-extension-converter .
+          ls
           cd Prettier\ Lichess
+          ls
           xcodebuild -target "Prettier Lichess (macOS)"
-          cd ../..
 
       - name: Upload Safari macOS app file
         uses: actions/upload-artifact@v3
