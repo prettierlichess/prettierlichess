@@ -33,7 +33,7 @@ jobs:
           npm run build
           cd dist
           zip -r build.zip .
-          xcrun safari-web-extension-converter build
+          xcrun safari-web-extension-converter .
           cd Prettier\ Lichess
           xcodebuild -target "Prettier Lichess (macOS)"
           cd ../..
