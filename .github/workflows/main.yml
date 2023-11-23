@@ -28,7 +28,7 @@ jobs:
 
       - run: npm install
 
-      - name: Build the release macOS version
+      - name: Build and Convert the release macOS version
         run: |
           npm run build
           cd dist
@@ -37,8 +37,16 @@ jobs:
           xcrun safari-web-extension-converter .
           ls
           cd Prettier\ Lichess
-          ls
-          xcodebuild -target "Prettier Lichess (macOS)"
+          
+      - name: Build Safari App
+        uses: sersoft-gmbh/xcodebuild-action@v3
+        with:
+          project: Prettier Lichess.xcodeproj
+          scheme: Prettier Lichess (macOS)
+          destination: platform=macOS
+          action: build
+
+      
 
       - name: Upload Safari macOS app file
         uses: actions/upload-artifact@v3
