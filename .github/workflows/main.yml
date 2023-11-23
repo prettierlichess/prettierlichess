@@ -29,10 +29,8 @@ jobs:
       - name: Build and Convert the release macOS version
         run: |
           npm run build
-          cd dist
-          zip -r build.zip .
-          xcrun safari-web-extension-converter .
-          xcodebuild -project /Users/runner/work/prettierlichess/prettierlichess/dist/Prettier\ Lichess/Prettier\ Lichess.xcodeproj -target "Prettier Lichess (macOS)" build
+          xcrun safari-web-extension-converter dist
+          xcodebuild -project ./Prettier\ Lichess/Prettier\ Lichess.xcodeproj -target "Prettier Lichess (macOS)"
 
       
 
@@ -40,4 +38,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-version
-          path: /Users/runner/work/prettierlichess/prettierlichess/dist/Prettier\ Lichess/build/Release/Prettier\ Lichess.app
+          path: /Users/runner/work/prettierlichess/prettierlichess/Prettier\ Lichess/build/Release/Prettier\ Lichess.app
