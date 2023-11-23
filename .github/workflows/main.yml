@@ -33,10 +33,10 @@ jobs:
           npm run build
           cd dist
           zip -r build.zip .
-          ls
           xcrun safari-web-extension-converter .
-          ls
           cd Prettier\ Lichess
+          pwd
+          ls
           
       - name: Build Safari App
         uses: sersoft-gmbh/xcodebuild-action@v3
