@@ -39,7 +39,7 @@ jobs:
       - name: Upload build version as artifact
         uses: actions/upload-artifact@v3
         with:
-          name: build-version
+          name: prettierlichess-safari
           path: ./prettierlichess-safari.zip
           
 
@@ -48,6 +48,11 @@ jobs:
     needs: [ build ]
     runs-on: ubuntu-latest
     steps:
+      - name: Download source code
+        uses: actions/download-artifact@v3
+        with:
+          name: prettierlichess-safari
+          path: ./prettierlichess-safari.zip
 
       - name: Upload build to release
         uses: svenstaro/upload-release-action@cc92c9093e5f785e23a3d654fe2671640b851b5f
