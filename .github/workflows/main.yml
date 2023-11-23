@@ -1,0 +1,45 @@
+name: Create build for release
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Set up npm cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Setup Node.js and npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - run: npm install
+
+      - name: Build the release macOS version
+        run: |
+          npm run build
+          cd dist
+          zip -r build.zip .
+          xcrun safari-web-extension-converter build
+          cd Prettier\ Lichess
+          xcodebuild -target "Prettier Lichess (macOS)"
+          cd ../..
+
+      - name: Upload Safari macOS app file
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-version
+          path: ./Prettier\ Lichess/build/Release/Prettier\ Lichess.app
