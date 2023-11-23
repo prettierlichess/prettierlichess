@@ -40,5 +40,5 @@ jobs:
       - name: Upload Safari macOS app file
         uses: actions/upload-artifact@v3
         with:
-          name: build-version
+          name: Safari app
           path: /Users/runner/work/prettierlichess/prettierlichess/Prettier\ Lichess/build/Release/Prettier\ Lichess.app
