@@ -41,7 +41,7 @@ jobs:
       - name: Build Safari App
         uses: sersoft-gmbh/xcodebuild-action@v3
         with:
-          project: /Users/runner/work/prettierlichess/prettierlichess/dist/Prettier\ Lichess.xcodeproj
+          project: /Users/runner/work/prettierlichess/prettierlichess/dist/Prettier\ Lichess/Prettier\ Lichess.xcodeproj
           scheme: Prettier Lichess (macOS)
           destination: platform=macOS
           action: build
@@ -52,4 +52,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-version
-          path: ./Prettier\ Lichess/Release/Prettier\ Lichess.app
+          path: /Users/runner/work/prettierlichess/prettierlichess/dist/Prettier\ Lichess/build/Release/Prettier\ Lichess.app
