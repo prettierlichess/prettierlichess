@@ -40,8 +40,7 @@ jobs:
         uses: sersoft-gmbh/xcodebuild-action@v3
         with:
           project: /Users/runner/work/prettierlichess/prettierlichess/dist/Prettier Lichess/Prettier Lichess.xcodeproj
-          scheme: Prettier Lichess (macOS)
-          destination: platform=macOS
+          target: Prettier Lichess (macOS)
           action: build
 
       
