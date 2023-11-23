@@ -1,7 +1,9 @@
 name: Create build for release
 
 
-on: push
+on:
+  release:
+    types: [ published ]
 
 jobs:
   build:
