@@ -41,7 +41,7 @@ jobs:
       - name: Build Safari App
         uses: sersoft-gmbh/xcodebuild-action@v3
         with:
-          project: ./Prettier\ Lichess/Prettier Lichess.xcodeproj
+          project: ./Prettier\ Lichess/Prettier\ Lichess.xcodeproj
           scheme: Prettier Lichess (macOS)
           destination: platform=macOS
           action: build
