@@ -161,7 +161,8 @@ main.lobby {
 		'app tv tv side'
 		'table blog blog support'
 		'leader puzzle puzzle winner'
-		'. tours tours .'
+		'feed puzzle puzzle .'
+		'feed tours tours .'
 		'. simuls simuls .'
 		'. about about .';
 	grid-template-columns: minmax(400px, 1fr) 1fr 1fr minmax(400px, 1fr);
