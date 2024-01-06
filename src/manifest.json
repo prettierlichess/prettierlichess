@@ -41,6 +41,7 @@
 		"styles.css",
 		"fonts/*",
 		"pieces/*",
+		"icons/*",
 		"masks/*"
 	],
 	"browser_specific_settings": {

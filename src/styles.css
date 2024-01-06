@@ -2055,10 +2055,42 @@ button.rematch-decline::before {
 .tview2-column > interrupt {
 	background: var(--backgroundColor) !important;
 	border: none !important;
+	margin: 10px;
+	max-width: calc(100% - 10px) !important;
+	border-radius: var(--borderRadius);
 }
 
 .tview2-column > interrupt > comment {
 	padding: 10px 14px !important;
+	border: none !important;
+
+	/* TODO: Proposal: display icon in interrupt comment (comment out padding and uncomment this block) */
+	/* margin: 10px 14px !important;
+	padding: 1px;
+	padding-left: 25px !important;
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/inaccuracy.svg') !important;
+	background-repeat: no-repeat; */
+}
+
+.tview2-column {
+	move > glyph {
+		width: 18px;
+		height: 18px;
+		font-size: 0 !important;
+		margin-left: 5px;
+	}
+
+	move.inaccuracy > glyph {
+		background-image: url('chrome-extension://__MSG_@@extension_id__/icons/inaccuracy.svg') !important;
+	}
+
+	move.blunder > glyph {
+		background-image: url('chrome-extension://__MSG_@@extension_id__/icons/blunder.svg') !important;
+	}
+
+	move.mistake > glyph {
+		background-image: url('chrome-extension://__MSG_@@extension_id__/icons/mistake.svg') !important;
+	}
 }
 
 .puzzle__side {
@@ -2771,7 +2803,7 @@ a.context-streamer:hover {
 	#main-wrap .gauge-on .analyse__acpl,
 	#main-wrap .gauge-on .analyse__controls,
 	#main-wrap .gauge-on .pocket {
-		left: -35px !important;
+		left: -31px !important;
 	}
 }
 @media (max-width: 799px) {
