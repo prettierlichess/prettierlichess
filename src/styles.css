@@ -5463,3 +5463,7 @@ body .glowing {
 		visibility: hidden !important;
 	}
 }
+
+.lobby__feed {
+	display: none !important;
+}
