@@ -865,6 +865,7 @@ square.selected {
 	font-family: 'Red Hat Display', sans-serif !important;
 	transition: opacity 0.2s ease-in-out !important;
 	z-index: 9 !important;
+	color: var(--primaryColor) !important;
 }
 
 .site-title:hover {
