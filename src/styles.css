@@ -161,6 +161,7 @@ body,
 .lobby__blog .post,
 .lobby__blog .post time,
 .lobby__counters a,
+.lobby__feed,
 .subnav a,
 .mini-game,
 .mini-game:hover,
@@ -1281,6 +1282,14 @@ signal > i {
 .lobby__app__content {
 	border-radius: 0 !important;
 	background: none !important;
+}
+
+.lobby__feed {
+	background: var(--surfaceColor) !important;
+	justify-content: center !important;
+	border: 1px solid var(--surfaceColorHover);
+	padding: 20px 0 !important;
+	width: 100% !important;
 }
 
 .lpools {
@@ -4942,7 +4951,8 @@ body .glowing {
 			'winner  tours   tours'
 			'table table table'
 			'support blog    blog '
-			'simuls   simuls  simuls'
+			'feed    feed    feed'
+			'. simuls  simuls'
 			'. about about' !important;
 	}
 
