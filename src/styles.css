@@ -2777,7 +2777,7 @@ a.context-streamer:hover {
 	#main-wrap .analyse__controls,
 	#main-wrap .analyse .pocket {
 		position: relative !important;
-		left: calc(-80px + 1vmin) !important;
+		left: calc(-80px + 2vmin) !important;
 		transition: left 0.3s ease-in-out !important;
 	}
 
