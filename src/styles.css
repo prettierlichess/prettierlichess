@@ -2707,6 +2707,9 @@ a.context-streamer:hover {
 	position: relative !important;
 	justify-content: center !important;
 	--meta-height: minmax(auto, 300px) !important;
+}
+
+.analyse:not(.has-players) {
 	margin-top: 20px !important;
 }
 
@@ -2725,10 +2728,6 @@ a.context-streamer:hover {
 			)
 			80px minmax(240px, 400px) !important;
 	}
-}
-
-.analyse.has-players {
-	margin-top: 18px !important;
 }
 
 .analyse__side .mselect {
