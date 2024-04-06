@@ -1242,7 +1242,7 @@ signal > i {
 /* Homepage */
 
 #main-wrap {
-	--main-max-width: 1500px !important;
+	/* --main-max-width: 1300px !important; */
 	justify-items: center !important;
 }
 
@@ -4402,7 +4402,7 @@ iframe.analyse {
 	background: none !important;
 	border: none !important;
 	justify-self: center !important;
-	margin-right: 70px !important;
+	/* margin-right: 70px !important; */
 }
 
 .blog .meta-headline {
