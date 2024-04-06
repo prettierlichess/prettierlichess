@@ -2707,14 +2707,7 @@ a.context-streamer:hover {
 	position: relative !important;
 	justify-content: center !important;
 	--meta-height: minmax(auto, 300px) !important;
-}
-
-#main-wrap {
-	margin-top: calc(
-		var(--site-header-height) +
-		var(--site-header-margin) +
-		var(--sticky-gap) + 20px
-	) !important;
+	margin-top: 20px !important;
 }
 
 @media (min-width: 1261px) {
