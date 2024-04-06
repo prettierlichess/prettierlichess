@@ -286,6 +286,11 @@ body {
 	background: var(--backgroundColor) !important;
 }
 
+body>header {
+	border: none !important;
+	background-image: none !important;
+}
+
 h1,
 h2,
 h3,
