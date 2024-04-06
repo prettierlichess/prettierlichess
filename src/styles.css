@@ -3059,6 +3059,10 @@ a.context-streamer:hover {
 	color: var(--defaultWhite) !important;
 }
 
+.analyse__underboard {
+	margin-top: calc(var(--block-gap) + 0.5em) !important;
+}
+
 /* Analysis Graph */
 
 #acpl-chart,
@@ -5421,6 +5425,7 @@ body .glowing {
 			'tours'
 			'simuls'
 			'support'
+			'feed'
 			'about'
 			'.' !important;
 		grid-template-columns: 100% !important;
