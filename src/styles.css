@@ -3463,6 +3463,7 @@ a.analyse {
 	margin-top: 0 !important;
 	margin-right: 5px !important;
 	backdrop-filter: blur(16px) !important;
+	width: 100% !important;
 }
 
 .studies .study {
