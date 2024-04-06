@@ -286,7 +286,7 @@ body {
 	background: var(--backgroundColor) !important;
 }
 
-body>header {
+body > header {
 	border: none !important;
 	background-image: none !important;
 }
