@@ -2709,6 +2709,14 @@ a.context-streamer:hover {
 	--meta-height: minmax(auto, 300px) !important;
 }
 
+#main-wrap {
+	margin-top: calc(
+		var(--site-header-height) +
+		var(--site-header-margin) +
+		var(--sticky-gap) + 20px
+	) !important;
+}
+
 @media (min-width: 1261px) {
 	#main-wrap .analyse:not(main.has-relay-tour) {
 		grid-template-columns:
