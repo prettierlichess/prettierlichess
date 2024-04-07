@@ -286,6 +286,11 @@ body {
 	background: var(--backgroundColor) !important;
 }
 
+body > header {
+	border: none !important;
+	background-image: none !important;
+}
+
 h1,
 h2,
 h3,
@@ -1238,7 +1243,7 @@ signal > i {
 /* Homepage */
 
 #main-wrap {
-	--main-max-width: 1500px !important;
+	/* --main-max-width: 1300px !important; */
 	justify-items: center !important;
 }
 
@@ -2710,6 +2715,10 @@ a.context-streamer:hover {
 	--meta-height: minmax(auto, 300px) !important;
 }
 
+.analyse:not(.has-players) {
+	margin-top: 20px !important;
+}
+
 @media (min-width: 1261px) {
 	#main-wrap .analyse:not(main.has-relay-tour) {
 		grid-template-columns:
@@ -2725,10 +2734,6 @@ a.context-streamer:hover {
 			)
 			80px minmax(240px, 400px) !important;
 	}
-}
-
-.analyse.has-players {
-	margin-top: 18px !important;
 }
 
 .analyse__side .mselect {
@@ -2773,7 +2778,7 @@ a.context-streamer:hover {
 	#main-wrap .analyse__controls,
 	#main-wrap .analyse .pocket {
 		position: relative !important;
-		left: calc(-80px + 1vmin) !important;
+		left: calc(-80px + 2vmin) !important;
 		transition: left 0.3s ease-in-out !important;
 	}
 
@@ -3050,6 +3055,10 @@ a.context-streamer:hover {
 
 .pv_box .pv[data-uci] .pv-san:hover {
 	color: var(--defaultWhite) !important;
+}
+
+.analyse__underboard {
+	margin-top: calc(var(--block-gap) + 0.5em) !important;
 }
 
 /* Analysis Graph */
@@ -3455,6 +3464,7 @@ a.analyse {
 	margin-top: 0 !important;
 	margin-right: 5px !important;
 	backdrop-filter: blur(16px) !important;
+	width: 100% !important;
 }
 
 .studies .study {
@@ -4394,7 +4404,7 @@ iframe.analyse {
 	background: none !important;
 	border: none !important;
 	justify-self: center !important;
-	margin-right: 70px !important;
+	/* margin-right: 70px !important; */
 }
 
 .blog .meta-headline {
