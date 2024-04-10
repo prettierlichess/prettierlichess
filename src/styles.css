@@ -514,6 +514,11 @@ group.radio label,
 	text-shadow: none !important;
 }
 
+.button.button-empty.button-red,
+.button.button-empty.button-red:hover {
+	color: var(--tertiaryColor) !important;
+}
+
 /* Board */
 
 /* Kiwi fix
@@ -4305,6 +4310,10 @@ tbody tr.enterable:hover,
 .team-show .mchat {
 	height: 40vh !important;
 	margin-bottom: 3vh !important;
+}
+
+.slist .team-name.mine {
+	color: var(--secondaryColor) !important;
 }
 
 /* Board Editor */
