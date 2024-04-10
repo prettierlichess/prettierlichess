@@ -892,9 +892,6 @@ square.selected {
 	width: 100vw !important;
 	align-items: center !important;
 	justify-content: center !important;
-	margin-left: 0 15vw !important;
-	left: 0 !important;
-	right: 0 !important;
 	max-width: 1800px !important;
 }
 
