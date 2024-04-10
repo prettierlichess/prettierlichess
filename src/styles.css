@@ -5105,7 +5105,6 @@ body .glowing {
 	}
 
 	body #main-wrap {
-		margin: 0 !important;
 		padding: 0 !important;
 		overflow-x: hidden !important;
 	}
@@ -5399,11 +5398,9 @@ body .glowing {
 
 	#main-wrap {
 		width: 100% !important;
-		margin: 0 !important;
 		grid-template-columns:
 			var(--main-margin) 1fr minmax(auto, var(--main-max-width))
 			1fr var(--main-margin) !important;
-		margin-top: var(--site-header-margin) !important;
 	}
 
 	#topnav {
