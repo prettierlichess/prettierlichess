@@ -1248,6 +1248,10 @@ signal > i {
 	justify-items: center !important;
 }
 
+#user_tag::after {
+	color: var(--textColor) !important;
+}
+
 .lobby__app,
 .lobby__side {
 	width: 100% !important;
