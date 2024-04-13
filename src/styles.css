@@ -3190,7 +3190,6 @@ path[fill='url(#highcharts-7)'] {
 
 .study__chapters {
 	overflow: overlay !important;
-	max-height: none !important;
 }
 
 .study__chapters::-webkit-scrollbar-track {
