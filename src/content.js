@@ -323,3 +323,95 @@ window.addEventListener('message', function (event) {
 		chrome.storage.sync.clear();
 	}
 });
+
+/**
+ * Removes the ... cells from the moves table
+ */
+function removeEmptyCells() {
+	document.querySelectorAll('.tview2-column > .empty').forEach((cell) => {
+		if (cell.previousElementSibling.tagName.toLowerCase() === 'index') {
+			cell.previousElementSibling.remove();
+		}
+
+		cell.remove();
+	});
+}
+
+function hideInterrupts() {
+	const moveToInterruptMap = new Map();
+
+	const interrupts = document.querySelectorAll('interrupt');
+	interrupts.forEach((interruptCard) => {
+		let interruptMove = interruptCard.previousElementSibling;
+
+		if (interruptMove.tagName.toLowerCase() !== 'move') {
+			interruptMove = interruptMove.previousElementSibling;
+		}
+
+		moveToInterruptMap.set(interruptMove, interruptCard);
+
+		if (interruptMove.classList.contains('active')) {
+			interruptCard.style.display = 'block';
+		} else {
+			interruptCard.style.display = 'none';
+		}
+
+		// We can't have interruputs in the middle of the row or the moves get split into two rows
+		// So we put all the interrupts after both moves
+		if (interruptCard.nextElementSibling.tagName.toLowerCase() === 'move') {
+			const nextMove = interruptCard.nextElementSibling;
+			interruptCard.parentNode.insertBefore(nextMove, interruptCard);
+		}
+	});
+
+	document.querySelectorAll('.tview2-column > move').forEach((move) => {
+		const interruptCard = moveToInterruptMap.get(move);
+
+		// Show the interrupt card for the active move it has one, and hide all the others
+		const callback = function (mutationsList) {
+			for (let mutation of mutationsList) {
+				if (
+					mutation.type === 'attributes' &&
+					mutation.attributeName === 'class'
+				) {
+					if (move.classList.contains('active')) {
+						interrupts.forEach((interrupt) => {
+							if (interrupt !== interruptCard) {
+								interrupt.style.display = 'none';
+							}
+						});
+
+						if (interruptCard) {
+							interruptCard.style.display = 'block';
+						}
+					}
+				}
+			}
+		};
+
+		const observer = new MutationObserver(callback);
+		const config = {attributes: true, childList: false, subtree: false};
+		observer.observe(move, config);
+	});
+
+	// Hide all interrupts when resetting the board
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'ArrowUp') {
+			interrupts.forEach((interrupt) => {
+				interrupt.style.display = 'none';
+			});
+		}
+	});
+
+	document.querySelector('[data-act=first]').addEventListener('click', () => {
+		interrupts.forEach((interrupt) => {
+			interrupt.style.display = 'none';
+		});
+	});
+}
+
+// TODO: Need a better way of detecting when the moves table is fully loaded
+setTimeout(() => {
+	removeEmptyCells();
+	hideInterrupts();
+}, 500);
