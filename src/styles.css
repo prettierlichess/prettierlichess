@@ -2719,17 +2719,8 @@ a.context-streamer:hover {
 @media (min-width: 1261px) {
 	#main-wrap .analyse:not(main.has-relay-tour) {
 		grid-template-columns:
-			minmax(230px, 20vw) 2vmin minmax(
-				calc(70vmin * var(--board-scale)),
-				calc(
-					100vh * var(--board-scale) -
-						calc(
-							var(--site-header-height) +
-								var(--site-header-margin)
-						) - 3rem
-				)
-			)
-			80px minmax(240px, 400px) !important;
+			minmax(250px, 350px) var(---block-gap) var(---col3-uniboard-width)
+			calc(3 * var(---block-gap)) minmax(240px, 400px);
 	}
 }
 
@@ -2775,17 +2766,10 @@ a.context-streamer:hover {
 	#main-wrap .analyse__controls,
 	#main-wrap .analyse .pocket {
 		position: relative !important;
-		left: calc(-80px + 2vmin) !important;
 		transition: left 0.3s ease-in-out !important;
 	}
-
-	#main-wrap .gauge-on .analyse__tools,
-	#main-wrap .gauge-on .analyse__acpl,
-	#main-wrap .gauge-on .analyse__controls,
-	#main-wrap .gauge-on .pocket {
-		left: -35px !important;
-	}
 }
+
 @media (max-width: 799px) {
 	#main-wrap .analyse__acpl,
 	#main-wrap .analyse__tools,
@@ -2879,8 +2863,9 @@ a.context-streamer:hover {
 }
 
 .eval-gauge {
-	width: calc(100% - 50px) !important;
-	margin-left: 10px !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: 80% !important;
 	background: none !important;
 	border-radius: var(--borderRadius) !important;
 	overflow: hidden !important;
@@ -3055,7 +3040,7 @@ a.context-streamer:hover {
 }
 
 .analyse__underboard {
-	margin-top: calc(var(--block-gap) + 0.5em) !important;
+	margin-top: 20px !important;
 }
 
 /* Analysis Graph */
@@ -4975,17 +4960,8 @@ body .glowing {
 
 	#main-wrap .analyse {
 		grid-template-columns:
-			minmax(
-				calc(70vmin * var(--board-scale)),
-				calc(
-					100vh * var(--board-scale) -
-						calc(
-							var(--site-header-height) +
-								var(--site-header-margin)
-						) - 3rem
-				)
-			)
-			80px minmax(240px, 400px) !important;
+			var(---col2-uniboard-width) calc(3 * var(---block-gap))
+			minmax(240px, 400px) !important;
 	}
 
 	.analyse__side {
@@ -5289,8 +5265,16 @@ body .glowing {
 		grid-template-columns: 100% !important;
 		grid-template-rows: auto !important;
 		margin: 0 !important;
+		grid-template-areas:
+			'board         '
+			'controls      '
+			'tools         '
+			'side          '
+			'round-training'
+			'under         '
+			'chat          '
+			'uchat         ';
 	}
-
 	.analyse.has-players {
 		margin-top: 30px !important;
 	}
