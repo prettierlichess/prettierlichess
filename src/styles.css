@@ -5432,7 +5432,10 @@ body .glowing {
 		font-size: 1.2rem !important;
 	}
 
-	.about-side,
+	.about-side {
+		margin-left: 10px !important;
+	}
+	
 	.lobby__streams,
 	.lobby__about {
 		margin-left: 0 !important;
