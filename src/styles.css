@@ -1558,6 +1558,7 @@ g[stroke='#888'] {
 	border-radius: var(--borderRadius) !important;
 	border: 2px solid var(--surfaceColorHover);
 	padding: 40px 0 !important;
+	margin: 20px 0 0 0 !important;
 }
 
 .lobby__start {
