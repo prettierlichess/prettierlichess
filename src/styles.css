@@ -275,7 +275,8 @@ rm6 .message::before,
 .team-events .slist a,
 .team-events .slist .setup,
 .relay-widget::before,
-.keyboard-move em {
+.keyboard-move em,
+.lobby .progress__text {
 	color: var(--textColor) !important;
 }
 
@@ -1251,7 +1252,6 @@ signal > i {
 	border: 2px solid var(--surfaceColorHover) !important;
 	border-radius: var(--borderRadius) !important;
 	overflow: hidden !important;
-	margin-top: 20px !important;
 	background: var(--surfaceColor) !important;
 	backdrop-filter: blur(16px) !important;
 }
@@ -1276,7 +1276,8 @@ signal > i {
 
 .lobby__side {
 	overflow: auto !important;
-	max-height: 50% !important;
+	height: 100% !important;
+	margin: 0 !important;
 }
 
 .lobby__app.lobby__app-real_time {
@@ -1295,7 +1296,7 @@ signal > i {
 	padding: 0 !important;
 	width: 100% !important;
 	min-height: auto !important;
-	margin-bottom: 20px !important;
+	margin: 20px 0 !important;
 }
 
 .daily-feed__update__marker.nobg {
@@ -1535,14 +1536,29 @@ g[stroke='#888'] {
 }
 
 .lobby__box__content {
+	position: relative !important;
+	height: 100% !important;
 	background: none !important;
-	overflow: auto !important;
-	overflow-x: hidden !important;
+	overflow-x: auto !important;
+}
+
+.lobby__box table {
+	table-layout: auto !important;
 }
 
 .lobby__box td {
 	border: none !important;
 	padding: 10px !important;
+	max-width: none !important;
+}
+
+.lobby .progress {
+	width: 15ch !important;
+	background: rgba(var(--backgroundColorRGB), 0.5) !important;
+}
+
+.lobby .progress__bar {
+	background: rgba(var(--primaryColorRGB), 0.25) !important;
 }
 
 .lobby__box tr:nth-child(even) {
@@ -1582,6 +1598,16 @@ g[stroke='#888'] {
 	border: 2px solid var(--surfaceColorHover);
 	padding: 40px 0 !important;
 	margin: 20px 0 !important;
+}
+
+.lobby__tournaments-simuls {
+	margin: 20px 0 !important;
+}
+
+.lobby__tournaments,
+.lobby__simuls {
+	max-height: none !important;
+	height: 100% !important;
 }
 
 .lobby__start {

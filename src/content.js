@@ -161,14 +161,14 @@ main.lobby {
 		'app tv tv table'
 		'side blog blog support'
 		'tours puzzle puzzle feed'
-		'. simuls simuls .'
-		'. about about .';
+		'simuls simuls simuls simuls'
+		'about about about about';
 	grid-template-columns: minmax(400px, 1fr) 1fr 1fr minmax(400px, 1fr);
-	grid-template-rows: minmax(1fr, 800px) fit-content minmax(1fr, 800px) repeat(2, fit-content(0));
+	grid-template-rows: fit-content(0) min-content fit-content(0) repeat(3, fit-content(0));
 }
-.lobby__app,
-.lobby__side {
+.lobby__app {
 	height: calc(100% - 40px) !important;
+	margin-top: 20px !important;
 }
 `;
 
