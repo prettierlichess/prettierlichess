@@ -309,6 +309,10 @@ p {
 	font-size: 14px !important;
 }
 
+#main-wrap {
+	---main-max-width: 1600px !important;
+}
+
 main {
 	width: 100% !important;
 }
