@@ -1400,6 +1400,10 @@ g[stroke='#888'] {
 	color: var(--defaultWhite) !important;
 }
 
+.lobby__spotlights {
+	border-radius: 0 !important;
+}
+
 .lobby__streams:empty,
 .lobby__spotlights:empty {
 	display: none !important;
@@ -1428,7 +1432,6 @@ g[stroke='#888'] {
 	box-shadow: none !important;
 }
 
-.lobby__spotlights,
 .lobby__streams {
 	border-bottom: 2px solid var(--surfaceColorHover) !important;
 }
