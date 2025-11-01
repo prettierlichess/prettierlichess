@@ -276,7 +276,8 @@ rm6 .message::before,
 .team-events .slist .setup,
 .relay-widget::before,
 .keyboard-move em,
-.lobby .progress__text {
+.lobby .progress__text,
+.daily-feed__update__day {
 	color: var(--textColor) !important;
 }
 
@@ -328,7 +329,8 @@ bad {
 	color: var(--tertiaryColor) !important;
 }
 
-.utitle {
+.utitle,
+.user-link.online .paco10 {
 	color: var(--secondaryColor) !important;
 }
 
@@ -864,26 +866,30 @@ square.selected {
 
 .site-title {
 	font-family: 'Red Hat Display', sans-serif !important;
-	transition: opacity 0.2s ease-in-out !important;
 	z-index: 9 !important;
-}
-
-.site-title:hover {
-	opacity: 0.7 !important;
-}
-
-.site-title a {
 	color: var(--primaryColor) !important;
+	gap: 10px !important;
+}
+
+.site-title:hover,
+.site-title-nav__donate:hover {
+	transition: opacity 0.2s ease-in-out !important;
+	opacity: 0.7 !important;
 }
 
 .site-title span {
 	color: var(--defaultWhite) !important;
 }
 
+.site-title .site-icon {
+	font-size: 24px !important;
+	margin-top: 2px !important;
+}
+
 .site-title-nav__donate {
 	display: block !important;
 	position: relative !important;
-	margin-top: 0.25rem !important;
+	margin-top: 0 !important;
 	color: var(--secondaryColor) !important;
 }
 
@@ -1301,16 +1307,16 @@ signal > i {
 
 .daily-feed__update__marker.nobg {
 	background: var(--surfaceColor) !important;
-	border: 2px solid var(--primaryColor) !important;
+	border: 2px solid var(--surfaceColorHover) !important;
 }
 
 .daily-feed__updates {
-	border-inline-start: 2px solid var(--primaryColor) !important;
+	border-inline-start: 2px solid var(--surfaceColorHover) !important;
 }
 
 .daily-feed__update__marker {
 	border: none !important;
-	background: var(--primaryColor) !important;
+	background: var(--surfaceColorHover) !important;
 }
 
 .lpools {
@@ -1334,9 +1340,9 @@ signal > i {
 }
 
 .complete-list,
-.lpools > div:hover {
-	background: var(--surfaceColor) !important;
-	border-radius: var(--borderRadius) !important;
+.lobby__app__content.lpools > div:hover {
+	background: var(--surfaceColorHover) !important;
+	border-radius: 4px !important;
 }
 
 .complete-list {
@@ -1431,7 +1437,7 @@ g[stroke='#888'] {
 
 .tabs-horiz span.active,
 .tabs-horiz span:hover {
-	border-color: var(--secondaryColor) !important;
+	border-color: var(--primaryColor) !important;
 }
 
 .tabs-horiz span::after {
@@ -1480,7 +1486,6 @@ g[stroke='#888'] {
 
 .timeline .entry:hover a,
 .hooks__chart .plot.rated,
-.daily-feed__update__day,
 .lobby__app .toggle:hover {
 	color: var(--primaryColor) !important;
 }
@@ -1502,10 +1507,11 @@ g[stroke='#888'] {
 .lobby__streams .stream {
 	display: flex !important;
 	flex-direction: column !important;
-	padding: 20px 20px !important;
+	padding: 20px !important;
 	transition: background 0.2s ease-in-out !important;
 	text-overflow: ellipsis !important;
 	margin: 0 !important;
+	overflow-x: auto !important;
 }
 
 .lobby__streams .stream:hover {
@@ -1596,7 +1602,7 @@ g[stroke='#888'] {
 	background: var(--surfaceColor) !important;
 	border-radius: var(--borderRadius) !important;
 	border: 2px solid var(--surfaceColorHover);
-	padding: 40px 0 !important;
+	padding: 0 !important;
 	margin: 20px 0 !important;
 }
 
@@ -1612,19 +1618,46 @@ g[stroke='#888'] {
 
 .lobby__start {
 	margin: 0 !important;
-	order: 2 !important;
 	display: flex !important;
-	flex-direction: row !important;
-	margin-top: 40px !important;
+	flex-direction: column !important;
 	justify-content: center !important;
 	align-items: flex-start !important;
-	flex-grow: 0 !important;
-	flex-wrap: wrap !important;
+	flex-grow: 1 !important;
+	width: 100% !important;
+	gap: 0 !important;
+	border-radius: 6px !important;
+	overflow: hidden !important;
 }
 
 .lobby__start button {
-	margin-left: 5px !important;
-	margin-right: 5px !important;
+	margin: 0 !important;
+	border-radius: 0 !important;
+	flex: 1 !important;
+	width: 100% !important;
+	background: none !important;
+	padding: 40px !important;
+	font-size: 1.25rem !important;
+	text-transform: capitalize !important;
+	border-top: 2px solid var(--surfaceColorHover) !important;
+}
+
+.lobby__start button:first-of-type {
+	border-top: none !important;
+}
+
+button.lobby__start__button:hover:not(.disabled) {
+	box-shadow: none !important;
+	background: var(--surfaceColorHover) !important;
+}
+
+.lobby__start__button::before,
+.lobby__start button {
+	color: var(--textColor) !important;
+}
+
+.lobby__start__button:hover:not(.disabled)::before,
+button.lobby__start__button:hover:not(.disabled) {
+	color: var(--primaryColor) !important;
 }
 
 .lobby__counters {
@@ -1634,8 +1667,11 @@ g[stroke='#888'] {
 	flex-direction: row !important;
 	align-items: center !important;
 	justify-content: center !important;
-	width: 80% !important;
+	width: 100% !important;
+	padding: 20px !important;
 	gap: 1em !important;
+	margin: 0 !important;
+	background: var(--surfaceColorHover) !important;
 }
 
 #nb_connected_players,
