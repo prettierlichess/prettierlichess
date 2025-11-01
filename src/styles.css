@@ -1292,11 +1292,25 @@ signal > i {
 	grid-area: side !important;
 	background: var(--surfaceColor) !important;
 	justify-content: center !important;
-	border: 1px solid var(--surfaceColorHover);
+	border: 2px solid var(--surfaceColorHover);
 	padding: 0 !important;
 	width: 100% !important;
 	height: calc(50% - 40px) !important;
 	align-self: end !important;
+}
+
+.daily-feed__update__marker.nobg {
+	background: var(--surfaceColor) !important;
+	border: 2px solid var(--primaryColor) !important;
+}
+
+.daily-feed__updates {
+	border-inline-start: 2px solid var(--primaryColor) !important;
+}
+
+.daily-feed__update__marker {
+	border: none !important;
+	background: var(--primaryColor) !important;
 }
 
 .lpools {
@@ -1427,6 +1441,7 @@ g[stroke='#888'] {
 .lobby__app__content,
 .lobby__support a,
 .lobby__spotlights,
+.lobby__feed,
 .lobby__box,
 .ublog-post-card {
 	box-shadow: none !important;
@@ -1465,6 +1480,7 @@ g[stroke='#888'] {
 
 .timeline .entry:hover a,
 .hooks__chart .plot.rated,
+.daily-feed__update__day,
 .lobby__app .toggle:hover {
 	color: var(--primaryColor) !important;
 }
