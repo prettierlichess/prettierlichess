@@ -513,7 +513,11 @@ group.radio label,
 .board-editor__tools select,
 .board-editor__tools .actions .button,
 .tv-single .tv-history h2,
-.sub-ratings a {
+.sub-ratings a,
+.btn-rack__btn.active,
+button.button.active,
+.data-count::after,
+.unread {
 	text-shadow: none !important;
 }
 
@@ -2649,10 +2653,16 @@ main.round {
 	background-color: var(--surfaceColorHover) !important;
 }
 
-.round .pocket piece::after {
+.round .pocket piece::after,
+rb1 .fbt.active,
+rm6 kwdb:hover {
 	color: var(--backgroundColor) !important;
 	background: var(--primaryColor) !important;
 	text-shadow: none !important;
+}
+
+.round__app {
+	position: relative !important;
 }
 
 .crosstable,
@@ -2702,10 +2712,17 @@ rm6 .buttons,
 rm6 {
 	margin-bottom: 0 !important;
 	background: none !important;
+	height: 50svh !important;
 }
 
 rm6 .board-menu {
 	background: var(--surfaceColorHover) !important;
+	border-top: 2px solid var(--primaryColor) !important;
+}
+
+rm6 rb1 {
+	background: none !important;
+	box-shadow: none !important;
 }
 
 rm6 l4x,
@@ -2716,7 +2733,7 @@ rm6 .buttons {
 }
 
 rm6 l4x {
-	flex-grow: 1 !important;
+	flex: 1 !important;
 	line-height: 40px !important;
 }
 
@@ -2728,8 +2745,10 @@ rm6 .buttons {
 
 rm6 i5z,
 rm6 u8t:hover,
-rm6 u8t.a1t {
+rm6 u8t.a1t,
+rm6 kwdb.a1t {
 	background: var(--surfaceColorHover) !important;
+	color: var(--textColor) !important;
 }
 
 rm6 u8t.a1t {
@@ -3972,6 +3991,10 @@ hr {
 
 .tv-single .round__side {
 	height: min-content !important;
+}
+
+.tv-single .round__side .subnav {
+	border: 0 !important;
 }
 
 .subnav a::after {
