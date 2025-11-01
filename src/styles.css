@@ -1276,6 +1276,7 @@ signal > i {
 
 .lobby__side {
 	overflow: auto !important;
+	max-height: 50% !important;
 }
 
 .lobby__app.lobby__app-real_time {
@@ -1288,11 +1289,14 @@ signal > i {
 }
 
 .lobby__feed {
+	grid-area: side !important;
 	background: var(--surfaceColor) !important;
 	justify-content: center !important;
 	border: 1px solid var(--surfaceColorHover);
-	padding: 20px 0 !important;
+	padding: 0 !important;
 	width: 100% !important;
+	height: calc(50% - 40px) !important;
+	align-self: end !important;
 }
 
 .lpools {
