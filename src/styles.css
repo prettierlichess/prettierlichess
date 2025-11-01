@@ -1295,8 +1295,10 @@ signal > i {
 	border: 2px solid var(--surfaceColorHover);
 	padding: 0 !important;
 	width: 100% !important;
-	height: calc(50% - 40px) !important;
+	height: calc(50% - 50px) !important;
+	min-height: auto !important;
 	align-self: end !important;
+	margin-bottom: 20px !important;
 }
 
 .daily-feed__update__marker.nobg {
