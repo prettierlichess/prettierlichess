@@ -1,14 +1,14 @@
 {
 	"name": "Prettier Lichess",
 	"version": "3.13.0",
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"description": "Lichess, but prettier.",
 	"icons": {
 		"128": "icon_128.png"
 	},
 	"content_scripts": [
 		{
-			"matches": ["*://lichess.org/*"],
+			"matches": ["*://*.lichess.org/*"],
 			"exclude_matches": ["*://lichess.org/api*"],
 			"run_at": "document_start",
 			"css": ["styles.css"],
@@ -22,7 +22,7 @@
 			"all_frames": true
 		}
 	],
-	"browser_action": {
+	"action": {
 		"default_popup": "popup.html"
 	},
 	"permissions": [
@@ -30,19 +30,18 @@
 		"storage",
 		"declarativeContent",
 		"downloads",
-		"*://lichess.org/*"
+		"scripting"
 	],
 	"background": {
-		"scripts": ["background.js"],
-		"persistent": false
+		"service_worker": "background.js"
 	},
-	"content_security_policy": "script-src 'self'; object-src 'self';",
-	"web_accessible_resources": [
-		"styles.css",
-		"fonts/*",
-		"pieces/*",
-		"masks/*"
-	],
+	"content_security_policy": {
+  "extension_pages": "script-src 'self'; object-src 'self';"
+},  "web_accessible_resources": [
+    {
+      "resources": [ "styles.css", "fonts/*", "pieces/*", "masks/*" ],
+      "matches": [ "*://*.lichess.org/*" ]
+    }],
 	"browser_specific_settings": {
 		"gecko": {
 			"id": "{8ad4bea8-ad8d-4e98-b434-a76065dee6cb}",

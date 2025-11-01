@@ -548,7 +548,7 @@ cg-container cg-board square {
 }
  */
 
-cg-container cg-board::before {
+cg-container cg-board::after {
 	content: '' !important;
 	position: absolute !important;
 	left: 0 !important;
@@ -1652,6 +1652,7 @@ a.button.button-metal:hover {
 	white-space: initial !important;
 	display: -webkit-box !important;
 	-webkit-line-clamp: 2 !important;
+	line-clamp: 2 !important;
 	-webkit-box-orient: vertical !important;
 }
 

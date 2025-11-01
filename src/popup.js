@@ -122,18 +122,43 @@ function syncSet(key, value) {
 }
 /**
  * Execute code for every open tab
- * @param {string} code - The code to execute
+ * @param {Function} func - The code to execute
+ * @param {Object} [params]  - Optional serializable parameters
  */
-function tabScript(code) {
+function tabScript(func, params) {
+	// Validate function
+	if (typeof func !== 'function') {
+		console.error('Invalid function provided to tabScript');
+		return;
+	}
+
+	// Validate params are JSON-serializable
+	if (params !== undefined) {
+		try {
+			JSON.parse(JSON.stringify(params));
+		} catch (err) {
+			console.error('Parameters must be JSON-serializable:', err);
+			return;
+		}
+	}
+
 	chrome.tabs.query({}, function (tabs) {
-		for (let i = 0; i < tabs.length; i++) {
-			// All tabs that the extension has no permission to
-			// have undefined as url
-			if (tabs[i].url !== undefined) {
-				chrome.tabs.executeScript(tabs[i].id, {
-					code: code,
-				});
+		try {
+			for (let i = 0; i < tabs.length; i++) {
+				if (tabs[i].url !== undefined) {
+					chrome.scripting
+						.executeScript({
+							target: {tabId: tabs[i].id},
+							func: func,
+							args: params !== undefined ? [params] : [],
+						})
+						.catch((err) =>
+							console.error('Script execution failed:', err)
+						);
+				}
 			}
+		} catch (err) {
+			console.error('Error in tabScript:', err);
 		}
 	});
 }
@@ -141,7 +166,9 @@ function tabScript(code) {
  * Reload each tab for which the extension has permission
  */
 function reloadAllTabs() {
-	tabScript('window.location.reload();');
+	tabScript(function () {
+		window.location.reload();
+	});
 }
 /**
  * Changes a color by changing it in the tab and synced storage
@@ -153,13 +180,29 @@ function setColor(scheme, color) {
 	let g = parseInt(color.substring(3, 5), 16);
 	let b = parseInt(color.substring(5, 7), 16);
 
-	// Creating a script to add the two color variables to the style
-	const baseScript =
-		'document.documentElement.setAttribute("style", (document.documentElement.getAttribute("style") ? document.documentElement.getAttribute("style") : "")';
-	const colorScript = `+ "--${scheme}: ${color} !important;`;
-	const RGBcolorScript = `--${scheme}RGB: ${r}, ${g}, ${b} !important;")`;
+	function createColorScript(params) {
+		const scheme = params.scheme;
+		const color = params.color;
+		const r = params.r;
+		const g = params.g;
+		const b = params.b;
 
-	tabScript(baseScript + colorScript + RGBcolorScript);
+		document.documentElement.setAttribute(
+			'style',
+			(document.documentElement.getAttribute('style')
+				? document.documentElement.getAttribute('style')
+				: '') +
+				`--${scheme}: ${color} !important;--${scheme}RGB: ${r}, ${g}, ${b} !important;`
+		);
+	}
+
+	tabScript(createColorScript, {
+		scheme: scheme,
+		color: color,
+		r: r,
+		g: g,
+		b: b,
+	});
 
 	// Save color in synced storage
 	syncSet(scheme, color);
