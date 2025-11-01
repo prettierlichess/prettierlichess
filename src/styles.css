@@ -2712,7 +2712,6 @@ rm6 .buttons,
 rm6 {
 	margin-bottom: 0 !important;
 	background: none !important;
-	height: 50svh !important;
 }
 
 rm6 .board-menu {
@@ -2733,7 +2732,7 @@ rm6 .buttons {
 }
 
 rm6 l4x {
-	flex: 1 !important;
+	flex: 0 0 30svh !important;
 	line-height: 40px !important;
 }
 
@@ -3987,10 +3986,6 @@ hr {
 	margin-top: 5px !important;
 	margin-right: 0 !important;
 	backdrop-filter: none !important;
-}
-
-.tv-single .round__side {
-	height: min-content !important;
 }
 
 .tv-single .round__side .subnav {
