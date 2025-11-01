@@ -1289,15 +1289,12 @@ signal > i {
 }
 
 .lobby__feed {
-	grid-area: side !important;
 	background: var(--surfaceColor) !important;
 	justify-content: center !important;
 	border: 2px solid var(--surfaceColorHover);
 	padding: 0 !important;
 	width: 100% !important;
-	height: calc(50% - 50px) !important;
 	min-height: auto !important;
-	align-self: end !important;
 	margin-bottom: 20px !important;
 }
 
@@ -1555,12 +1552,13 @@ g[stroke='#888'] {
 .lobby__support {
 	display: flex !important;
 	flex-direction: column !important;
+	margin: 0 !important;
+	grid-gap: 10px !important;
 }
 
 .lobby__support a {
 	display: flex !important;
 	flex-grow: 1 !important;
-	margin-bottom: 4px !important;
 	box-shadow: none !important;
 	background: var(--surfaceColor) !important;
 	padding: 20px !important;
@@ -1583,7 +1581,7 @@ g[stroke='#888'] {
 	border-radius: var(--borderRadius) !important;
 	border: 2px solid var(--surfaceColorHover);
 	padding: 40px 0 !important;
-	margin: 20px 0 0 0 !important;
+	margin: 20px 0 !important;
 }
 
 .lobby__start {
@@ -1658,7 +1656,12 @@ a.button.button-metal:hover {
 .lobby__blog {
 	grid-gap: minmax(4%, 20px) !important;
 	grid-template-columns: 1fr 1fr 1fr !important;
-	max-height: 300px !important;
+	height: 100% !important;
+	margin: 0 !important;
+
+	.track {
+		height: 100% !important;
+	}
 }
 
 .lobby__blog .post {
@@ -1677,9 +1680,13 @@ a.button.button-metal:hover {
 	text-overflow: ellipsis !important;
 	white-space: initial !important;
 	display: -webkit-box !important;
-	-webkit-line-clamp: 2 !important;
-	line-clamp: 2 !important;
+	-webkit-line-clamp: 4 !important;
+	line-clamp: 4 !important;
 	-webkit-box-orient: vertical !important;
+}
+
+.carousel .controls button {
+	font-size: 2em !important;
 }
 
 .ublog-post-card {
@@ -1702,8 +1709,7 @@ a.button.button-metal:hover {
 
 .ublog-post-card:hover,
 .lobby__support a:hover {
-	transform: scale(1.01) !important;
-	box-shadow: var(--main-shadow) !important;
+	transform: scale(0.98) !important;
 	z-index: 5 !important;
 }
 
@@ -1714,6 +1720,7 @@ a.button.button-metal:hover {
 .ublog-post-card time,
 .ublog-post-card .user-link {
 	z-index: 1 !important;
+	backdrop-filter: blur(16px) !important;
 }
 
 .ublog-post-card__over-image::before {

@@ -158,15 +158,13 @@ const STREAMER_STYLES = `
 const LAYOUT_CHANGE = `
 main.lobby {
 	grid-template-areas:
-		'app tv tv side'
-		'table blog blog support'
-		'leader puzzle puzzle winner'
-		'feed puzzle puzzle .'
-		'feed tours tours .'
+		'app tv tv table'
+		'side blog blog support'
+		'tours puzzle puzzle feed'
 		'. simuls simuls .'
 		'. about about .';
 	grid-template-columns: minmax(400px, 1fr) 1fr 1fr minmax(400px, 1fr);
-	grid-template-rows: minmax(1fr, 800px) repeat(2, fit-content(0));
+	grid-template-rows: minmax(1fr, 800px) fit-content minmax(1fr, 800px) repeat(2, fit-content(0));
 }
 .lobby__app,
 .lobby__side {
@@ -258,11 +256,6 @@ chrome.storage.sync.get('layoutPreference', function (result) {
 		let styleSheet = document.createElement('style');
 		styleSheet.type = 'text/css';
 		styleSheet.innerText = LAYOUT_CHANGE;
-
-		if (result['layoutPreference'] === 'default-1440') {
-			styleSheet.innerText +=
-				'\nbody #main-wrap {--main-max-width: 2500px !important;}';
-		}
 
 		if (document.head) {
 			document.head.appendChild(styleSheet);
