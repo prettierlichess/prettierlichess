@@ -118,7 +118,7 @@ html {
 	--coordDarkRGB: var(--boardDarkRGB) !important;
 	--coordLight: var(--boardLight) !important;
 	--coordLightRGB: var(--boardLightRGB) !important;
-	--borderRadius: 8px !important;
+	--borderRadius: 16px !important;
 	scrollbar-color: var(--surfaceColorHover) var(--surfaceColor) !important;
 	scrollbar-width: thin !important;
 }
@@ -305,8 +305,9 @@ h4,
 }
 
 p {
-	line-height: 20px !important;
-	font-size: 14px !important;
+	line-height: 24px !important;
+	font-size: 16px !important;
+	letter-spacing: 0.2px !important;
 }
 
 #main-wrap {
@@ -1336,9 +1337,13 @@ signal > i {
 	background: var(--surfaceColorHover) !important;
 }
 
-.lpools {
+.lobby__app__content.lpools {
 	grid-gap: 3px !important;
-	padding: 4px !important;
+	margin: 4px !important;
+	padding: 0 !important;
+	border-radius: 0 0 calc(var(--borderRadius) - 4px)
+		calc(var(--borderRadius) - 4px) !important;
+	overflow: hidden !important;
 }
 
 .lpools > div {
@@ -1646,6 +1651,10 @@ g[stroke='#888'] {
 	overflow: hidden !important;
 }
 
+.lobby__start__button::before {
+	font-size: 1.5rem !important;
+}
+
 .lobby__start button {
 	margin: 0 !important;
 	border-radius: 0 !important;
@@ -1654,8 +1663,10 @@ g[stroke='#888'] {
 	background: none !important;
 	padding: 40px !important;
 	font-size: 1.25rem !important;
+	gap: 0.5rem !important;
 	text-transform: capitalize !important;
 	border-top: 2px solid var(--surfaceColorHover) !important;
+	justify-content: center !important;
 }
 
 .lobby__start button:first-of-type {
@@ -1749,7 +1760,15 @@ a.button.button-metal:hover {
 	transition: background 0.2s ease-in-out !important;
 }
 
-.lobby__blog .post img {
+.lobby__blog .post img,
+.lobby__feed,
+.lobby__support a,
+.lobby__app__content,
+#hook,
+.lobby__box,
+.ublog-post-card,
+.hook__filters .regular-checkbox,
+.ublog-post-card {
 	border-radius: var(--borderRadius) !important;
 }
 
@@ -1773,7 +1792,6 @@ a.button.button-metal:hover {
 	position: relative !important;
 	background: var(--surfaceColor) !important;
 	text-shadow: none !important;
-	border-radius: 8px !important;
 	border: 2px solid var(--surfaceColorHover) !important;
 	display: flex !important;
 	flex-direction: column !important;
@@ -1790,7 +1808,7 @@ a.button.button-metal:hover {
 .ublog-post-card:hover,
 .lobby__support a:hover {
 	transform: scale(0.98) !important;
-	z-index: 5 !important;
+	background: var(--surfaceColorHover) !important;
 }
 
 .ublog-post-card__over-image {
@@ -2731,6 +2749,7 @@ rm6 {
 rm6 .board-menu {
 	background: var(--surfaceColorHover) !important;
 	border-top: 2px solid var(--primaryColor) !important;
+	backdrop-filter: blur(16px) !important;
 }
 
 rm6 rb1 {
@@ -2952,6 +2971,10 @@ a.context-streamer:hover {
 	border: none !important;
 }
 
+.analyse__controls {
+	margin: 0 8px !important;
+}
+
 .pv_box .pv[data-uci]:hover,
 .ceval .bar span,
 .ceval .engine .cloud,
@@ -2971,7 +2994,9 @@ a.context-streamer:hover {
 .ceval .technology.good,
 .advice-summary__side > div.symbol:hover,
 .advice-summary__side > div.inaccuracy,
-.tview2-column > interrupt > comment.inaccuracy {
+.tview2-column > interrupt > comment.inaccuracy,
+.action-menu__tools button:hover,
+.action-menu__tools > a:hover {
 	color: var(--primaryColor) !important;
 }
 
@@ -2995,7 +3020,7 @@ a.context-streamer:hover {
 	margin-right: auto !important;
 	width: 80% !important;
 	background: none !important;
-	border-radius: var(--borderRadius) !important;
+	border-radius: calc(var(--borderRadius) / 2) !important;
 	overflow: hidden !important;
 	border: 1px solid var(--surfaceColorHover) !important;
 }
@@ -3013,7 +3038,7 @@ a.context-streamer:hover {
 	left: 0 !important;
 	right: 0 !important;
 	background: rgb(225, 225, 225) !important;
-	border-radius: var(--borderRadius) !important;
+	border-radius: calc(var(--borderRadius) / 2) !important;
 	z-index: -1 !important;
 }
 
@@ -3027,8 +3052,12 @@ a.context-streamer:hover {
 	border-bottom: 0 !important;
 }
 
-.eval-gauge tick.zero {
-	border-bottom: 3px solid var(--secondaryColor) !important;
+html .eval-gauge tick.zero {
+	border-bottom: 2px solid var(--secondaryColor) !important;
+}
+
+.action-menu {
+	background: var(--backgroundColor) !important;
 }
 
 .analyse__side,
@@ -3173,6 +3202,11 @@ a.context-streamer:hover {
 
 /* Analysis Graph */
 
+#acpl-chart-container,
+#movetimes-chart-container {
+	background: none !important;
+}
+
 #acpl-chart,
 #movetimes-chart {
 	background: none !important;
@@ -3180,6 +3214,8 @@ a.context-streamer:hover {
 
 .analyse__underboard__menu > span {
 	padding: 1em 0 !important;
+	border-radius: 0 !important;
+	border-bottom: 1px solid var(--surfaceColorHover) !important;
 }
 
 .analyse__underboard__menu > span.active {
@@ -3567,10 +3603,11 @@ a.analyse {
 
 .subnav {
 	background: var(--surfaceColor) !important;
-	border-radius: var(--borderRadius) !important;
+	border-radius: calc(var(--borderRadius) / 2) !important;
+	overflow: hidden !important;
 	border: 2px solid var(--surfaceColorHover) !important;
 	align-self: flex-start !important;
-	margin-top: 0 !important;
+	margin-top: 20px !important;
 	margin-right: 5px !important;
 	backdrop-filter: blur(16px) !important;
 	width: 100% !important;
@@ -3583,9 +3620,9 @@ a.analyse {
 }
 
 .studies .study:hover {
-	transform: scale(1.01) !important;
+	transform: scale(1.02) !important;
 	box-shadow: var(--main-shadow) !important;
-	background: none !important;
+	background: var(--surfaceColorHover) !important;
 	z-index: 5 !important;
 }
 
@@ -3647,6 +3684,16 @@ a.analyse {
 	margin-right: 10px !important;
 	border-radius: 45px !important;
 	background: var(--surfaceColor) !important;
+	transition: all 0.2s ease-out;
+}
+
+.study-index .box__top .search input:hover,
+.study-index .box__top .mselect:hover {
+	background: var(--surfaceColorHover) !important;
+}
+
+.mselect__item.current {
+	border-color: var(--primaryColor) !important;
 }
 
 .study-index .box__top .new-study .button::before {
@@ -3719,7 +3766,8 @@ button.analyse {
 	background: var(--backgroundColor) !important;
 }
 
-.gamebook-edit .hint .legend i {
+.gamebook-edit .hint .legend i,
+.studies .study .top .study__icon {
 	color: var(--primaryColor) !important;
 }
 
@@ -4453,6 +4501,15 @@ h1 a,
 	color: var(--primaryColor) !important;
 }
 
+.page .body h2 {
+	border-bottom: 1px solid var(--primaryColor) !important;
+}
+
+.page .body pre {
+	box-shadow: none !important;
+	background: var(--surfaceColorHover) !important;
+}
+
 .ublog-post__image {
 	box-shadow: none !important;
 	border-radius: var(--borderRadius) !important;
@@ -4513,7 +4570,11 @@ iframe.analyse {
 	background: none !important;
 	border: none !important;
 	justify-self: center !important;
-	/* margin-right: 70px !important; */
+}
+
+.page-menu.page-small,
+.page-menu {
+	gap: 8px !important;
 }
 
 .blog .meta-headline {
@@ -4552,6 +4613,11 @@ iframe.analyse {
 	background: none !important;
 }
 
+.ublog-post__markup .embed {
+	border-radius: var(--borderRadius) !important;
+	overflow: hidden !important;
+}
+
 .ublog-topics__topic .ublog-post-card__title::before {
 	content: '';
 	position: absolute;
@@ -4572,6 +4638,24 @@ iframe.analyse {
 
 .ublog-post-card__title {
 	font-weight: 700 !important;
+}
+
+.ublog-post__actions {
+	gap: 10px !important;
+}
+
+.ublog-post__actions .button,
+.ublog-post__like::before {
+	margin: 0 !important;
+}
+
+.ublog-post__like::before {
+	margin-right: 10px !important;
+}
+
+.ublog-post__actions .button {
+	width: 200px !important;
+	border-radius: calc(var(--borderRadius) / 2) !important;
 }
 
 /* Practice */
@@ -4954,6 +5038,30 @@ body #main-wrap group.radio input:checked + label,
 	border: 0 !important;
 	border-bottom: 1px solid var(--surfaceColorHover) !important;
 	box-shadow: var(--main-shadow) !important;
+}
+
+.relay-card {
+	transition: all 0.2s ease-out !important;
+	background: var(--surfaceColor) !important;
+	color: var(--textColor) !important;
+}
+
+.relay-card:hover {
+	box-shadow: none !important;
+	background: var(--surfaceColorHover) !important;
+	transform: scale(0.98) !important;
+}
+
+.relay-card__title {
+	color: var(--defaultWhite) !important;
+}
+
+.relay-card--live {
+	outline: 2px solid rgba(var(--tertiaryColorRGB), 0.4) !important;
+}
+
+.relay-card__live {
+	color: var(--tertiaryColor) !important;
 }
 
 .box__top > h1,
