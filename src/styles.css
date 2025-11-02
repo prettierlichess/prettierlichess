@@ -108,7 +108,7 @@ html {
 	--lastMoveRGB: 153, 214, 158 !important;
 	--preMove: #1b7cc7 !important;
 	--preMoveRGB: 27, 124, 199 !important;
-	--moveIndicator: #389840 !important;
+	--moveIndicator: #0000003b !important;
 	--moveIndicatorRGB: 56, 152, 64 !important;
 	--boardDark: #71828f !important;
 	--boardDarkRGB: 113, 130, 143 !important;
@@ -378,7 +378,8 @@ bad {
 	box-shadow: 0 0 0 1px var(--primaryColor) inset !important;
 }
 
-.button.button-empty {
+.button.button-empty,
+.daily-feed__update__day a {
 	background: none !important;
 	color: var(--defaultWhite) !important;
 }
