@@ -2991,7 +2991,7 @@ a.context-streamer:hover {
 	#main-wrap .analyse:not(main.has-relay-tour) {
 		grid-template-columns:
 			minmax(250px, 350px) var(---block-gap) var(---col3-uniboard-width)
-			calc(3 * var(---block-gap)) minmax(240px, 400px);
+			calc(4 * var(---block-gap)) minmax(240px, 400px);
 	}
 }
 
