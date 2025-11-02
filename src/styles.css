@@ -185,7 +185,6 @@ rm6 u8t.a1t,
 .study__chapters > div.active,
 .study__chapters > div:active,
 .study__chapters > div:hover,
-.study__members > div:hover,
 .study__relay__rounds > div:hover,
 .study__chapters > div.active,
 .study__members > div.active,
@@ -338,7 +337,9 @@ main {
 .user-link.online .line,
 .is-green::before,
 good,
-a.user-link:hover {
+a.user-link:hover,
+.study__chapters .study-list > button > span,
+.study__chapters > button > span {
 	color: var(--primaryColor) !important;
 }
 
@@ -352,7 +353,8 @@ bad {
 }
 
 .utitle,
-.user-link.online .paco10 {
+.user-link.online .paco10,
+.game__meta__players abbr {
 	color: var(--secondaryColor) !important;
 }
 
@@ -569,7 +571,8 @@ group.radio label,
 .btn-rack__btn.active,
 button.button.active,
 .data-count::after,
-.unread {
+.unread,
+.mchat__messages action {
 	text-shadow: none !important;
 }
 
@@ -755,6 +758,7 @@ cg-container .cg-shapes {
 square.last-move {
 	background: var(--lastMove) !important;
 	opacity: 0.4 !important;
+	z-index: 1 !important;
 }
 
 square.premove-dest {
@@ -763,6 +767,7 @@ square.premove-dest {
 		rgba(0, 0, 0, 0) 20%
 	) !important;
 	opacity: 0.8 !important;
+	z-index: 1 !important;
 }
 
 square.oc.premove-dest {
@@ -771,6 +776,7 @@ square.oc.premove-dest {
 		transparent 79%,
 		var(--preMove) 80%
 	) !important;
+	z-index: 1 !important;
 }
 
 square.move-dest {
@@ -779,11 +785,13 @@ square.move-dest {
 		rgba(0, 0, 0, 0) 20%
 	) !important;
 	opacity: 0.8 !important;
+	z-index: 1 !important;
 }
 
 square.move-dest:hover {
 	background: var(--moveIndicator) !important;
 	opacity: 0.3 !important;
+	z-index: 1 !important;
 }
 
 square.oc.move-dest {
@@ -792,11 +800,13 @@ square.oc.move-dest {
 		transparent 79%,
 		var(--moveIndicator) 80%
 	) !important;
+	z-index: 1 !important;
 }
 
 cg-board square.current-premove {
 	background: var(--preMove) !important;
 	opacity: 0.25 !important;
+	z-index: 1 !important;
 }
 
 /* Pieces */
@@ -1492,7 +1502,11 @@ g[stroke='#888'] {
 .tabs-horiz {
 	background: var(--surfaceColor) !important;
 	border-bottom: 2px solid var(--surfaceColorHover) !important;
-	border-radius: 0 !important;
+	border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
+}
+
+.study__side .tabs-horiz {
+	border: 2px solid var(--surfaceColorHover) !important;
 }
 
 .tabs-horiz span {
@@ -1687,6 +1701,7 @@ g[stroke='#888'] {
 	border: 2px solid var(--surfaceColorHover);
 	padding: 0 !important;
 	margin: 20px 0 !important;
+	overflow: hidden !important;
 }
 
 .lobby__tournaments-simuls {
@@ -1708,7 +1723,6 @@ g[stroke='#888'] {
 	flex-grow: 1 !important;
 	width: 100% !important;
 	gap: 0 !important;
-	border-radius: 6px !important;
 	overflow: hidden !important;
 }
 
@@ -2147,6 +2161,13 @@ button.rematch-decline::before {
 	color: var(--backgroundColor) !important;
 }
 
+.puzzle__controls .board-menu {
+	border-radius: var(--borderRadius) !important;
+	border: none !important;
+	background: var(--surfaceColor) !important;
+	backdrop-filter: blur(16px) !important;
+}
+
 .puzzle__feedback {
 	background: none !important;
 	border-top: 1px solid var(--surfaceColorHover) !important;
@@ -2264,6 +2285,7 @@ button.rematch-decline::before {
 
 .tview2-column > interrupt > comment {
 	padding: 10px 14px !important;
+	border-inline-start: none !important;
 }
 
 .puzzle__side {
@@ -3026,6 +3048,14 @@ a.context-streamer:hover {
 	color: var(--defaultWhite) !important;
 }
 
+.analyse__moves button.next {
+	padding: 20px !important;
+}
+
+.analyse__moves button.next:hover {
+	color: var(--primaryColor) !important;
+}
+
 .analyse__fork move,
 .analyse__fork move:nth-child(odd) {
 	background: var(--surfaceColorHover) !important;
@@ -3033,7 +3063,7 @@ a.context-streamer:hover {
 }
 
 .analyse__controls {
-	margin: 0 8px !important;
+	margin: 0 16px !important;
 }
 
 .pv_box .pv[data-uci]:hover,
@@ -3121,11 +3151,13 @@ html .eval-gauge tick.zero {
 	background: var(--backgroundColor) !important;
 }
 
-.analyse__side,
 .analyse .mchat {
 	background: var(--surfaceColor) !important;
 	border: 2px solid var(--surfaceColorHover) !important;
 	backdrop-filter: blur(16px) !important;
+	border-radius: var(--borderRadius) !important;
+	border-top: none !important;
+	min-height: 300px !important;
 }
 
 .analyse__side {
@@ -3134,17 +3166,11 @@ html .eval-gauge tick.zero {
 	display: flex !important;
 	flex-direction: column !important;
 	justify-content: space-between !important;
-	align-self: stretch !important;
-}
-
-.analyse .mchat {
-	border-radius: 0 0 var(--borderRadius) var(--borderRadius) !important;
-	border-top: none !important;
-	min-height: 300px !important;
 }
 
 .action-menu__tools .button,
-.action-menu .autoplay a {
+.action-menu .autoplay a,
+.mchat__messages action {
 	color: var(--primaryColor) !important;
 	background: none !important;
 }
@@ -3181,7 +3207,7 @@ html .eval-gauge tick.zero {
 	padding: 10px !important;
 }
 
-.explorer-box tr:nth-child(even),
+.explorer-box tr,
 .explorer-box .explorer-title button:hover {
 	background: var(--backgroundColor) !important;
 }
@@ -3191,6 +3217,10 @@ html .eval-gauge tick.zero {
 .explorer-title,
 .explorer-box .moves tbody tr.sum {
 	background: var(--surfaceColorHover) !important;
+}
+
+.explorer-box .moves tbody tr.sum {
+	backdrop-filter: blur(16px) !important;
 }
 
 /* Hide icon for small screen width */
@@ -3238,6 +3268,11 @@ html .eval-gauge tick.zero {
 
 .explorer-box .config .choices span {
 	border: 0 !important;
+}
+
+.explorer-box .white,
+.explorer-box .black {
+	box-shadow: none !important;
 }
 
 .analyse__tools .sub-box .title {
@@ -3374,32 +3409,50 @@ path[fill='url(#highcharts-7)'] {
 	background: none !important;
 }
 
-.study__members > div:hover,
 .study__members > div.active,
 .gamebook .feedback.end a:hover,
 .gamebook .feedback.end button:hover {
 	background: var(--surfaceColorHover) !important;
-	padding: 12px !important;
 }
 
 .study__chapters > div.active,
 .study__relay__rounds > div.active,
-.study__chapters > div:hover,
-.study__relay__rounds > div:hover {
+.study__relay__rounds > div:hover,
+.study-search__results .study-list > div:hover,
+.study__members .study-list > div:hover,
+.study__chapters .study-list > div:hover,
+.study-search__results .study-list > div:focus,
+.study__members .study-list > div:focus,
+.study__chapters .study-list > div:focus,
+.study-search__results .study-list > div.active,
+.study__members .study-list > div.active,
+.study__chapters .study-list > div.active,
+.study-search__results button:hover,
+.study__members button:hover,
+.study__chapters button:hover,
+.study-search__results button:focus,
+.study__members button:focus,
+.study__chapters button:focus,
+.study-search__results button.active,
+.study__members button.active,
+.study__chapters button.active {
 	background: var(--surfaceColorHover) !important;
+}
+
+.study-list {
+	background: var(--surfaceColor) !important;
 }
 
 .gamebook .feedback.end {
 	margin-right: 20px !important;
 }
-@media (min-width: 800px) {
-	.gamebook {
-		margin-left: -50px !important;
-	}
-}
 
-.study__chapters {
+.study__chapters,
+.study__members {
 	overflow: overlay !important;
+	border-radius: 0 0 var(--borderRadius) var(--borderRadius) !important;
+	border: 2px solid var(--surfaceColorHover) !important;
+	border-top: 0 !important;
 }
 
 .study__chapters::-webkit-scrollbar-track {
@@ -3446,6 +3499,7 @@ path[fill='url(#highcharts-7)'] {
 .gamebook .feedback.end button {
 	border: 0 !important;
 	transition: all 0.2s ease-in-out !important;
+	margin: 0 !important;
 }
 
 .study__chapters > div > span {
@@ -3459,14 +3513,7 @@ path[fill='url(#highcharts-7)'] {
 
 .study__chapters > div,
 .study__relay__rounds > div {
-	padding: 2px 4px 2px 4px !important;
 	align-items: center !important;
-}
-
-.study__chapters > div:hover,
-.study__relay__rounds > div:hover {
-	padding-top: 5px !important;
-	padding-bottom: 5px !important;
 }
 
 .study__buttons {
@@ -4043,6 +4090,13 @@ rect[fill='#e7e7e7'] {
 
 hr {
 	background: var(--surfaceColorHover) !important;
+	height: 4px !important;
+	border-radius: 4px !important;
+}
+
+.vertical-resize:hover {
+	background: var(--surfaceColorHover) !important;
+	border-radius: var(--borderRadius) !important;
 }
 
 .fire-trophy,
@@ -4113,6 +4167,7 @@ hr {
 
 .tv-single .round__side .subnav {
 	border: 0 !important;
+	border-radius: 0 !important;
 }
 
 .subnav a::after {
