@@ -670,6 +670,7 @@ select,
 .button,
 .btn-rack {
 	border-radius: var(--borderRadius) !important;
+	overflow: hidden !important;
 }
 
 .main-board {
@@ -1969,6 +1970,7 @@ a.button.button-metal:hover {
 #miniGame {
 	background: var(--surfaceColor) !important;
 	padding: 10px !important;
+	padding-right: 12px !important;
 	border-radius: var(--borderRadius) !important;
 	box-shadow: var(--main-shadow) !important;
 	border: 2px solid var(--surfaceColorHover) !important;
@@ -4004,7 +4006,7 @@ button.analyse {
 	padding: 4px !important;
 	border: 1px solid var(--surfaceColorHover) !important;
 	border-radius: var(--borderRadius) !important;
-	margin-bottom: 10px !important;
+	margin: 0 !important;
 }
 
 #us_profile,
@@ -5186,7 +5188,6 @@ body #main-wrap group.radio input:checked + label,
 .study__members .left,
 .analyse__puzzle a,
 .analyse__persistence__help,
-.material,
 #analyse-cm a,
 .explorer-box .explorer-title .active,
 .explorer-box .explorer-title,
@@ -5194,8 +5195,7 @@ body #main-wrap group.radio input:checked + label,
 .tabs-horiz,
 .flash,
 #ceval-settings .setting,
-.copy-me,
-.board-menu .setting {
+.copy-me {
 	background: var(--surfaceColor) !important;
 }
 
