@@ -1012,6 +1012,15 @@ nav section a:target-within {
 	padding: 1rem !important;
 }
 
+.dasher #dasher_app .links a:hover,
+.dasher #dasher_app .links a:hover::before,
+.dasher #dasher_app .links a:hover .line::before,
+.dasher #dasher_app .links button:hover,
+.dasher #dasher_app .subs .sub:hover {
+	background: var(--primaryColor) !important;
+	color: var(--backgroundColor) !important;
+}
+
 #dasher_app .logout button.text:hover {
 	background: var(--tertiaryColor) !important;
 	color: var(--backgroundColor) !important;
@@ -1656,6 +1665,7 @@ g[stroke='#888'] {
 button.lobby__start__button:hover:not(.disabled) {
 	box-shadow: none !important;
 	background: var(--surfaceColorHover) !important;
+	font-size: 1.4rem !important;
 }
 
 .lobby__start__button::before,
