@@ -755,10 +755,22 @@ cg-container .cg-shapes {
 	opacity: 0.8 !important;
 }
 
+cg-board square {
+	z-index: 1 !important;
+}
+
+square.check {
+	background: radial-gradient(
+		ellipse at center,
+		var(--tertiaryColor) 0%,
+		rgba(169, 0, 0, 0) 89%,
+		rgba(158, 0, 0, 0) 100%
+	) !important;
+}
+
 square.last-move {
 	background: var(--lastMove) !important;
 	opacity: 0.4 !important;
-	z-index: 1 !important;
 }
 
 square.premove-dest {
@@ -767,7 +779,6 @@ square.premove-dest {
 		rgba(0, 0, 0, 0) 20%
 	) !important;
 	opacity: 0.8 !important;
-	z-index: 1 !important;
 }
 
 square.oc.premove-dest {
@@ -776,7 +787,6 @@ square.oc.premove-dest {
 		transparent 79%,
 		var(--preMove) 80%
 	) !important;
-	z-index: 1 !important;
 }
 
 square.move-dest {
@@ -785,13 +795,11 @@ square.move-dest {
 		rgba(0, 0, 0, 0) 20%
 	) !important;
 	opacity: 0.8 !important;
-	z-index: 1 !important;
 }
 
 square.move-dest:hover {
 	background: var(--moveIndicator) !important;
 	opacity: 0.3 !important;
-	z-index: 1 !important;
 }
 
 square.oc.move-dest {
@@ -800,13 +808,11 @@ square.oc.move-dest {
 		transparent 79%,
 		var(--moveIndicator) 80%
 	) !important;
-	z-index: 1 !important;
 }
 
 cg-board square.current-premove {
 	background: var(--preMove) !important;
 	opacity: 0.25 !important;
-	z-index: 1 !important;
 }
 
 /* Pieces */
