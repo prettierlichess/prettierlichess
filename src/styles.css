@@ -1849,8 +1849,15 @@ a.button.button-metal:hover {
 .lobby__box,
 .ublog-post-card,
 .hook__filters .regular-checkbox,
-.ublog-post-card {
+.ublog-post-card,
+.ublog-post__markup img {
 	border-radius: var(--borderRadius) !important;
+}
+
+.ublog-post__markup em,
+.ublog-post__image-credit {
+	line-height: 40px !important;
+	opacity: 0.75 !important;
 }
 
 .lobby__blog h2 {
@@ -4635,7 +4642,6 @@ h1 a,
 .ublog-post__image {
 	box-shadow: none !important;
 	border-radius: var(--borderRadius) !important;
-	border: 2px solid var(--surfaceColorHover) !important;
 }
 
 .ublog-topics .ublog-post-card--mini {
