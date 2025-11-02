@@ -284,7 +284,8 @@ rm6 .message::before,
 .relay-tour__round-select .status,
 .relay-tour__side__empty::before,
 .study__player .team,
-.tpp a {
+.tpp a,
+.tpp__games td:first-child {
 	color: var(--textColor) !important;
 }
 
@@ -5151,6 +5152,7 @@ body #main-wrap group.radio input:checked + label,
 	border-radius: var(--borderRadius) !important;
 	border: 2px solid var(--surfaceColorHover) !important;
 	box-shadow: none !important;
+	backdrop-filter: blur(16px) !important;
 }
 
 .relay-tour__side__header,
@@ -5221,6 +5223,10 @@ th[role='columnheader']:not(.no-sort):after,
 .relay-tour__side__name::before,
 .relay-tour__side__header button:hover::before {
 	color: currentColor !important;
+}
+
+.tpp__games td {
+	border-top: 1px solid var(--surfaceColorHover) !important;
 }
 
 .relay-games {
