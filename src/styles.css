@@ -3175,7 +3175,8 @@ html .eval-gauge tick.zero {
 	background: var(--backgroundColor) !important;
 }
 
-.analyse .mchat {
+.analyse .mchat,
+#ceval-settings {
 	background: var(--surfaceColor) !important;
 	border: 2px solid var(--surfaceColorHover) !important;
 	backdrop-filter: blur(16px) !important;
@@ -3212,8 +3213,13 @@ html .eval-gauge tick.zero {
 	margin-left: 16px !important;
 }
 
+#ceval-settings .setting .tick.recommended div {
+	border-color: var(--primaryColor) !important;
+}
+
 .analyse__controls .fbt.active,
-.analyse__moves button.next.highlighted {
+.analyse__moves button.next.highlighted,
+.ceval .settings-gear.active {
 	background: var(--primaryColor) !important;
 	color: var(--backgroundColor) !important;
 }
