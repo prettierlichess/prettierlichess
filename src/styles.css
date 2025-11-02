@@ -404,6 +404,15 @@ dialog {
 	backdrop-filter: blur(16px) !important;
 }
 
+dialog button.close-button {
+	background: var(--backgroundColor) !important;
+	transition: all 0.2s;
+}
+
+dialog button.close-button:hover {
+	background: var(--tertiaryColor) !important;
+}
+
 .game-setup .setup-content {
 	border-block: none !important;
 	background: var(--surfaceColorHover) !important;
@@ -2741,6 +2750,12 @@ main.round {
 .mchat__tabs {
 	border-radius: 0 !important;
 	border-bottom: 2px solid var(--surfaceColorHover) !important;
+	border-top: 2px solid var(--surfaceColorHover) !important;
+}
+
+.mchat__content.note textarea {
+	border-radius: 0 !important;
+	border: 0 !important;
 }
 
 .mchat__messages li.me {
@@ -5186,7 +5201,6 @@ body #main-wrap group.radio input:checked + label,
 .study__buttons .mode,
 .study__player .analyse__clock,
 .study__members .left,
-.analyse__puzzle a,
 .analyse__persistence__help,
 #analyse-cm a,
 .explorer-box .explorer-title .active,

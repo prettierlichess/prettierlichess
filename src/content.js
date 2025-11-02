@@ -22,16 +22,34 @@ const STREAMER_STYLES = `
 (orientation: landscape) {
 
     main div.round__app {
-        grid-template-columns: minmax(calc(70vmin * var(--board-scale)), calc(100vh * var(--board-scale) - calc(var(--site-header-height) + var(--site-header-margin)) - 3rem)) minmax(240px, 400px);
-        grid-template-rows: 50px 1fr auto min-content 3fr auto min-content auto 1fr 50px !important;
-        grid-template-areas: 'user-top .''board voice''board mat-top''board expi-top''board moves''board controls''board expi-bot''board mat-bot''board .''user-bot .''kb-move .';
+        grid-template-rows: 
+			50px
+			1fr
+			auto
+			min-content
+			min-content
+			auto
+			min-content
+			auto
+			1fr
+			50px !important;
+        grid-template-areas: 
+			'user-top .'
+			'board voice'
+			'board mat-top'
+			'board expi-top'
+			'board moves'
+			'board controls'
+			'board expi-bot'
+			'board mat-bot'
+			'board .'
+			'user-bot .'
+			'kb-move .';
     }
 
     rm6 {
-        background: var(--surfaceColor);
-        border-top: 2px solid var(--surfaceColorHover);
-        border-bottom: 2px solid var(--surfaceColorHover);
         border-radius: var(--borderRadius);
+		overflow: hidden;
     }
 
     .round__app .rclock-top {
@@ -51,7 +69,9 @@ const STREAMER_STYLES = `
     }
     
     .rclock {
-        display: inline;
+        display: inline flex;
+		justify-content: end;
+		align-items: center;
     }
 
     .rclock > * {
@@ -70,17 +90,17 @@ const STREAMER_STYLES = `
         display: none;
     }
 
-    .rclock .time {
+    .rclock .time,
+	.rclock .time.hour {
         padding-left: 5px;
         padding-right: 5px;
-        font-size: 2em;
-        line-height: 0px;
-        height: 100%;
-        width: 10ch;
+        height: 2em;
+        width: 9ch;
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: 600;
+		font-size: 1.5em;
         font-family: 'Red Hat Display', sans-serif;
     }
 
@@ -114,7 +134,6 @@ const STREAMER_STYLES = `
     .round__app .ruser {
         font-size: 16px;
         padding: 0em !important;
-        line-height: 14px;
         background:none;
         border: none !important;
         border-radius: 0;
@@ -134,11 +153,29 @@ const STREAMER_STYLES = `
         flex: none;
     }
 
+	.user-link {
+		display: flex;
+		align-items: center;
+	}
+
+	.ruser-top .utitle {
+		margin-top: 1px;
+	}
+
+	.uflair {
+		margin-top: 4px;
+	}
+
+	.ricons .fbt {
+		font-size: 1.2em;
+	}
+
     .rcontrols {
         margin-top: 10px;
         background: var(--surfaceColor);
         border: 2px solid var(--surfaceColorHover);
         border-radius: var(--borderRadius);
+		overflow: hidden;
     }
 
     .ricons {
