@@ -277,7 +277,14 @@ rm6 .message::before,
 .keyboard-move em,
 .lobby .progress__text,
 .daily-feed__update__day,
-.dialog-content {
+.dialog-content,
+.relay-game,
+.relay-game__player,
+.relay-tour__round-select .time,
+.relay-tour__round-select .status,
+.relay-tour__side__empty::before,
+.study__player .team,
+.tpp a {
 	color: var(--textColor) !important;
 }
 
@@ -348,7 +355,9 @@ html a:hover {
 	color: var(--primaryColor);
 }
 
-bad {
+bad,
+.context-streamer strong,
+.context-streamer::before {
 	color: var(--tertiaryColor) !important;
 }
 
@@ -3630,7 +3639,9 @@ a.analyse {
 }
 
 .study__multiboard .now-playing a {
-	border-radius: 0 !important;
+	border-radius: var(--borderRadius) !important;
+	padding: 10px !important;
+	transition: all 0.2s ease-out !important;
 }
 
 .study__metadata h2 {
@@ -3679,6 +3690,7 @@ a.analyse {
 
 .study__multiboard .now-playing {
 	padding: 10px !important;
+	border: none !important;
 }
 
 .analyse__underboard .study__multiboard .now-playing {
@@ -3714,6 +3726,7 @@ a.analyse {
 	color: var(--textColor) !important;
 	opacity: 0.7 !important;
 	line-height: 16px !important;
+	letter-spacing: 0.5px !important;
 }
 
 .mchat__messages i {
@@ -3857,8 +3870,7 @@ button.analyse {
 	backdrop-filter: blur(16px) !important;
 }
 
-.mselect__list .current,
-.mselect__list > :hover {
+.mselect__list .current {
 	background: var(--surfaceColorHover) !important;
 }
 
@@ -5133,14 +5145,115 @@ body #main-wrap group.radio input:checked + label,
 
 /* Broadcasts */
 
+.relay-tour__side__empty,
+#tour-player-tip {
+	background: var(--surfaceColor) !important;
+	border-radius: var(--borderRadius) !important;
+	border: 2px solid var(--surfaceColorHover) !important;
+	box-shadow: none !important;
+}
+
+.relay-tour__side__header,
+.tpp__player {
+	background: var(--surfaceColorHover) !important;
+	border-radius: var(--borderRadius) var(--borderRadius) 0 0 !important;
+	border: 2px solid var(--surfaceColorHover) !important;
+	border-bottom: 0 !important;
+}
+
+.relay-tour__team-match__teams,
+.relay-tour__team-match__game,
+.relay-tour__side .streamer,
+.relay-game,
+.relay-tour__players th a,
+.relay-tour__subscribe,
+.relay-tour__note,
+.relay-tour__header .setting,
+.relay-tour__header,
+.relay-tour__side__header button,
+.relay-tour__side__header,
+.study__glyphs button,
+.study__invite .info,
+.study__buttons .mode,
+.study__player .analyse__clock,
+.study__members .left,
+.analyse__puzzle a,
+.analyse__persistence__help,
+.material,
+#analyse-cm a,
+.explorer-box .explorer-title .active,
+.explorer-box .explorer-title,
+.context-streamer,
+.tabs-horiz,
+.flash,
+#ceval-settings .setting,
+.copy-me,
+.board-menu .setting {
+	background: var(--surfaceColor) !important;
+}
+
+.relay-tour__mselect .mselect__list a,
+th[aria-sort]:not(.no-sort),
+th[role='columnheader']:not(.no-sort):after,
+.study__player .info a.name {
+	color: var(--defaultWhite) !important;
+}
+
 .relay-widget.tour-tier--5.relay-widget--active,
 .relay-widget.tour-tier--5.relay-widget--active::before,
 .relay-widget.tour-tier--5.relay-widget--active:hover h2,
-.relay-widget.tour-tier--5.relay-widget--active p {
+.relay-widget.tour-tier--5.relay-widget--active p,
+.relay-tour__side__header button:hover,
+.mselect__item:hover,
+.relay-tour__mselect .mselect__list a:hover,
+.relay-tour__round-select tr:hover *,
+.relay-tour__round-select tr:hover .round-state::before {
 	background: var(--primaryColor) !important;
 	color: var(--backgroundColor) !important;
 	box-shadow: none !important;
 	transition: all 0.2s ease-in-out !important;
+}
+
+.relay-tour__tabs span {
+	border: 2px solid var(--surfaceColorHover) !important;
+}
+
+.relay-tour__side__name::before,
+.relay-tour__side__header button:hover::before {
+	color: currentColor !important;
+}
+
+.relay-games {
+	font-size: 1em !important;
+	background: none !important;
+	border-radius: 0 0 var(--borderRadius) var(--borderRadius) !important;
+	border: 2px solid var(--surfaceColorHover) !important;
+}
+
+.relay-game {
+	border-bottom: 1px solid var(--surfaceColorHover) !important;
+}
+
+.mini-game__gauge--set tick {
+	border-bottom: 2px solid var(--secondaryColor) !important;
+}
+
+.mini-game__gauge,
+.relay-tour__mselect {
+	border: 0 !important;
+	border-radius: 2px !important;
+}
+
+.mini-game__gauge__black {
+	background: rgb(31, 31, 31) !important;
+}
+
+.mini-game__gauge--set::after {
+	box-shadow: none !important;
+}
+
+.now-playing .mini-game__gauge {
+	margin-left: 10px !important;
 }
 
 .relay-widget.tour-tier--5.relay-widget--active:hover {
@@ -5154,13 +5267,94 @@ body #main-wrap group.radio input:checked + label,
 	border-radius: 0 !important;
 }
 
-.relay-widget:hover {
+.relay-widget:hover,
+.relay-tour__info,
+th[aria-sort]:not(.no-sort),
+.tpp__games tr:hover {
 	background: var(--surfaceColorHover) !important;
 }
 
 .relay-widget--active::before,
-.relay-widget:hover h2 {
+.relay-widget:hover h2,
+.relay-game--current::before,
+.relay-game:hover::before,
+.relay-tour__round-select .finished::before,
+.relay-tour__header h1,
+.study__player .info a.name:hover,
+.tpp a:hover {
 	color: var(--primaryColor) !important;
+}
+
+.relay-game--current,
+.relay-game:hover {
+	border-left-color: var(--primaryColor) !important;
+}
+
+.relay-game__player good,
+.relay-game__player bad,
+.relay-game__player status {
+	width: 1ch !important;
+	text-align: center !important;
+}
+
+.study__multiboard .now-playing a.active,
+.study__multiboard .now-playing a:hover,
+.relay-tour__tabs span.active {
+	border-color: var(--primaryColor) !important;
+}
+
+.relay-games,
+.relay-tour__tabs span:hover,
+.study__comments #comment-text,
+.study__player,
+.context-streamer,
+.eval-gauge-horiz,
+.relay-tour,
+.analyse__tools,
+.mchat,
+.crosstable,
+.relay-tour__player__card,
+.relay-tour__info,
+.relay-tour__note,
+.relay-tour__side__empty,
+.relay-tour__side__preload,
+.study__message,
+.study__server-eval,
+.analyse__underboard .study__multiboard,
+.study__share,
+.study__glyphs,
+.study__comment,
+.study__comments .study__wiki,
+.study__metadata,
+.study-desc,
+.board-editor__tools .metadata,
+.study__relay__rounds,
+.study-search__results,
+.study__members,
+.study__chapters,
+.mselect__label,
+.toggle-box--toggle-off legend:hover,
+.flash-box,
+.flash-quiet {
+	box-shadow: none !important;
+}
+
+.relay-tour__round-select tr.current-round,
+.toggle-box,
+.toggle-box legend {
+	background: var(--surfaceColorHover) !important;
+	border: 0 !important;
+}
+
+.copy-me {
+	border: 0 !important;
+	border-radius: calc(var(--borderRadius) / 2) !important;
+	overflow: hidden !important;
+}
+
+.form-group button {
+	border-radius: 0 calc(var(--borderRadius) / 2) calc(var(--borderRadius) / 2)
+		0 !important;
 }
 
 .relay-widget.tour-tier--5 {
