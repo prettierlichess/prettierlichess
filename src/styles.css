@@ -1091,6 +1091,7 @@ nav section a:target-within {
 #dasher_app .button.more {
 	width: 195px !important;
 	justify-self: center !important;
+	color: var(--backgroundColor) !important;
 }
 
 #dasher_app .piece .list {
@@ -5527,13 +5528,12 @@ body .glowing {
 		grid-template-areas:
 			'tv   app     app'
 			'side    app     app'
-			'puzzle   leader  leader'
-			'winner  tours   tours'
+			'puzzle   tours  tours'
 			'table table table'
 			'support blog    blog '
 			'feed    feed    feed'
-			'. simuls  simuls'
-			'. about about' !important;
+			'simuls simuls  simuls'
+			'about about about' !important;
 	}
 
 	.lobby__app,
