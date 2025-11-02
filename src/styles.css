@@ -4070,8 +4070,7 @@ button.analyse {
 
 .game-row {
 	background: none !important;
-	border-top: 1px solid var(--surfaceColorHover) !important;
-	border-bottom: 1px solid var(--surfaceColorHover) !important;
+	border: 0 !important;
 }
 
 .game-row:hover {
