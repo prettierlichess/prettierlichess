@@ -5393,6 +5393,10 @@ th[aria-sort]:not(.no-sort),
 	color: var(--tertiaryColor) !important;
 }
 
+.relay-tour__side .relay-tour__side__search {
+	border: 0 !important;
+}
+
 .box__top > h1,
 .box__top > div,
 .box__top > form {
