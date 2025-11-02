@@ -277,7 +277,8 @@ rm6 .message::before,
 .relay-widget::before,
 .keyboard-move em,
 .lobby .progress__text,
-.daily-feed__update__day {
+.daily-feed__update__day,
+.dialog-content {
 	color: var(--textColor) !important;
 }
 
@@ -291,6 +292,26 @@ body {
 body > header {
 	border: none !important;
 	background-image: none !important;
+}
+
+body > header::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 120%;
+	background: rgba(var(--backgroundColorRGB), 0.85);
+	backdrop-filter: blur(16px);
+	mask-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(0, 0, 0, 0.75) 20%,
+		rgba(0, 0, 0, 0.5) 60%,
+		rgba(0, 0, 0, 0.25) 80%,
+		transparent 100%
+	);
+	z-index: -1 !important;
 }
 
 h1,
@@ -366,6 +387,29 @@ bad {
 
 .button.button-empty:hover {
 	box-shadow: none !important;
+	color: var(--primaryColor) !important;
+}
+
+dialog {
+	background: var(--surfaceColor) !important;
+	backdrop-filter: blur(16px) !important;
+}
+
+.game-setup .setup-content {
+	border-block: none !important;
+	background: var(--surfaceColorHover) !important;
+}
+
+.game-setup .lobby__start__button {
+	border: none !important;
+}
+
+.game-setup .button.lobby__start__button:hover {
+	font-size: 1rem !important;
+}
+
+.game-setup button.lobby__start__button::before {
+	color: var(--backgroundColor) !important;
 }
 
 .streamerButton {
@@ -389,7 +433,8 @@ bad {
 }
 
 .cmn-toggle:focus + label,
-.cmn-toggle:hover + label {
+.cmn-toggle:hover + label,
+group.radio {
 	box-shadow: none !important;
 }
 
@@ -440,6 +485,12 @@ select {
 	background: var(--backgroundColor) !important;
 	border: 1px solid var(--surfaceColorHover) !important;
 	outline: none !important;
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+	background: var(--surfaceColor) !important;
 }
 
 input[type='range']::-webkit-slider-runnable-track {
@@ -931,6 +982,7 @@ nav section a:hover {
 	background: var(--surfaceColor) !important;
 	padding: 0 20px !important;
 	border-radius: var(--borderRadius) !important;
+	backdrop-filter: blur(16px) !important;
 }
 
 nav section a:target-within {
@@ -1003,6 +1055,16 @@ nav section a:target-within {
 	overflow: hidden !important;
 }
 
+#dasher_app .button.more {
+	width: 195px !important;
+	justify-self: center !important;
+}
+
+#dasher_app .piece .list {
+	background: none !important;
+	box-shadow: none !important;
+}
+
 #dasher_app .head {
 	border-bottom: 1px solid var(--surfaceColorHover) !important;
 }
@@ -1017,7 +1079,8 @@ nav section a:target-within {
 .dasher #dasher_app .links a:hover::before,
 .dasher #dasher_app .links a:hover .line::before,
 .dasher #dasher_app .links button:hover,
-.dasher #dasher_app .subs .sub:hover {
+.dasher #dasher_app .subs .sub:hover,
+.dasher #dasher_app .selector button:hover {
 	background: var(--primaryColor) !important;
 	color: var(--backgroundColor) !important;
 }
@@ -1085,7 +1148,8 @@ signal > i {
 .dasher #dasher_app .langs .current:hover,
 .dasher #dasher_app .sound .active:hover,
 .dasher #dasher_app .background .active:hover,
-.dasher #dasher_app .board .active:hover {
+.dasher #dasher_app .board .active:hover,
+.dasher #dasher_app .piece .no-square.active {
 	background-color: rgba(var(--primaryColorRGB), 0.8) !important;
 }
 
@@ -1093,7 +1157,8 @@ signal > i {
 	accent-color: var(--primaryColor) !important;
 }
 
-.dasher #dasher_app .theme .list button.active {
+.dasher #dasher_app .theme .list button.active,
+#dasher_app .piece .no-square:hover {
 	background-color: var(--surfaceColorHover) !important;
 }
 
@@ -4331,7 +4396,7 @@ hr {
 .tournament-leaderboards__item,
 .tournament-shields__item,
 .community__leaders .leaderboards .user-top {
-	border-right: 1px solid var(--surfaceColorHover) !important;
+	border: 1px solid var(--surfaceColorHover) !important;
 }
 
 .simul__main .mini-game {
