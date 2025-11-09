@@ -1,0 +1,46 @@
+{
+	"name": "Prettier Lichess",
+	"version": "3.13.0",
+	"manifest_version": 2,
+	"description": "Lichess, but prettier.",
+	"icons": {
+		"128": "icon_128.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*.lichess.org/*"],
+			"exclude_matches": ["*://lichess.org/api*"],
+			"run_at": "document_start",
+			"css": ["styles.css"],
+			"js": ["content.js"],
+			"all_frames": true
+		},
+		{
+			"matches": ["*://lichess.org/*"],
+			"run_at": "document_idle",
+			"js": ["postLoad.js"],
+			"all_frames": true
+		}
+	],
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"activeTab",
+		"storage",
+		"declarativeContent",
+		"downloads"
+	],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"content_security_policy": "script-src 'self'; object-src 'self';",
+	"web_accessible_resources": ["styles.css", "fonts/*", "pieces/*", "masks/*"],
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "{8ad4bea8-ad8d-4e98-b434-a76065dee6cb}",
+			"strict_min_version": "57.0"
+		}
+	}
+}

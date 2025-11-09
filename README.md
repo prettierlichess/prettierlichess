@@ -52,6 +52,14 @@ During the build, the output files from webpack are placed in the `.dist/` folde
 npm run build
 ```
 
+### Firefox build
+
+If you want to produce a Firefox-compatible build (the extension requires a Manifest V2 format for local/dev installs), there's a convenience script that runs the normal webpack build and then emits a Firefox-friendly manifest into `dist/`:
+
+```
+npm run build:firefox
+```
+
 To rebuild automatically when changes are made, run:
 
 ```

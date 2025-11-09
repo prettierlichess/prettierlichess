@@ -4,6 +4,7 @@
   "description": "Here is the source code for both the chrome and firefox extension! It's simple but it's mine. Feel free to download, fork, use, and mess with it all you want. No attribution or anything required.",
   "scripts": {
     "build": "npx webpack",
+  "build:firefox": "npm run build && node ./scripts/generate-firefox-manifest.js",
     "watch": "npx webpack -w",
     "popup:serve": "cd dist && node ../testing/popupServer.js",
     "popup:run": "npm run build && cd dist && node ../testing/popupServer.js",
