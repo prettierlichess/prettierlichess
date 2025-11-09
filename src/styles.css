@@ -2340,6 +2340,11 @@ button.rematch-decline::before {
 	border-inline-start: none !important;
 }
 
+.chat__members__inner > * {
+	display: flex !important;
+	flex-wrap: wrap !important;
+}
+
 .puzzle__side {
 	grid-gap: 0 !important;
 	grid-template-rows: min-content min-content min-content min-content !important;
