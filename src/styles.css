@@ -1399,8 +1399,8 @@ signal > i {
 
 .lobby__side {
 	overflow: auto !important;
-	height: 100% !important;
-	margin: 0 !important;
+	height: calc(100% - 40px) !important;
+	margin: 20px 0 !important;
 }
 
 .lobby__app.lobby__app-real_time {
@@ -1420,6 +1420,11 @@ signal > i {
 	width: 100% !important;
 	min-height: auto !important;
 	margin: 20px 0 !important;
+}
+
+.about-side {
+	padding: 20px !important;
+	padding-top: 0 !important;
 }
 
 .daily-feed__update__marker.nobg {
@@ -1547,6 +1552,7 @@ g[stroke='#888'] {
 
 .lobby__spotlights {
 	border-radius: 0 !important;
+	flex: 1 !important;
 }
 
 .lobby__streams:empty,
@@ -1576,6 +1582,17 @@ g[stroke='#888'] {
 .lobby__box,
 .ublog-post-card {
 	box-shadow: none !important;
+}
+
+.ublog-post-card__top {
+	flex: 1 !important;
+}
+
+.ublog-post-card__image {
+	aspect-ratio: unset !important;
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover !important;
 }
 
 .lobby__streams {
@@ -1728,7 +1745,6 @@ g[stroke='#888'] {
 	border-radius: var(--borderRadius) !important;
 	border: 2px solid var(--surfaceColorHover);
 	padding: 0 !important;
-	margin: 20px 0 !important;
 	overflow: hidden !important;
 }
 
@@ -1779,7 +1795,6 @@ g[stroke='#888'] {
 button.lobby__start__button:hover:not(.disabled) {
 	box-shadow: none !important;
 	background: var(--surfaceColorHover) !important;
-	font-size: 1.4rem !important;
 }
 
 .lobby__start__button::before,
@@ -1945,8 +1960,9 @@ a.button.button-metal:hover {
 }
 
 .ublog-post-card__content {
-	padding: 12% 8% 6% 8% !important;
+	padding: 20px !important;
 	order: 1 !important;
+	height: 20em !important;
 }
 
 #friend_box {

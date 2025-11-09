@@ -195,8 +195,8 @@ const STREAMER_STYLES = `
 const LAYOUT_CHANGE = `
 main.lobby {
 	grid-template-areas:
-		'app tv tv table'
-		'side blog blog support'
+		'app tv tv side'
+		'table blog blog support'
 		'tours puzzle puzzle feed'
 		'simuls simuls simuls simuls'
 		'about about about about';
