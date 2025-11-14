@@ -2154,7 +2154,7 @@ main.page-small {
 	justify-content: center !important;
 }
 
-.tview2 .good{
+.tview2 .good {
 	--c-base: var(--primaryColor) !important;
 }
 
@@ -2172,13 +2172,13 @@ main.page-small {
 	backdrop-filter: blur(16px) !important;
 }
 
-.puzzle__board circle[fill="#22ac38"] {
+.cg-custom-svgs circle[fill='#22ac38'],
+.cg-custom-svgs circle[fill='#168226'] {
 	fill: var(--primaryColor) !important;
-	box-shadow: none !important;
 }
 
-.puzzle__board g path[fill="#fff"] {
-	fill: var(--defaultWhite) !important;
+.cg-custom-svgs g path[fill='#fff'] {
+	fill: var(--backgroundColor) !important;
 }
 
 feDropShadow {
@@ -2258,7 +2258,7 @@ button.rematch-decline::before {
 .puzzle__themes__vote:hover,
 .puzzle__themes__vote.active,
 .puzzle__side__replay__bar::before,
-.puzzle__session a.session-new {
+.puzzle__session a.session-new, .analyse-controls .jumps .fbt.active {
 	background: var(--primaryColor) !important;
 	color: var(--backgroundColor) !important;
 }
@@ -2696,7 +2696,8 @@ main.round {
 	border: 0 !important;
 }
 
-.rcontrols .negotiation a, .rcontrols .question {
+.rcontrols .negotiation a,
+.rcontrols .question {
 	background: none !important;
 }
 
