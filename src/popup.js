@@ -15,7 +15,7 @@ const defaultColorScheme = {
 	arrowTertiary: '#d64d4d',
 	arrowAlternate: '#4b81e6',
 	lastMove: '#99d69e',
-	preMove: '#1B7CC7',
+	preMove: '#1b7cc733',
 	moveIndicator: '#0000003b',
 	boardDark: '#71828F',
 	boardLight: '#c7c7c7',

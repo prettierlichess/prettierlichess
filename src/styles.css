@@ -106,7 +106,7 @@ html {
 	--arrowAlternateRGB: 75, 129, 230 !important;
 	--lastMove: #99d69e !important;
 	--lastMoveRGB: 153, 214, 158 !important;
-	--preMove: #1b7cc7 !important;
+	--preMove: #1b7cc733 !important;
 	--preMoveRGB: 27, 124, 199 !important;
 	--moveIndicator: #0000003b !important;
 	--moveIndicatorRGB: 56, 152, 64 !important;
@@ -2154,6 +2154,10 @@ main.page-small {
 	justify-content: center !important;
 }
 
+.tview2 .good{
+	--c-base: var(--primaryColor) !important;
+}
+
 .puzzle .eval-gauge {
 	display: none !important;
 }
@@ -2166,6 +2170,19 @@ main.page-small {
 	border-radius: var(--borderRadius) !important;
 	border: 2px solid var(--surfaceColorHover) !important;
 	backdrop-filter: blur(16px) !important;
+}
+
+.puzzle__board circle[fill="#22ac38"] {
+	fill: var(--primaryColor) !important;
+	box-shadow: none !important;
+}
+
+.puzzle__board g path[fill="#fff"] {
+	fill: var(--defaultWhite) !important;
+}
+
+feDropShadow {
+	flood-opacity: 0 !important;
 }
 
 .storm--end__score > p {
@@ -2679,7 +2696,7 @@ main.round {
 	border: 0 !important;
 }
 
-.rcontrols .negotiation a {
+.rcontrols .negotiation a, .rcontrols .question {
 	background: none !important;
 }
 
