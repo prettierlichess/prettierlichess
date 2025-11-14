@@ -24,14 +24,12 @@ const STREAMER_STYLES = `
     main div.round__app {
         grid-template-rows: 
 			50px
-			1fr
+			auto
 			auto
 			min-content
 			min-content
 			auto
-			min-content
 			auto
-			1fr
 			50px !important;
         grid-template-areas: 
 			'user-top .'
@@ -46,6 +44,10 @@ const STREAMER_STYLES = `
 			'user-bot .'
 			'kb-move .';
     }
+
+	.round__app__board {
+		align-self: center;
+	}
 
     rm6 {
         border-radius: var(--borderRadius);

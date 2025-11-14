@@ -2258,7 +2258,8 @@ button.rematch-decline::before {
 .puzzle__themes__vote:hover,
 .puzzle__themes__vote.active,
 .puzzle__side__replay__bar::before,
-.puzzle__session a.session-new, .analyse-controls .jumps .fbt.active {
+.puzzle__session a.session-new,
+.analyse-controls .jumps .fbt.active {
 	background: var(--primaryColor) !important;
 	color: var(--backgroundColor) !important;
 }
