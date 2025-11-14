@@ -1552,7 +1552,6 @@ g[stroke='#888'] {
 
 .lobby__spotlights {
 	border-radius: 0 !important;
-	flex: 1 !important;
 }
 
 .lobby__streams:empty,
@@ -5414,6 +5413,8 @@ th[aria-sort]:not(.no-sort),
 	transition: all 0.2s ease-out !important;
 	background: var(--surfaceColor) !important;
 	color: var(--textColor) !important;
+	outline: 2px solid var(--surfaceColorHover) !important;
+	box-shadow: none !important;
 }
 
 .relay-card:hover {
