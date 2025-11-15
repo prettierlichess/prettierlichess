@@ -45,6 +45,10 @@ const STREAMER_STYLES = `
 			'kb-move .';
     }
 
+	.round__app .round__app__table {
+		grid-area: 4 / 2 / 8 / 3 !important;	
+	}
+
 	.round__app__board {
 		align-self: center;
 	}
