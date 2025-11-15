@@ -4043,11 +4043,10 @@ button.analyse {
 }
 
 .page-menu__content.box {
-	background: var(--surfaceColor) !important;
+	background: none !important;
 	border-radius: var(--borderRadius) !important;
-	border: 2px solid var(--surfaceColorHover) !important;
+	border: none !important;
 	box-shadow: none !important;
-	backdrop-filter: blur(16px) !important;
 }
 
 .user-show__header,
@@ -4066,14 +4065,14 @@ button.analyse {
 
 #us_profile,
 #us_profile .insight {
-	border-top: 2px solid var(--surfaceColorHover) !important;
+	border: none !important;
+	margin: 20px 0 !important;
 }
 
 .perf-stat__content [title] {
 	border-bottom: 1px dashed var(--primaryColor) !important;
 }
 
-#us_profile,
 .perf-stat .counter tr:first-child,
 .perf-stat .result thead tr {
 	border-bottom: 2px solid var(--surfaceColorHover) !important;
@@ -4098,8 +4097,7 @@ button.analyse {
 }
 
 .user-show .angles {
-	border: none !important;
-	padding: 0 !important;
+	border: 2px solid var(--surfaceColorHover) !important;
 }
 
 .number-menu--tabs .nm-item.active,
@@ -4114,9 +4112,9 @@ button.analyse {
 }
 
 .number-menu--tabs .nm-item {
-	border-bottom: 2px solid var(--surfaceColorHover) !important;
+	border:0 !important;
 	margin-top: 0 !important;
-	border-radius: 0 !important;
+	border-radius: calc(var(--borderRadius) - 5px) !important;
 }
 
 .user-show .angle-content #games.number-menu {
@@ -4205,10 +4203,14 @@ hr {
 	margin-top: -8px !important;
 }
 
+.sub-ratings a {
+	border-radius: var(--borderRadius) !important;
+}
+
 .sub-ratings a:hover,
 .sub-ratings a.active {
 	background: var(--surfaceColorHover) !important;
-	border-radius: var(--borderRadius) 0 0 var(--borderRadius) !important;
+	border-radius: var(--borderRadius) !important;
 	box-shadow: none !important;
 }
 
