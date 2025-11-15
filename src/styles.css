@@ -2901,10 +2901,6 @@ rm6 .buttons,
 	border-left: 2px solid var(--surfaceColorHover) !important;
 }
 
-#voice-bar #voice-status-row {
-	background: var(--surfaceColor) !important;
-}
-
 rm6 {
 	margin-bottom: 0 !important;
 	background: none !important;
@@ -4112,7 +4108,7 @@ button.analyse {
 }
 
 .number-menu--tabs .nm-item {
-	border:0 !important;
+	border: 0 !important;
 	margin-top: 0 !important;
 	border-radius: calc(var(--borderRadius) - 5px) !important;
 }
@@ -5514,6 +5510,13 @@ th[aria-sort]:not(.no-sort),
 
 /* Voice */
 
+#voice-bar #voice-status-row {
+	background: var(--surfaceColor) !important;
+	box-shadow: none !important;
+	border-bottom: 1px solid var(--surfaceColorHover) !important;
+	border-radius: 0 !important;
+}
+
 .voice-move-help th p {
 	background: var(--secondaryColor) !important;
 	color: var(--surfaceColor) !important;
@@ -5527,6 +5530,7 @@ th[aria-sort]:not(.no-sort),
 button#microphone-button.push-to-talk,
 button#microphone-button.listening {
 	border-color: var(--primaryColor) !important;
+	border-radius: calc(var(--borderRadius) - 5px) !important;
 }
 
 #voice-settings {
