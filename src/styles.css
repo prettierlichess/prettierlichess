@@ -4056,7 +4056,7 @@ button.analyse {
 
 .number-menu {
 	padding: 4px !important;
-	margin: 0 10px !important;
+	margin: 10px !important;
 	border: 1px solid var(--surfaceColorHover) !important;
 	border-radius: var(--borderRadius) !important;
 }
