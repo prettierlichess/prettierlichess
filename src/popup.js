@@ -146,15 +146,41 @@ function tabScript(func, params) {
 		try {
 			for (let i = 0; i < tabs.length; i++) {
 				if (tabs[i].url !== undefined) {
-					chrome.scripting
-						.executeScript({
-							target: {tabId: tabs[i].id},
-							func: func,
-							args: params !== undefined ? [params] : [],
-						})
-						.catch((err) =>
-							console.error('Script execution failed:', err)
+					// Use chrome.scripting when available (MV3/Chromium).
+					if (chrome.scripting && chrome.scripting.executeScript) {
+						chrome.scripting
+							.executeScript({
+								target: {tabId: tabs[i].id},
+								func: func,
+								args: params !== undefined ? [params] : [],
+							})
+							.catch((err) =>
+								console.error('Script execution failed:', err)
+							);
+					} else if (chrome.tabs && chrome.tabs.executeScript) {
+						// Fallback for Firefox/MV2: inject via tabs.executeScript
+						const invocation =
+							'(' +
+							func.toString() +
+							')(' +
+							(params !== undefined
+								? JSON.stringify(params)
+								: '') +
+							');';
+						chrome.tabs.executeScript(
+							tabs[i].id,
+							{code: invocation},
+							function () {
+								if (chrome.runtime.lastError) {
+                                    // Some pages may reject injection; log and continue
+									console.error(
+										'Script execution failed:',
+										chrome.runtime.lastError.message
+									);
+								}
+							}
 						);
+					}
 				}
 			}
 		} catch (err) {
@@ -194,6 +220,22 @@ function setColor(scheme, color) {
 				: '') +
 				`--${scheme}: ${color} !important;--${scheme}RGB: ${r}, ${g}, ${b} !important;`
 		);
+	}
+
+	// Broadcast to all content scripts via runtime messaging (works in Firefox without tabs permission)
+	if (chrome.runtime && chrome.runtime.sendMessage) {
+		try {
+			chrome.runtime.sendMessage({
+				type: 'setColor',
+				scheme: scheme,
+				color: color,
+				r: r,
+				g: g,
+				b: b,
+			});
+		} catch (e) {
+			// Ignore messaging errors; script injection fallback below will still try
+		}
 	}
 
 	tabScript(createColorScript, {

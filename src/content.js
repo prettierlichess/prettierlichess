@@ -359,3 +359,66 @@ window.addEventListener('message', function (event) {
 		chrome.storage.sync.clear();
 	}
 });
+
+// Deterministic live updates: react to changes in synced storage
+chrome.storage.onChanged.addListener(function (changes, areaName) {
+	if (areaName !== 'sync') return;
+	for (const key in changes) {
+		const change = changes[key];
+		// Update any color scheme variable immediately
+		if (colorScheme.indexOf(key) !== -1 && change.newValue) {
+			const newColor = change.newValue;
+			const r = parseInt(newColor.substring(1, 3), 16);
+			const g = parseInt(newColor.substring(3, 5), 16);
+			const b = parseInt(newColor.substring(5, 7), 16);
+			const currentStyle =
+				document.documentElement.getAttribute('style') || '';
+			document.documentElement.setAttribute(
+				'style',
+				`${currentStyle} --${key}: ${newColor} !important; --${key}RGB: ${r}, ${g}, ${b} !important;`
+			);
+		}
+		// Keep coord variables in sync when default board toggles
+		if (key === 'defaultBoardSwitch') {
+			const useDefault = !!changes[key].newValue;
+			const darkCoord = useDefault
+				? 'var(--cg-coord-color-black)'
+				: 'var(--boardDark)';
+			const lightCoord = useDefault
+				? 'var(--cg-coord-color-white)'
+				: 'var(--boardLight)';
+			const currentStyle =
+				document.documentElement.getAttribute('style') || '';
+			document.documentElement.setAttribute(
+				'style',
+				`${currentStyle} --coordDark: ${darkCoord} !important; --coordLight: ${lightCoord} !important;`
+			);
+		}
+	}
+});
+
+// Listen for color updates from the popup (Firefox-friendly, MV2-safe)
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+	if (!message || !message.type) return;
+	if (message.type === 'setColor') {
+		try {
+			const scheme = message.scheme;
+			const color = message.color;
+			const r = message.r;
+			const g = message.g;
+			const b = message.b;
+
+			const currentStyle = document.documentElement.getAttribute('style') || '';
+			document.documentElement.setAttribute(
+				'style',
+				currentStyle +
+					`--${scheme}: ${color} !important;--${scheme}RGB: ${r}, ${g}, ${b} !important;`
+			);
+			if (typeof sendResponse === 'function') sendResponse({ok: true});
+		} catch (e) {
+			if (typeof sendResponse === 'function') sendResponse({ok: false, error: String(e)});
+		}
+		// Indicate we will not send an async response
+		return false;
+	}
+});
