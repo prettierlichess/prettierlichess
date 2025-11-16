@@ -67,10 +67,10 @@ The Firefox build also emits a Firefox-friendly `manifest.json` into `dist-firef
 
 ### Watch/serve
 
-To rebuild automatically when changes are made, run:
+To rebuild automatically when changes are made (watches both Chrome and Firefox builds simultaneously), run:
 
 ```
-npm run watch   # Chrome build, writes to dist-chrome/
+npm run watch   # Watches both builds, writes to dist-chrome/ and dist-firefox/
 ```
 
 For the popup test server:
