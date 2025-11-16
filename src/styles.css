@@ -4039,10 +4039,12 @@ button.analyse {
 }
 
 .page-menu__content.box {
-	background: none !important;
+	background: var(--surfaceColor) !important;
 	border-radius: var(--borderRadius) !important;
-	border: none !important;
+	border: 2px solid var(--surfaceColorHover) !important;
 	box-shadow: none !important;
+	backdrop-filter: blur(16px) !important;
+	overflow: hidden !important;
 }
 
 .user-show__header,
@@ -4054,9 +4056,9 @@ button.analyse {
 
 .number-menu {
 	padding: 4px !important;
+	margin: 0 10px !important;
 	border: 1px solid var(--surfaceColorHover) !important;
 	border-radius: var(--borderRadius) !important;
-	margin: 0 !important;
 }
 
 #us_profile,
