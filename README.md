@@ -46,24 +46,37 @@ npm install
 
 ### Build
 
-During the build, the output files from webpack are placed in the `.dist/` folder. There are two ways to start this process. For a single build, run:
+Build outputs are separated per browser:
+- Chrome build → `dist-chrome/`
+- Firefox build → `dist-firefox/`
+
+For a single combined build (both Chrome and Firefox), run:
 
 ```
 npm run build
 ```
 
-### Firefox build
-
-If you want to produce a Firefox-compatible build (the extension requires a Manifest V2 format for local/dev installs), there's a convenience script that runs the normal webpack build and then emits a Firefox-friendly manifest into `dist/`:
+To build just one target:
 
 ```
+npm run build:chrome
 npm run build:firefox
 ```
+
+The Firefox build also emits a Firefox-friendly `manifest.json` into `dist-firefox/` based on `src/manifest.firefox.json`.
+
+### Watch/serve
 
 To rebuild automatically when changes are made, run:
 
 ```
-npm run watch
+npm run watch   # Chrome build, writes to dist-chrome/
+```
+
+For the popup test server:
+
+```
+npm run popup:run    # builds Chrome then serves from dist-chrome/
 ```
 
 That's pretty much it :smiley:
