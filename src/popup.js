@@ -368,11 +368,23 @@ for (let scheme in defaultColorScheme) {
 	pickrCreate(scheme);
 }
 
-resetButton.addEventListener('click', () => {
-	chrome.storage.sync.clear();
-	reloadAllTabs();
-	location.reload();
-});
+function resetToDefaults() {
+	// Clear first, then set defaults and broadcast updates so pages reflect immediately.
+	chrome.storage.sync.clear(function () {
+		// Ensure board uses custom colors again by default
+		syncSet('defaultBoardSwitch', false);
+		// Apply default colors across all tabs and persist them
+		for (let scheme in defaultColorScheme) {
+			setColor(scheme, defaultColorScheme[scheme]);
+		}
+		// Optionally reset layout to default
+		syncSet('layoutPreference', 'default');
+		// Refresh the popup UI after values are written
+		location.reload();
+	});
+}
+
+resetButton.addEventListener('click', resetToDefaults);
 
 // The defaultBoardSwitch attribute is true if the default
 // lichess boards should be used
