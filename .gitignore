@@ -1,3 +1,5 @@
+dist-chrome/
+dist-firefox/
 node_modules/
 dist/
 .DS_Store

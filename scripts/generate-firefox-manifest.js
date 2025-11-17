@@ -3,7 +3,7 @@ const path = require('path');
 
 const root = process.cwd();
 const srcManifest = path.join(root, 'src', 'manifest.firefox.json');
-const outDir = path.join(root, 'dist');
+const outDir = path.join(root, 'dist-firefox');
 const outManifest = path.join(outDir, 'manifest.json');
 
 function fail(msg) {
