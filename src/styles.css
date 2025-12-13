@@ -4798,12 +4798,14 @@ iframe.analyse {
 .blog-cards > a time,
 .ublog-topics__topic:hover,
 .ublog-post__topics a,
-.forum-post__metas a.author--op {
+.forum-post__metas a.author--op,
+.reactions button.mine {
 	background: var(--surfaceColorHover) !important;
 	box-shadow: none !important;
 }
 
-.blog-cards > a {
+.blog-cards > a,
+.reactions button.mine {
 	border-radius: var(--borderRadius) !important;
 }
 
@@ -4817,7 +4819,8 @@ iframe.analyse {
 }
 
 .ublog-post-card__title,
-.ublog-post-card__content {
+.ublog-post-card__content,
+.forum-post:hover .reactions-auth button.no:hover {
 	background: none !important;
 }
 
