@@ -526,7 +526,8 @@ input[type='range']::-webkit-slider-thumb {
 	background: var(--primaryColor) !important;
 }
 
-.hook__filters .rating-range input {
+.hook__filters .rating-range input,
+#clinput input {
 	background: none !important;
 	border: 0 !important;
 }
