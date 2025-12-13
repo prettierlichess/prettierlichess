@@ -413,6 +413,11 @@ dialog button.close-button:hover {
 	background: var(--tertiaryColor) !important;
 }
 
+#dasher_app .sound .dialog-content {
+	min-width: 180px !important;
+	padding: 10px !important;
+}
+
 .game-setup .setup-content {
 	border-block: none !important;
 	background: var(--surfaceColorHover) !important;
