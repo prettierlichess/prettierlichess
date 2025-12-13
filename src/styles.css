@@ -4225,8 +4225,22 @@ hr {
 	color: var(--primaryColor) !important;
 }
 
-.page-menu .btn-rack__btn:hover {
+.page-menu .btn-rack__btn:hover,
+.user-show__social .user-actions .dropdown .dropdown-window a:hover,
+.user-show__social .user-actions .dropdown .dropdown-window button:hover {
 	background: var(--surfaceColorHover) !important;
+}
+
+.user-show__social .user-actions .menu-container {
+	overflow: visible !important;
+}
+
+.user-show__social .user-actions .dropdown .dropdown-window {
+	background: var(--surfaceColor) !important;
+	border-radius: var(--borderRadius) !important;
+	border: 2px solid var(--surfaceColorHover) !important;
+	box-shadow: none !important;
+	backdrop-filter: blur(16px) !important;
 }
 
 /* TV Page */
