@@ -3379,6 +3379,10 @@ html .eval-gauge tick.zero {
 	margin-top: 20px !important;
 }
 
+.analyse__underboard:empty {
+	display: none !important;
+}
+
 /* Analysis Graph */
 
 #acpl-chart-container,

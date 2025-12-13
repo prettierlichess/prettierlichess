@@ -1,20 +1,25 @@
 chrome.runtime.onInstalled.addListener(function () {
 	// If declarativeContent exists (Chrome), keep existing behavior.
 	if (chrome.declarativeContent && chrome.declarativeContent.onPageChanged) {
-		chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
-			chrome.declarativeContent.onPageChanged.addRules([
-				{
-					conditions: [
-						new chrome.declarativeContent.PageStateMatcher({
-							pageUrl: {
-								hostEquals: 'lichess.org',
-							},
-						}),
-					],
-					actions: [new chrome.declarativeContent.ShowPageAction()],
-				},
-			]);
-		});
+		chrome.declarativeContent.onPageChanged.removeRules(
+			undefined,
+			function () {
+				chrome.declarativeContent.onPageChanged.addRules([
+					{
+						conditions: [
+							new chrome.declarativeContent.PageStateMatcher({
+								pageUrl: {
+									hostEquals: 'lichess.org',
+								},
+							}),
+						],
+						actions: [
+							new chrome.declarativeContent.ShowPageAction(),
+						],
+					},
+				]);
+			}
+		);
 		return;
 	}
 
@@ -22,10 +27,15 @@ chrome.runtime.onInstalled.addListener(function () {
 	function updatePageActionForTab(tab) {
 		if (!tab || !tab.id) return;
 		const url = tab.url || '';
-		if (url.indexOf('://lichess.org/') !== -1 || url.indexOf('://www.lichess.org/') !== -1) {
-			if (chrome.pageAction && chrome.pageAction.show) chrome.pageAction.show(tab.id);
+		if (
+			url.indexOf('://lichess.org/') !== -1 ||
+			url.indexOf('://www.lichess.org/') !== -1
+		) {
+			if (chrome.pageAction && chrome.pageAction.show)
+				chrome.pageAction.show(tab.id);
 		} else {
-			if (chrome.pageAction && chrome.pageAction.hide) chrome.pageAction.hide(tab.id);
+			if (chrome.pageAction && chrome.pageAction.hide)
+				chrome.pageAction.hide(tab.id);
 		}
 	}
 

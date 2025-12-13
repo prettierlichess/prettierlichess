@@ -47,8 +47,9 @@ npm install
 ### Build
 
 Build outputs are separated per browser:
-- Chrome build → `dist-chrome/`
-- Firefox build → `dist-firefox/`
+
+-   Chrome build → `dist-chrome/`
+-   Firefox build → `dist-firefox/`
 
 For a single combined build (both Chrome and Firefox), run:
 

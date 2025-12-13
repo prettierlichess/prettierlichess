@@ -172,7 +172,7 @@ function tabScript(func, params) {
 							{code: invocation},
 							function () {
 								if (chrome.runtime.lastError) {
-                                    // Some pages may reject injection; log and continue
+									// Some pages may reject injection; log and continue
 									console.error(
 										'Script execution failed:',
 										chrome.runtime.lastError.message

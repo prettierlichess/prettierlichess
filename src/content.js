@@ -408,7 +408,8 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 			const g = message.g;
 			const b = message.b;
 
-			const currentStyle = document.documentElement.getAttribute('style') || '';
+			const currentStyle =
+				document.documentElement.getAttribute('style') || '';
 			document.documentElement.setAttribute(
 				'style',
 				currentStyle +
@@ -416,7 +417,8 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 			);
 			if (typeof sendResponse === 'function') sendResponse({ok: true});
 		} catch (e) {
-			if (typeof sendResponse === 'function') sendResponse({ok: false, error: String(e)});
+			if (typeof sendResponse === 'function')
+				sendResponse({ok: false, error: String(e)});
 		}
 		// Indicate we will not send an async response
 		return false;
