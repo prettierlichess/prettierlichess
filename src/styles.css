@@ -2025,7 +2025,8 @@ a.button.button-metal:hover {
 }
 
 .upt__actions.btn-rack a:hover,
-#hook .opponent {
+#hook .opponent,
+.filter-and-sort .btn-rack__btn.lit {
 	background: var(--surfaceColorHover) !important;
 }
 
