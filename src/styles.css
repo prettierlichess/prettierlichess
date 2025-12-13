@@ -4702,6 +4702,13 @@ tbody tr.enterable:hover,
 	background: var(--surfaceColorHover) !important;
 }
 
+.board-editor .spare .no-square.trash piece {
+	background-image: none !important;
+	background-color: var(--textColor) !important;
+	-webkit-mask-image: url('https://lichess1.org/assets/hashed/trash.c06824db.svg') !important;
+	mask-image: url('https://lichess1.org/assets/hashed/trash.c06824db.svg') !important;
+}
+
 /* Forum/Blog */
 
 h1 a,
